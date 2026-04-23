@@ -1,3 +1,4 @@
+![Logo](images/Logo.jpg)
 # 1.1 Sistem Persamaan Linear
 
 Tidak dapat dipungkiri bahwa menghitung dan mempelajari solusi persamaan, serta *sistem persamaan*, memegang peranan yang sangat penting dalam matematika. Namun, perlu kami tegaskan bahwa bukan hanya itu yang dilakukan oleh para matematikawan!
@@ -621,3 +622,4 @@ A^{-1} = \frac{1}{\det A} \operatorname{adj} A.
 No 4.A = \begin{bmatrix} -7 & -5 \\ 1 & 4 \end{bmatrix}
 No 5.A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}
 No 6.A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}.
+
