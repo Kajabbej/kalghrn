@@ -1,3 +1,4 @@
+![Logo](images/Logo.jpg)
 # 1.1 Sistem Persamaan Linear
 
 Tidak dapat dipungkiri bahwa menghitung dan mempelajari solusi persamaan, serta *sistem persamaan*, memegang peranan yang sangat penting dalam matematika. Namun, perlu kami tegaskan bahwa bukan hanya itu yang dilakukan oleh para matematikawan!
@@ -79,7 +80,7 @@ $$
 
 ---
 
- **Visualisasi GeoGebra (Direkomendasikan)**
+### 🎨 **Visualisasi GeoGebra (Direkomendasikan)**
 
 **Mengapa butuh GeoGebra:** Untuk memahami konsep double-indexing dan bagaimana koefisien tersusun dalam matriks.
 
@@ -116,7 +117,7 @@ adalah sebuah $n$-tuple $(s_1, s_2, \dots, s_n)$ dari bilangan real di mana penu
 
 ---
 
- **Visualisasi GeoGebra (Sangat Direkomendasikan)**
+### 🎨 **Visualisasi GeoGebra (Sangat Direkomendasikan)**
 
 **Mengapa butuh GeoGebra:** Untuk memvisualisasikan konsep solusi dan bagaimana $n$-tuple bekerja dalam sistem persamaan.
 
@@ -149,7 +150,7 @@ Intersect(x + y = 5, 2x - y = 1)
 
 ---
 ```markdown
-### Definisi Matriks di GeoGebra
+### 📊 Definisi Matriks di GeoGebra
 
 **Perintah GeoGebra:**
 ```geogebra
@@ -158,7 +159,7 @@ A = {{1, 2, 3}, {4, 5, 6}}
 
 ---
 
-####  Penjelasan Struktur:
+#### 🔍 Penjelasan Struktur:
 
 | Sintaks | Arti |
 |---------|------|
@@ -169,7 +170,7 @@ A = {{1, 2, 3}, {4, 5, 6}}
 
 ---
 
-####  Representasi Matematika:
+#### 📐 Representasi Matematika:
 
 Matriks $A$ yang terbentuk:
 
@@ -605,195 +606,27 @@ $$
 X = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \end{bmatrix}
 $$
 ## tugas
-## A. Hitunglah determinan matriks berikut dengan menggunakan rumus ekspansi baris
-
-A. Hitunglah determinan matrik berikut dengan menggunakan rumus expansi baris $\sum_{k=1}^{n}(-1)^{i+k} a_{ik} M_{ik}$ dengan $M_{ij}$ adalah minor dari matriks $A$ dan $M_{ij} = \det A_{ij}$.
-
-**No 1.**
-$$A = \begin{bmatrix} -7 & 1 \\ -5 & 4 \end{bmatrix}$$
-
-**No 2.**
-$$A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}$$
-
-**No 3.**
-$$A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}$$
-
----
-
-B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut dengan rumus $(\operatorname{adj} A)_{ij} = (-1)^{i+j} M_{ji}$ dan rumus $A^{-1} = \frac{1}{\det A} \operatorname{adj} A$.
-
-**No 4.**
-$$A = \begin{bmatrix} -7 & -5 \\ 1 & 4 \end{bmatrix}$$
-
-**No 5.**
-$$A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}$$
-
-**No 6.**
-$$A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}$$
-**jawaban**
-**Bagian A — No 1**
-
-Menghitung $\det(A)$ matriks $2 \times 2$:
-
-$$A = \begin{bmatrix} -7 & 1 \\ -5 & 4 \end{bmatrix}$$
-
-**Rumus ekspansi baris ke-1**
-
-$$\det(A) = (-1)^{1+1} \cdot a_{11} \cdot M_{11} + (-1)^{1+2} \cdot a_{12} \cdot M_{12}$$
-
-**Identifikasi minor**
-
-* $M_{11} = 4$ (sisa elemen baris 1, kolom 1 dihapus)
-* $M_{12} = -5$ (sisa elemen baris 1, kolom 2 dihapus)
-
-**Substitusi nilai**
-
-$$
-\begin{aligned}
-\det(A) &= (+1) \cdot (-7) \cdot (4) + (-1) \cdot (1) \cdot (-5) \\
-&= -28 + 5 \\
-&= -23
-\end{aligned}
-$$
-**Bagian A — No 2**
-
-Menghitung $\det(A)$ matriks $3 \times 3$ — ekspansi baris ke-1:
-
-$$A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}$$
-
-**Rumus ekspansi baris ke-1**
-
-$$\det(A) = (-1)^{1+1} \cdot a_{11} \cdot M_{11} + (-1)^{1+2} \cdot a_{12} \cdot M_{12} + (-1)^{1+3} \cdot a_{13} \cdot M_{13}$$
-
-**Identifikasi dan Hitung Minor**
-
-* **Hitung $M_{11}$** (hapus baris 1, kolom 1):
-    $$M_{11} = \begin{vmatrix} -2 & -1 \\ 0 & 1 \end{vmatrix} = (-2)(1) - (-1)(0) = -2$$
-
-* **Hitung $M_{12}$** (hapus baris 1, kolom 2):
-    $$M_{12} = \begin{vmatrix} 1 & -1 \\ 0 & 1 \end{vmatrix} = (1)(1) - (-1)(0) = 1$$
-
-* **Hitung $M_{13}$** (hapus baris 1, kolom 3):
-    $$M_{13} = \begin{vmatrix} 1 & -2 \\ 0 & 0 \end{vmatrix} = (1)(0) - (-2)(0) = 0$$
-
-**Substitusi nilai**
-
-Perhatikan $a_{11} = 0$, jadi suku pertama $= 0$:
-
-$$
-\begin{aligned}
-\det(A) &= (+1) \cdot (0) \cdot (-2) + (-1) \cdot (2) \cdot (1) + (+1) \cdot (-3) \cdot (0) \\
-&= 0 + (-2) + 0 \\
-&= -2
-\end{aligned}
-$$
-**Bagian A — No 3**
-
-Menghitung $\det(A)$ matriks $4 \times 4$ — reduksi baris:
-
-$$A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}$$
-
-**Langkah 1:** $R_2 \leftarrow R_2 + 3R_1$
-
-$$\begin{bmatrix} 1 & -3 & 1 & 1 \\ 0 & -8 & 4 & 4 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}$$
-
-**Langkah 2:** $R_3 \leftarrow R_3 - R_1 \quad | \quad R_4 \leftarrow R_4 - R_1$
-
-$$\begin{bmatrix} 1 & -3 & 1 & 1 \\ 0 & -8 & 4 & 4 \\ 0 & 4 & -4 & 0 \\ 0 & 4 & 0 & -4 \end{bmatrix}$$
-
-**Langkah 3:** $R_3 \leftarrow R_3 + \frac{1}{2}R_2 \quad | \quad R_4 \leftarrow R_4 + \frac{1}{2}R_2$
-
-$$\begin{bmatrix} 1 & -3 & 1 & 1 \\ 0 & -8 & 4 & 4 \\ 0 & 0 & -2 & 2 \\ 0 & 0 & 2 & -2 \end{bmatrix}$$
-
-**Langkah 4:** $R_4 \leftarrow R_4 + R_3 \rightarrow \text{baris ke-4 menjadi nol semua}$
-
-$$\begin{bmatrix} 1 & -3 & 1 & 1 \\ 0 & -8 & 4 & 4 \\ 0 & 0 & -2 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix} \leftarrow \text{baris nol!}$$
-
-**Hasil Akhir:**
-
-$\det(A)$ adalah hasil kali elemen diagonal (karena sudah membentuk matriks segitiga atas):
-
-$$
-\begin{aligned}
-\det(A) &= 1 \times (-8) \times (-2) \times 0 \\
-&= 0
-\end{aligned}
-$$
-**Bagian B — No 4**
-
-Invers matriks $2 \times 2$ menggunakan adjoin:
-
-$$A = \begin{bmatrix} -7 & -5 \\ 1 & 4 \end{bmatrix}$$
-
-**Step 1 — Hitung $\det(A)$**
-
-$$\det(A) = (-7)(4) - (-5)(1) = -28 + 5 = -23$$
-
-**Step 2 — Hitung semua kofaktor $C_{ij} = (-1)^{i+j} \cdot M_{ij}$**
-
-* $C_{11} = (+1) \cdot M_{11} = (+1) \cdot (4) = 4$
-* $C_{12} = (-1) \cdot M_{12} = (-1) \cdot (1) = -1$
-* $C_{21} = (-1) \cdot M_{21} = (-1) \cdot (-5) = 5$
-* $C_{22} = (+1) \cdot M_{22} = (+1) \cdot (-7) = -7$
-
-**Step 3 — Bentuk matriks kofaktor lalu transpose $\rightarrow \operatorname{adj}(A)$**
-
-$$C = \begin{bmatrix} 4 & -1 \\ 5 & -7 \end{bmatrix} \quad \rightarrow \quad \operatorname{adj}(A) = C^T = \begin{bmatrix} 4 & 5 \\ -1 & -7 \end{bmatrix}$$
-
-**Step 4 — Hitung invers $A^{-1} = \frac{1}{\det(A)} \cdot \operatorname{adj}(A)$**
-
-$$A^{-1} = \frac{1}{-23} \begin{bmatrix} 4 & 5 \\ -1 & -7 \end{bmatrix}$$
-
-$$A^{-1} = \begin{bmatrix} -\frac{4}{23} & -\frac{5}{23} \\ \frac{1}{23} & \frac{7}{23} \end{bmatrix}$$
-**Bagian B — No 5**
-
-Invers matriks $3 \times 3$ menggunakan adjoin:
-
-$$A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}$$
-
-**Step 1 — $\det(A)$**
-
-Dari hasil perhitungan No 2, diketahui:
-
-$$\det(A) = -2$$
-
-**Step 2 — Hitung 9 kofaktor $C_{ij} = (-1)^{i+j} \cdot M_{ij}$**
-
-* $C_{11} = +\begin{vmatrix} -2 & -1 \\ 0 & 1 \end{vmatrix} = (-2 \cdot 1) - (-1 \cdot 0) = -2$
-* $C_{12} = -\begin{vmatrix} 1 & -1 \\ 0 & 1 \end{vmatrix} = -(1 \cdot 1 - (-1) \cdot 0) = -1$
-* $C_{13} = +\begin{vmatrix} 1 & -2 \\ 0 & 0 \end{vmatrix} = (1 \cdot 0 - (-2) \cdot 0) = 0$
-* $C_{21} = -\begin{vmatrix} 2 & -3 \\ 0 & 1 \end{vmatrix} = -(2 \cdot 1 - (-3) \cdot 0) = -2$
-* $C_{22} = +\begin{vmatrix} 0 & -3 \\ 0 & 1 \end{vmatrix} = (0 \cdot 1 - (-3) \cdot 0) = 0$
-* $C_{23} = -\begin{vmatrix} 0 & 2 \\ 0 & 0 \end{vmatrix} = -(0 \cdot 0 - 2 \cdot 0) = 0$
-* $C_{31} = +\begin{vmatrix} 2 & -3 \\ -2 & -1 \end{vmatrix} = (2 \cdot (-1) - (-3) \cdot (-2)) = -2 - 6 = -8$
-* $C_{32} = -\begin{vmatrix} 0 & -3 \\ 1 & -1 \end{vmatrix} = -(0 \cdot (-1) - (-3) \cdot 1) = -(3) = -3$
-* $C_{33} = +\begin{vmatrix} 0 & 2 \\ 1 & -2 \end{vmatrix} = (0 \cdot (-2) - 2 \cdot 1) = -2$
-
-**Step 3 — Matriks kofaktor dan $\operatorname{adj}(A) = C^T$**
-
-$$C = \begin{bmatrix} -2 & -1 & 0 \\ -2 & 0 & 0 \\ -8 & -3 & -2 \end{bmatrix}$$
-
-$$\operatorname{adj}(A) = C^T = \begin{bmatrix} -2 & -2 & -8 \\ -1 & 0 & -3 \\ 0 & 0 & -2 \end{bmatrix}$$
-
-**Step 4 — $A^{-1} = \frac{1}{\det(A)} \cdot \operatorname{adj}(A)$**
-
-$$A^{-1} = \frac{1}{-2} \begin{bmatrix} -2 & -2 & -8 \\ -1 & 0 & -3 \\ 0 & 0 & -2 \end{bmatrix}$$
-
-$$A^{-1} = \begin{bmatrix} 1 & 1 & 4 \\ \frac{1}{2} & 0 & \frac{3}{2} \\ 0 & 0 & 1 \end{bmatrix}$$
-**Bagian B — No 6**
-
-Invers matriks $4 \times 4$:
-
-$$A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}$$
-
-**Penjelasan**
-
-Dari perhitungan No 3, sudah dibuktikan bahwa $\det(A) = 0$. Matriks yang memiliki determinan nol disebut matriks singular dan **tidak memiliki invers**! 
-
-Rumus invers tidak bisa dipakai karena akan terjadi pembagian dengan nol:
-
-$$A^{-1} = \frac{1}{0} \cdot \operatorname{adj}(A) \quad \text{(Tidak terdefinisi)}$$
-
-**Kesimpulan**
-
-$\det(A) = 0 \rightarrow A^{-1}$ **tidak ada** (matriks singular).
+A. Hitunglah determinan matrik berikut dengan menggunakan rumus expansi baris
+∑k=1n​(−1)i+kaik​Mik
+dengan M_{ij} adalah minior dari matrik A dan
+M_{ij} = \det A_{ij}.
+
+No 1.A=[−71​−54​]
+No 2. A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}
+No 3.A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}.
+
+##B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut dengan rumus
+(\operatorname{adj} A)_{ij} = (-1)^{i+j} M_{ji}
+dan rumus 
+A^{-1} = \frac{1}{\det A} \operatorname{adj} A.
+No 4.A = \begin{bmatrix} -7 & -5 \\ 1 & 4 \end{bmatrix}
+No 5.A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}
+No 6.A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}.
+
+**tugas**
+membuat matrik tranformasi dengan matriks tranformasinya:
+A ke b
+B ke c
+D ke e
+E ke f
+<iframe src="https://www.geogebra.org/calculator/c7suyjf9?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
