@@ -658,13 +658,3 @@ B ke c
 D ke e
 E ke f
 <iframe src="https://www.geogebra.org/calculator/c7suyjf9?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
-
-## Simulasi Interaktif Transformasi
-
-Berikut adalah simulasi interaktif pencerminan terhadap Sumbu-X:
-
-### Simulasi Interaktif Transformasi (Tugas)
-
-Sila gerakkan titik biru untuk melihat perubahan pada titik merah secara automatik mengikut konsep pencerminan Sumbu-X.
-
-<iframe src="_static/transformasi.html" width="100%" height="550px" frameborder="0"></iframe>
