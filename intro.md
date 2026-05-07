@@ -667,4 +667,4 @@ Berikut adalah simulasi interaktif pencerminan terhadap Sumbu-X:
 
 Sila gerakkan titik biru untuk melihat perubahan pada titik merah secara automatik mengikut konsep pencerminan Sumbu-X.
 
-<iframe src="transformasi.html" width="100%" height="500px" frameborder="0"></iframe>
+<iframe src="https://kajabbej.github.io/kalghrn/transformasi.html" width="100%" height="550px" frameborder="0"></iframe>
