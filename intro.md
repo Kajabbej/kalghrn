@@ -149,7 +149,7 @@ Intersect(x + y = 5, 2x - y = 1)
 - Jika titik tidak pada garis, maka bukan solusi
 
 ---
-```markdown
+
 ### 📊 Definisi Matriks di GeoGebra
 
 **Perintah GeoGebra:**
@@ -188,6 +188,7 @@ $$
 
 <iframe src="https://www.geogebra.org/calculator/gz9xyxsf?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
+```python
 # Ini contoh jika Anda ingin menyelesaikan persamaan di VS Code pakai Python
 # Butuh install library: pip install sympy
 
@@ -207,6 +208,7 @@ solusi = solve((eq1, eq2), (x, y))
 
 # 4. Tampilkan hasil
 print(solusi)
+```
 
 <iframe src="https://www.geogebra.org/calculator/gjt3qt27?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
@@ -605,21 +607,75 @@ Nilai variabel yang memenuhi sistem persamaan tersebut adalah:
 $$
 X = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \end{bmatrix}
 $$
-## tugas
-A. Hitunglah determinan matrik berikut dengan menggunakan rumus expansi baris
-∑k=1n​(−1)i+kaik​Mik
-dengan M_{ij} adalah minior dari matrik A dan
-M_{ij} = \det A_{ij}.
+## Tugas
+A. Hitunglah determinan matriks berikut dengan menggunakan rumus ekspansi baris
+$$ \sum_{k=1}^n (-1)^{i+k} a_{ik} M_{ik} $$
+dengan $M_{ij}$ adalah minor dari matriks A dan
+$$ M_{ij} = \det A_{ij}. $$
 
-No 1.A=[−71​−54​]
-No 2. A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}
-No 3.A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}.
+No 1. $A = \begin{bmatrix} -7 & -5 \\ 1 & 4 \end{bmatrix}$
+No 2. $A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}$
+No 3. $A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}$
 
-##B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut dengan rumus
-(\operatorname{adj} A)_{ij} = (-1)^{i+j} M_{ji}
+## B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut dengan rumus
+$$ (\operatorname{adj} A)_{ij} = (-1)^{i+j} M_{ji} $$
 dan rumus 
-A^{-1} = \frac{1}{\det A} \operatorname{adj} A.
-No 4.A = \begin{bmatrix} -7 & -5 \\ 1 & 4 \end{bmatrix}
-No 5.A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}
-No 6.A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}.
+$$ A^{-1} = \frac{1}{\det A} \operatorname{adj} A. $$
 
+No 4. $A = \begin{bmatrix} -7 & -5 \\ 1 & 4 \end{bmatrix}$
+No 5. $A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}$
+No 6. $A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}$
+
+---
+
+# Dekomposisi Matrix — QR Gram-Schmidt
+
+## Foto Catatan
+
+::::{grid} 3
+:::{grid-item}
+![Bagian 1](images/Dekomposisi/1.jpeg)
+
+**Bagian 1** — Setup & $q_1$
+:::
+:::{grid-item}
+![Bagian 2](images/Dekomposisi/2.jpeg)
+
+**Bagian 2** — Kolom $a_4$
+:::
+:::{grid-item}
+![Bagian 3](images/Dekomposisi/3.jpeg)
+
+**Bagian 3** — $v_2$, $q_2$, $v_3$
+:::
+::::
+
+---
+
+## Keterangan Bagian 1
+
+$$A = \begin{bmatrix} 3 & -2 & 5 & 1 \\ 0 & 4 & -1 & 2 \\ -3 & 1 & 2 & -4 \\ 2 & 0 & -2 & 3 \end{bmatrix}$$
+
+$$\|v_1\| = \sqrt{22}, \quad q_1 = \frac{1}{\sqrt{22}}\begin{bmatrix}3\\0\\-3\\2\end{bmatrix}$$
+
+$$R_{11} = \sqrt{22}, \quad a_2 \cdot q_1 = \frac{-9}{\sqrt{22}}$$
+
+$$v_2 = \begin{bmatrix}-2\\4\\1\\0\end{bmatrix} - \frac{-9}{\sqrt{22}} \cdot \frac{1}{\sqrt{22}}\begin{bmatrix}3\\0\\-3\\2\end{bmatrix}$$
+
+---
+
+## Keterangan Bagian 2
+
+$$R_{14} = \frac{1}{\sqrt{22}}(3+0+12+6) = \frac{21}{\sqrt{22}}$$
+
+$$v_4 = a_4 - \sum_{j=1}^{3}(a_4 \cdot q_j)q_j$$
+
+---
+
+## Keterangan Bagian 3
+
+$$v_2 = \begin{bmatrix}-\frac{17}{22}\\4\\-\frac{5}{22}\\\frac{18}{22}\end{bmatrix}, \quad q_2 = \frac{v_2}{\|v_2\|}$$
+
+$$R_{13} = \frac{1}{\sqrt{22}}(15-0-6-4) = \frac{5}{\sqrt{22}}$$
+
+$$q_3 = \frac{v_3}{\|v_3\|}$$
