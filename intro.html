@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>📊 Definisi Matriks di GeoGebra &#8212; My sample book</title>
+    <title>1.1 Sistem Persamaan Linear &#8212; My sample book</title>
   
   
   
@@ -167,7 +167,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    📊 Definisi Matriks di GeoGebra
+                    1.1 Sistem Persamaan Linear
                 </a>
             </li>
         </ul>
@@ -358,7 +358,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>📊 Definisi Matriks di GeoGebra</h1>
+    <h1>1.1 Sistem Persamaan Linear</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -368,19 +368,19 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">📊 Definisi Matriks di GeoGebra</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-struktur">🔍 Penjelasan Struktur:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matematika">📐 Representasi Matematika:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.1 Sistem Persamaan Linear</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1.1 Sistem Persamaan Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-1-1-2-persamaan-linear-dan-nonlinear">Contoh 1.1.2. Persamaan linear dan nonlinear.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-1-1-3-sistem-persamaan-linear">Definisi 1.1.3. Sistem persamaan linear.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-geogebra-direkomendasikan">🎨 <strong>Visualisasi GeoGebra (Direkomendasikan)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-geogebra-sangat-direkomendasikan">🎨 <strong>Visualisasi GeoGebra (Sangat Direkomendasikan)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks-di-geogebra">📊 Definisi Matriks di GeoGebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-struktur">🔍 Penjelasan Struktur:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matematika">📐 Representasi Matematika:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ini-contoh-jika-anda-ingin-menyelesaikan-persamaan-di-vs-code-pakai-python">Ini contoh jika Anda ingin menyelesaikan persamaan di VS Code pakai Python</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#butuh-install-library-pip-install-sympy">Butuh install library: pip install sympy</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-variabel">1. Definisi variabel</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-persamaan">2. Buat persamaan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eq-kiri-kanan-berarti-kiri-kanan">Eq(kiri, kanan) berarti “kiri = kanan”</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#selesaikan-sistem-persamaan">3. Selesaikan sistem persamaan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-persamaan1-persamaan2-variabel1-variabel2">solve((persamaan1, persamaan2), (variabel1, variabel2))</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tampilkan-hasil">4. Tampilkan hasil</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linear">PENYELESAIAN SISTEM PERSAMAAN LINEAR</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-metode-eliminasi-gaussian">Menggunakan Metode Eliminasi Gaussian</a></li>
 </ul>
@@ -417,7 +417,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmented">Matriks Augmented</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-pertama">Eliminasi Kolom Pertama</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-kedua-dan-ketiga">Eliminasi Kolom Kedua dan Ketiga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Substitusi Balik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Substitusi Balik</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-spl-4-variabel">Solusi SPL 4 Variabel</a></li>
 </ul>
 </li>
@@ -444,11 +444,8 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-akhir">Kesimpulan Akhir</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas">tugas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-hitunglah-determinan-matriks-berikut-dengan-menggunakan-rumus-ekspansi-baris">A. Hitunglah determinan matriks berikut dengan menggunakan rumus ekspansi baris</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-gunakan-rumus-matriks-adjoin-untuk-menghitung-invers-dari-matriks-berikut">B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas">Tugas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-gunakan-rumus-matriks-adjoin-untuk-menghitung-invers-dari-matriks-berikut-dengan-rumus">B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut dengan rumus</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dekomposisi-matrix-qr-gram-schmidt">Dekomposisi Matrix — QR Gram-Schmidt</a><ul class="visible nav section-nav flex-column">
@@ -470,15 +467,159 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="definisi-matriks-di-geogebra">
-<h1>📊 Definisi Matriks di GeoGebra<a class="headerlink" href="#definisi-matriks-di-geogebra" title="Link to this heading">#</a></h1>
+  <p><img alt="Logo" src="images/Logo.jpg" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="sistem-persamaan-linear">
+<h1>1.1 Sistem Persamaan Linear<a class="headerlink" href="#sistem-persamaan-linear" title="Link to this heading">#</a></h1>
+<p>Tidak dapat dipungkiri bahwa menghitung dan mempelajari solusi persamaan, serta <em>sistem persamaan</em>, memegang peranan yang sangat penting dalam matematika. Namun, perlu kami tegaskan bahwa bukan hanya itu yang dilakukan oleh para matematikawan!</p>
+<p>Dalam bab ini, kita akan membangun teori yang hampir lengkap mengenai jenis persamaan matematika yang paling sederhana, yaitu: <em>persamaan linear</em>.</p>
+<p>Pembahasan ini akan menjadi pengantar (walaupun sedikit tidak langsung) menuju studi <strong>Aljabar Linear</strong>. Mengapa? Karena di balik cara kita mendeskripsikan solusi sistem linear, sebenarnya tersembunyi konsep-konsep dasar ruang vektor seperti <em>subruang</em>, <em>rentang (span)</em>, dan <em>kebebasan linear</em>.</p>
+<p>Selain itu, kita juga akan mempelajari salah satu alat hitung paling penting dalam aljabar linear: <strong>Eliminasi Gaussian</strong>.</p>
+<section id="id1">
+<h2>1.1.1 Sistem Persamaan Linear<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><strong>Definisi 1.1.1. Persamaan Linear.</strong> Sebuah <em>ekspresi linear</em> dalam <span class="math notranslate nohighlight">\(n\)</span> variabel yang tidak diketahui (atau peubah) <span class="math notranslate nohighlight">\(x_1, x_2, \dots x_n\)</span> adalah sebuah ekspresi yang berbentuk
+$<span class="math notranslate nohighlight">\( a_1x_1 + a_2x_2 + \dots + a_nx_n, \)</span><span class="math notranslate nohighlight">\(
+dengan \)</span>a_1, a_2, \dots, a_n$ adalah bilangan real tetap.</p>
+<p>Sebuah <em>persamaan linear</em> dalam variabel yang tidak diketahui <span class="math notranslate nohighlight">\(x_1, x_2, \dots, x_n\)</span> adalah sebuah persamaan yang dapat disederhanakan, hanya menggunakan penjumlahan dan pengurangan, menjadi sebuah persamaan yang berbentuk
+$<span class="math notranslate nohighlight">\( a_1x_1 + a_2x_2 + \dots a_nx_n = b, \tag{1.1.1} \)</span><span class="math notranslate nohighlight">\(
+yang kita sebut sebagai **bentuk baku**-nya. Sebuah persamaan dalam variabel yang tidak diketahui \)</span>x_1, x_2, \dots, x_n$ disebut <em>nonlinear</em> jika persamaan tersebut tidak dapat disederhanakan menjadi bentuk (1.1.1) hanya menggunakan penjumlahan dan pengurangan.</p>
+<p>Diberikan sebuah persamaan linear dengan bentuk baku (1.1.1), persamaan tersebut disebut <em>homogen</em> jika <span class="math notranslate nohighlight">\(b = 0\)</span>, dan <em>tak-homogen</em> jika <span class="math notranslate nohighlight">\(b \neq 0\)</span>.</p>
+</section>
+<section id="contoh-1-1-2-persamaan-linear-dan-nonlinear">
+<h2>Contoh 1.1.2. Persamaan linear dan nonlinear.<a class="headerlink" href="#contoh-1-1-2-persamaan-linear-dan-nonlinear" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Perhatikan <span class="math notranslate nohighlight">\(\sqrt{3}x + \sin(5) = 2z - e^4y\)</span>. Ini adalah persamaan linear dalam variabel yang tidak diketahui <span class="math notranslate nohighlight">\(x, y, z\)</span>. Bentuk bakunya adalah <span class="math notranslate nohighlight">\(\sqrt{3}x + e^4y - 2z = -\sin(5)\)</span>. Karena ruas kanannya bukan nol (nonzero), kita lihat bahwa persamaan tersebut adalah <strong>tak-homogen</strong> (nonhomogeneous).</p>
+<blockquote>
+<div><p>💡 <strong>Penjelasan:</strong> Meskipun ada <span class="math notranslate nohighlight">\(\sin(5)\)</span> dan <span class="math notranslate nohighlight">\(e^4\)</span>, itu hanyalah angka tetap (konstanta), bukan variabel yang dipangkatkan atau dikalikan. Jadi, persamaannya tetap linear. Karena hasilnya tidak sama dengan 0, maka disebut tak-homogen.</p>
+</div></blockquote>
+</li>
+<li><p>Persamaan <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span> adalah persamaan <em>nonlinear</em> dalam variabel yang tidak diketahui <span class="math notranslate nohighlight">\(x\)</span> dan <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<blockquote>
+<div><p>💡 <strong>Penjelasan:</strong> Ada pangkat 2 (<span class="math notranslate nohighlight">\(x^2\)</span> dan <span class="math notranslate nohighlight">\(y^2\)</span>), sehingga grafiknya akan melengkung (lingkaran), bukan garis lurus.</p>
+</div></blockquote>
+</li>
+</ol>
+<hr class="docutils" />
+</section>
+<section id="definisi-1-1-3-sistem-persamaan-linear">
+<h2>Definisi 1.1.3. Sistem persamaan linear.<a class="headerlink" href="#definisi-1-1-3-sistem-persamaan-linear" title="Link to this heading">#</a></h2>
+<p>Sebuah <strong>sistem persamaan linear</strong> (atau <em>sistem linear</em>) adalah sekumpulan persamaan linear.</p>
+<p>Sebuah sistem linear <strong>homogen</strong> adalah sekumpulan persamaan linear homogen.</p>
+<p>Ketika menampilkan sistem yang terdiri dari <span class="math notranslate nohighlight">\(m\)</span> persamaan dengan <span class="math notranslate nohighlight">\(n\)</span> variabel yang tidak diketahui <span class="math notranslate nohighlight">\(x_1, x_2, \dots x_n\)</span>, kita biasanya menulis setiap persamaan dalam bentuk baku dan menyusun suku-suku yang bersesuaian dari setiap persamaan ke dalam kolom-kolom:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+a_{11}x_1 \quad + \quad a_{12}x_2 \quad + \dots + \quad a_{1n}x_n \quad &amp;= \quad b_1 \\
+a_{21}x_1 \quad + \quad a_{22}x_2 \quad + \dots + \quad a_{2n}x_n \quad &amp;= \quad b_2 \\
+\vdots \qquad \qquad \vdots \qquad \qquad &amp; \qquad \vdots \\
+a_{m1}x_1 \quad + \quad a_{m2}x_2 \quad + \dots + \quad a_{mn}x_n \quad &amp;= \quad b_m
+\end{aligned}
+\end{split}\]</div>
+<p>Sebuah sistem homogen dengan demikian biasanya ditulis sebagai:</p>
+<div class="math notranslate nohighlight">
+\[ a_{11}x_1 \quad + \quad a_{12}x_2 \quad + \dots + \quad a_{1n}x_n \quad = \quad 0 \]</div>
+<p><em>(Catatan: Untuk sistem homogen, semua nilai <span class="math notranslate nohighlight">\(b\)</span> di ruas kanan adalah 0)</em>
+Sebuah sistem homogen dengan demikian biasanya ditulis sebagai:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+a_{11}x_1 \quad + \quad a_{12}x_2 \quad + \dots + \quad a_{1n}x_n \quad &amp;= \quad 0 \\
+a_{21}x_1 \quad + \quad a_{22}x_2 \quad + \dots + \quad a_{2n}x_n \quad &amp;= \quad 0 \\
+\vdots \qquad \qquad \vdots \qquad \qquad &amp; \qquad \vdots \\
+a_{m1}x_1 \quad + \quad a_{m2}x_2 \quad + \dots + \quad a_{mn}x_n \quad &amp;= \quad 0
+\end{aligned}
+\end{split}\]</div>
+<hr class="docutils" />
+<p><strong>Catatan 1.1.4.</strong> Anda akan ingin terbiasa dengan <em>double-indexing</em> (pengindeksan ganda) yang digunakan untuk menampilkan sistem linear secepat mungkin. Berikut adalah cara yang baik untuk mengorientasikan diri Anda:</p>
+<ul class="simple">
+<li><p>Huruf <span class="math notranslate nohighlight">\(i\)</span> yang muncul di <span class="math notranslate nohighlight">\(a_{ij}\)</span> dan <span class="math notranslate nohighlight">\(b_i\)</span> menunjukkan baris ke-<span class="math notranslate nohighlight">\(i\)</span> dalam sistem yang ditampilkan, atau secara ekuivalen, persamaan ke-<span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p>Huruf <span class="math notranslate nohighlight">\(j\)</span> yang muncul di <span class="math notranslate nohighlight">\(a_{ij}\)</span> menunjukkan kolom ke-<span class="math notranslate nohighlight">\(j\)</span> dalam sistem yang ditampilkan, yang terkait dengan variabel ke-<span class="math notranslate nohighlight">\(j\)</span>, untuk <span class="math notranslate nohighlight">\(1 \leq j \leq n\)</span>.</p></li>
+</ul>
+<blockquote>
+<div><p>💡 <strong>Penjelasan Sederhana:</strong></p>
+<ul class="simple">
+<li><p><strong>Indeks pertama (<span class="math notranslate nohighlight">\(i\)</span>)</strong> = nomor baris/persamaan (vertikal)</p></li>
+<li><p><strong>Indeks kedua (<span class="math notranslate nohighlight">\(j\)</span>)</strong> = nomor kolom/variabel (horizontal)</p></li>
+<li><p>Contoh: <span class="math notranslate nohighlight">\(a_{23}\)</span> berarti koefisien di baris 2, kolom 3 (koefisien untuk variabel ke-3 di persamaan ke-2)</p></li>
+</ul>
+</div></blockquote>
+<hr class="docutils" />
+</section>
+<section id="visualisasi-geogebra-direkomendasikan">
+<h2>🎨 <strong>Visualisasi GeoGebra (Direkomendasikan)</strong><a class="headerlink" href="#visualisasi-geogebra-direkomendasikan" title="Link to this heading">#</a></h2>
+<p><strong>Mengapa butuh GeoGebra:</strong> Untuk memahami konsep double-indexing dan bagaimana koefisien tersusun dalam matriks.</p>
+<p><strong>Perintah yang diketik:</strong></p>
+<div class="highlight-geogebra notranslate"><div class="highlight"><pre><span></span># Buat matriks koefisien untuk visualisasi
+A = {{1, 2, 3}, {4, 5, 6}}
+
+# Tampilkan sebagai sistem persamaan
+x + 2y + 3z = 0
+4x + 5y + 6z = 0
+
+# Atau gunakan spreadsheet view untuk lihat indeks
+</pre></div>
+</div>
+<p><strong>Yang diamati:</strong></p>
+<ul class="simple">
+<li><p>Posisi <span class="math notranslate nohighlight">\(a_{ij}\)</span> dalam matriks</p></li>
+<li><p>Hubungan antara indeks dan posisi koefisien</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Definisi 1.1.5. Solusi untuk sistem linear.</strong> Sebuah <em>solusi untuk persamaan linear</em></p>
+<div class="math notranslate nohighlight">
+\[ a_1x_1 + a_2x_2 + \cdots a_nx_n = b \]</div>
+<p>adalah sebuah <span class="math notranslate nohighlight">\(n\)</span>-tuple <span class="math notranslate nohighlight">\((s_1, s_2, \dots, s_n)\)</span> dari bilangan real di mana penugasan variabel <span class="math notranslate nohighlight">\(x_1 = s_1, x_2 = s_2, \dots, x_n = s_n\)</span> membuat persamaan tersebut benar. Kita katakan <span class="math notranslate nohighlight">\((s_1, \dots, s_n)\)</span> <strong>menyelesaikan persamaan</strong> dalam kasus ini.</p>
+<p><em>Sebuah solusi untuk sistem persamaan linear</em></p>
+<blockquote>
+<div><p>💡 <strong>Penjelasan Sederhana:</strong></p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(n\)</span>-tuple</strong> = kumpulan <span class="math notranslate nohighlight">\(n\)</span> bilangan (contoh: untuk 3 variabel, solusinya adalah triple <span class="math notranslate nohighlight">\((s_1, s_2, s_3)\)</span>)</p></li>
+<li><p><strong>Menyelesaikan persamaan</strong> = ketika kita substitusi nilai-nilai tersebut ke persamaan, hasilnya benar (ruas kiri = ruas kanan)</p></li>
+<li><p>Contoh: Untuk <span class="math notranslate nohighlight">\(2x + 3y = 8\)</span>, solusi <span class="math notranslate nohighlight">\((1, 2)\)</span> berarti <span class="math notranslate nohighlight">\(x=1, y=2\)</span>, dan <span class="math notranslate nohighlight">\(2(1) + 3(2) = 2 + 6 = 8\)</span> ✓</p></li>
+</ul>
+</div></blockquote>
+<hr class="docutils" />
+</section>
+<section id="visualisasi-geogebra-sangat-direkomendasikan">
+<h2>🎨 <strong>Visualisasi GeoGebra (Sangat Direkomendasikan)</strong><a class="headerlink" href="#visualisasi-geogebra-sangat-direkomendasikan" title="Link to this heading">#</a></h2>
+<p><strong>Mengapa butuh GeoGebra:</strong> Untuk memvisualisasikan konsep solusi dan bagaimana <span class="math notranslate nohighlight">\(n\)</span>-tuple bekerja dalam sistem persamaan.</p>
+<p><strong>Perintah yang diketik:</strong></p>
+<div class="highlight-geogebra notranslate"><div class="highlight"><pre><span></span># Contoh persamaan linear 2 variabel
+2x + 3y = 8
+
+# Plot garisnya
+
+# Tambahkan titik solusi
+A = (1, 2)
+
+# Verifikasi: titik A harus terletak pada garis
+
+# Untuk sistem persamaan:
+x + y = 5
+2x - y = 1
+
+# Cari titik potong (solusi sistem)
+Intersect(x + y = 5, 2x - y = 1)
+
+# Hasilnya akan menunjukkan solusi sebagai titik (x, y)
+</pre></div>
+</div>
+<p><strong>Yang diamati:</strong></p>
+<ul class="simple">
+<li><p>Titik solusi terletak pada garis/persamaan</p></li>
+<li><p>Untuk sistem: titik potong adalah solusi yang menyelesaikan SEMUA persamaan sekaligus</p></li>
+<li><p>Jika titik tidak pada garis, maka bukan solusi</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="definisi-matriks-di-geogebra">
+<h2>📊 Definisi Matriks di GeoGebra<a class="headerlink" href="#definisi-matriks-di-geogebra" title="Link to this heading">#</a></h2>
 <p><strong>Perintah GeoGebra:</strong></p>
 <div class="highlight-geogebra notranslate"><div class="highlight"><pre><span></span>A = {{1, 2, 3}, {4, 5, 6}}
 </pre></div>
 </div>
 <hr class="docutils" />
 <section id="penjelasan-struktur">
-<h2>🔍 Penjelasan Struktur:<a class="headerlink" href="#penjelasan-struktur" title="Link to this heading">#</a></h2>
+<h3>🔍 Penjelasan Struktur:<a class="headerlink" href="#penjelasan-struktur" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Sintaks</p></th>
@@ -504,7 +645,7 @@
 </section>
 <hr class="docutils" />
 <section id="representasi-matematika">
-<h2>📐 Representasi Matematika:<a class="headerlink" href="#representasi-matematika" title="Link to this heading">#</a></h2>
+<h3>📐 Representasi Matematika:<a class="headerlink" href="#representasi-matematika" title="Link to this heading">#</a></h3>
 <p>Matriks <span class="math notranslate nohighlight">\(A\)</span> yang terbentuk:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -523,38 +664,30 @@ A = \begin{pmatrix}
 </li>
 </ul>
 <iframe src="https://www.geogebra.org/calculator/gz9xyxsf?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="ini-contoh-jika-anda-ingin-menyelesaikan-persamaan-di-vs-code-pakai-python">
-<h1>Ini contoh jika Anda ingin menyelesaikan persamaan di VS Code pakai Python<a class="headerlink" href="#ini-contoh-jika-anda-ingin-menyelesaikan-persamaan-di-vs-code-pakai-python" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="butuh-install-library-pip-install-sympy">
-<h1>Butuh install library: pip install sympy<a class="headerlink" href="#butuh-install-library-pip-install-sympy" title="Link to this heading">#</a></h1>
-<p>from sympy import symbols, Eq, solve</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="definisi-variabel">
-<h1>1. Definisi variabel<a class="headerlink" href="#definisi-variabel" title="Link to this heading">#</a></h1>
-<p>x, y = symbols(‘x y’)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="buat-persamaan">
-<h1>2. Buat persamaan<a class="headerlink" href="#buat-persamaan" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="eq-kiri-kanan-berarti-kiri-kanan">
-<h1>Eq(kiri, kanan) berarti “kiri = kanan”<a class="headerlink" href="#eq-kiri-kanan-berarti-kiri-kanan" title="Link to this heading">#</a></h1>
-<p>eq1 = Eq(2<em>x + 3</em>y, 6)
-eq2 = Eq(x - y, 1)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="selesaikan-sistem-persamaan">
-<h1>3. Selesaikan sistem persamaan<a class="headerlink" href="#selesaikan-sistem-persamaan" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="solve-persamaan1-persamaan2-variabel1-variabel2">
-<h1>solve((persamaan1, persamaan2), (variabel1, variabel2))<a class="headerlink" href="#solve-persamaan1-persamaan2-variabel1-variabel2" title="Link to this heading">#</a></h1>
-<p>solusi = solve((eq1, eq2), (x, y))</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="tampilkan-hasil">
-<h1>4. Tampilkan hasil<a class="headerlink" href="#tampilkan-hasil" title="Link to this heading">#</a></h1>
-<p>print(solusi)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ini contoh jika Anda ingin menyelesaikan persamaan di VS Code pakai Python</span>
+<span class="c1"># Butuh install library: pip install sympy</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">solve</span>
+
+<span class="c1"># 1. Definisi variabel</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+
+<span class="c1"># 2. Buat persamaan</span>
+<span class="c1"># Eq(kiri, kanan) berarti &quot;kiri = kanan&quot;</span>
+<span class="n">eq1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">eq2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 3. Selesaikan sistem persamaan</span>
+<span class="c1"># solve((persamaan1, persamaan2), (variabel1, variabel2))</span>
+<span class="n">solusi</span> <span class="o">=</span> <span class="n">solve</span><span class="p">((</span><span class="n">eq1</span><span class="p">,</span> <span class="n">eq2</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+<span class="c1"># 4. Tampilkan hasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solusi</span><span class="p">)</span>
+</pre></div>
+</div>
 <iframe src="https://www.geogebra.org/calculator/gjt3qt27?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+</section>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="penyelesaian-sistem-persamaan-linear">
 <h1>PENYELESAIAN SISTEM PERSAMAAN LINEAR<a class="headerlink" href="#penyelesaian-sistem-persamaan-linear" title="Link to this heading">#</a></h1>
@@ -796,8 +929,8 @@ R_4 = R_4 - R_1
 \end{split}\]</div>
 <hr class="docutils" />
 </section>
-<section id="id1">
-<h2>Substitusi Balik<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2>Substitusi Balik<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Baris 4:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -964,33 +1097,24 @@ X = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 1 \
 \)</span>$</p>
 </section>
 <section id="tugas">
-<h2>tugas<a class="headerlink" href="#tugas" title="Link to this heading">#</a></h2>
-<section id="a-hitunglah-determinan-matriks-berikut-dengan-menggunakan-rumus-ekspansi-baris">
-<h3>A. Hitunglah determinan matriks berikut dengan menggunakan rumus ekspansi baris<a class="headerlink" href="#a-hitunglah-determinan-matriks-berikut-dengan-menggunakan-rumus-ekspansi-baris" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\sum_{k=1}^{n}(-1)^{i+k} a_{ik} M_{ik}\]</div>
-<p>dengan <span class="math notranslate nohighlight">\(M_{ij}\)</span> adalah minor dari matriks <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(M_{ij} = \det A_{ij}\)</span>.</p>
-<p><strong>No 1.</strong>
-$<span class="math notranslate nohighlight">\(A = \begin{bmatrix} -7 &amp; 1 \\ -5 &amp; 4 \end{bmatrix}\)</span>$</p>
-<p><strong>No 2.</strong>
-$<span class="math notranslate nohighlight">\(A = \begin{bmatrix} 0 &amp; 2 &amp; -3 \\ 1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span>$</p>
-<p><strong>No 3.</strong>
-$<span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\)</span>$</p>
+<h2>Tugas<a class="headerlink" href="#tugas" title="Link to this heading">#</a></h2>
+<p>A. Hitunglah determinan matriks berikut dengan menggunakan rumus ekspansi baris
+$<span class="math notranslate nohighlight">\( \sum_{k=1}^n (-1)^{i+k} a_{ik} M_{ik} \)</span><span class="math notranslate nohighlight">\(
+dengan \)</span>M_{ij}<span class="math notranslate nohighlight">\( adalah minor dari matriks A dan
+\)</span><span class="math notranslate nohighlight">\( M_{ij} = \det A_{ij}. \)</span>$</p>
+<p>No 1. <span class="math notranslate nohighlight">\(A = \begin{bmatrix} -7 &amp; -5 \\ 1 &amp; 4 \end{bmatrix}\)</span>
+No 2. <span class="math notranslate nohighlight">\(A = \begin{bmatrix} 0 &amp; 2 &amp; -3 \\ 1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span>
+No 3. <span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\)</span></p>
 </section>
-<hr class="docutils" />
-<section id="b-gunakan-rumus-matriks-adjoin-untuk-menghitung-invers-dari-matriks-berikut">
-<h3>B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut<a class="headerlink" href="#b-gunakan-rumus-matriks-adjoin-untuk-menghitung-invers-dari-matriks-berikut" title="Link to this heading">#</a></h3>
+<section id="b-gunakan-rumus-matriks-adjoin-untuk-menghitung-invers-dari-matriks-berikut-dengan-rumus">
+<h2>B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut dengan rumus<a class="headerlink" href="#b-gunakan-rumus-matriks-adjoin-untuk-menghitung-invers-dari-matriks-berikut-dengan-rumus" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
-\[( \operatorname{adj} A)_{ij} = (-1)^{i+j} M_{ji}\]</div>
-<div class="math notranslate nohighlight">
-\[A^{-1} = \frac{1}{\det A} \operatorname{adj} A\]</div>
-<p><strong>No 4.</strong>
-$<span class="math notranslate nohighlight">\(A = \begin{bmatrix} -7 &amp; -5 \\ 1 &amp; 4 \end{bmatrix}\)</span>$</p>
-<p><strong>No 5.</strong>
-$<span class="math notranslate nohighlight">\(A = \begin{bmatrix} 0 &amp; 2 &amp; -3 \\ 1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span>$</p>
-<p><strong>No 6.</strong>
-$<span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\)</span>$</p>
-</section>
+\[ (\operatorname{adj} A)_{ij} = (-1)^{i+j} M_{ji} \]</div>
+<p>dan rumus
+$<span class="math notranslate nohighlight">\( A^{-1} = \frac{1}{\det A} \operatorname{adj} A. \)</span>$</p>
+<p>No 4. <span class="math notranslate nohighlight">\(A = \begin{bmatrix} -7 &amp; -5 \\ 1 &amp; 4 \end{bmatrix}\)</span>
+No 5. <span class="math notranslate nohighlight">\(A = \begin{bmatrix} 0 &amp; 2 &amp; -3 \\ 1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span>
+No 6. <span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\)</span></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -1039,7 +1163,7 @@ $<span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; -3 &am
 <section id="keterangan-bagian-3">
 <h2>Keterangan Bagian 3<a class="headerlink" href="#keterangan-bagian-3" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
-\[\begin{split}v_2 = \begin{bmatrix}-\frac{17}{22}\\4\\-\frac{9}{22}\\\frac{9}{22}\end{bmatrix}, \quad q_2 = \frac{v_2}{\|v_2\|}\end{split}\]</div>
+\[\begin{split}v_2 = \begin{bmatrix}-\frac{17}{22}\\4\\-\frac{5}{22}\\\frac{18}{22}\end{bmatrix}, \quad q_2 = \frac{v_2}{\|v_2\|}\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[R_{13} = \frac{1}{\sqrt{22}}(15-0-6-4) = \frac{5}{\sqrt{22}}\]</div>
 <div class="math notranslate nohighlight">
@@ -1106,19 +1230,19 @@ $<span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; -3 &am
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">📊 Definisi Matriks di GeoGebra</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-struktur">🔍 Penjelasan Struktur:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matematika">📐 Representasi Matematika:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.1 Sistem Persamaan Linear</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1.1 Sistem Persamaan Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-1-1-2-persamaan-linear-dan-nonlinear">Contoh 1.1.2. Persamaan linear dan nonlinear.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-1-1-3-sistem-persamaan-linear">Definisi 1.1.3. Sistem persamaan linear.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-geogebra-direkomendasikan">🎨 <strong>Visualisasi GeoGebra (Direkomendasikan)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-geogebra-sangat-direkomendasikan">🎨 <strong>Visualisasi GeoGebra (Sangat Direkomendasikan)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks-di-geogebra">📊 Definisi Matriks di GeoGebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-struktur">🔍 Penjelasan Struktur:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matematika">📐 Representasi Matematika:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ini-contoh-jika-anda-ingin-menyelesaikan-persamaan-di-vs-code-pakai-python">Ini contoh jika Anda ingin menyelesaikan persamaan di VS Code pakai Python</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#butuh-install-library-pip-install-sympy">Butuh install library: pip install sympy</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-variabel">1. Definisi variabel</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-persamaan">2. Buat persamaan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eq-kiri-kanan-berarti-kiri-kanan">Eq(kiri, kanan) berarti “kiri = kanan”</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#selesaikan-sistem-persamaan">3. Selesaikan sistem persamaan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-persamaan1-persamaan2-variabel1-variabel2">solve((persamaan1, persamaan2), (variabel1, variabel2))</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tampilkan-hasil">4. Tampilkan hasil</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linear">PENYELESAIAN SISTEM PERSAMAAN LINEAR</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-metode-eliminasi-gaussian">Menggunakan Metode Eliminasi Gaussian</a></li>
 </ul>
@@ -1155,7 +1279,7 @@ $<span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; -3 &am
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmented">Matriks Augmented</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-pertama">Eliminasi Kolom Pertama</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-kedua-dan-ketiga">Eliminasi Kolom Kedua dan Ketiga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Substitusi Balik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Substitusi Balik</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-spl-4-variabel">Solusi SPL 4 Variabel</a></li>
 </ul>
 </li>
@@ -1182,11 +1306,8 @@ $<span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; -3 &am
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-akhir">Kesimpulan Akhir</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas">tugas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-hitunglah-determinan-matriks-berikut-dengan-menggunakan-rumus-ekspansi-baris">A. Hitunglah determinan matriks berikut dengan menggunakan rumus ekspansi baris</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-gunakan-rumus-matriks-adjoin-untuk-menghitung-invers-dari-matriks-berikut">B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas">Tugas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-gunakan-rumus-matriks-adjoin-untuk-menghitung-invers-dari-matriks-berikut-dengan-rumus">B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut dengan rumus</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dekomposisi-matrix-qr-gram-schmidt">Dekomposisi Matrix — QR Gram-Schmidt</a><ul class="visible nav section-nav flex-column">
