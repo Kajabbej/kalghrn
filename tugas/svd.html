@@ -456,10 +456,10 @@ Matriks V^T:
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Membaca gambar (OpenCV membaca dalam format BGR)</span>
-<span class="n">color_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../images/myprofile.jpg&#39;</span><span class="p">)</span>
+<span class="n">color_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../images/foto_kucing.png&#39;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">color_img</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Gambar &#39;../images/myprofile.jpg&#39; tidak ditemukan. Pastikan file ada di folder images/.&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Gambar &#39;../images/foto_kucing.png&#39; tidak ditemukan. Pastikan file ada di folder images/.&quot;</span><span class="p">)</span>
 
 <span class="c1"># Memisahkan channel warna B, G, R</span>
 <span class="n">B</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">color_img</span><span class="p">)</span>
