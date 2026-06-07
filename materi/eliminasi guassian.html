@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; My sample book</title>
+    <title>Metode Eliminasi Gauss &#8212; My sample book</title>
   
   
   
@@ -60,9 +60,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'materi/eliminasi guassian';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Determinan dan Invers Matriks" href="determinan%20%26%20invers.html" />
+    <link rel="prev" title="Sistem Persamaan Linier (SPL)" href="spl.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -113,8 +117,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -173,16 +175,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../biodata/biodata.html">Biodata Saya &amp; Dosen Pengampu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Materi</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="spl.html">Sistem Persamaan Linier (SPL)</a></li>
 
 
 
 
 
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Metode Eliminasi Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="determinan%20%26%20invers.html">Determinan dan Invers Matriks</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Determinan%20matriks.html">Determinan Matriks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dekomposisi%20QR.html">Dekomposisi QR</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">tugas</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tugas/guassian.html">3.2 SPL Empat Variabel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tugas/transformasi_pencerminan.html">Transformasi Sumbu Y menggunakan Translasi dan Pencerminan</a></li>
 </ul>
 
@@ -366,7 +375,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Metode Eliminasi Gauss</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -375,9 +384,28 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer-obe">Operasi Baris Elementer (OBE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembahasan-contoh-soal">Pembahasan Contoh Soal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spl-tiga-variabel">1. SPL Tiga Variabel</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-matriks-augmented">Langkah 1: Matriks Augmented</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-eliminasi-kolom-pertama">Langkah 2: Eliminasi Kolom Pertama</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-eliminasi-kolom-kedua">Langkah 3: Eliminasi Kolom Kedua</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-substitusi-balik">Langkah 4: Substitusi Balik</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-akhir">Solusi Akhir</a></li>
 </ul>
-
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spl-empat-variabel">2. SPL Empat Variabel</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Langkah 1: Matriks Augmented</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 2: Eliminasi Kolom Pertama</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-eliminasi-kolom-kedua-dan-ketiga">Langkah 3: Eliminasi Kolom Kedua dan Ketiga</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Langkah 4: Substitusi Balik</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Solusi Akhir</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -388,7 +416,183 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="metode-eliminasi-gauss">
+<h1>Metode Eliminasi Gauss<a class="headerlink" href="#metode-eliminasi-gauss" title="Link to this heading">#</a></h1>
+<p>Metode Eliminasi Gauss adalah metode penyelesaian Sistem Persamaan Linier (SPL) dengan menggunakan operasi baris elementer pada matriks augmentasi hingga diperoleh bentuk matriks segitiga atas (upper triangular matrix). Setelah matriks berada pada bentuk tersebut, nilai variabel dapat ditentukan melalui proses substitusi balik (<em>back substitution</em>).</p>
+<p>Tujuan utama Eliminasi Gauss adalah mengubah matriks augmentasi menjadi <strong>bentuk eselon baris (row echelon form)</strong>, yaitu bentuk matriks yang memenuhi kondisi:</p>
+<ol class="arabic simple">
+<li><p>Semua baris nol berada di bagian bawah matriks.</p></li>
+<li><p>Elemen pertama yang tidak nol pada setiap baris (pivot) berada di sebelah kanan pivot pada baris sebelumnya.</p></li>
+<li><p>Semua elemen di bawah pivot bernilai nol.</p></li>
+</ol>
+<hr class="docutils" />
+<section id="operasi-baris-elementer-obe">
+<h2>Operasi Baris Elementer (OBE)<a class="headerlink" href="#operasi-baris-elementer-obe" title="Link to this heading">#</a></h2>
+<p>Dalam Eliminasi Gauss digunakan tiga operasi dasar, yaitu:</p>
+<ol class="arabic simple">
+<li><p><strong>Pertukaran Baris</strong>: Menukar posisi dua baris.
+$<span class="math notranslate nohighlight">\( B_i \leftrightarrow B_j \)</span>$</p></li>
+<li><p><strong>Perkalian Baris</strong>: Mengalikan suatu baris dengan konstanta bukan nol.
+$<span class="math notranslate nohighlight">\( B_i \rightarrow kB_i \)</span><span class="math notranslate nohighlight">\( (dengan \)</span>k \neq 0$)</p></li>
+<li><p><strong>Penjumlahan Baris</strong>: Menambahkan kelipatan suatu baris ke baris lainnya.
+$<span class="math notranslate nohighlight">\( B_i \rightarrow B_i + kB_j \)</span>$</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="pembahasan-contoh-soal">
+<h2>Pembahasan Contoh Soal<a class="headerlink" href="#pembahasan-contoh-soal" title="Link to this heading">#</a></h2>
+<section id="spl-tiga-variabel">
+<h3>1. SPL Tiga Variabel<a class="headerlink" href="#spl-tiga-variabel" title="Link to this heading">#</a></h3>
+<p>Diketahui sistem persamaan berikut:
+$<span class="math notranslate nohighlight">\(
+\begin{cases}
+2x + y - z = 8 \\
+-3x - y + 2z = -11 \\
+-2x + y + 2z = -3
+\end{cases}
+\)</span>$</p>
+<section id="langkah-1-matriks-augmented">
+<h4>Langkah 1: Matriks Augmented<a class="headerlink" href="#langkah-1-matriks-augmented" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccc|c}
+2 &amp; 1 &amp; -1 &amp; 8 \\
+-3 &amp; -1 &amp; 2 &amp; -11 \\
+-2 &amp; 1 &amp; 2 &amp; -3
+\end{array}
+\right]
+\end{split}\]</div>
+</section>
+<section id="langkah-2-eliminasi-kolom-pertama">
+<h4>Langkah 2: Eliminasi Kolom Pertama<a class="headerlink" href="#langkah-2-eliminasi-kolom-pertama" title="Link to this heading">#</a></h4>
+<p>Lakukan operasi:
+$<span class="math notranslate nohighlight">\( R_2 = R_2 + \frac{3}{2}R_1 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( R_3 = R_3 + R_1 \)</span>$</p>
+<p>Hasilnya:
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccc|c}
+2 &amp; 1 &amp; -1 &amp; 8 \\
+0 &amp; 0.5 &amp; 0.5 &amp; 1 \\
+0 &amp; 2 &amp; 1 &amp; 5
+\end{array}
+\right]
+\)</span>$</p>
+</section>
+<section id="langkah-3-eliminasi-kolom-kedua">
+<h4>Langkah 3: Eliminasi Kolom Kedua<a class="headerlink" href="#langkah-3-eliminasi-kolom-kedua" title="Link to this heading">#</a></h4>
+<p>Lakukan operasi:
+$<span class="math notranslate nohighlight">\( R_3 = R_3 - 4R_2 \)</span>$</p>
+<p>Hasilnya:
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccc|c}
+2 &amp; 1 &amp; -1 &amp; 8 \\
+0 &amp; 0.5 &amp; 0.5 &amp; 1 \\
+0 &amp; 0 &amp; -1 &amp; 1
+\end{array}
+\right]
+\)</span>$</p>
+<p>Matriks di atas sudah berada dalam bentuk eselon baris.</p>
+</section>
+<section id="langkah-4-substitusi-balik">
+<h4>Langkah 4: Substitusi Balik<a class="headerlink" href="#langkah-4-substitusi-balik" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Dari baris ke-3:
+$<span class="math notranslate nohighlight">\( -z = 1 \Rightarrow z = -1 \)</span>$</p></li>
+<li><p>Dari baris ke-2:
+$<span class="math notranslate nohighlight">\( 0.5y + 0.5(-1) = 1 \Rightarrow 0.5y = 1.5 \Rightarrow y = 3 \)</span>$</p></li>
+<li><p>Dari baris ke-1:
+$<span class="math notranslate nohighlight">\( 2x + (3) - (-1) = 8 \Rightarrow 2x + 4 = 8 \Rightarrow 2x = 4 \Rightarrow x = 2 \)</span>$</p></li>
+</ul>
+</section>
+<section id="solusi-akhir">
+<h4>Solusi Akhir<a class="headerlink" href="#solusi-akhir" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[ x = 2, \quad y = 3, \quad z = -1 \]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="spl-empat-variabel">
+<h3>2. SPL Empat Variabel<a class="headerlink" href="#spl-empat-variabel" title="Link to this heading">#</a></h3>
+<p>Diketahui sistem persamaan berikut:
+$<span class="math notranslate nohighlight">\(
+\begin{cases}
+x + y + z + w = 10 \\
+2x - y + z + w = 5 \\
+3x + y - z + w = 12 \\
+x + 2y + 3z - w = 7
+\end{cases}
+\)</span>$</p>
+<section id="id1">
+<h4>Langkah 1: Matriks Augmented<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+2 &amp; -1 &amp; 1 &amp; 1 &amp; 5 \\
+3 &amp; 1 &amp; -1 &amp; 1 &amp; 12 \\
+1 &amp; 2 &amp; 3 &amp; -1 &amp; 7
+\end{array}
+\right]
+\end{split}\]</div>
+</section>
+<section id="id2">
+<h4>Langkah 2: Eliminasi Kolom Pertama<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Lakukan operasi:
+$<span class="math notranslate nohighlight">\( R_2 = R_2 - 2R_1 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( R_3 = R_3 - 3R_1 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( R_4 = R_4 - R_1 \)</span>$</p>
+<p>Hasilnya:
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; -3 &amp; -1 &amp; -1 &amp; -15 \\
+0 &amp; -2 &amp; -4 &amp; -2 &amp; -18 \\
+0 &amp; 1 &amp; 2 &amp; -2 &amp; -3
+\end{array}
+\right]
+\)</span>$</p>
+</section>
+<section id="langkah-3-eliminasi-kolom-kedua-dan-ketiga">
+<h4>Langkah 3: Eliminasi Kolom Kedua dan Ketiga<a class="headerlink" href="#langkah-3-eliminasi-kolom-kedua-dan-ketiga" title="Link to this heading">#</a></h4>
+<p>Setelah melakukan OBE lanjutan, diperoleh matriks eselon:
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; -3 &amp; -1 &amp; -1 &amp; -15 \\
+0 &amp; 0 &amp; -10/3 &amp; -4/3 &amp; -8 \\
+0 &amp; 0 &amp; 0 &amp; -3 &amp; -12
+\end{array}
+\right]
+\)</span>$</p>
+</section>
+<section id="id3">
+<h4>Langkah 4: Substitusi Balik<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Dari baris ke-4:
+$<span class="math notranslate nohighlight">\( -3w = -12 \Rightarrow w = 4 \)</span>$</p></li>
+<li><p>Dari baris ke-3:
+$<span class="math notranslate nohighlight">\( -\frac{10}{3}z - \frac{4}{3}(4) = -8 \Rightarrow z = 3 \)</span>$</p></li>
+<li><p>Dari baris ke-2:
+$<span class="math notranslate nohighlight">\( -3y - (3) - (4) = -15 \Rightarrow y = 2 \)</span>$</p></li>
+<li><p>Dari baris ke-1:
+$<span class="math notranslate nohighlight">\( x + 2 + 3 + 4 = 10 \Rightarrow x = 1 \)</span>$</p></li>
+</ul>
+</section>
+<section id="id4">
+<h4>Solusi Akhir<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[ x = 1, \quad y = 2, \quad z = 3, \quad w = 4 \]</div>
+</section>
+</section>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -419,6 +623,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="spl.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sistem Persamaan Linier (SPL)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="determinan%20%26%20invers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Determinan dan Invers Matriks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -436,9 +658,28 @@
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer-obe">Operasi Baris Elementer (OBE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembahasan-contoh-soal">Pembahasan Contoh Soal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spl-tiga-variabel">1. SPL Tiga Variabel</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-matriks-augmented">Langkah 1: Matriks Augmented</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-eliminasi-kolom-pertama">Langkah 2: Eliminasi Kolom Pertama</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-eliminasi-kolom-kedua">Langkah 3: Eliminasi Kolom Kedua</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-substitusi-balik">Langkah 4: Substitusi Balik</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-akhir">Solusi Akhir</a></li>
 </ul>
-
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spl-empat-variabel">2. SPL Empat Variabel</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Langkah 1: Matriks Augmented</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 2: Eliminasi Kolom Pertama</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-eliminasi-kolom-kedua-dan-ketiga">Langkah 3: Eliminasi Kolom Kedua dan Ketiga</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Langkah 4: Substitusi Balik</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Solusi Akhir</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>
