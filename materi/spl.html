@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Sistem Persamaan Linear (SPL) &#8212; My sample book</title>
+    <title>Sistem Persamaan Linier (SPL) &#8212; My sample book</title>
   
   
   
@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'materi/spl';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="📋 Konsep Dasar Matriks" href="matriks.html" />
+    <link rel="next" title="Transformasi Sumbu Y menggunakan Translasi dan Pencerminan" href="../tugas/transformasi_pencerminan.html" />
     <link rel="prev" title="Biodata Saya &amp; Dosen Pengampu" href="../biodata/biodata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,13 +176,15 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Materi</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sistem Persamaan Linear (SPL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matriks.html">📋 Konsep Dasar Matriks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dekomposisi_qr.html">Dekomposisi QR</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sistem Persamaan Linier (SPL)</a></li>
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">tugas</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tugas/tugas_eliminasi_gaussian.html">Tugas Eliminasi Gaussian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tugas/transformasi_pencerminan.html">Transformasi Sumbu Y menggunakan Translasi dan Pencerminan</a></li>
 </ul>
 
@@ -366,7 +368,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Sistem Persamaan Linear (SPL)</h1>
+    <h1>Sistem Persamaan Linier (SPL)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,36 +378,88 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-pembelajaran">Tujuan Pembelajaran</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prasyarat">Prasyarat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-1-gambaran-besar">Bagian 1: Gambaran Besar</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analogi-timbangan-neraca-dua-lengan">Analogi Timbangan Neraca Dua Lengan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-overview-alur-spl">Diagram Overview Alur SPL</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sistem Persamaan Linier (SPL)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-sistem-persamaan-linier">Pengertian Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-sistem-persamaan-linier">Karakteristik Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-sistem-persamaan-linier">Tujuan Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-umum-sistem-persamaan-linier">Bentuk Umum Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-2-konsep-inti">Bagian 2: Konsep Inti</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-singkat-spl">Definisi Singkat SPL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-konkrit">Contoh Konkrit</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-persamaan-linear-dan-non-linear">Perbandingan Persamaan Linear dan Non-Linear</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-persamaan-homogen-dan-tak-homogen">Perbandingan Persamaan Homogen dan Tak-Homogen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-persamaan-linier-dan-non-linier">Definisi Persamaan Linier dan Non Linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-linier">Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-persamaan-linier">Karakteristik Persamaan Linier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-persamaan-linier">Contoh Persamaan Linier</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-geometris-solusi-spl-2d">Visualisasi Geometris Solusi SPL (2D)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latihan-kecil">Latihan Kecil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-non-linier">Persamaan Non Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-persamaan-non-linier">Karakteristik Persamaan Non Linier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-persamaan-non-linier">Contoh Persamaan Non Linier</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-3-detail-teknis">Bagian 3: Detail / Teknis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indeks-ganda-koefisien">Indeks Ganda Koefisien</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmented-membentuk-matriks-diperbesar">Matriks Augmented (Membentuk Matriks Diperbesar)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer-obe">Operasi Baris Elementer (OBE)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-demi-langkah-obe-eliminasi-gaussian">Langkah demi Langkah OBE (Eliminasi Gaussian)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-case-catatan-penting">Edge Case / Catatan Penting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perbedaan-persamaan-linier-dan-non-linier">Perbedaan Persamaan Linier dan Non Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rangkuman">Rangkuman</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latihan-soal">Latihan / Soal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi">Referensi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan-linier">Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-sistem-persamaan-linier">Definisi Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Karakteristik Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsur-unsur-sistem-persamaan-linier">Unsur-Unsur Sistem Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variabel">1. Variabel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koefisien">2. Koefisien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konstanta">3. Konstanta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan">4. Persamaan</a></li>
 </ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Bentuk Umum Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Tujuan Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-sistem-persamaan-linier">Contoh Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-sistem-persamaan-linier">Solusi Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-solusi-sistem-persamaan-linier">Definisi Solusi Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-solusi-sistem-persamaan-linier">Bentuk Solusi Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-solusi-sistem-persamaan-linier">Jenis-Jenis Solusi Sistem Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-tunggal">1. Solusi Tunggal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tak-hingga-banyak-solusi">2. Tak Hingga Banyak Solusi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tidak-memiliki-solusi">3. Tidak Memiliki Solusi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matriks-sistem-persamaan-linier">Representasi Matriks Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-representasi-matriks-sistem-persamaan-linier">Definisi Representasi Matriks Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-representasi-matriks-spl">Contoh Representasi Matriks SPL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks-koefisien">Bentuk Matriks Koefisien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks-variabel">Bentuk Matriks Variabel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks-konstanta">Bentuk Matriks Konstanta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks-spl">Bentuk Matriks SPL</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmentasi">Matriks Augmentasi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks-augmentasi">Definisi Matriks Augmentasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Contoh Sistem Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-koefisien">Matriks Koefisien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-konstanta">Matriks Konstanta</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-matriks-augmentasi">Contoh Matriks Augmentasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-lain-matriks-augmentasi">Contoh Lain Matriks Augmentasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Matriks Koefisien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Matriks Konstanta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Matriks Augmentasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Kesimpulan</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -416,233 +470,553 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sistem-persamaan-linear-spl">
-<h1>Sistem Persamaan Linear (SPL)<a class="headerlink" href="#sistem-persamaan-linear-spl" title="Link to this heading">#</a></h1>
-<section id="tujuan-pembelajaran">
-<h2>Tujuan Pembelajaran<a class="headerlink" href="#tujuan-pembelajaran" title="Link to this heading">#</a></h2>
-<p>Setelah mempelajari materi ini, Anda diharapkan mampu:</p>
-<ul class="simple">
-<li><p>Membedakan persamaan linear dan non-linear dengan tepat.</p></li>
-<li><p>Menentukan apakah suatu persamaan linear bersifat homogen atau tak-homogen.</p></li>
-<li><p>Menyusun sistem persamaan linear ke dalam bentuk matriks augmented.</p></li>
-<li><p>Menerapkan Operasi Baris Elementer (OBE) untuk mencari solusi sistem persamaan linear.</p></li>
-</ul>
-</section>
-<section id="prasyarat">
-<h2>Prasyarat<a class="headerlink" href="#prasyarat" title="Link to this heading">#</a></h2>
-<p>Sebelum memulai, pastikan Anda telah memahami:</p>
-<ul class="simple">
-<li><p>Konsep dasar aritmatika (penjumlahan, pengurangan, perkalian, pembagian).</p></li>
-<li><p>Pengenalan dasar tentang matriks (baris, kolom, dan elemen matriks).</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="bagian-1-gambaran-besar">
-<h2>Bagian 1: Gambaran Besar<a class="headerlink" href="#bagian-1-gambaran-besar" title="Link to this heading">#</a></h2>
-<section id="analogi-timbangan-neraca-dua-lengan">
-<h3>Analogi Timbangan Neraca Dua Lengan<a class="headerlink" href="#analogi-timbangan-neraca-dua-lengan" title="Link to this heading">#</a></h3>
-<p>Persamaan linear dapat dianalogikan seperti timbangan neraca dua lengan yang seimbang.</p>
-<ul class="simple">
-<li><p>Lengan kiri berisi beban variabel dan konstanta.</p></li>
-<li><p>Lengan kanan berisi beban konstanta hasil akhir.</p></li>
-<li><p>Timbangan harus selalu seimbang. Jika Anda menambah atau mengurangi beban di lengan kiri, Anda harus melakukan hal yang sama di lengan kanan.</p></li>
-</ul>
-<p>Sistem Persamaan Linear (SPL) adalah ketika Anda memiliki beberapa timbangan sekaligus dengan jenis beban variabel yang sama, dan Anda bertugas mencari berat dari masing-masing jenis beban variabel tersebut.</p>
-</section>
-<section id="diagram-overview-alur-spl">
-<h3>Diagram Overview Alur SPL<a class="headerlink" href="#diagram-overview-alur-spl" title="Link to this heading">#</a></h3>
-<p>Berikut adalah alur penyelesaian SPL menggunakan matriks:</p>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph TD
-    A[Sistem Persamaan Linear] --&gt; B[Matriks Augmented]
-    B --&gt; C[Operasi Baris Elementer - OBE]
-    C --&gt; D[Bentuk Eselon Baris]
-    D --&gt; E[Substitusi Balik]
-    E --&gt; F[Solusi Akhir]
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils" />
-<section id="bagian-2-konsep-inti">
-<h2>Bagian 2: Konsep Inti<a class="headerlink" href="#bagian-2-konsep-inti" title="Link to this heading">#</a></h2>
-<section id="definisi-singkat-spl">
-<h3>Definisi Singkat SPL<a class="headerlink" href="#definisi-singkat-spl" title="Link to this heading">#</a></h3>
-<p>Sistem Persamaan Linear adalah kumpulan dari satu atau lebih persamaan linear yang menggunakan variabel-variabel yang sama.</p>
-</section>
-<section id="contoh-konkrit">
-<h3>Contoh Konkrit<a class="headerlink" href="#contoh-konkrit" title="Link to this heading">#</a></h3>
-<section id="perbandingan-persamaan-linear-dan-non-linear">
-<h4>Perbandingan Persamaan Linear dan Non-Linear<a class="headerlink" href="#perbandingan-persamaan-linear-dan-non-linear" title="Link to this heading">#</a></h4>
-<p>Contoh persamaan linear:
-$<span class="math notranslate nohighlight">\(
-2x + 3y = 6
-\)</span>$</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="sistem-persamaan-linier-spl">
+<h1>Sistem Persamaan Linier (SPL)<a class="headerlink" href="#sistem-persamaan-linier-spl" title="Link to this heading">#</a></h1>
+<section id="pengertian-sistem-persamaan-linier">
+<h2>Pengertian Sistem Persamaan Linier<a class="headerlink" href="#pengertian-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Sistem Persamaan Linier (SPL) adalah sekumpulan dua atau lebih persamaan linier yang memiliki variabel yang sama dan harus dipenuhi secara bersamaan. Dengan kata lain, nilai variabel yang dicari harus membuat seluruh persamaan dalam sistem bernilai benar pada waktu yang sama.</p>
+<p>Istilah <strong>sistem</strong> menunjukkan bahwa beberapa persamaan tersebut saling berkaitan dan membentuk satu kesatuan. Sementara itu, istilah <strong>linier</strong> menunjukkan bahwa setiap variabel dalam persamaan berpangkat satu, sehingga hubungan antarvariabel membentuk garis lurus apabila digambarkan dalam bidang koordinat.</p>
+<p>Secara matematis, Sistem Persamaan Linier dapat dinyatakan sebagai kumpulan persamaan berbentuk:</p>
 <div class="math notranslate nohighlight">
 \[
-\sqrt{5}x - 2y = 8
+a_1x_1 + a_2x_2 + \cdots + a_nx_n = b
 \]</div>
-<p>Contoh persamaan non-linear:
-$<span class="math notranslate nohighlight">\(
-x^{2} + y^{2} = 1
-\)</span>$</p>
-<div class="math notranslate nohighlight">
-\[
-xy = 4
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-\sin(x) + y = 2
-\]</div>
+<p>dengan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_1, a_2, \ldots, a_n\)</span> adalah koefisien,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_1, x_2, \ldots, x_n\)</span> adalah variabel,</p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> adalah konstanta.</p></li>
+</ul>
+<p>Suatu Sistem Persamaan Linier dapat terdiri atas dua variabel, tiga variabel, atau lebih, tergantung pada banyaknya variabel yang terlibat dalam sistem tersebut.</p>
 </section>
-<section id="perbandingan-persamaan-homogen-dan-tak-homogen">
-<h4>Perbandingan Persamaan Homogen dan Tak-Homogen<a class="headerlink" href="#perbandingan-persamaan-homogen-dan-tak-homogen" title="Link to this heading">#</a></h4>
-<p>Contoh persamaan homogen:
-$<span class="math notranslate nohighlight">\(
-3x - y = 0
-\)</span>$</p>
-<p>Contoh persamaan tak-homogen:
-$<span class="math notranslate nohighlight">\(
-3x - y = 5
-\)</span>$</p>
-</section>
-</section>
-<section id="visualisasi-geometris-solusi-spl-2d">
-<h3>Visualisasi Geometris Solusi SPL (2D)<a class="headerlink" href="#visualisasi-geometris-solusi-spl-2d" title="Link to this heading">#</a></h3>
-<p>Secara geometris, solusi dari SPL 2 dimensi adalah titik potong dari garis-garis persamaan tersebut:</p>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph TD
-    A[Garis Persamaan 1] --- B((Titik Potong = Solusi))
-    C[Garis Persamaan 2] --- B
-</pre></div>
-</div>
-</section>
-<section id="latihan-kecil">
-<h3>Latihan Kecil<a class="headerlink" href="#latihan-kecil" title="Link to this heading">#</a></h3>
-<p>Tentukan jenis persamaan berikut (Linear/Non-linear dan Homogen/Tak-homogen):</p>
+<section id="karakteristik-sistem-persamaan-linier">
+<h2>Karakteristik Sistem Persamaan Linier<a class="headerlink" href="#karakteristik-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Sebuah sistem persamaan dikatakan sebagai Sistem Persamaan Linier apabila memenuhi karakteristik berikut:</p>
 <ol class="arabic simple">
-<li></li>
+<li><p>Variabel hanya berpangkat satu.</p></li>
+<li><p>Tidak terdapat perkalian antarvariabel.</p></li>
+<li><p>Tidak terdapat akar, logaritma, atau fungsi nonlinier lainnya yang melibatkan variabel.</p></li>
+<li><p>Setiap persamaan memiliki bentuk linier.</p></li>
+<li><p>Persamaan-persamaan dalam sistem memiliki variabel yang sama.</p></li>
 </ol>
+</section>
+<section id="tujuan-sistem-persamaan-linier">
+<h2>Tujuan Sistem Persamaan Linier<a class="headerlink" href="#tujuan-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Tujuan utama dari Sistem Persamaan Linier adalah menentukan nilai variabel yang memenuhi seluruh persamaan dalam sistem secara simultan. Nilai-nilai tersebut disebut sebagai <strong>solusi</strong> atau <strong>penyelesaian</strong> dari Sistem Persamaan Linier.</p>
+</section>
+<section id="bentuk-umum-sistem-persamaan-linier">
+<h2>Bentuk Umum Sistem Persamaan Linier<a class="headerlink" href="#bentuk-umum-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Untuk sistem dengan <span class="math notranslate nohighlight">\(n\)</span> variabel dan <span class="math notranslate nohighlight">\(m\)</span> persamaan, bentuk umumnya dapat dituliskan sebagai:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n &amp;= b_1 \\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n &amp;= b_2 \\
+&amp;\vdots \\
+a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n &amp;= b_m
+\end{aligned}
+\end{split}\]</div>
+<p>di mana:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_{ij}\)</span> merupakan koefisien,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_j\)</span> merupakan variabel,</p></li>
+<li><p><span class="math notranslate nohighlight">\(b_i\)</span> merupakan konstanta.</p></li>
+</ul>
+</section>
+<section id="kesimpulan">
+<h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>Sistem Persamaan Linier adalah kumpulan beberapa persamaan linier yang saling berkaitan dan memiliki variabel yang sama. Tujuan penyelesaiannya adalah mencari nilai variabel yang memenuhi seluruh persamaan secara bersamaan. Konsep ini menjadi dasar dalam berbagai metode penyelesaian matematika, terutama dalam Aljabar Linear dan representasi matriks.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="definisi-persamaan-linier-dan-non-linier">
+<h1>Definisi Persamaan Linier dan Non Linier<a class="headerlink" href="#definisi-persamaan-linier-dan-non-linier" title="Link to this heading">#</a></h1>
+<section id="persamaan-linier">
+<h2>Persamaan Linier<a class="headerlink" href="#persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Persamaan linier adalah persamaan matematika yang setiap variabelnya berpangkat satu dan tidak terdapat perkalian maupun pembagian antarvariabel. Grafik dari persamaan linier berbentuk garis lurus sehingga hubungan antara variabel-variabelnya bersifat linier.</p>
+<p>Bentuk umum persamaan linier satu variabel:</p>
 <div class="math notranslate nohighlight">
 \[
-x - 5y = 0
+ax + b = 0
 \]</div>
-<ol class="arabic simple" start="2">
-<li></li>
-</ol>
+<p>Bentuk umum persamaan linier dua variabel:</p>
 <div class="math notranslate nohighlight">
 \[
-x + yz = 3
+ax + by = c
 \]</div>
-<ol class="arabic simple" start="3">
-<li></li>
+<p>dengan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, dan <span class="math notranslate nohighlight">\(c\)</span> merupakan konstanta,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> dan <span class="math notranslate nohighlight">\(y\)</span> merupakan variabel,</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> dan <span class="math notranslate nohighlight">\(b\)</span> tidak keduanya bernilai nol.</p></li>
+</ul>
+<section id="karakteristik-persamaan-linier">
+<h3>Karakteristik Persamaan Linier<a class="headerlink" href="#karakteristik-persamaan-linier" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Variabel hanya berpangkat satu.</p></li>
+<li><p>Tidak terdapat perkalian antarvariabel.</p></li>
+<li><p>Tidak terdapat akar variabel.</p></li>
+<li><p>Tidak terdapat fungsi nonlinier seperti logaritma, eksponensial, atau trigonometri yang melibatkan variabel.</p></li>
+<li><p>Grafiknya berbentuk garis lurus.</p></li>
 </ol>
-<div class="math notranslate nohighlight">
-\[
-2x + y = 9
-\]</div>
+</section>
+<section id="contoh-persamaan-linier">
+<h3>Contoh Persamaan Linier<a class="headerlink" href="#contoh-persamaan-linier" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(2x + 5 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3x - 4 = 8\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2x + y = 7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(4x - 3y = 12\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x + 2y - 5 = 0\)</span></p></li>
+</ol>
 </section>
 </section>
 <hr class="docutils" />
-<section id="bagian-3-detail-teknis">
-<h2>Bagian 3: Detail / Teknis<a class="headerlink" href="#bagian-3-detail-teknis" title="Link to this heading">#</a></h2>
-<section id="indeks-ganda-koefisien">
-<h3>Indeks Ganda Koefisien<a class="headerlink" href="#indeks-ganda-koefisien" title="Link to this heading">#</a></h3>
-<p>Untuk sistem persamaan dengan banyak variabel, koefisien dilambangkan dengan indeks ganda:
-$<span class="math notranslate nohighlight">\(
-a_{ij}
-\)</span>$</p>
-<p>Keterangan:</p>
+<section id="persamaan-non-linier">
+<h2>Persamaan Non Linier<a class="headerlink" href="#persamaan-non-linier" title="Link to this heading">#</a></h2>
+<p>Persamaan non linier adalah persamaan yang tidak memenuhi sifat-sifat persamaan linier. Pada persamaan non linier terdapat variabel yang berpangkat lebih dari satu, perkalian antarvariabel, akar variabel, atau fungsi nonlinier lainnya sehingga grafik yang dihasilkan tidak berbentuk garis lurus.</p>
+<section id="karakteristik-persamaan-non-linier">
+<h3>Karakteristik Persamaan Non Linier<a class="headerlink" href="#karakteristik-persamaan-non-linier" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Terdapat variabel dengan pangkat lebih dari satu.</p></li>
+<li><p>Terdapat perkalian antarvariabel.</p></li>
+<li><p>Terdapat akar yang melibatkan variabel.</p></li>
+<li><p>Dapat mengandung fungsi eksponensial, logaritma, atau trigonometri.</p></li>
+<li><p>Grafiknya tidak berbentuk garis lurus.</p></li>
+</ol>
+</section>
+<section id="contoh-persamaan-non-linier">
+<h3>Contoh Persamaan Non Linier<a class="headerlink" href="#contoh-persamaan-non-linier" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x^2 + 3x - 4 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^3 - 2x + 1 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(xy + 2 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sqrt{x} + 3 = 7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2^x = 8\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\log(x) + 1 = 0\)</span></p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="perbedaan-persamaan-linier-dan-non-linier">
+<h2>Perbedaan Persamaan Linier dan Non Linier<a class="headerlink" href="#perbedaan-persamaan-linier-dan-non-linier" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspek</p></th>
+<th class="head"><p>Persamaan Linier</p></th>
+<th class="head"><p>Persamaan Non Linier</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pangkat variabel</p></td>
+<td><p>Pangkat satu</p></td>
+<td><p>Pangkat lebih dari satu atau bentuk lainnya</p></td>
+</tr>
+<tr class="row-odd"><td><p>Perkalian antarvariabel</p></td>
+<td><p>Tidak ada</p></td>
+<td><p>Dapat ada</p></td>
+</tr>
+<tr class="row-even"><td><p>Bentuk grafik</p></td>
+<td><p>Garis lurus</p></td>
+<td><p>Kurva atau bentuk lain</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kompleksitas penyelesaian</p></td>
+<td><p>Relatif sederhana</p></td>
+<td><p>Lebih kompleks</p></td>
+</tr>
+<tr class="row-even"><td><p>Contoh</p></td>
+<td><p><span class="math notranslate nohighlight">\(2x+y=5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x^2+y=5\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id1">
+<h2>Kesimpulan<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Persamaan linier merupakan persamaan yang variabel-variabelnya berpangkat satu dan menghasilkan grafik berupa garis lurus. Sebaliknya, persamaan non linier adalah persamaan yang memiliki variabel berpangkat lebih dari satu, perkalian antarvariabel, akar, atau fungsi nonlinier lainnya sehingga grafiknya tidak berbentuk garis lurus.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sistem-persamaan-linier">
+<h1>Sistem Persamaan Linier<a class="headerlink" href="#sistem-persamaan-linier" title="Link to this heading">#</a></h1>
+<section id="definisi-sistem-persamaan-linier">
+<h2>Definisi Sistem Persamaan Linier<a class="headerlink" href="#definisi-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Sistem Persamaan Linier (SPL) adalah kumpulan dua atau lebih persamaan linier yang memiliki variabel yang sama dan harus dipenuhi secara bersamaan. Artinya, nilai variabel yang dicari harus membuat seluruh persamaan dalam sistem bernilai benar pada waktu yang sama.</p>
+<p>Kata <strong>sistem</strong> menunjukkan bahwa persamaan-persamaan tersebut saling berhubungan dan membentuk satu kesatuan. Sedangkan kata <strong>linier</strong> menunjukkan bahwa setiap variabel dalam persamaan hanya berpangkat satu.</p>
+<p>Secara sederhana, jika sebuah persamaan linier hanya melibatkan satu hubungan matematika, maka Sistem Persamaan Linier melibatkan beberapa hubungan matematika yang harus diselesaikan secara bersamaan untuk memperoleh nilai variabel yang tepat.</p>
+</section>
+<section id="id2">
+<h2>Karakteristik Sistem Persamaan Linier<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Sebuah sistem persamaan dikatakan sebagai Sistem Persamaan Linier apabila memenuhi syarat berikut:</p>
+<ol class="arabic simple">
+<li><p>Terdiri atas dua atau lebih persamaan.</p></li>
+<li><p>Memiliki variabel yang sama pada setiap persamaan.</p></li>
+<li><p>Setiap variabel berpangkat satu.</p></li>
+<li><p>Tidak terdapat perkalian antarvariabel.</p></li>
+<li><p>Tidak terdapat akar atau fungsi nonlinier yang melibatkan variabel.</p></li>
+</ol>
+</section>
+<section id="unsur-unsur-sistem-persamaan-linier">
+<h2>Unsur-Unsur Sistem Persamaan Linier<a class="headerlink" href="#unsur-unsur-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<section id="variabel">
+<h3>1. Variabel<a class="headerlink" href="#variabel" title="Link to this heading">#</a></h3>
+<p>Variabel adalah simbol yang nilainya belum diketahui dan biasanya dinyatakan dengan huruf seperti <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, atau <span class="math notranslate nohighlight">\(z\)</span>.</p>
+</section>
+<section id="koefisien">
+<h3>2. Koefisien<a class="headerlink" href="#koefisien" title="Link to this heading">#</a></h3>
+<p>Koefisien adalah bilangan yang mengalikan variabel.</p>
+</section>
+<section id="konstanta">
+<h3>3. Konstanta<a class="headerlink" href="#konstanta" title="Link to this heading">#</a></h3>
+<p>Konstanta adalah bilangan yang nilainya tetap dan tidak mengandung variabel.</p>
+</section>
+<section id="persamaan">
+<h3>4. Persamaan<a class="headerlink" href="#persamaan" title="Link to this heading">#</a></h3>
+<p>Persamaan adalah hubungan matematis yang menyatakan bahwa dua bentuk aljabar memiliki nilai yang sama.</p>
+</section>
+</section>
+<section id="id3">
+<h2>Bentuk Umum Sistem Persamaan Linier<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Sistem Persamaan Linier dua variabel dapat dituliskan dalam bentuk:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+a_1x+b_1y=c_1 \\
+a_2x+b_2y=c_2
+\end{cases}
+\end{split}\]</div>
+<p>Sedangkan Sistem Persamaan Linier tiga variabel dapat dituliskan dalam bentuk:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+a_1x+b_1y+c_1z=d_1 \\
+a_2x+b_2y+c_2z=d_2 \\
+a_3x+b_3y+c_3z=d_3
+\end{cases}
+\end{split}\]</div>
+<p>dengan:</p>
 <ul class="simple">
-<li><p>Indeks pertama menunjukkan nomor baris (persamaan).</p></li>
-<li><p>Indeks kedua menunjukkan nomor kolom (variabel).</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, dan <span class="math notranslate nohighlight">\(c\)</span> merupakan koefisien,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, dan <span class="math notranslate nohighlight">\(z\)</span> merupakan variabel,</p></li>
+<li><p><span class="math notranslate nohighlight">\(d\)</span> merupakan konstanta.</p></li>
 </ul>
 </section>
-<section id="matriks-augmented-membentuk-matriks-diperbesar">
-<h3>Matriks Augmented (Membentuk Matriks Diperbesar)<a class="headerlink" href="#matriks-augmented-membentuk-matriks-diperbesar" title="Link to this heading">#</a></h3>
-<p>Misalkan kita memiliki SPL berikut:
-$<span class="math notranslate nohighlight">\(
-2x + y + z = 8
-\)</span>$</p>
+<section id="id4">
+<h2>Tujuan Sistem Persamaan Linier<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Tujuan utama Sistem Persamaan Linier adalah menentukan nilai variabel yang memenuhi seluruh persamaan dalam sistem secara bersamaan. Nilai yang memenuhi seluruh persamaan tersebut disebut sebagai solusi atau penyelesaian sistem.</p>
+</section>
+<section id="contoh-sistem-persamaan-linier">
+<h2>Contoh Sistem Persamaan Linier<a class="headerlink" href="#contoh-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x+y=8 \\
+x-y=2
+\end{cases}
+\end{split}\]</div>
+<p>Pada contoh di atas, terdapat dua persamaan linier yang memiliki variabel yang sama, yaitu <span class="math notranslate nohighlight">\(x\)</span> dan <span class="math notranslate nohighlight">\(y\)</span>. Kedua persamaan tersebut membentuk sebuah Sistem Persamaan Linier karena harus dipenuhi secara bersamaan.</p>
+</section>
+<section id="id5">
+<h2>Kesimpulan<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Sistem Persamaan Linier adalah kumpulan dua atau lebih persamaan linier yang memiliki variabel yang sama dan harus diselesaikan secara bersamaan untuk memperoleh nilai variabel yang memenuhi seluruh persamaan dalam sistem.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="solusi-sistem-persamaan-linier">
+<h1>Solusi Sistem Persamaan Linier<a class="headerlink" href="#solusi-sistem-persamaan-linier" title="Link to this heading">#</a></h1>
+<section id="definisi-solusi-sistem-persamaan-linier">
+<h2>Definisi Solusi Sistem Persamaan Linier<a class="headerlink" href="#definisi-solusi-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Solusi Sistem Persamaan Linier (SPL) adalah nilai atau himpunan nilai variabel yang memenuhi seluruh persamaan dalam sistem secara bersamaan. Dengan kata lain, ketika nilai variabel tersebut disubstitusikan ke setiap persamaan dalam sistem, semua persamaan akan menjadi benar.</p>
+<p>Dalam Sistem Persamaan Linier, tujuan utama penyelesaian adalah mencari solusi yang memenuhi semua persamaan yang ada. Jika suatu nilai hanya memenuhi sebagian persamaan tetapi tidak memenuhi persamaan lainnya, maka nilai tersebut bukan merupakan solusi dari sistem.</p>
+</section>
+<section id="bentuk-solusi-sistem-persamaan-linier">
+<h2>Bentuk Solusi Sistem Persamaan Linier<a class="headerlink" href="#bentuk-solusi-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Misalkan terdapat sistem persamaan:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x+y=8 \\
+x-y=2
+\end{cases}
+\end{split}\]</div>
+<p>Pasangan nilai:</p>
 <div class="math notranslate nohighlight">
 \[
-3x - y - z = 2
+x=5,\quad y=3
 \]</div>
+<p>merupakan solusi dari sistem tersebut karena memenuhi kedua persamaan secara bersamaan.</p>
+</section>
+<section id="jenis-jenis-solusi-sistem-persamaan-linier">
+<h2>Jenis-Jenis Solusi Sistem Persamaan Linier<a class="headerlink" href="#jenis-jenis-solusi-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<section id="solusi-tunggal">
+<h3>1. Solusi Tunggal<a class="headerlink" href="#solusi-tunggal" title="Link to this heading">#</a></h3>
+<p>Solusi tunggal terjadi ketika sistem persamaan memiliki tepat satu penyelesaian.</p>
+<p>Contoh:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x+y=8 \\
+x-y=2
+\end{cases}
+\end{split}\]</div>
+<p>Solusinya adalah:</p>
 <div class="math notranslate nohighlight">
 \[
-x + 2y - z = 2
+(x,y)=(5,3)
 \]</div>
-<p>Matriks augmented dari SPL di atas adalah:
-$<span class="math notranslate nohighlight">\(
+</section>
+<hr class="docutils" />
+<section id="tak-hingga-banyak-solusi">
+<h3>2. Tak Hingga Banyak Solusi<a class="headerlink" href="#tak-hingga-banyak-solusi" title="Link to this heading">#</a></h3>
+<p>Tak hingga banyak solusi terjadi ketika seluruh persamaan dalam sistem merepresentasikan hubungan yang sama sehingga terdapat banyak pasangan nilai yang memenuhi sistem tersebut.</p>
+<p>Contoh:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x+y=4 \\
+2x+2y=8
+\end{cases}
+\end{split}\]</div>
+<p>Karena persamaan kedua merupakan kelipatan dari persamaan pertama, maka sistem memiliki tak hingga banyak solusi.</p>
+</section>
+<hr class="docutils" />
+<section id="tidak-memiliki-solusi">
+<h3>3. Tidak Memiliki Solusi<a class="headerlink" href="#tidak-memiliki-solusi" title="Link to this heading">#</a></h3>
+<p>Suatu sistem tidak memiliki solusi apabila tidak ada nilai variabel yang dapat memenuhi seluruh persamaan secara bersamaan.</p>
+<p>Contoh:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x+y=4 \\
+x+y=7
+\end{cases}
+\end{split}\]</div>
+<p>Tidak ada pasangan nilai yang dapat membuat kedua persamaan tersebut benar sekaligus, sehingga sistem tidak memiliki solusi.</p>
+</section>
+</section>
+<section id="id6">
+<h2>Kesimpulan<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>Solusi Sistem Persamaan Linier adalah nilai variabel yang memenuhi seluruh persamaan dalam sistem secara bersamaan. Berdasarkan banyaknya penyelesaian yang dimiliki, suatu Sistem Persamaan Linier dapat memiliki satu solusi (solusi tunggal), tak hingga banyak solusi, atau tidak memiliki solusi sama sekali.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="representasi-matriks-sistem-persamaan-linier">
+<h1>Representasi Matriks Sistem Persamaan Linier<a class="headerlink" href="#representasi-matriks-sistem-persamaan-linier" title="Link to this heading">#</a></h1>
+<section id="definisi-representasi-matriks-sistem-persamaan-linier">
+<h2>Definisi Representasi Matriks Sistem Persamaan Linier<a class="headerlink" href="#definisi-representasi-matriks-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Representasi matriks Sistem Persamaan Linier (SPL) adalah cara menyatakan suatu sistem persamaan linier ke dalam bentuk matriks sehingga lebih ringkas dan mudah diolah menggunakan operasi matriks.</p>
+<p>Dalam representasi ini, koefisien-koefisien dari setiap variabel disusun ke dalam sebuah matriks yang disebut <strong>matriks koefisien</strong>, variabel-variabel disusun ke dalam <strong>matriks variabel</strong>, dan konstanta-konstanta disusun ke dalam <strong>matriks konstanta</strong>.</p>
+<p>Secara umum, Sistem Persamaan Linier dapat dituliskan dalam bentuk:</p>
+<div class="math notranslate nohighlight">
+\[
+AX=B
+\]</div>
+<p>dengan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> = matriks koefisien,</p></li>
+<li><p><span class="math notranslate nohighlight">\(X\)</span> = matriks variabel,</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> = matriks konstanta.</p></li>
+</ul>
+<p>Representasi matriks digunakan untuk mempermudah penyelesaian Sistem Persamaan Linier, terutama pada sistem yang memiliki banyak persamaan dan variabel.</p>
+</section>
+<section id="contoh-representasi-matriks-spl">
+<h2>Contoh Representasi Matriks SPL<a class="headerlink" href="#contoh-representasi-matriks-spl" title="Link to this heading">#</a></h2>
+<p>Diberikan Sistem Persamaan Linier:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+2x+y=5 \\
+x+3y=7
+\end{cases}
+\end{split}\]</div>
+<section id="bentuk-matriks-koefisien">
+<h3>Bentuk Matriks Koefisien<a class="headerlink" href="#bentuk-matriks-koefisien" title="Link to this heading">#</a></h3>
+<p>Koefisien dari setiap variabel disusun menjadi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=
 \begin{bmatrix}
-2 &amp; 1 &amp; 1 &amp; | &amp; 8 \\
-3 &amp; -1 &amp; -1 &amp; | &amp; 2 \\
-1 &amp; 2 &amp; -1 &amp; | &amp; 2
+2 &amp; 1 \\
+1 &amp; 3
 \end{bmatrix}
-\)</span>$</p>
+\end{split}\]</div>
 </section>
-<section id="operasi-baris-elementer-obe">
-<h3>Operasi Baris Elementer (OBE)<a class="headerlink" href="#operasi-baris-elementer-obe" title="Link to this heading">#</a></h3>
-<p>Operasi Baris Elementer adalah langkah manipulasi baris matriks tanpa mengubah nilai solusinya. 3 aturan OBE adalah:</p>
-<ol class="arabic simple">
-<li><p>Menukar posisi dua baris.</p></li>
-<li><p>Mengalikan sebuah baris dengan konstanta bukan nol.</p></li>
-<li><p>Menambahkan kelipatan suatu baris ke baris lainnya.</p></li>
-</ol>
+<section id="bentuk-matriks-variabel">
+<h3>Bentuk Matriks Variabel<a class="headerlink" href="#bentuk-matriks-variabel" title="Link to this heading">#</a></h3>
+<p>Variabel-variabel disusun menjadi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+X=
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+\end{split}\]</div>
 </section>
-<section id="langkah-demi-langkah-obe-eliminasi-gaussian">
-<h3>Langkah demi Langkah OBE (Eliminasi Gaussian)<a class="headerlink" href="#langkah-demi-langkah-obe-eliminasi-gaussian" title="Link to this heading">#</a></h3>
-<p>Mari selesaikan matriks augmented di atas langkah demi langkah menggunakan Python NumPy.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="c1"># Definisikan matriks koefisien A dan konstanta b</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
-              <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">],</span>
-              <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">]])</span>
-
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">8.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
-
-<span class="c1"># Menggunakan np.linalg.solve untuk mencari solusi secara langsung</span>
-<span class="n">solusi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solusi variabel x, y, z adalah:&quot;</span><span class="p">,</span> <span class="n">solusi</span><span class="p">)</span>
-</pre></div>
-</div>
+<section id="bentuk-matriks-konstanta">
+<h3>Bentuk Matriks Konstanta<a class="headerlink" href="#bentuk-matriks-konstanta" title="Link to this heading">#</a></h3>
+<p>Konstanta pada ruas kanan disusun menjadi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+B=
+\begin{bmatrix}
+5 \\
+7
+\end{bmatrix}
+\end{split}\]</div>
 </section>
-<section id="edge-case-catatan-penting">
-<h3>Edge Case / Catatan Penting<a class="headerlink" href="#edge-case-catatan-penting" title="Link to this heading">#</a></h3>
-<p>SPL tidak selalu memiliki solusi unik. Kemungkinan solusi SPL meliputi:</p>
-<ol class="arabic simple">
-<li><p><strong>Solusi Unik (Satu Solusi):</strong> Garis-garis saling berpotongan di satu titik.</p></li>
-<li><p><strong>Solusi Tak Terhingga:</strong> Persamaan saling tumpang tindih (garis yang sama).</p></li>
-<li><p><strong>Tidak Ada Solusi:</strong> Garis-garis sejajar dan tidak pernah bertemu.</p></li>
-</ol>
-</section>
-</section>
-<hr class="docutils" />
-<section id="rangkuman">
-<h2>Rangkuman<a class="headerlink" href="#rangkuman" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Persamaan linear adalah persamaan dengan pangkat variabel tertinggi bernilai satu.</p></li>
-<li><p>SPL homogen memiliki ruas kanan bernilai nol, sedangkan tak-homogen tidak bernilai nol.</p></li>
-<li><p>Representasi SPL ke dalam bentuk matriks augmented mempermudah proses eliminasi menggunakan OBE untuk memperoleh bentuk eselon baris.</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="latihan-soal">
-<h2>Latihan / Soal<a class="headerlink" href="#latihan-soal" title="Link to this heading">#</a></h2>
-<p>Selesaikan SPL berikut dengan metode eliminasi:
-$<span class="math notranslate nohighlight">\(
-x + y = 5
-\)</span>$</p>
+<section id="bentuk-matriks-spl">
+<h3>Bentuk Matriks SPL<a class="headerlink" href="#bentuk-matriks-spl" title="Link to this heading">#</a></h3>
+<p>Sehingga sistem persamaan tersebut dapat dituliskan sebagai:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+2 &amp; 1 \\
+1 &amp; 3
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+=
+\begin{bmatrix}
+5 \\
+7
+\end{bmatrix}
+\end{split}\]</div>
+<p>atau secara singkat:</p>
 <div class="math notranslate nohighlight">
 \[
-2x - y = 1
+AX=B
 \]</div>
 </section>
-<hr class="docutils" />
-<section id="referensi">
-<h2>Referensi<a class="headerlink" href="#referensi" title="Link to this heading">#</a></h2>
+</section>
+<section id="id7">
+<h2>Kesimpulan<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>Representasi matriks Sistem Persamaan Linier adalah penyajian SPL ke dalam bentuk matriks dengan memisahkan koefisien, variabel, dan konstanta. Bentuk ini memudahkan proses perhitungan dan menjadi dasar berbagai metode penyelesaian SPL seperti eliminasi Gauss, Gauss-Jordan, invers matriks, dan aturan Cramer.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="matriks-augmentasi">
+<h1>Matriks Augmentasi<a class="headerlink" href="#matriks-augmentasi" title="Link to this heading">#</a></h1>
+<section id="definisi-matriks-augmentasi">
+<h2>Definisi Matriks Augmentasi<a class="headerlink" href="#definisi-matriks-augmentasi" title="Link to this heading">#</a></h2>
+<p>Matriks augmentasi adalah matriks yang diperoleh dengan menggabungkan matriks koefisien dan matriks konstanta dari suatu Sistem Persamaan Linier (SPL) ke dalam satu matriks. Penggabungan tersebut dilakukan dengan menempatkan kolom konstanta di sebelah kanan matriks koefisien yang dipisahkan oleh garis vertikal.</p>
+<p>Matriks augmentasi digunakan untuk menyederhanakan penulisan Sistem Persamaan Linier dan mempermudah proses penyelesaian menggunakan metode operasi baris elementer, seperti Eliminasi Gauss dan Eliminasi Gauss-Jordan.</p>
+<p>Secara umum, jika suatu Sistem Persamaan Linier dinyatakan dalam bentuk:</p>
+<div class="math notranslate nohighlight">
+\[
+AX = B
+\]</div>
+<p>maka matriks augmentasinya ditulis sebagai:</p>
+<div class="math notranslate nohighlight">
+\[
+[A|B]
+\]</div>
+<p>di mana:</p>
 <ul class="simple">
-<li><p>Anton, H., &amp; Rorres, C. (2013). Elementary Linear Algebra: Applications Version. John Wiley &amp; Sons.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> adalah matriks koefisien,</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> adalah matriks konstanta,</p></li>
+<li><p><span class="math notranslate nohighlight">\([A|B]\)</span> adalah matriks augmentasi.</p></li>
 </ul>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h2>Contoh Sistem Persamaan Linier<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<p>Diberikan SPL:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+2x+y=5 \\
+x+3y=7
+\end{cases}
+\end{split}\]</div>
+<section id="matriks-koefisien">
+<h3>Matriks Koefisien<a class="headerlink" href="#matriks-koefisien" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=
+\begin{bmatrix}
+2 &amp; 1 \\
+1 &amp; 3
+\end{bmatrix}
+\end{split}\]</div>
+</section>
+<section id="matriks-konstanta">
+<h3>Matriks Konstanta<a class="headerlink" href="#matriks-konstanta" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+B=
+\begin{bmatrix}
+5 \\
+7
+\end{bmatrix}
+\end{split}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="contoh-matriks-augmentasi">
+<h2>Contoh Matriks Augmentasi<a class="headerlink" href="#contoh-matriks-augmentasi" title="Link to this heading">#</a></h2>
+<p>Dengan menggabungkan matriks koefisien dan matriks konstanta, diperoleh matriks augmentasi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{cc|c}
+2 &amp; 1 &amp; 5 \\
+1 &amp; 3 &amp; 7
+\end{array}
+\right]
+\end{split}\]</div>
+<p>Matriks di atas merupakan bentuk ringkas dari Sistem Persamaan Linier yang diberikan.</p>
+</section>
+<hr class="docutils" />
+<section id="contoh-lain-matriks-augmentasi">
+<h2>Contoh Lain Matriks Augmentasi<a class="headerlink" href="#contoh-lain-matriks-augmentasi" title="Link to this heading">#</a></h2>
+<p>Diberikan SPL tiga variabel:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x+y+z=6 \\
+2x-y+z=5 \\
+x+2y-z=4
+\end{cases}
+\end{split}\]</div>
+<section id="id9">
+<h3>Matriks Koefisien<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 \\
+2 &amp; -1 &amp; 1 \\
+1 &amp; 2 &amp; -1
+\end{bmatrix}
+\end{split}\]</div>
+</section>
+<section id="id10">
+<h3>Matriks Konstanta<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+6 \\
+5 \\
+4
+\end{bmatrix}
+\end{split}\]</div>
+</section>
+<section id="id11">
+<h3>Matriks Augmentasi<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccc|c}
+1 &amp; 1 &amp; 1 &amp; 6 \\
+2 &amp; -1 &amp; 1 &amp; 5 \\
+1 &amp; 2 &amp; -1 &amp; 4
+\end{array}
+\right]
+\end{split}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id12">
+<h2>Kesimpulan<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<p>Matriks augmentasi adalah matriks yang diperoleh dari penggabungan matriks koefisien dan matriks konstanta suatu Sistem Persamaan Linier. Matriks ini dituliskan dalam bentuk <span class="math notranslate nohighlight">\([A|B]\)</span> dan digunakan untuk mempermudah penyelesaian SPL melalui operasi baris elementer, khususnya pada metode Eliminasi Gauss dan Eliminasi Gauss-Jordan.</p>
 </section>
 </section>
 
@@ -686,11 +1060,11 @@ x + y = 5
       </div>
     </a>
     <a class="right-next"
-       href="matriks.html"
+       href="../tugas/transformasi_pencerminan.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">📋 Konsep Dasar Matriks</p>
+        <p class="prev-next-title">Transformasi Sumbu Y menggunakan Translasi dan Pencerminan</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -712,36 +1086,88 @@ x + y = 5
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-pembelajaran">Tujuan Pembelajaran</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prasyarat">Prasyarat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-1-gambaran-besar">Bagian 1: Gambaran Besar</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analogi-timbangan-neraca-dua-lengan">Analogi Timbangan Neraca Dua Lengan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-overview-alur-spl">Diagram Overview Alur SPL</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sistem Persamaan Linier (SPL)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-sistem-persamaan-linier">Pengertian Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-sistem-persamaan-linier">Karakteristik Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-sistem-persamaan-linier">Tujuan Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-umum-sistem-persamaan-linier">Bentuk Umum Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-2-konsep-inti">Bagian 2: Konsep Inti</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-singkat-spl">Definisi Singkat SPL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-konkrit">Contoh Konkrit</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-persamaan-linear-dan-non-linear">Perbandingan Persamaan Linear dan Non-Linear</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-persamaan-homogen-dan-tak-homogen">Perbandingan Persamaan Homogen dan Tak-Homogen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-persamaan-linier-dan-non-linier">Definisi Persamaan Linier dan Non Linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-linier">Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-persamaan-linier">Karakteristik Persamaan Linier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-persamaan-linier">Contoh Persamaan Linier</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-geometris-solusi-spl-2d">Visualisasi Geometris Solusi SPL (2D)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latihan-kecil">Latihan Kecil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-non-linier">Persamaan Non Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-persamaan-non-linier">Karakteristik Persamaan Non Linier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-persamaan-non-linier">Contoh Persamaan Non Linier</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-3-detail-teknis">Bagian 3: Detail / Teknis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indeks-ganda-koefisien">Indeks Ganda Koefisien</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmented-membentuk-matriks-diperbesar">Matriks Augmented (Membentuk Matriks Diperbesar)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer-obe">Operasi Baris Elementer (OBE)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-demi-langkah-obe-eliminasi-gaussian">Langkah demi Langkah OBE (Eliminasi Gaussian)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-case-catatan-penting">Edge Case / Catatan Penting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perbedaan-persamaan-linier-dan-non-linier">Perbedaan Persamaan Linier dan Non Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rangkuman">Rangkuman</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latihan-soal">Latihan / Soal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi">Referensi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan-linier">Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-sistem-persamaan-linier">Definisi Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Karakteristik Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsur-unsur-sistem-persamaan-linier">Unsur-Unsur Sistem Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variabel">1. Variabel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koefisien">2. Koefisien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konstanta">3. Konstanta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan">4. Persamaan</a></li>
 </ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Bentuk Umum Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Tujuan Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-sistem-persamaan-linier">Contoh Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-sistem-persamaan-linier">Solusi Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-solusi-sistem-persamaan-linier">Definisi Solusi Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-solusi-sistem-persamaan-linier">Bentuk Solusi Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-solusi-sistem-persamaan-linier">Jenis-Jenis Solusi Sistem Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-tunggal">1. Solusi Tunggal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tak-hingga-banyak-solusi">2. Tak Hingga Banyak Solusi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tidak-memiliki-solusi">3. Tidak Memiliki Solusi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matriks-sistem-persamaan-linier">Representasi Matriks Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-representasi-matriks-sistem-persamaan-linier">Definisi Representasi Matriks Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-representasi-matriks-spl">Contoh Representasi Matriks SPL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks-koefisien">Bentuk Matriks Koefisien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks-variabel">Bentuk Matriks Variabel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks-konstanta">Bentuk Matriks Konstanta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks-spl">Bentuk Matriks SPL</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmentasi">Matriks Augmentasi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks-augmentasi">Definisi Matriks Augmentasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Contoh Sistem Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-koefisien">Matriks Koefisien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-konstanta">Matriks Konstanta</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-matriks-augmentasi">Contoh Matriks Augmentasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-lain-matriks-augmentasi">Contoh Lain Matriks Augmentasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Matriks Koefisien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Matriks Konstanta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Matriks Augmentasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Kesimpulan</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

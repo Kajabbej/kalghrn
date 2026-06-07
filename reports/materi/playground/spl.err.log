@@ -1,0 +1,425 @@
+Traceback (most recent call last):
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+"""
+SPL Non-Linier Interaktif
+=========================
+Sistem 2 persamaan non-linier dengan slider parameter.
+Titik potong dihitung otomatis menggunakan scipy (fsolve).
+
+Jalankan sebagai script:
+    python spl_nonlinier.py
+
+ATAU di Jupyter tambahkan di cell pertama:
+    %matplotlib widget
+    (pip install ipympl jika belum)
+"""
+%matplotlib widget
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+from matplotlib.widgets import Slider, RadioButtons
+from scipy.optimize import fsolve
+from scipy.optimize import brentq
+
+# ── Range sumbu ──────────────────────────────────────────────────
+x = np.linspace(-10, 10, 800)
+
+# ================================================================
+# DEFINISI PASANGAN PERSAMAAN NON-LINIER
+# ================================================================
+PASANGAN = {
+    'Kuadrat vs Linier\ny=ax²+b  |  y=cx+d': {
+        'f1': lambda x, p: p[0]*x**2 + p[1],
+        'f2': lambda x, p: p[2]*x + p[3],
+        'label1': r'$y = ax^2 + b$',
+        'label2': r'$y = cx + d$',
+        'params': ['a','b','c','d'],
+        'init':   [1.0, -3.0, 2.0, 1.0],
+        'range':  [(-5,5),(-10,10),(-5,5),(-10,10)],
+    },
+    'Lingkaran vs Linier\nx²+y²=r²  |  y=cx+d': {
+        # f1: y positif lingkaran, f2: y negatif (kurva bawah)
+        'f1': lambda x, p: np.where(p[0]**2 - x**2 >= 0,
+                                     np.sqrt(np.maximum(p[0]**2 - x**2, 0)), np.nan),
+        'f1b': lambda x, p: np.where(p[0]**2 - x**2 >= 0,
+                                      -np.sqrt(np.maximum(p[0]**2 - x**2, 0)), np.nan),
+        'f2': lambda x, p: p[1]*x + p[2],
+        'label1': r'$x^2 + y^2 = r^2$',
+        'label2': r'$y = cx + d$',
+        'params': ['r','c','d'],
+        'init':   [4.0, 1.0, 0.0],
+        'range':  [(1,8),(-5,5),(-10,10)],
+        'lingkaran': True,
+    },
+    'Sinus vs Kuadrat\ny=a·sin(bx)  |  y=cx²+d': {
+        'f1': lambda x, p: p[0]*np.sin(p[1]*x),
+        'f2': lambda x, p: p[2]*x**2 + p[3],
+        'label1': r'$y = a\sin(bx)$',
+        'label2': r'$y = cx^2 + d$',
+        'params': ['a','b','c','d'],
+        'init':   [3.0, 1.0, 0.1, -2.0],
+        'range':  [(-5,5),(-3,3),(-2,2),(-5,5)],
+    },
+    'Eksponensial vs Kuadrat\ny=a·eˣ+b  |  y=cx²+d': {
+        'f1': lambda x, p: p[0]*np.exp(np.clip(x, -10, 3)) + p[1],
+        'f2': lambda x, p: p[2]*x**2 + p[3],
+        'label1': r'$y = ae^x + b$',
+        'label2': r'$y = cx^2 + d$',
+        'params': ['a','b','c','d'],
+        'init':   [0.5, -5.0, 0.5, 0.0],
+        'range':  [(-3,3),(-10,10),(-3,3),(-10,10)],
+    },
+}
+
+# ================================================================
+# CARI TITIK POTONG
+# ================================================================
+def cari_titik_potong(f1, f2, params, is_lingkaran=False):
+    """
+    Scan seluruh domain x, deteksi perubahan tanda f1-f2,
+    lalu gunakan brentq untuk akar presisi.
+    """
+    titik = []
+    xx = np.linspace(-9.9, 9.9, 2000)
+
+    if is_lingkaran:
+        # Lingkaran: cek garis vs lingkaran atas dan bawah
+        r = params[0]
+        for sign in [1, -1]:
+            def diff(xv):
+                inside = r**2 - xv**2
+                if inside < 0:
+                    return np.nan
+                return sign * np.sqrt(inside) - (params[1]*xv + params[2])
+
+            yy = np.array([diff(xv) for xv in xx])
+            valid = ~np.isnan(yy)
+            xv_valid = xx[valid]
+            yy_valid = yy[valid]
+            for i in range(len(xv_valid) - 1):
+                if yy_valid[i] * yy_valid[i+1] < 0:
+                    try:
+                        xr = brentq(diff, xv_valid[i], xv_valid[i+1], xtol=1e-6)
+                        yr = params[1]*xr + params[2]
+                        # Hindari duplikat
+                        if not any(abs(xr - tp[0]) < 0.05 for tp in titik):
+                            titik.append((round(xr,3), round(yr,3)))
+                    except:
+                        pass
+        return titik
+
+    # Non-lingkaran
+    try:
+        y1 = f1(xx, params)
+        y2 = f2(xx, params)
+        diff = y1 - y2
+        valid = ~(np.isnan(diff) | np.isinf(diff))
+        xv = xx[valid]
+        dv = diff[valid]
+
+        for i in range(len(xv) - 1):
+            if dv[i] * dv[i+1] < 0:
+                try:
+                    def eq(xval):
+                        return f1(np.array([xval]), params)[0] - f2(np.array([xval]), params)[0]
+                    xr = brentq(eq, xv[i], xv[i+1], xtol=1e-6)
+                    yr = float(f1(np.array([xr]), params)[0])
+                    if not any(abs(xr - tp[0]) < 0.05 for tp in titik):
+                        titik.append((round(xr,3), round(yr,3)))
+                except:
+                    pass
+    except:
+        pass
+    return titik
+
+# ================================================================
+# SETUP FIGURE
+# ================================================================
+fig = plt.figure(figsize=(12, 8))
+fig.patch.set_facecolor('#f8fafc')
+
+# Area grafik
+ax = fig.add_axes([0.30, 0.38, 0.67, 0.55])
+ax.set_facecolor('#ffffff')
+ax.set_xlim(-10, 10)
+ax.set_ylim(-15, 15)
+ax.grid(True, linestyle='--', alpha=0.5, color='#cbd5e1')
+ax.axhline(0, color='#1e293b', linewidth=1.2)
+ax.axvline(0, color='#1e293b', linewidth=1.2)
+ax.tick_params(labelsize=9)
+for spine in ax.spines.values():
+    spine.set_edgecolor('#94a3b8')
+
+title_txt = ax.set_title('', fontsize=12, fontweight='bold', color='#1e293b', pad=10)
+
+# Lines
+line1,     = ax.plot([], [], lw=2.5, color='#3b82f6', label='Persamaan 1', zorder=4)
+line1b,    = ax.plot([], [], lw=2.5, color='#3b82f6', linestyle='--', zorder=4)  # lingkaran bawah
+line2,     = ax.plot([], [], lw=2.5, color='#ef4444', label='Persamaan 2', zorder=4)
+scatter_tp = ax.scatter([], [], s=120, color='#f59e0b', edgecolors='#92400e',
+                        zorder=6, label='Titik Potong')
+annot_list = []  # label titik potong dinamis
+
+ax.legend(loc='upper right', fontsize=9, framealpha=0.9)
+
+# Info box titik potong
+info_box = ax.text(
+    -9.5, 13.5, '', fontsize=8.5, color='#1e293b',
+    fontfamily='monospace', va='top',
+    bbox=dict(boxstyle='round,pad=0.5', facecolor='#fefce8',
+              edgecolor='#fbbf24', alpha=0.95)
+)
+
+# ================================================================
+# RADIO BUTTONS — pilih jenis persamaan
+# ================================================================
+ax_radio = fig.add_axes([0.01, 0.50, 0.27, 0.42], facecolor='#f1f5f9')
+ax_radio.set_title('Jenis Persamaan', fontsize=9, fontweight='bold', pad=6)
+radio = RadioButtons(
+    ax_radio,
+    list(PASANGAN.keys()),
+    activecolor='#3b82f6'
+)
+for label in radio.labels:
+    label.set_fontsize(8)
+
+# ================================================================
+# SLIDERS — 4 parameter (a, b, c, d)
+# ================================================================
+axcolor = '#f1f5f9'
+slider_axes = [
+    fig.add_axes([0.30, 0.27, 0.60, 0.025], facecolor=axcolor),
+    fig.add_axes([0.30, 0.22, 0.60, 0.025], facecolor=axcolor),
+    fig.add_axes([0.30, 0.17, 0.60, 0.025], facecolor=axcolor),
+    fig.add_axes([0.30, 0.12, 0.60, 0.025], facecolor=axcolor),
+]
+sliders = [
+    Slider(slider_axes[0], 'param a', -10.0, 10.0, valinit=1.0, color='#3b82f6'),
+    Slider(slider_axes[1], 'param b', -10.0, 10.0, valinit=0.0, color='#3b82f6'),
+    Slider(slider_axes[2], 'param c', -10.0, 10.0, valinit=1.0, color='#ef4444'),
+    Slider(slider_axes[3], 'param d', -10.0, 10.0, valinit=0.0, color='#ef4444'),
+]
+
+# Label keterangan slider
+info_slider = fig.text(0.30, 0.07, '', fontsize=8.5, color='#475569',
+                       fontfamily='monospace')
+
+# ================================================================
+# FUNGSI UPDATE
+# ================================================================
+def update(val=None):
+    nama = radio.value_selected
+    cfg  = PASANGAN[nama]
+
+    params_nama = cfg['params']
+    params_init = cfg['init']
+    params_range = cfg['range']
+    is_lingkaran = cfg.get('lingkaran', False)
+
+    # Ambil nilai slider sesuai jumlah param
+    n = len(params_nama)
+    params_val = [sliders[i].val for i in range(n)]
+
+    # Update label slider
+    info_txt = '  '.join(
+        f'{params_nama[i]} = {params_val[i]:.2f}' for i in range(n)
+    )
+    info_slider.set_text('Parameter aktif: ' + info_txt)
+
+    # Update slider label nama
+    for i, s in enumerate(sliders):
+        if i < n:
+            s.label.set_text(f'param {params_nama[i]}')
+            s.ax.set_visible(True)
+        else:
+            s.ax.set_visible(False)
+
+    # Hitung y
+    f1 = cfg['f1']
+    f2 = cfg['f2']
+
+    y1 = f1(x, params_val)
+    y2 = f2(x, params_val)
+
+    line1.set_data(x, y1)
+    line1.set_label(cfg['label1'])
+    line2.set_data(x, y2)
+    line2.set_label(cfg['label2'])
+
+    # Lingkaran: gambar busur bawah juga
+    if is_lingkaran and 'f1b' in cfg:
+        y1b = cfg['f1b'](x, params_val)
+        line1b.set_data(x, y1b)
+        line1b.set_visible(True)
+    else:
+        line1b.set_visible(False)
+
+    # Titik potong
+    titik = cari_titik_potong(f1, f2, params_val, is_lingkaran)
+
+    # Hapus anotasi lama
+    for ann in annot_list:
+        ann.remove()
+    annot_list.clear()
+
+    if titik:
+        xs_tp = [t[0] for t in titik]
+        ys_tp = [t[1] for t in titik]
+        scatter_tp.set_offsets(np.column_stack([xs_tp, ys_tp]))
+
+        info_lines = [f'✔ {len(titik)} titik potong ditemukan:']
+        for i, (xp, yp) in enumerate(titik):
+            info_lines.append(f'  P{i+1} = ({xp:.3f}, {yp:.3f})')
+            ann = ax.annotate(
+                f'P{i+1}({xp:.2f}, {yp:.2f})',
+                xy=(xp, yp),
+                xytext=(xp + 0.4, yp + 0.8),
+                fontsize=7.5, color='#92400e', fontweight='bold',
+                arrowprops=dict(arrowstyle='->', color='#92400e', lw=1),
+                bbox=dict(boxstyle='round,pad=0.2', facecolor='#fef9c3',
+                          edgecolor='#fbbf24', alpha=0.9),
+                zorder=7
+            )
+            annot_list.append(ann)
+        info_box.set_text('\n'.join(info_lines))
+    else:
+        scatter_tp.set_offsets(np.empty((0, 2)))
+        info_box.set_text('✘ Tidak ada titik potong\n  di domain [-10, 10]')
+
+    ax.legend(loc='upper right', fontsize=9, framealpha=0.9)
+    title_txt.set_text(f'SPL Non-Linier: {nama.split(chr(10))[0]}')
+    fig.canvas.draw_idle()
+
+
+def on_radio(label):
+    # Reset slider ke init value pasangan yang dipilih
+    cfg = PASANGAN[label]
+    n   = len(cfg['params'])
+    for i in range(4):
+        if i < n:
+            lo, hi = cfg['range'][i]
+            sliders[i].valmin = lo
+            sliders[i].valmax = hi
+            sliders[i].ax.set_xlim(lo, hi)
+            sliders[i].set_val(cfg['init'][i])
+        else:
+            sliders[i].ax.set_visible(False)
+    update()
+
+# ── Daftarkan event ──────────────────────────────────────────────
+for s in sliders:
+    s.on_changed(update)
+radio.on_clicked(on_radio)
+
+# Inisialisasi tampilan awal
+on_radio(list(PASANGAN.keys())[0])
+
+# ── Catatan di bawah ─────────────────────────────────────────────
+fig.text(0.30, 0.02,
+         '📌 Titik potong dihitung dengan metode Brentq (scipy)  |  '
+         'Geser slider untuk ubah parameter  |  Klik radio untuk ganti fungsi',
+         fontsize=8, color='#64748b', ha='left')
+
+plt.suptitle('Eksplorasi Sistem Persamaan Non-Linier',
+             fontsize=14, fontweight='bold', color='#0f172a', y=0.98)
+
+plt.show()
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mRuntimeError[39m                              Traceback (most recent call last)
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python314\Lib\site-packages\matplotlib\backends\registry.py:407[39m, in [36mBackendRegistry.resolve_gui_or_backend[39m[34m(self, gui_or_backend)[39m
+[32m    406[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m407[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mresolve_backend[49m[43m([49m[43mgui_or_backend[49m[43m)[49m
+[32m    408[39m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m:  [38;5;66;03m# KeyError ?[39;00m
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python314\Lib\site-packages\matplotlib\backends\registry.py:369[39m, in [36mBackendRegistry.resolve_backend[39m[34m(self, backend)[39m
+[32m    368[39m [38;5;28;01mif[39;00m gui [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m--> [39m[32m369[39m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([33mf[39m[33m"[39m[33m'[39m[38;5;132;01m{[39;00mbackend[38;5;132;01m}[39;00m[33m'[39m[33m is not a recognised backend name[39m[33m"[39m)
+[32m    371[39m [38;5;28;01mreturn[39;00m backend, gui [38;5;28;01mif[39;00m gui != [33m"[39m[33mheadless[39m[33m"[39m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+
+[31mRuntimeError[39m: 'widget' is not a recognised backend name
+
+During handling of the above exception, another exception occurred:
+
+[31mRuntimeError[39m                              Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 14[39m
+[32m      1[39m [33;03m"""[39;00m
+[32m      2[39m [33;03mSPL Non-Linier Interaktif[39;00m
+[32m      3[39m [33;03m=========================[39;00m
+[32m   (...)[39m[32m     12[39m [33;03m    (pip install ipympl jika belum)[39;00m
+[32m     13[39m [33;03m"""[39;00m
+[32m---> [39m[32m14[39m [43mget_ipython[49m[43m([49m[43m)[49m[43m.[49m[43mrun_line_magic[49m[43m([49m[33;43m'[39;49m[33;43mmatplotlib[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43mwidget[39;49m[33;43m'[39;49m[43m)[49m
+[32m     15[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
+[32m     16[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[34;01m.[39;00m[34;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mplt[39;00m
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python314\Lib\site-packages\IPython\core\interactiveshell.py:2511[39m, in [36mInteractiveShell.run_line_magic[39m[34m(self, magic_name, line, _stack_depth)[39m
+[32m   2509[39m     kwargs[[33m'[39m[33mlocal_ns[39m[33m'[39m] = [38;5;28mself[39m.get_local_scope(stack_depth)
+[32m   2510[39m [38;5;28;01mwith[39;00m [38;5;28mself[39m.builtin_trap:
+[32m-> [39m[32m2511[39m     result = [43mfn[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   2513[39m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
+[32m   2514[39m [38;5;66;03m# when using magics with decorator @output_can_be_silenced[39;00m
+[32m   2515[39m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
+[32m   2516[39m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python314\Lib\site-packages\IPython\core\magics\pylab.py:103[39m, in [36mPylabMagics.matplotlib[39m[34m(self, line)[39m
+[32m     98[39m     [38;5;28mprint[39m(
+[32m     99[39m         [33m"[39m[33mAvailable matplotlib backends: [39m[38;5;132;01m%s[39;00m[33m"[39m
+[32m    100[39m         % _list_matplotlib_backends_and_gui_loops()
+[32m    101[39m     )
+[32m    102[39m [38;5;28;01melse[39;00m:
+[32m--> [39m[32m103[39m     gui, backend = [38;5;28;43mself[39;49m[43m.[49m[43mshell[49m[43m.[49m[43menable_matplotlib[49m[43m([49m[43margs[49m[43m.[49m[43mgui[49m[43m)[49m
+[32m    104[39m     [38;5;28mself[39m._show_matplotlib_backend(args.gui, backend)
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python314\Lib\site-packages\IPython\core\interactiveshell.py:3789[39m, in [36mInteractiveShell.enable_matplotlib[39m[34m(self, gui)[39m
+[32m   3786[39m     [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib_inline[39;00m[34;01m.[39;00m[34;01mbackend_inline[39;00m
+[32m   3788[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mIPython[39;00m[34;01m.[39;00m[34;01mcore[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m pylabtools [38;5;28;01mas[39;00m pt
+[32m-> [39m[32m3789[39m gui, backend = [43mpt[49m[43m.[49m[43mfind_gui_and_backend[49m[43m([49m[43mgui[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43mpylab_gui_select[49m[43m)[49m
+[32m   3791[39m [38;5;28;01mif[39;00m gui != [38;5;28;01mNone[39;00m:
+[32m   3792[39m     [38;5;66;03m# If we have our first gui selection, store it[39;00m
+[32m   3793[39m     [38;5;28;01mif[39;00m [38;5;28mself[39m.pylab_gui_select [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python314\Lib\site-packages\IPython\core\pylabtools.py:349[39m, in [36mfind_gui_and_backend[39m[34m(gui, gui_select)[39m
+[32m    347[39m [38;5;28;01melse[39;00m:
+[32m    348[39m     gui = _convert_gui_to_matplotlib(gui)
+[32m--> [39m[32m349[39m     backend, gui = [43mbackend_registry[49m[43m.[49m[43mresolve_gui_or_backend[49m[43m([49m[43mgui[49m[43m)[49m
+[32m    351[39m gui = _convert_gui_from_matplotlib(gui)
+[32m    352[39m [38;5;28;01mreturn[39;00m gui, backend
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python314\Lib\site-packages\matplotlib\backends\registry.py:409[39m, in [36mBackendRegistry.resolve_gui_or_backend[39m[34m(self, gui_or_backend)[39m
+[32m    407[39m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m.resolve_backend(gui_or_backend)
+[32m    408[39m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m:  [38;5;66;03m# KeyError ?[39;00m
+[32m--> [39m[32m409[39m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m(
+[32m    410[39m         [33mf[39m[33m"[39m[33m'[39m[38;5;132;01m{[39;00mgui_or_backend[38;5;132;01m}[39;00m[33m'[39m[33m is not a recognised GUI loop or backend name[39m[33m"[39m)
+
+[31mRuntimeError[39m: 'widget' is not a recognised GUI loop or backend name
+
