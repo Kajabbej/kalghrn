@@ -6,7 +6,7 @@ parts:
       - file: biodata/biodata
   - caption: "Materi"
     chapters:
-      - file: materi/sistem_persamaan_linear
+      - file: materi/spl
       - file: materi/matriks
       - file: materi/dekomposisi_qr
   - caption: "tugas"
