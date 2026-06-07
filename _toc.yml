@@ -1,10 +1,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: intro1
-- file: markdown
-- file: markdown-notebooks
-- file: notebooks
-- file: transformasi_pencerminan
-- file: Dekomposisi Matrix
 - file: biodata/biodata
+- file: tugas/transformasi_pencerminan
+- file: Dekomposisi Matrix
