@@ -1,6 +1,14 @@
 format: jb-book
 root: intro
-chapters:
-- file: biodata/biodata
-- file: tugas/transformasi_pencerminan
-- file: Dekomposisi Matrix
+- caption: "Tentang"
+  chapters:
+  - file: biodata/biodata
+- caption: "Materi"
+  chapters:
+  - file: SPL
+  - file: Determinan matriks
+  - file: dekomposisi QR
+- caption : "tugas"
+  chapters:
+  - file: tugas/tugas_eliminasi_gaussian
+  - file: tugas/transformasi_pencerminan
