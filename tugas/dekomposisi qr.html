@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Determinan Matriks &#8212; My sample book</title>
+    <title>Tugas: Dekomposisi QR &#8212; My sample book</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,11 +60,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'materi/Determinan matriks';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tugas/dekomposisi qr';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Dekomposisi QR" href="dekomposisi%20QR.html" />
-    <link rel="prev" title="Determinan dan Invers Matriks" href="determinan%20%26%20invers.html" />
+    <link rel="prev" title="Tugas: Singular Value Decomposition (SVD)" href="svd.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -173,24 +174,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../biodata/biodata.html">Biodata Saya &amp; Dosen Pengampu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Materi</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="spl.html">Sistem Persamaan Linier (SPL)</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../materi/spl.html">Sistem Persamaan Linier (SPL)</a></li>
 
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="eliminasi%20guassian.html">Metode Eliminasi Gauss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="determinan%20%26%20invers.html">Determinan dan Invers Matriks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../materi/eliminasi%20guassian.html">Metode Eliminasi Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../materi/determinan%20%26%20invers.html">Determinan dan Invers Matriks</a></li>
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Determinan Matriks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dekomposisi%20QR.html">Dekomposisi QR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../materi/dekomposisi%20QR.html">Dekomposisi QR</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">tugas</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tugas/guassian.html">tugas gauss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tugas/transformasi_pencerminan.html">Transformasi Sumbu Y menggunakan Translasi dan Pencerminan</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="guassian.html">tugas gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformasi_pencerminan.html">Transformasi Sumbu Y menggunakan Translasi dan Pencerminan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svd.html">Tugas: Singular Value Decomposition (SVD)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas: Dekomposisi QR</a></li>
 </ul>
 
     </div>
@@ -267,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmateri/Determinan matriks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftugas/dekomposisi qr.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +299,7 @@
       
       
       
-      <li><a href="../_sources/materi/Determinan matriks.md" target="_blank"
+      <li><a href="../_sources/tugas/dekomposisi qr.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +309,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -373,7 +375,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Determinan Matriks</h1>
+    <h1>Tugas: Dekomposisi QR</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,7 +385,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-determinan">Pengertian Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instruksi-tugas">Instruksi Tugas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal">Soal</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -395,13 +400,40 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="determinan-matriks">
-<h1>Determinan Matriks<a class="headerlink" href="#determinan-matriks" title="Link to this heading">#</a></h1>
-<p>Topik ini membahas tentang determinan matriks, sifat-sifatnya, dan metode perhitungannya.</p>
-<section id="pengertian-determinan">
-<h2>Pengertian Determinan<a class="headerlink" href="#pengertian-determinan" title="Link to this heading">#</a></h2>
-<p>Determinan adalah nilai numerik yang dapat dihitung dari elemen-elemen suatu matriks persegi.</p>
-<p><em>(Materi lengkap akan segera ditambahkan)</em></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-dekomposisi-qr">
+<h1>Tugas: Dekomposisi QR<a class="headerlink" href="#tugas-dekomposisi-qr" title="Link to this heading">#</a></h1>
+<section id="instruksi-tugas">
+<h2>Instruksi Tugas<a class="headerlink" href="#instruksi-tugas" title="Link to this heading">#</a></h2>
+<p>Selesaikan tugas di bawah ini menggunakan pustaka Python (NumPy/SciPy/SageMath) untuk menghitung Dekomposisi QR dari matriks yang diberikan.</p>
+<section id="soal">
+<h3>Soal<a class="headerlink" href="#soal" title="Link to this heading">#</a></h3>
+<p>Diberikan matriks <span class="math notranslate nohighlight">\(A\)</span> sebagai berikut:
+$<span class="math notranslate nohighlight">\(
+A = \begin{bmatrix} 1 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 1 \end{bmatrix}
+\)</span>$</p>
+<ol class="arabic simple">
+<li><p>Carilah matriks ortogonal <span class="math notranslate nohighlight">\(Q\)</span> dan matriks segitiga atas <span class="math notranslate nohighlight">\(R\)</span> menggunakan metode Gram-Schmidt atau fungsi pustaka komputasi sehingga <span class="math notranslate nohighlight">\(A = QR\)</span>.</p></li>
+<li><p>Verifikasi hasil dekomposisi Anda dengan memeriksa apakah <span class="math notranslate nohighlight">\(Q^T Q = I\)</span> (identitas) dan <span class="math notranslate nohighlight">\(QR = A\)</span>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tuliskan kode penyelesaian Anda di sini</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Definisikan matriks A</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># Hitung Dekomposisi QR</span>
+<span class="c1"># Q, R = np.linalg.qr(A)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -418,7 +450,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./materi"
+            path: "./tugas"
         },
         predefinedOutput: true
     }
@@ -436,22 +468,13 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="determinan%20%26%20invers.html"
+       href="svd.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Determinan dan Invers Matriks</p>
+        <p class="prev-next-title">Tugas: Singular Value Decomposition (SVD)</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="dekomposisi%20QR.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Dekomposisi QR</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -471,7 +494,10 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-determinan">Pengertian Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instruksi-tugas">Instruksi Tugas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal">Soal</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
