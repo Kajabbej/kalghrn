@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3.2 SPL Empat Variabel &#8212; My sample book</title>
+    <title>tugas gauss &#8212; My sample book</title>
   
   
   
@@ -182,12 +182,16 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="../materi/eliminasi%20guassian.html">Metode Eliminasi Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../materi/determinan%20%26%20invers.html">Determinan dan Invers Matriks</a></li>
+
+
 <li class="toctree-l1"><a class="reference internal" href="../materi/Determinan%20matriks.html">Determinan Matriks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../materi/dekomposisi%20QR.html">Dekomposisi QR</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">tugas</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3.2 SPL Empat Variabel</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">tugas gauss</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transformasi_pencerminan.html">Transformasi Sumbu Y menggunakan Translasi dan Pencerminan</a></li>
 </ul>
 
@@ -371,7 +375,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>3.2 SPL Empat Variabel</h1>
+    <h1>tugas gauss</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,6 +397,7 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-spl-4-variabel">Solusi SPL 4 Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sagematcshell-i-o">sagematcshell i/o</a></li>
 </ul>
             </nav>
         </div>
@@ -404,8 +409,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="spl-empat-variabel">
-<h1>3.2 SPL Empat Variabel<a class="headerlink" href="#spl-empat-variabel" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-gauss">
+<h1>tugas gauss<a class="headerlink" href="#tugas-gauss" title="Link to this heading">#</a></h1>
 <p>Diketahui:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -621,6 +626,31 @@ w=4
 \right)
 \]</div>
 </section>
+<section id="sagematcshell-i-o">
+<h2>sagematcshell i/o<a class="headerlink" href="#sagematcshell-i-o" title="Link to this heading">#</a></h2>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>
+sagecell.makeSagecell({
+    inputLocation: '.sage',
+    evalButtonText: 'Jalankan Eliminasi Gauss'
+});
+</script>
+<div class="sage">
+<p>A = matrix(QQ, [
+[1, 1, 1, 6],
+[2, -1, 1, 3],
+[1, 2, -1, 3]
+])</p>
+<p>html(”<h4>Langkah 1: Matriks Augmentasi</h4>”)
+show(A)</p>
+<p>A.add_multiple_of_row(1, 0, -2)
+A.add_multiple_of_row(2, 0, -1)</p>
+<p>html(”<h4>Langkah 2: Eliminasi Kolom Pertama</h4>”)
+show(A)</p>
+<p>A.add_multiple_of_row(2, 1, 1/3)</p>
+<p>html(”<h4>Langkah 3: Eliminasi Kolom Kedua</h4>”)
+show(A)</p>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -701,6 +731,7 @@ w=4
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-spl-4-variabel">Solusi SPL 4 Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sagematcshell-i-o">sagematcshell i/o</a></li>
 </ul>
   </nav></div>
 
