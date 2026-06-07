@@ -11,7 +11,7 @@
         <div class="bio-card-header">
             <div class="avatar-container">
                 <div class="avatar-ring mhs-ring"></div>
-                <img class="avatar-img" src="../_static/Logo.jpg" alt="Moh. Ghufron">
+                <img class="avatar-img" src="../images/myprofile.jpg" alt="Moh. Ghufron">
             </div>
             <h2 class="bio-name mhs-name">Moh. Ghufron</h2>
             <p class="bio-tagline">Student & Tech Enthusiast</p>
