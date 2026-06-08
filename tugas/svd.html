@@ -387,7 +387,6 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-1-teori-dan-perhitungan-matriks">Bagian 1: Teori dan Perhitungan Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-2-aplikasi-svd-pada-kompresi-gambar-berwarna">Bagian 2: Aplikasi SVD pada Kompresi Gambar Berwarna</a></li>
 </ul>
             </nav>
         </div>
@@ -443,62 +442,6 @@ Matriks V^T:
  [-6.66666667e-01  6.66666667e-01  3.33333333e-01]]
 </pre></div>
 </div>
-</div>
-</div>
-</section>
-<section id="bagian-2-aplikasi-svd-pada-kompresi-gambar-berwarna">
-<h2>Bagian 2: Aplikasi SVD pada Kompresi Gambar Berwarna<a class="headerlink" href="#bagian-2-aplikasi-svd-pada-kompresi-gambar-berwarna" title="Link to this heading">#</a></h2>
-<p>Di bawah ini adalah kode untuk mengompresi gambar profil menggunakan metode SVD. Perhatikan penggunaan path berkas gambar yang tepat dan pemisahan channel warna (R, G, B).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="c1"># Membaca gambar (OpenCV membaca dalam format BGR)</span>
-<span class="n">color_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../images/foto_kucing.png&#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">color_img</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Gambar &#39;../images/foto_kucing.png&#39; tidak ditemukan. Pastikan file ada di folder images/.&quot;</span><span class="p">)</span>
-
-<span class="c1"># Memisahkan channel warna B, G, R</span>
-<span class="n">B</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">color_img</span><span class="p">)</span>
-
-<span class="c1"># Fungsi untuk melakukan kompresi pada masing-masing channel</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">kompresi_rgb</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="n">hasil</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">channel</span> <span class="ow">in</span> <span class="p">[</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">]:</span>
-        <span class="c1"># Hitung SVD pada satu channel warna</span>
-        <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        
-        <span class="c1"># Rekonstruksi matriks menggunakan n nilai singular pertama</span>
-        <span class="n">compressed</span> <span class="o">=</span> <span class="n">U</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n</span><span class="p">]</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">S</span><span class="p">[:</span><span class="n">n</span><span class="p">])</span> <span class="o">@</span> <span class="n">Vt</span><span class="p">[:</span><span class="n">n</span><span class="p">,</span> <span class="p">:]</span>
-        
-        <span class="c1"># Memastikan nilai piksel berada dalam batas [0, 255]</span>
-        <span class="n">hasil</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">compressed</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
-        
-    <span class="c1"># Gabungkan kembali channel warna terkompresi (menjadi format RGB untuk matplotlib)</span>
-    <span class="k">return</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-
-<span class="c1"># Tampilkan gambar asli</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">color_img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gambar Asli&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-
-<span class="c1"># Tampilkan gambar terkompresi dengan n=50</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kompresi_rgb</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">50</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gambar Terkompresi (n=50)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/e2cec907a7c3581959f53ca3a478678eb4ed40350e9579839b7471f50e7b8863.png" src="../_images/e2cec907a7c3581959f53ca3a478678eb4ed40350e9579839b7471f50e7b8863.png" />
 </div>
 </div>
 </section>
@@ -571,7 +514,6 @@ Matriks V^T:
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-1-teori-dan-perhitungan-matriks">Bagian 1: Teori dan Perhitungan Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-2-aplikasi-svd-pada-kompresi-gambar-berwarna">Bagian 2: Aplikasi SVD pada Kompresi Gambar Berwarna</a></li>
 </ul>
   </nav></div>
 
