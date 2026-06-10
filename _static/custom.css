@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
-/* Global Font Settings */
+/* ==========================================
+   GLOBAL & LIGHT MODE STYLES (DEFAULT)
+   ========================================== */
 body, html, .bd-content, .bd-article {
   font-family: 'Inter', sans-serif !important;
   color: #334155 !important;
@@ -31,7 +33,7 @@ h2, .bd-content h2 {
   border-bottom: none !important;
 }
 
-/* Sidebar Styling - Glassmorphism & Custom Accent */
+/* Sidebar Styling - Light Mode */
 .bd-sidebar {
   background: rgba(255, 255, 255, 0.8) !important;
   backdrop-filter: blur(16px) !important;
@@ -105,7 +107,7 @@ h2, .bd-content h2 {
   color: inherit !important;
 }
 
-/* Premium Math block design */
+/* Math block design */
 .math, .math.div {
   background-color: #f8fafc !important;
   border-radius: 10px !important;
@@ -113,6 +115,7 @@ h2, .bd-content h2 {
   padding: 16px 20px !important;
   margin: 20px 0 !important;
   box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.01) !important;
+  color: #0f172a !important;
 }
 
 /* Custom Table Layouts */
@@ -175,4 +178,112 @@ iframe {
 
 iframe:hover {
   transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   DARK MODE COMPATIBILITY STYLES
+   ========================================== */
+html[data-theme="dark"] body, 
+html[data-theme="dark"] html, 
+html[data-theme="dark"] .bd-content, 
+html[data-theme="dark"] .bd-article {
+  color: #cbd5e1 !important;
+}
+
+/* Dark Mode Headings (Fixes the invisible text issue) */
+html[data-theme="dark"] h1, 
+html[data-theme="dark"] h2, 
+html[data-theme="dark"] h3, 
+html[data-theme="dark"] h4, 
+html[data-theme="dark"] h5, 
+html[data-theme="dark"] h6, 
+html[data-theme="dark"] .bd-content h1, 
+html[data-theme="dark"] .bd-content h2, 
+html[data-theme="dark"] .bd-content h3, 
+html[data-theme="dark"] .bd-content h4,
+html[data-theme="dark"] .bd-content h1 a, 
+html[data-theme="dark"] .bd-content h2 a, 
+html[data-theme="dark"] .bd-content h3 a {
+  color: #f8fafc !important;
+}
+
+/* Dark Mode Sidebar */
+html[data-theme="dark"] .bd-sidebar {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border-right: 1px solid rgba(51, 65, 85, 0.8) !important;
+}
+
+html[data-theme="dark"] .bd-sidenav a {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .bd-sidenav a:hover {
+  color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.08) !important;
+}
+
+html[data-theme="dark"] .bd-sidenav .current > a,
+html[data-theme="dark"] .bd-sidenav .active > a,
+html[data-theme="dark"] .bd-sidenav a.current,
+html[data-theme="dark"] .bd-sidenav a.active {
+  color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.12) !important;
+  border-left-color: #38bdf8 !important;
+}
+
+/* Dark Mode Admonitions */
+html[data-theme="dark"] .admonition {
+  background: rgba(30, 41, 59, 0.8) !important;
+  border-color: rgba(71, 85, 105, 0.5) !important;
+}
+
+html[data-theme="dark"] .admonition.note, 
+html[data-theme="dark"] .admonition.todo {
+  background-color: rgba(12, 74, 110, 0.4) !important;
+}
+
+html[data-theme="dark"] .admonition.warning {
+  background-color: rgba(120, 53, 4, 0.4) !important;
+}
+
+html[data-theme="dark"] .admonition.tip {
+  background-color: rgba(6, 78, 59, 0.4) !important;
+}
+
+/* Dark Mode Math Blocks */
+html[data-theme="dark"] .math, 
+html[data-theme="dark"] .math.div {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Dark Mode Code Blocks */
+html[data-theme="dark"] div.highlight {
+  border-color: #334155 !important;
+}
+
+/* Dark Mode Tables */
+html[data-theme="dark"] table.table, 
+html[data-theme="dark"] table.dataframe {
+  border-color: #334155 !important;
+}
+
+html[data-theme="dark"] table.table th, 
+html[data-theme="dark"] table.dataframe th {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border-bottom-color: #334155 !important;
+}
+
+html[data-theme="dark"] table.table td, 
+html[data-theme="dark"] table.dataframe td {
+  color: #cbd5e1 !important;
+  border-bottom-color: #1e293b !important;
+}
+
+/* Dark Mode Embeds */
+html[data-theme="dark"] iframe {
+  border-color: rgba(51, 65, 85, 0.8) !important;
 }
