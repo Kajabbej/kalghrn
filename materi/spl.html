@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5f88933c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ad5f3a07" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -167,7 +167,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    1.1 Sistem Persamaan Linear
+                    Aljabar Linear Komputasi Modern
                 </a>
             </li>
         </ul>
@@ -184,6 +184,7 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="eliminasi%20guassian.html">Eliminasi Gaussian</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="determinan%20%26%20invers.html">Determinan dan Invers Matriks</a></li>
 
 
@@ -474,6 +475,12 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-simulasi-komputasi">🎨 Visualisasi &amp; Simulasi Komputasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-matriks-geogebra">1. Visualisasi Matriks GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-solusi-geometri-titik-potong">2. Visualisasi Solusi Geometri (Titik Potong)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komputasi-aljabar-dengan-sympy-python">3. Komputasi Aljabar dengan SymPy (Python)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1036,6 +1043,42 @@ x+2y-z=4
 <h2>Kesimpulan<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
 <p>Matriks augmentasi adalah matriks yang diperoleh dari penggabungan matriks koefisien dan matriks konstanta suatu Sistem Persamaan Linier. Matriks ini dituliskan dalam bentuk <span class="math notranslate nohighlight">\([A|B]\)</span> dan digunakan untuk mempermudah penyelesaian SPL melalui operasi baris elementer, khususnya pada metode Eliminasi Gauss dan Eliminasi Gauss-Jordan.</p>
 </section>
+<hr class="docutils" />
+<section id="visualisasi-simulasi-komputasi">
+<h2>🎨 Visualisasi &amp; Simulasi Komputasi<a class="headerlink" href="#visualisasi-simulasi-komputasi" title="Link to this heading">#</a></h2>
+<section id="visualisasi-matriks-geogebra">
+<h3>1. Visualisasi Matriks GeoGebra<a class="headerlink" href="#visualisasi-matriks-geogebra" title="Link to this heading">#</a></h3>
+<p>Berikut adalah lembar kerja GeoGebra interaktif untuk memvisualisasikan bagaimana koefisien persamaan tersusun menjadi baris dan kolom dalam matriks:</p>
+<iframe src="https://www.geogebra.org/calculator/gz9xyxsf?embed" width="100%" height="500" allowfullscreen style="border: 1px solid #e2e8f0; border-radius: 12px;" frameborder="0"></iframe>
+</section>
+<section id="visualisasi-solusi-geometri-titik-potong">
+<h3>2. Visualisasi Solusi Geometri (Titik Potong)<a class="headerlink" href="#visualisasi-solusi-geometri-titik-potong" title="Link to this heading">#</a></h3>
+<p>Garis atau bidang persamaan linear saling berpotongan pada satu titik yang merepresentasikan solusi tunggal sistem tersebut:</p>
+<iframe src="https://www.geogebra.org/calculator/gjt3qt27?embed" width="100%" height="500" allowfullscreen style="border: 1px solid #e2e8f0; border-radius: 12px;" frameborder="0"></iframe>
+</section>
+<section id="komputasi-aljabar-dengan-sympy-python">
+<h3>3. Komputasi Aljabar dengan SymPy (Python)<a class="headerlink" href="#komputasi-aljabar-dengan-sympy-python" title="Link to this heading">#</a></h3>
+<p>Gunakan kode Python berikut menggunakan pustaka <code class="docutils literal notranslate"><span class="pre">sympy</span></code> untuk menghitung solusi eksak dari sistem persamaan linear di atas secara simbolis:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Jalankan kode ini di komputer lokal Anda (butuh instalasi: pip install sympy)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">solve</span>
+
+<span class="c1"># 1. Definisikan variabel simbolis</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+
+<span class="c1"># 2. Rumuskan persamaan linear</span>
+<span class="c1"># Eq(ruas_kiri, ruas_kanan) menyatakan persamaan &quot;ruas_kiri = ruas_kanan&quot;</span>
+<span class="n">eq1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">eq2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 3. Selesaikan sistem persamaan</span>
+<span class="n">solusi</span> <span class="o">=</span> <span class="n">solve</span><span class="p">((</span><span class="n">eq1</span><span class="p">,</span> <span class="n">eq2</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+<span class="c1"># 4. Tampilkan solusi</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solusi SPL:&quot;</span><span class="p">,</span> <span class="n">solusi</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1182,6 +1225,12 @@ x+2y-z=4
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-simulasi-komputasi">🎨 Visualisasi &amp; Simulasi Komputasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-matriks-geogebra">1. Visualisasi Matriks GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-solusi-geometri-titik-potong">2. Visualisasi Solusi Geometri (Titik Potong)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komputasi-aljabar-dengan-sympy-python">3. Komputasi Aljabar dengan SymPy (Python)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

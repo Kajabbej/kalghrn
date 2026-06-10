@@ -494,3 +494,336 @@ html[data-theme="dark"] div.highlight {
 html[data-theme="dark"] iframe {
   border-color: rgba(51, 65, 85, 0.6) !important;
 }
+
+
+/* ==========================================
+   LANDING PAGE DASHBOARD SYSTEM
+   ========================================== */
+.landing-container {
+  padding: 16px 0 !important;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+}
+
+/* Hero Jumbotron style */
+.landing-hero {
+  position: relative !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  padding: 48px 40px !important;
+  margin-bottom: 40px !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04) !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+html[data-theme="dark"] .landing-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #090d16 100%) !important;
+  border: 1px solid rgba(51, 65, 85, 0.5) !important;
+  box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.4) !important;
+}
+
+.hero-glow {
+  position: absolute !important;
+  top: -50px !important;
+  right: -50px !important;
+  width: 300px !important;
+  height: 300px !important;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.12) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+html[data-theme="dark"] .hero-glow {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%) !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 680px !important;
+}
+
+.hero-badge {
+  display: inline-block !important;
+  background: rgba(13, 148, 136, 0.08) !important;
+  color: #0d9488 !important;
+  border: 1px solid rgba(13, 148, 136, 0.15) !important;
+  padding: 4px 12px !important;
+  border-radius: 99px !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 20px !important;
+  text-transform: uppercase !important;
+}
+
+html[data-theme="dark"] .hero-badge {
+  background: rgba(56, 189, 248, 0.1) !important;
+  color: #38bdf8 !important;
+  border-color: rgba(56, 189, 248, 0.2) !important;
+}
+
+.hero-title {
+  font-size: 2.75rem !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 16px !important;
+}
+
+html[data-theme="dark"] .hero-title {
+  color: #ffffff !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0d9488 0%, #0ea5e9 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+html[data-theme="dark"] .gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #2dd4bf 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+.hero-desc {
+  font-size: 1.05rem !important;
+  line-height: 1.625 !important;
+  color: #475569 !important;
+  margin-bottom: 28px !important;
+}
+
+html[data-theme="dark"] .hero-desc {
+  color: #94a3b8 !important;
+}
+
+.hero-actions {
+  display: flex !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+}
+
+.hero-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 12px 24px !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.hero-btn.primary {
+  background: #0d9488 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25) !important;
+}
+
+.hero-btn.primary:hover {
+  background: #0f766e !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35) !important;
+}
+
+html[data-theme="dark"] .hero-btn.primary {
+  background: #0ea5e9 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.25) !important;
+}
+
+html[data-theme="dark"] .hero-btn.primary:hover {
+  background: #0284c7 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35) !important;
+}
+
+.hero-btn.secondary {
+  background: #ffffff !important;
+  color: #475569 !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+}
+
+.hero-btn.secondary:hover {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  transform: translateY(-2px) !important;
+}
+
+html[data-theme="dark"] .hero-btn.secondary {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+  border: 1px solid rgba(51, 65, 85, 0.8) !important;
+}
+
+html[data-theme="dark"] .hero-btn.secondary:hover {
+  background: #334155 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin-bottom: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+html[data-theme="dark"] .section-title {
+  color: #f8fafc !important;
+}
+
+/* Dashboard Grid */
+.landing-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 24px !important;
+  margin-bottom: 40px !important;
+}
+
+/* Card Design */
+.landing-card {
+  position: relative !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 16px !important;
+  padding: 30px !important;
+  text-decoration: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.02) !important;
+  overflow: hidden !important;
+}
+
+html[data-theme="dark"] .landing-card {
+  background: rgba(15, 23, 42, 0.4) !important;
+  border: 1px solid rgba(51, 65, 85, 0.4) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.15) !important;
+}
+
+.landing-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.08) !important;
+  border-color: rgba(13, 148, 136, 0.3) !important;
+}
+
+html[data-theme="dark"] .landing-card:hover {
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.35) !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+}
+
+/* Custom glow per card */
+.card-glow {
+  position: absolute !important;
+  top: -60px !important;
+  right: -60px !important;
+  width: 140px !important;
+  height: 140px !important;
+  border-radius: 50% !important;
+  filter: blur(20px) !important;
+  opacity: 0.15 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.card-materi .card-glow { background: #0d9488 !important; }
+.card-playground .card-glow { background: #0ea5e9 !important; }
+.card-tugas .card-glow { background: #f59e0b !important; }
+
+/* Icon Badge */
+.card-icon-wrapper {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 20px !important;
+}
+
+.card-materi .card-icon-wrapper {
+  background: rgba(13, 148, 136, 0.08) !important;
+  color: #0d9488 !important;
+}
+.card-playground .card-icon-wrapper {
+  background: rgba(14, 165, 233, 0.08) !important;
+  color: #0ea5e9 !important;
+}
+.card-tugas .card-icon-wrapper {
+  background: rgba(245, 158, 11, 0.08) !important;
+  color: #f59e0b !important;
+}
+
+html[data-theme="dark"] .card-materi .card-icon-wrapper {
+  background: rgba(45, 212, 191, 0.12) !important;
+  color: #2dd4bf !important;
+}
+html[data-theme="dark"] .card-playground .card-icon-wrapper {
+  background: rgba(56, 189, 248, 0.12) !important;
+  color: #38bdf8 !important;
+}
+html[data-theme="dark"] .card-tugas .card-icon-wrapper {
+  background: rgba(251, 191, 36, 0.12) !important;
+  color: #fbbf24 !important;
+}
+
+.card-icon {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin-bottom: 10px !important;
+  margin-top: 0 !important;
+}
+
+html[data-theme="dark"] .card-title {
+  color: #ffffff !important;
+}
+
+.card-desc {
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  color: #64748b !important;
+  margin-bottom: 24px !important;
+  flex-grow: 1 !important;
+}
+
+html[data-theme="dark"] .card-desc {
+  color: #94a3b8 !important;
+}
+
+.card-action {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: #0d9488 !important;
+  transition: transform 0.2s ease !important;
+}
+
+html[data-theme="dark"] .card-action {
+  color: #38bdf8 !important;
+}
+
+.landing-card:hover .card-action {
+  transform: translateX(4px) !important;
+}
+

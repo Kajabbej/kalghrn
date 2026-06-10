@@ -532,3 +532,39 @@ $$
 ## Kesimpulan
 
 Matriks augmentasi adalah matriks yang diperoleh dari penggabungan matriks koefisien dan matriks konstanta suatu Sistem Persamaan Linier. Matriks ini dituliskan dalam bentuk $[A|B]$ dan digunakan untuk mempermudah penyelesaian SPL melalui operasi baris elementer, khususnya pada metode Eliminasi Gauss dan Eliminasi Gauss-Jordan.
+
+---
+
+## 🎨 Visualisasi & Simulasi Komputasi
+
+### 1. Visualisasi Matriks GeoGebra
+Berikut adalah lembar kerja GeoGebra interaktif untuk memvisualisasikan bagaimana koefisien persamaan tersusun menjadi baris dan kolom dalam matriks:
+
+<iframe src="https://www.geogebra.org/calculator/gz9xyxsf?embed" width="100%" height="500" allowfullscreen style="border: 1px solid #e2e8f0; border-radius: 12px;" frameborder="0"></iframe>
+
+### 2. Visualisasi Solusi Geometri (Titik Potong)
+Garis atau bidang persamaan linear saling berpotongan pada satu titik yang merepresentasikan solusi tunggal sistem tersebut:
+
+<iframe src="https://www.geogebra.org/calculator/gjt3qt27?embed" width="100%" height="500" allowfullscreen style="border: 1px solid #e2e8f0; border-radius: 12px;" frameborder="0"></iframe>
+
+### 3. Komputasi Aljabar dengan SymPy (Python)
+Gunakan kode Python berikut menggunakan pustaka `sympy` untuk menghitung solusi eksak dari sistem persamaan linear di atas secara simbolis:
+
+```python
+# Jalankan kode ini di komputer lokal Anda (butuh instalasi: pip install sympy)
+from sympy import symbols, Eq, solve
+
+# 1. Definisikan variabel simbolis
+x, y = symbols('x y')
+
+# 2. Rumuskan persamaan linear
+# Eq(ruas_kiri, ruas_kanan) menyatakan persamaan "ruas_kiri = ruas_kanan"
+eq1 = Eq(2*x + 3*y, 6)
+eq2 = Eq(x - y, 1)
+
+# 3. Selesaikan sistem persamaan
+solusi = solve((eq1, eq2), (x, y))
+
+# 4. Tampilkan solusi
+print("Solusi SPL:", solusi)
+```
