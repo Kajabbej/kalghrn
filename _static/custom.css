@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+/* Global Font Settings */
+body, html, .bd-content, .bd-article {
+  font-family: 'Inter', sans-serif !important;
+  color: #334155 !important;
+  line-height: 1.625 !important;
+}
+
+/* Headings Design */
+h1, h2, h3, h4, h5, h6, 
+.bd-content h1, .bd-content h2, .bd-content h3, .bd-content h4,
+.bd-content h1 a, .bd-content h2 a, .bd-content h3 a {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.02em !important;
+}
+
+h1, .bd-content h1 {
+  font-size: 2.25rem !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  border-bottom: none !important;
+}
+
+h2, .bd-content h2 {
+  font-size: 1.5rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  border-bottom: none !important;
+}
+
+/* Sidebar Styling - Glassmorphism & Custom Accent */
+.bd-sidebar {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-right: 1px solid rgba(226, 232, 240, 0.8) !important;
+}
+
+.bd-sidenav a {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: #475569 !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border-radius: 8px !important;
+  margin: 4px 12px !important;
+  padding: 8px 12px !important;
+}
+
+.bd-sidenav a:hover {
+  color: #0d9488 !important;
+  background-color: rgba(13, 148, 136, 0.06) !important;
+  transform: translateX(4px);
+}
+
+/* Sidebar Active & Current State */
+.bd-sidenav .current > a,
+.bd-sidenav .active > a,
+.bd-sidenav a.current,
+.bd-sidenav a.active {
+  color: #0d9488 !important;
+  background-color: rgba(13, 148, 136, 0.1) !important;
+  font-weight: 600 !important;
+  border-left: 3px solid #0d9488 !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+/* Custom Styled Admonitions (Note, Warning, Tip) */
+.admonition {
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  border-left: 4px solid #0d9488 !important;
+  background: rgba(248, 250, 252, 0.8) !important;
+  backdrop-filter: blur(8px) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.04) !important;
+  padding: 20px !important;
+  margin: 24px 0 !important;
+}
+
+.admonition.note, .admonition.todo {
+  border-left-color: #0ea5e9 !important;
+  background-color: rgba(240, 249, 255, 0.6) !important;
+}
+
+.admonition.warning {
+  border-left-color: #f59e0b !important;
+  background-color: rgba(254, 243, 199, 0.6) !important;
+}
+
+.admonition.tip {
+  border-left-color: #10b981 !important;
+  background-color: rgba(240, 253, 250, 0.6) !important;
+}
+
+.admonition-title {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 8px !important;
+  color: inherit !important;
+}
+
+/* Premium Math block design */
+.math, .math.div {
+  background-color: #f8fafc !important;
+  border-radius: 10px !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 16px 20px !important;
+  margin: 20px 0 !important;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.01) !important;
+}
+
+/* Custom Table Layouts */
+table.table, table.dataframe {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03) !important;
+  margin: 28px 0 !important;
+}
+
+table.table th, table.dataframe th {
+  background-color: #f8fafc !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  padding: 14px 18px !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+}
+
+table.table td, table.dataframe td {
+  padding: 14px 18px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  color: #475569 !important;
+}
+
+table.table tr:last-child td, table.dataframe tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Highlight / Code Blocks */
+div.highlight {
+  border-radius: 12px !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01) !important;
+  overflow: hidden !important;
+  margin: 20px 0 !important;
+}
+
+/* Custom Styles for Buttons & Top Navigation */
+.btn {
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn:hover {
+  transform: translateY(-1px) !important;
+}
+
+/* GeoGebra / Embed Container */
+iframe {
+  border-radius: 14px !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.08) !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+iframe:hover {
+  transform: translateY(-3px);
+}
