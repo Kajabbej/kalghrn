@@ -535,7 +535,7 @@ Matriks augmentasi adalah matriks yang diperoleh dari penggabungan matriks koefi
 
 ---
 
-## 🎨 Visualisasi & Simulasi Komputasi
+##  Visualisasi & Simulasi Komputasi
 
 ### 1. Visualisasi Matriks GeoGebra
 Berikut adalah lembar kerja GeoGebra interaktif untuk memvisualisasikan bagaimana koefisien persamaan tersusun menjadi baris dan kolom dalam matriks:

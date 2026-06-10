@@ -1,4 +1,4 @@
-# Aljabar Linear Komputasi Modern
+# Landing Page
 
 ```{raw} html
 <div class="landing-container">
