@@ -2,8 +2,6 @@
 
 Pembahasan ini mencakup definisi formal determinan dan langkah penyelesaian Sistem Persamaan Linear (SPL) menggunakan matriks invers.
 
----
-
 ## 1. Definisi Determinan Matriks
 
 Misalkan terdapat matriks persegi:
@@ -19,8 +17,6 @@ $$ \det(A) = \sum_{j=1}^{n} (-1)^{1+j} \, a_{1j} \, \det(A_{1j}) $$
 
 Keterangan:
 - $A_{1j}$ adalah submatriks yang diperoleh dengan menghapus baris ke-1 dan kolom ke-$j$ dari matriks $A$.
-
----
 
 ## 2. Penyelesaian SPL 4x4 dengan Matriks Invers
 
