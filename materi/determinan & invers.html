@@ -186,8 +186,6 @@
 <li class="toctree-l1"><a class="reference internal" href="eliminasi%20guassian.html">Eliminasi Gaussian</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Determinan dan Invers Matriks</a></li>
-
-
 <li class="toctree-l1"><a class="reference internal" href="dekomposisi%20QR.html">Dekomposisi QR</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Playground</span></p>
@@ -396,46 +394,19 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Determinan dan Invers Matriks</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-determinan">1. Menghitung Determinan</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-1-times-1">Matriks <span class="math notranslate nohighlight">\(1 \times 1\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-n-times-n-n-geq-2">Matriks <span class="math notranslate nohighlight">\(n \times n\)</span> (<span class="math notranslate nohighlight">\(n \geq 2\)</span>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyelesaikan-spl-4-times-4-dengan-invers">2. Menyelesaikan SPL <span class="math notranslate nohighlight">\(4 \times 4\)</span> dengan Invers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyelesaikan-spl-4-times-4-dengan-invers">2. Menyelesaikan SPL <span class="math notranslate nohighlight">\(4 \times 4\)</span> dengan Invers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-buat-matriks-gabungan-a-i">Langkah 1: Buat Matriks Gabungan <span class="math notranslate nohighlight">\([A|I]\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hasil-akhir-invers-a-1">Langkah 2: Hasil Akhir Invers (<span class="math notranslate nohighlight">\(A^{-1}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-hitung-nilai-variabel-x-a-1-b">Langkah 3: Hitung Nilai Variabel (<span class="math notranslate nohighlight">\(X = A^{-1}B\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-akhir">Solusi Akhir</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diberikan-spl-dalam-bentuk-matriks-begin-bmatrix-1-1-1-1-2-1-1-1-1-2-1-1-3-1-2-1-end-bmatrix-begin-bmatrix-x-1-x-2-x-3-x-4-end-bmatrix">Diberikan SPL dalam bentuk matriks:
-$$
-\begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; 1 \
-2 &amp; -1 &amp; 1 &amp; -1 \
-1 &amp; 2 &amp; -1 &amp; 1 \
-3 &amp; -1 &amp; 2 &amp; 1
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \
-x_2 \
-x_3 \
-x_4
-\end{bmatrix}</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-buat-matriks-gabungan-a-i">Langkah 1: Buat Matriks Gabungan <span class="math notranslate nohighlight">\([A|I]\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hasil-akhir-invers-a-1">Langkah 2: Hasil Akhir Invers (<span class="math notranslate nohighlight">\(A^{-1}\)</span>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-hitung-nilai-variabel-x-a-1-b">Langkah 3: Hitung Nilai Variabel (<span class="math notranslate nohighlight">\(X = A^{-1}B\)</span>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-akhir">Solusi Akhir</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-variabel-yang-memenuhi-sistem-adalah-x-begin-bmatrix-x-1-x-2-x-3-x-4-end-bmatrix">Nilai variabel yang memenuhi sistem adalah:
-$$
-X =
-\begin{bmatrix}
-x_1 \
-x_2 \
-x_3 \
-x_4
-\end{bmatrix}</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -469,35 +440,31 @@ $<span class="math notranslate nohighlight">\( \det(A) = \sum_{j=1}^{n} (-1)^{1+
 <hr class="docutils" />
 <section id="menyelesaikan-spl-4-times-4-dengan-invers">
 <h2>2. Menyelesaikan SPL <span class="math notranslate nohighlight">\(4 \times 4\)</span> dengan Invers<a class="headerlink" href="#menyelesaikan-spl-4-times-4-dengan-invers" title="Link to this heading">#</a></h2>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="diberikan-spl-dalam-bentuk-matriks-begin-bmatrix-1-1-1-1-2-1-1-1-1-2-1-1-3-1-2-1-end-bmatrix-begin-bmatrix-x-1-x-2-x-3-x-4-end-bmatrix">
-<h1>Diberikan SPL dalam bentuk matriks:
-$$
-\begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; 1 \
-2 &amp; -1 &amp; 1 &amp; -1 \
-1 &amp; 2 &amp; -1 &amp; 1 \
-3 &amp; -1 &amp; 2 &amp; 1
+<p>Diberikan SPL dalam bentuk matriks:
+$<span class="math notranslate nohighlight">\(
+\begin{bmatrix} 
+1 &amp; 1 &amp; 1 &amp; 1 \\ 
+2 &amp; -1 &amp; 1 &amp; -1 \\ 
+1 &amp; 2 &amp; -1 &amp; 1 \\ 
+3 &amp; -1 &amp; 2 &amp; 1 
+\end{bmatrix} 
+\begin{bmatrix} 
+x_1 \\ 
+x_2 \\ 
+x_3 \\ 
+x_4 
+\end{bmatrix} = \begin{bmatrix} 
+10 \\ 
+-1 \\ 
+6 \\ 
+11 
 \end{bmatrix}
-\begin{bmatrix}
-x_1 \
-x_2 \
-x_3 \
-x_4
-\end{bmatrix}<a class="headerlink" href="#diberikan-spl-dalam-bentuk-matriks-begin-bmatrix-1-1-1-1-2-1-1-1-1-2-1-1-3-1-2-1-end-bmatrix-begin-bmatrix-x-1-x-2-x-3-x-4-end-bmatrix" title="Link to this heading">#</a></h1>
-<p>\begin{bmatrix}
-10 \
--1 \
-6 \
-11
-\end{bmatrix}
-$$</p>
+\)</span>$</p>
 <p>Solusi SPL ini dicari menggunakan rumus:
 $<span class="math notranslate nohighlight">\( AX = B \Rightarrow X = A^{-1}B \)</span>$</p>
 <p>Kita akan mencari matriks invers <span class="math notranslate nohighlight">\(A^{-1}\)</span> dengan metode <strong>Eliminasi Gauss-Jordan</strong>.</p>
 <section id="langkah-1-buat-matriks-gabungan-a-i">
-<h2>Langkah 1: Buat Matriks Gabungan <span class="math notranslate nohighlight">\([A|I]\)</span><a class="headerlink" href="#langkah-1-buat-matriks-gabungan-a-i" title="Link to this heading">#</a></h2>
+<h3>Langkah 1: Buat Matriks Gabungan <span class="math notranslate nohighlight">\([A|I]\)</span><a class="headerlink" href="#langkah-1-buat-matriks-gabungan-a-i" title="Link to this heading">#</a></h3>
 <p>Gabungkan matriks <span class="math notranslate nohighlight">\(A\)</span> dengan matriks identitas <span class="math notranslate nohighlight">\(4 \times 4\)</span>:
 $<span class="math notranslate nohighlight">\(
 \left[ 
@@ -528,7 +495,7 @@ $<span class="math notranslate nohighlight">\(
 \)</span>$</p>
 </section>
 <section id="langkah-2-hasil-akhir-invers-a-1">
-<h2>Langkah 2: Hasil Akhir Invers (<span class="math notranslate nohighlight">\(A^{-1}\)</span>)<a class="headerlink" href="#langkah-2-hasil-akhir-invers-a-1" title="Link to this heading">#</a></h2>
+<h3>Langkah 2: Hasil Akhir Invers (<span class="math notranslate nohighlight">\(A^{-1}\)</span>)<a class="headerlink" href="#langkah-2-hasil-akhir-invers-a-1" title="Link to this heading">#</a></h3>
 <p>Selesaikan OBE Gauss-Jordan sampai ruas kiri menjadi matriks identitas. Hasil di ruas kanan adalah matriks invers kita:
 $<span class="math notranslate nohighlight">\(
 A^{-1} = \frac{1}{13} 
@@ -541,7 +508,7 @@ A^{-1} = \frac{1}{13}
 \)</span>$</p>
 </section>
 <section id="langkah-3-hitung-nilai-variabel-x-a-1-b">
-<h2>Langkah 3: Hitung Nilai Variabel (<span class="math notranslate nohighlight">\(X = A^{-1}B\)</span>)<a class="headerlink" href="#langkah-3-hitung-nilai-variabel-x-a-1-b" title="Link to this heading">#</a></h2>
+<h3>Langkah 3: Hitung Nilai Variabel (<span class="math notranslate nohighlight">\(X = A^{-1}B\)</span>)<a class="headerlink" href="#langkah-3-hitung-nilai-variabel-x-a-1-b" title="Link to this heading">#</a></h3>
 <p>Kalikan matriks <span class="math notranslate nohighlight">\(A^{-1}\)</span> dengan kolom konstanta <span class="math notranslate nohighlight">\(B = [10, -1, 6, 11]^T\)</span>.</p>
 <ul class="simple">
 <li><p><strong>Hitung <span class="math notranslate nohighlight">\(x_1\)</span></strong>:
@@ -555,26 +522,24 @@ $<span class="math notranslate nohighlight">\( x_4 = \frac{1}{13} [(-4 \times 10
 </ul>
 </section>
 <section id="solusi-akhir">
-<h2>Solusi Akhir<a class="headerlink" href="#solusi-akhir" title="Link to this heading">#</a></h2>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="nilai-variabel-yang-memenuhi-sistem-adalah-x-begin-bmatrix-x-1-x-2-x-3-x-4-end-bmatrix">
-<h1>Nilai variabel yang memenuhi sistem adalah:
-$$
-X =
-\begin{bmatrix}
-x_1 \
-x_2 \
-x_3 \
-x_4
-\end{bmatrix}<a class="headerlink" href="#nilai-variabel-yang-memenuhi-sistem-adalah-x-begin-bmatrix-x-1-x-2-x-3-x-4-end-bmatrix" title="Link to this heading">#</a></h1>
-<p>\begin{bmatrix}
-1 \
-2 \
-3 \
-4
+<h3>Solusi Akhir<a class="headerlink" href="#solusi-akhir" title="Link to this heading">#</a></h3>
+<p>Nilai variabel yang memenuhi sistem adalah:
+$<span class="math notranslate nohighlight">\(
+X = 
+\begin{bmatrix} 
+x_1 \\ 
+x_2 \\ 
+x_3 \\ 
+x_4 
+\end{bmatrix} = \begin{bmatrix} 
+1 \\ 
+2 \\ 
+3 \\ 
+4 
 \end{bmatrix}
-$$</p>
+\)</span>$</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -643,46 +608,19 @@ $$</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Determinan dan Invers Matriks</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-determinan">1. Menghitung Determinan</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-1-times-1">Matriks <span class="math notranslate nohighlight">\(1 \times 1\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-n-times-n-n-geq-2">Matriks <span class="math notranslate nohighlight">\(n \times n\)</span> (<span class="math notranslate nohighlight">\(n \geq 2\)</span>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyelesaikan-spl-4-times-4-dengan-invers">2. Menyelesaikan SPL <span class="math notranslate nohighlight">\(4 \times 4\)</span> dengan Invers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyelesaikan-spl-4-times-4-dengan-invers">2. Menyelesaikan SPL <span class="math notranslate nohighlight">\(4 \times 4\)</span> dengan Invers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-buat-matriks-gabungan-a-i">Langkah 1: Buat Matriks Gabungan <span class="math notranslate nohighlight">\([A|I]\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hasil-akhir-invers-a-1">Langkah 2: Hasil Akhir Invers (<span class="math notranslate nohighlight">\(A^{-1}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-hitung-nilai-variabel-x-a-1-b">Langkah 3: Hitung Nilai Variabel (<span class="math notranslate nohighlight">\(X = A^{-1}B\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-akhir">Solusi Akhir</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diberikan-spl-dalam-bentuk-matriks-begin-bmatrix-1-1-1-1-2-1-1-1-1-2-1-1-3-1-2-1-end-bmatrix-begin-bmatrix-x-1-x-2-x-3-x-4-end-bmatrix">Diberikan SPL dalam bentuk matriks:
-$$
-\begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; 1 \
-2 &amp; -1 &amp; 1 &amp; -1 \
-1 &amp; 2 &amp; -1 &amp; 1 \
-3 &amp; -1 &amp; 2 &amp; 1
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \
-x_2 \
-x_3 \
-x_4
-\end{bmatrix}</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-buat-matriks-gabungan-a-i">Langkah 1: Buat Matriks Gabungan <span class="math notranslate nohighlight">\([A|I]\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hasil-akhir-invers-a-1">Langkah 2: Hasil Akhir Invers (<span class="math notranslate nohighlight">\(A^{-1}\)</span>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-hitung-nilai-variabel-x-a-1-b">Langkah 3: Hitung Nilai Variabel (<span class="math notranslate nohighlight">\(X = A^{-1}B\)</span>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-akhir">Solusi Akhir</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-variabel-yang-memenuhi-sistem-adalah-x-begin-bmatrix-x-1-x-2-x-3-x-4-end-bmatrix">Nilai variabel yang memenuhi sistem adalah:
-$$
-X =
-\begin{bmatrix}
-x_1 \
-x_2 \
-x_3 \
-x_4
-\end{bmatrix}</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>

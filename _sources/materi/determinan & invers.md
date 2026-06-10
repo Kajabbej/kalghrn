@@ -36,9 +36,7 @@ x_1 \\
 x_2 \\ 
 x_3 \\ 
 x_4 
-\end{bmatrix} 
-= 
-\begin{bmatrix} 
+\end{bmatrix} = \begin{bmatrix} 
 10 \\ 
 -1 \\ 
 6 \\ 
@@ -114,9 +112,7 @@ x_1 \\
 x_2 \\ 
 x_3 \\ 
 x_4 
-\end{bmatrix} 
-= 
-\begin{bmatrix} 
+\end{bmatrix} = \begin{bmatrix} 
 1 \\ 
 2 \\ 
 3 \\ 
