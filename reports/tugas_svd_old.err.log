@@ -1,0 +1,88 @@
+Traceback (most recent call last):
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Membaca gambar (OpenCV membaca dalam format BGR)
+color_img = cv2.imread('../images/foto_kucing.png')
+
+if color_img is None:
+    raise FileNotFoundError("Gambar '../images/foto_kucing.png' tidak ditemukan. Pastikan file ada di folder images/.")
+
+# Memisahkan channel warna B, G, R
+B, G, R = cv2.split(color_img)
+
+# Fungsi untuk melakukan kompresi pada masing-masing channel
+def kompresi_rgb(R, G, B, n):
+    hasil = []
+    for channel in [R, G, B]:
+        # Hitung SVD pada satu channel warna
+        U, S, Vt = np.linalg.svd(channel, full_matrices=False)
+        
+        # Rekonstruksi matriks menggunakan n nilai singular pertama
+        compressed = U[:, :n] @ np.diag(S[:n]) @ Vt[:n, :]
+        
+        # Memastikan nilai piksel berada dalam batas [0, 255]
+        hasil.append(np.clip(compressed, 0, 255))
+        
+    # Gabungkan kembali channel warna terkompresi (menjadi format RGB untuk matplotlib)
+    return cv2.merge(hasil).astype(np.uint8)
+
+# Tampilkan gambar asli
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
+plt.imshow(cv2.cvtColor(color_img, cv2.COLOR_BGR2RGB))
+plt.title('Gambar Asli')
+plt.axis('off')
+
+# Tampilkan gambar terkompresi dengan n=50
+plt.subplot(1, 2, 2)
+plt.imshow(kompresi_rgb(R, G, B, n=50))
+plt.title('Gambar Terkompresi (n=50)')
+plt.axis('off')
+
+plt.show()
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mFileNotFoundError[39m                         Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 9[39m
+[32m      6[39m color_img = cv2.imread([33m'[39m[33m../images/foto_kucing.png[39m[33m'[39m)
+[32m      8[39m [38;5;28;01mif[39;00m color_img [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m----> [39m[32m9[39m     [38;5;28;01mraise[39;00m [38;5;167;01mFileNotFoundError[39;00m([33m"[39m[33mGambar [39m[33m'[39m[33m../images/foto_kucing.png[39m[33m'[39m[33m tidak ditemukan. Pastikan file ada di folder images/.[39m[33m"[39m)
+[32m     11[39m [38;5;66;03m# Memisahkan channel warna B, G, R[39;00m
+[32m     12[39m B, G, R = cv2.split(color_img)
+
+[31mFileNotFoundError[39m: Gambar '../images/foto_kucing.png' tidak ditemukan. Pastikan file ada di folder images/.
+

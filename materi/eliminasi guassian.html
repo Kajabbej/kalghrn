@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Metode Eliminasi Gauss &#8212; My sample book</title>
+    <title>Eliminasi Gaussian &#8212; My sample book</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -182,7 +182,7 @@
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Metode Eliminasi Gauss</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Eliminasi Gaussian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="determinan%20%26%20invers.html">Determinan dan Invers Matriks</a></li>
 
 
@@ -192,6 +192,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tugas/guassian.html">tugas gauss</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tugas/transformasi_pencerminan.html">Transformasi Sumbu Y menggunakan Translasi dan Pencerminan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tugas/svd.html">Tugas: Singular Value Decomposition (SVD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tugas/dekomposisi%20qr.html">Tugas: Dekomposisi QR</a></li>
 </ul>
 
     </div>
@@ -374,7 +376,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Metode Eliminasi Gauss</h1>
+    <h1>Eliminasi Gaussian</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -384,26 +386,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer-obe">Operasi Baris Elementer (OBE)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembahasan-contoh-soal">Pembahasan Contoh Soal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spl-tiga-variabel">1. SPL Tiga Variabel</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-matriks-augmented">Langkah 1: Matriks Augmented</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-eliminasi-kolom-pertama">Langkah 2: Eliminasi Kolom Pertama</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-eliminasi-kolom-kedua">Langkah 3: Eliminasi Kolom Kedua</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-substitusi-balik">Langkah 4: Substitusi Balik</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-akhir">Solusi Akhir</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spl-empat-variabel">2. SPL Empat Variabel</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Langkah 1: Matriks Augmented</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 2: Eliminasi Kolom Pertama</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-eliminasi-kolom-kedua-dan-ketiga">Langkah 3: Eliminasi Kolom Kedua dan Ketiga</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Langkah 4: Substitusi Balik</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Solusi Akhir</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-eliminasi-gaussian">Langkah-Langkah Eliminasi Gaussian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-python-numpy">Implementasi Python (NumPy)</a></li>
 </ul>
             </nav>
         </div>
@@ -415,180 +399,47 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="metode-eliminasi-gauss">
-<h1>Metode Eliminasi Gauss<a class="headerlink" href="#metode-eliminasi-gauss" title="Link to this heading">#</a></h1>
-<p>Metode Eliminasi Gauss adalah metode penyelesaian Sistem Persamaan Linier (SPL) dengan menggunakan operasi baris elementer pada matriks augmentasi hingga diperoleh bentuk matriks segitiga atas (upper triangular matrix). Setelah matriks berada pada bentuk tersebut, nilai variabel dapat ditentukan melalui proses substitusi balik (<em>back substitution</em>).</p>
-<p>Tujuan utama Eliminasi Gauss adalah mengubah matriks augmentasi menjadi <strong>bentuk eselon baris (row echelon form)</strong>, yaitu bentuk matriks yang memenuhi kondisi:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="eliminasi-gaussian">
+<h1>Eliminasi Gaussian<a class="headerlink" href="#eliminasi-gaussian" title="Link to this heading">#</a></h1>
+<p>Eliminasi Gaussian adalah algoritma dalam aljabar linear untuk menyelesaikan sistem persamaan linear, menentukan pangkat matriks, atau mencari invers suatu matriks. Metode ini dinamai dari matematikawan Jerman, Carl Friedrich Gauss.</p>
+<section id="langkah-langkah-eliminasi-gaussian">
+<h2>Langkah-Langkah Eliminasi Gaussian<a class="headerlink" href="#langkah-langkah-eliminasi-gaussian" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Semua baris nol berada di bagian bawah matriks.</p></li>
-<li><p>Elemen pertama yang tidak nol pada setiap baris (pivot) berada di sebelah kanan pivot pada baris sebelumnya.</p></li>
-<li><p>Semua elemen di bawah pivot bernilai nol.</p></li>
-</ol>
-<hr class="docutils" />
-<section id="operasi-baris-elementer-obe">
-<h2>Operasi Baris Elementer (OBE)<a class="headerlink" href="#operasi-baris-elementer-obe" title="Link to this heading">#</a></h2>
-<p>Dalam Eliminasi Gauss digunakan tiga operasi dasar, yaitu:</p>
-<ol class="arabic simple">
-<li><p><strong>Pertukaran Baris</strong>: Menukar posisi dua baris.
-$<span class="math notranslate nohighlight">\( B_i \leftrightarrow B_j \)</span>$</p></li>
-<li><p><strong>Perkalian Baris</strong>: Mengalikan suatu baris dengan konstanta bukan nol.
-$<span class="math notranslate nohighlight">\( B_i \rightarrow kB_i \)</span><span class="math notranslate nohighlight">\( (dengan \)</span>k \neq 0$)</p></li>
-<li><p><strong>Penjumlahan Baris</strong>: Menambahkan kelipatan suatu baris ke baris lainnya.
-$<span class="math notranslate nohighlight">\( B_i \rightarrow B_i + kB_j \)</span>$</p></li>
+<li><p><strong>Matriks Augmentasi</strong>: Tuliskan sistem persamaan linear (SPL) dalam bentuk matriks augmented <span class="math notranslate nohighlight">\([A|b]\)</span>.</p></li>
+<li><p><strong>Eliminasi Maju (Forward Elimination)</strong>: Mengubah matriks augmented menjadi bentuk eselon baris (segitiga atas) menggunakan Operasi Baris Elementer (OBE).</p></li>
+<li><p><strong>Substitusi Balik (Back Substitution)</strong>: Menyelesaikan nilai-nilai variabel dari baris paling bawah ke atas.</p></li>
 </ol>
 </section>
-<hr class="docutils" />
-<section id="pembahasan-contoh-soal">
-<h2>Pembahasan Contoh Soal<a class="headerlink" href="#pembahasan-contoh-soal" title="Link to this heading">#</a></h2>
-<section id="spl-tiga-variabel">
-<h3>1. SPL Tiga Variabel<a class="headerlink" href="#spl-tiga-variabel" title="Link to this heading">#</a></h3>
-<p>Diketahui sistem persamaan berikut:
-$<span class="math notranslate nohighlight">\(
-\begin{cases}
-2x + y - z = 8 \\
--3x - y + 2z = -11 \\
--2x + y + 2z = -3
-\end{cases}
-\)</span>$</p>
-<section id="langkah-1-matriks-augmented">
-<h4>Langkah 1: Matriks Augmented<a class="headerlink" href="#langkah-1-matriks-augmented" title="Link to this heading">#</a></h4>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\left[
-\begin{array}{ccc|c}
-2 &amp; 1 &amp; -1 &amp; 8 \\
--3 &amp; -1 &amp; 2 &amp; -11 \\
--2 &amp; 1 &amp; 2 &amp; -3
-\end{array}
-\right]
-\end{split}\]</div>
-</section>
-<section id="langkah-2-eliminasi-kolom-pertama">
-<h4>Langkah 2: Eliminasi Kolom Pertama<a class="headerlink" href="#langkah-2-eliminasi-kolom-pertama" title="Link to this heading">#</a></h4>
-<p>Lakukan operasi:
-$<span class="math notranslate nohighlight">\( R_2 = R_2 + \frac{3}{2}R_1 \)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\( R_3 = R_3 + R_1 \)</span>$</p>
-<p>Hasilnya:
-$<span class="math notranslate nohighlight">\(
-\left[
-\begin{array}{ccc|c}
-2 &amp; 1 &amp; -1 &amp; 8 \\
-0 &amp; 0.5 &amp; 0.5 &amp; 1 \\
-0 &amp; 2 &amp; 1 &amp; 5
-\end{array}
-\right]
-\)</span>$</p>
-</section>
-<section id="langkah-3-eliminasi-kolom-kedua">
-<h4>Langkah 3: Eliminasi Kolom Kedua<a class="headerlink" href="#langkah-3-eliminasi-kolom-kedua" title="Link to this heading">#</a></h4>
-<p>Lakukan operasi:
-$<span class="math notranslate nohighlight">\( R_3 = R_3 - 4R_2 \)</span>$</p>
-<p>Hasilnya:
-$<span class="math notranslate nohighlight">\(
-\left[
-\begin{array}{ccc|c}
-2 &amp; 1 &amp; -1 &amp; 8 \\
-0 &amp; 0.5 &amp; 0.5 &amp; 1 \\
-0 &amp; 0 &amp; -1 &amp; 1
-\end{array}
-\right]
-\)</span>$</p>
-<p>Matriks di atas sudah berada dalam bentuk eselon baris.</p>
-</section>
-<section id="langkah-4-substitusi-balik">
-<h4>Langkah 4: Substitusi Balik<a class="headerlink" href="#langkah-4-substitusi-balik" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Dari baris ke-3:
-$<span class="math notranslate nohighlight">\( -z = 1 \Rightarrow z = -1 \)</span>$</p></li>
-<li><p>Dari baris ke-2:
-$<span class="math notranslate nohighlight">\( 0.5y + 0.5(-1) = 1 \Rightarrow 0.5y = 1.5 \Rightarrow y = 3 \)</span>$</p></li>
-<li><p>Dari baris ke-1:
-$<span class="math notranslate nohighlight">\( 2x + (3) - (-1) = 8 \Rightarrow 2x + 4 = 8 \Rightarrow 2x = 4 \Rightarrow x = 2 \)</span>$</p></li>
-</ul>
-</section>
-<section id="solusi-akhir">
-<h4>Solusi Akhir<a class="headerlink" href="#solusi-akhir" title="Link to this heading">#</a></h4>
-<div class="math notranslate nohighlight">
-\[ x = 2, \quad y = 3, \quad z = -1 \]</div>
-</section>
-</section>
-<hr class="docutils" />
-<section id="spl-empat-variabel">
-<h3>2. SPL Empat Variabel<a class="headerlink" href="#spl-empat-variabel" title="Link to this heading">#</a></h3>
-<p>Diketahui sistem persamaan berikut:
-$<span class="math notranslate nohighlight">\(
-\begin{cases}
-x + y + z + w = 10 \\
-2x - y + z + w = 5 \\
-3x + y - z + w = 12 \\
-x + 2y + 3z - w = 7
-\end{cases}
-\)</span>$</p>
-<section id="id1">
-<h4>Langkah 1: Matriks Augmented<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\left[
-\begin{array}{cccc|c}
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
-2 &amp; -1 &amp; 1 &amp; 1 &amp; 5 \\
-3 &amp; 1 &amp; -1 &amp; 1 &amp; 12 \\
-1 &amp; 2 &amp; 3 &amp; -1 &amp; 7
-\end{array}
-\right]
-\end{split}\]</div>
-</section>
-<section id="id2">
-<h4>Langkah 2: Eliminasi Kolom Pertama<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
-<p>Lakukan operasi:
-$<span class="math notranslate nohighlight">\( R_2 = R_2 - 2R_1 \)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\( R_3 = R_3 - 3R_1 \)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\( R_4 = R_4 - R_1 \)</span>$</p>
-<p>Hasilnya:
-$<span class="math notranslate nohighlight">\(
-\left[
-\begin{array}{cccc|c}
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
-0 &amp; -3 &amp; -1 &amp; -1 &amp; -15 \\
-0 &amp; -2 &amp; -4 &amp; -2 &amp; -18 \\
-0 &amp; 1 &amp; 2 &amp; -2 &amp; -3
-\end{array}
-\right]
-\)</span>$</p>
-</section>
-<section id="langkah-3-eliminasi-kolom-kedua-dan-ketiga">
-<h4>Langkah 3: Eliminasi Kolom Kedua dan Ketiga<a class="headerlink" href="#langkah-3-eliminasi-kolom-kedua-dan-ketiga" title="Link to this heading">#</a></h4>
-<p>Setelah melakukan OBE lanjutan, diperoleh matriks eselon:
-$<span class="math notranslate nohighlight">\(
-\left[
-\begin{array}{cccc|c}
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
-0 &amp; -3 &amp; -1 &amp; -1 &amp; -15 \\
-0 &amp; 0 &amp; -10/3 &amp; -4/3 &amp; -8 \\
-0 &amp; 0 &amp; 0 &amp; -3 &amp; -12
-\end{array}
-\right]
-\)</span>$</p>
-</section>
-<section id="id3">
-<h4>Langkah 4: Substitusi Balik<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Dari baris ke-4:
-$<span class="math notranslate nohighlight">\( -3w = -12 \Rightarrow w = 4 \)</span>$</p></li>
-<li><p>Dari baris ke-3:
-$<span class="math notranslate nohighlight">\( -\frac{10}{3}z - \frac{4}{3}(4) = -8 \Rightarrow z = 3 \)</span>$</p></li>
-<li><p>Dari baris ke-2:
-$<span class="math notranslate nohighlight">\( -3y - (3) - (4) = -15 \Rightarrow y = 2 \)</span>$</p></li>
-<li><p>Dari baris ke-1:
-$<span class="math notranslate nohighlight">\( x + 2 + 3 + 4 = 10 \Rightarrow x = 1 \)</span>$</p></li>
-</ul>
-</section>
-<section id="id4">
-<h4>Solusi Akhir<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
-<div class="math notranslate nohighlight">
-\[ x = 1, \quad y = 2, \quad z = 3, \quad w = 4 \]</div>
-</section>
-</section>
+<section id="implementasi-python-numpy">
+<h2>Implementasi Python (NumPy)<a class="headerlink" href="#implementasi-python-numpy" title="Link to this heading">#</a></h2>
+<p>Berikut adalah contoh implementasi kode Python untuk menyelesaikan SPL menggunakan Eliminasi Gaussian dengan partial pivoting.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">eliminasi_gaussian</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="c1"># Gabungkan menjadi matriks augmented</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    
+    <span class="c1"># Eliminasi Maju dengan Partial Pivoting</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="c1"># Cari pivot terbesar di kolom i</span>
+        <span class="n">pivot_row</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">:,</span> <span class="n">i</span><span class="p">]))</span> <span class="o">+</span> <span class="n">i</span>
+        <span class="c1"># Tukar baris jika diperlukan</span>
+        <span class="k">if</span> <span class="n">pivot_row</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">M</span><span class="p">[[</span><span class="n">i</span><span class="p">,</span> <span class="n">pivot_row</span><span class="p">]]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[[</span><span class="n">pivot_row</span><span class="p">,</span> <span class="n">i</span><span class="p">]]</span>
+            
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="n">factor</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">:]</span> <span class="o">-=</span> <span class="n">factor</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">:]</span>
+            
+    <span class="c1"># Substitusi Balik</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">]))</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
+        
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -658,26 +509,8 @@ $<span class="math notranslate nohighlight">\( x + 2 + 3 + 4 = 10 \Rightarrow x 
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer-obe">Operasi Baris Elementer (OBE)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembahasan-contoh-soal">Pembahasan Contoh Soal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spl-tiga-variabel">1. SPL Tiga Variabel</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-matriks-augmented">Langkah 1: Matriks Augmented</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-eliminasi-kolom-pertama">Langkah 2: Eliminasi Kolom Pertama</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-eliminasi-kolom-kedua">Langkah 3: Eliminasi Kolom Kedua</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-substitusi-balik">Langkah 4: Substitusi Balik</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-akhir">Solusi Akhir</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spl-empat-variabel">2. SPL Empat Variabel</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Langkah 1: Matriks Augmented</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 2: Eliminasi Kolom Pertama</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-eliminasi-kolom-kedua-dan-ketiga">Langkah 3: Eliminasi Kolom Kedua dan Ketiga</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Langkah 4: Substitusi Balik</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Solusi Akhir</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-eliminasi-gaussian">Langkah-Langkah Eliminasi Gaussian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-python-numpy">Implementasi Python (NumPy)</a></li>
 </ul>
   </nav></div>
 
