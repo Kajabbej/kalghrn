@@ -63,6 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'materi/playground/spl';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="tugas gauss" href="../../tugas/guassian.html" />
     <link rel="prev" title="Playground: Eliminasi Gaussian" href="gauss.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,18 +186,20 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../dekomposisi%20QR.html">Dekomposisi QR</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Playground</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="gauss.html">Playground: Eliminasi Gaussian</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">visualisasi sistem persamaan linier</a></li>
+
+
+
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">tugas</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../tugas/guassian.html">tugas gauss</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tugas/transformasi_pencerminan.html">Transformasi Sumbu Y menggunakan Translasi dan Pencerminan</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tugas/svd.html">Tugas: Singular Value Decomposition (SVD)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tugas/dekomposisi%20qr.html">Tugas: Dekomposisi QR</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Playground</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="gauss.html">Playground: Eliminasi Gaussian</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">visualisasi sistem persamaan linier</a></li>
-
 </ul>
 
     </div>
@@ -391,6 +394,8 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">visualisasi sistem persamaan linier</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-sistem-persamaan-non-linier">visualisasi sistem persamaan non linier</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra-visualisation-linier">geogebra visualisation linier</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra-visualisation-non-linier">geogebra visualisation non linier</a></li>
 </ul>
 
             </nav>
@@ -485,7 +490,7 @@
 <span class="sd">SPL Non-Linier Interaktif</span>
 <span class="sd">=========================</span>
 <span class="sd">Sistem 2 persamaan non-linier dengan slider parameter.</span>
-<span class="sd">Titik potong dihitung otomatis menggunakan scipy (fsolve).</span>
+<span class="sd">Titik potong dihitung otomatis menggunakan scipy (fsolve) jika tersedia, atau fallback ke bisection.</span>
 
 <span class="sd">Jalankan sebagai script:</span>
 <span class="sd">    python spl_nonlinier.py</span>
@@ -494,13 +499,53 @@
 <span class="sd">    %matplotlib widget</span>
 <span class="sd">    (pip install ipympl jika belum)</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="c1"># ── Deteksi Lingkungan &amp; Set Matplotlib Backend ──────────────────</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">is_build</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;JUPYTER_BOOK_BUILD&#39;</span><span class="p">)</span> <span class="ow">or</span> 
+    <span class="s1">&#39;sphinx&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span> <span class="ow">or</span> 
+    <span class="nb">any</span><span class="p">(</span><span class="s1">&#39;hist_file=:memory:&#39;</span> <span class="ow">in</span> <span class="n">arg</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">IPython</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_ipython</span>
+    <span class="n">ipy</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">ipy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_build</span><span class="p">:</span>
+            <span class="n">ipy</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;widget&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ipy</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="k">pass</span>
+
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpatches</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span><span class="p">,</span> <span class="n">RadioButtons</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">fsolve</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">brentq</span>
+
+<span class="c1"># Fallback untuk scipy.optimize.brentq</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">brentq</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">brentq</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">xtol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">fa</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">fb</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">fa</span> <span class="o">*</span> <span class="n">fb</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Root is not bracketed&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+            <span class="n">fc</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">fc</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">xtol</span> <span class="ow">or</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">xtol</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">c</span>
+            <span class="k">if</span> <span class="n">fa</span> <span class="o">*</span> <span class="n">fc</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
+                <span class="n">fb</span> <span class="o">=</span> <span class="n">fc</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">c</span>
+                <span class="n">fa</span> <span class="o">=</span> <span class="n">fc</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
 
 <span class="c1"># ── Range sumbu ──────────────────────────────────────────────────</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span>
@@ -517,6 +562,7 @@
         <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">],</span>
         <span class="s1">&#39;init&#39;</span><span class="p">:</span>   <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
         <span class="s1">&#39;range&#39;</span><span class="p">:</span>  <span class="p">[(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)],</span>
+        <span class="s1">&#39;colors&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#3b82f6&#39;</span><span class="p">,</span> <span class="s1">&#39;#3b82f6&#39;</span><span class="p">,</span> <span class="s1">&#39;#ef4444&#39;</span><span class="p">,</span> <span class="s1">&#39;#ef4444&#39;</span><span class="p">],</span>
     <span class="p">},</span>
     <span class="s1">&#39;Lingkaran vs Linier</span><span class="se">\n</span><span class="s1">x²+y²=r²  |  y=cx+d&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1"># f1: y positif lingkaran, f2: y negatif (kurva bawah)</span>
@@ -531,6 +577,7 @@
         <span class="s1">&#39;init&#39;</span><span class="p">:</span>   <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
         <span class="s1">&#39;range&#39;</span><span class="p">:</span>  <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">),(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)],</span>
         <span class="s1">&#39;lingkaran&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;colors&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#3b82f6&#39;</span><span class="p">,</span> <span class="s1">&#39;#ef4444&#39;</span><span class="p">,</span> <span class="s1">&#39;#ef4444&#39;</span><span class="p">],</span>
     <span class="p">},</span>
     <span class="s1">&#39;Sinus vs Kuadrat</span><span class="se">\n</span><span class="s1">y=a·sin(bx)  |  y=cx²+d&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;f1&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">),</span>
@@ -540,6 +587,7 @@
         <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">],</span>
         <span class="s1">&#39;init&#39;</span><span class="p">:</span>   <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">],</span>
         <span class="s1">&#39;range&#39;</span><span class="p">:</span>  <span class="p">[(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)],</span>
+        <span class="s1">&#39;colors&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#3b82f6&#39;</span><span class="p">,</span> <span class="s1">&#39;#3b82f6&#39;</span><span class="p">,</span> <span class="s1">&#39;#ef4444&#39;</span><span class="p">,</span> <span class="s1">&#39;#ef4444&#39;</span><span class="p">],</span>
     <span class="p">},</span>
     <span class="s1">&#39;Eksponensial vs Kuadrat</span><span class="se">\n</span><span class="s1">y=a·eˣ+b  |  y=cx²+d&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;f1&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
@@ -549,69 +597,89 @@
         <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">],</span>
         <span class="s1">&#39;init&#39;</span><span class="p">:</span>   <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
         <span class="s1">&#39;range&#39;</span><span class="p">:</span>  <span class="p">[(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)],</span>
+        <span class="s1">&#39;colors&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#3b82f6&#39;</span><span class="p">,</span> <span class="s1">&#39;#3b82f6&#39;</span><span class="p">,</span> <span class="s1">&#39;#ef4444&#39;</span><span class="p">,</span> <span class="s1">&#39;#ef4444&#39;</span><span class="p">],</span>
     <span class="p">},</span>
 <span class="p">}</span>
 
 <span class="c1"># ================================================================</span>
 <span class="c1"># CARI TITIK POTONG</span>
 <span class="c1"># ================================================================</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">cari_titik_potong</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">is_lingkaran</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Scan seluruh domain x, deteksi perubahan tanda f1-f2,</span>
-<span class="sd">    lalu gunakan brentq untuk akar presisi.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cari_titik_potong</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">nama</span><span class="p">):</span>
     <span class="n">titik</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">9.9</span><span class="p">,</span> <span class="mf">9.9</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">is_lingkaran</span><span class="p">:</span>
-        <span class="c1"># Lingkaran: cek garis vs lingkaran atas dan bawah</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">sign</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-            <span class="k">def</span><span class="w"> </span><span class="nf">diff</span><span class="p">(</span><span class="n">xv</span><span class="p">):</span>
-                <span class="n">inside</span> <span class="o">=</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">xv</span><span class="o">**</span><span class="mi">2</span>
-                <span class="k">if</span> <span class="n">inside</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-                <span class="k">return</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">inside</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">xv</span> <span class="o">+</span> <span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-
-            <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">diff</span><span class="p">(</span><span class="n">xv</span><span class="p">)</span> <span class="k">for</span> <span class="n">xv</span> <span class="ow">in</span> <span class="n">xx</span><span class="p">])</span>
-            <span class="n">valid</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">yy</span><span class="p">)</span>
-            <span class="n">xv_valid</span> <span class="o">=</span> <span class="n">xx</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span>
-            <span class="n">yy_valid</span> <span class="o">=</span> <span class="n">yy</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xv_valid</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">yy_valid</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">yy_valid</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="k">try</span><span class="p">:</span>
-                        <span class="n">xr</span> <span class="o">=</span> <span class="n">brentq</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="n">xv_valid</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xv_valid</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">xtol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
-                        <span class="n">yr</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">xr</span> <span class="o">+</span> <span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-                        <span class="c1"># Hindari duplikat</span>
+    
+    <span class="c1"># 1. Kuadrat vs Linier (Analytical Solver)</span>
+    <span class="k">if</span> <span class="s1">&#39;Kuadrat vs Linier&#39;</span> <span class="ow">in</span> <span class="n">nama</span><span class="p">:</span>
+        <span class="c1"># y = a*x^2 + b</span>
+        <span class="c1"># y = c*x + d</span>
+        <span class="c1"># a*x^2 - c*x + (b - d) = 0</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">params</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-9</span><span class="p">:</span>
+            <span class="c1"># Linear: -c*x + (b - d) = 0 =&gt; c*x = b - d</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-9</span><span class="p">:</span>
+                <span class="n">xr</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span> <span class="o">/</span> <span class="n">c</span>
+                <span class="k">if</span> <span class="o">-</span><span class="mi">10</span> <span class="o">&lt;=</span> <span class="n">xr</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+                    <span class="n">yr</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">xr</span> <span class="o">+</span> <span class="n">d</span>
+                    <span class="n">titik</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">round</span><span class="p">(</span><span class="n">xr</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">A</span> <span class="o">=</span> <span class="n">a</span>
+            <span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="n">c</span>
+            <span class="n">C</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">d</span>
+            <span class="n">D</span> <span class="o">=</span> <span class="n">B</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">C</span>
+            <span class="k">if</span> <span class="n">D</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">1e-9</span><span class="p">:</span>
+                <span class="n">D</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">sign</span> <span class="ow">in</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">D</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+                    <span class="n">xr</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">B</span> <span class="o">+</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">D</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">A</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="o">-</span><span class="mi">10</span> <span class="o">&lt;=</span> <span class="n">xr</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+                        <span class="n">yr</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">xr</span> <span class="o">+</span> <span class="n">d</span>
                         <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">xr</span> <span class="o">-</span> <span class="n">tp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="k">for</span> <span class="n">tp</span> <span class="ow">in</span> <span class="n">titik</span><span class="p">):</span>
-                            <span class="n">titik</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">round</span><span class="p">(</span><span class="n">xr</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
-                    <span class="k">except</span><span class="p">:</span>
-                        <span class="k">pass</span>
+                            <span class="n">titik</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">round</span><span class="p">(</span><span class="n">xr</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
         <span class="k">return</span> <span class="n">titik</span>
 
-    <span class="c1"># Non-lingkaran</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">y1</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
-        <span class="n">y2</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
-        <span class="n">diff</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span>
-        <span class="n">valid</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">diff</span><span class="p">))</span>
-        <span class="n">xv</span> <span class="o">=</span> <span class="n">xx</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span>
-        <span class="n">dv</span> <span class="o">=</span> <span class="n">diff</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span>
-
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xv</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">dv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">dv</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="k">def</span><span class="w"> </span><span class="nf">eq</span><span class="p">(</span><span class="n">xval</span><span class="p">):</span>
-                        <span class="k">return</span> <span class="n">f1</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xval</span><span class="p">]),</span> <span class="n">params</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">f2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xval</span><span class="p">]),</span> <span class="n">params</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-                    <span class="n">xr</span> <span class="o">=</span> <span class="n">brentq</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">xtol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
-                    <span class="n">yr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f1</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xr</span><span class="p">]),</span> <span class="n">params</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="c1"># 2. Lingkaran vs Linier (Analytical Solver)</span>
+    <span class="k">elif</span> <span class="s1">&#39;Lingkaran vs Linier&#39;</span> <span class="ow">in</span> <span class="n">nama</span><span class="p">:</span>
+        <span class="c1"># x^2 + y^2 = r^2</span>
+        <span class="c1"># y = c*x + d</span>
+        <span class="c1"># (1 + c^2)*x^2 + 2*c*d*x + (d^2 - r^2) = 0</span>
+        <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">params</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span>
+        <span class="n">C</span> <span class="o">=</span> <span class="n">d</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">B</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">C</span>
+        <span class="k">if</span> <span class="n">D</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">1e-9</span><span class="p">:</span>
+            <span class="n">D</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">sign</span> <span class="ow">in</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">D</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+                <span class="n">xr</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">B</span> <span class="o">+</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">D</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">A</span><span class="p">)</span>
+                <span class="k">if</span> <span class="o">-</span><span class="mi">10</span> <span class="o">&lt;=</span> <span class="n">xr</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xr</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">:</span>
+                    <span class="n">yr</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">xr</span> <span class="o">+</span> <span class="n">d</span>
                     <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">xr</span> <span class="o">-</span> <span class="n">tp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="k">for</span> <span class="n">tp</span> <span class="ow">in</span> <span class="n">titik</span><span class="p">):</span>
-                        <span class="n">titik</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">round</span><span class="p">(</span><span class="n">xr</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
-                <span class="k">except</span><span class="p">:</span>
-                    <span class="k">pass</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">pass</span>
-    <span class="k">return</span> <span class="n">titik</span>
+                        <span class="n">titik</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">round</span><span class="p">(</span><span class="n">xr</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">titik</span>
+
+    <span class="c1"># 3. Sinus vs Kuadrat &amp; Eksponensial vs Kuadrat (Numerical Root Finding)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">9.9</span><span class="p">,</span> <span class="mf">9.9</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">y1</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+            <span class="n">y2</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+            <span class="n">diff</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span>
+            <span class="n">valid</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">diff</span><span class="p">))</span>
+            <span class="n">xv</span> <span class="o">=</span> <span class="n">xx</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span>
+            <span class="n">dv</span> <span class="o">=</span> <span class="n">diff</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span>
+
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xv</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">dv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">dv</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="k">def</span><span class="w"> </span><span class="nf">eq</span><span class="p">(</span><span class="n">xval</span><span class="p">):</span>
+                            <span class="k">return</span> <span class="n">f1</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xval</span><span class="p">]),</span> <span class="n">params</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">f2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xval</span><span class="p">]),</span> <span class="n">params</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="n">xr</span> <span class="o">=</span> <span class="n">brentq</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">xtol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+                        <span class="n">yr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f1</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xr</span><span class="p">]),</span> <span class="n">params</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">xr</span> <span class="o">-</span> <span class="n">tp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="k">for</span> <span class="n">tp</span> <span class="ow">in</span> <span class="n">titik</span><span class="p">):</span>
+                            <span class="n">titik</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">round</span><span class="p">(</span><span class="n">xr</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="k">pass</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">return</span> <span class="n">titik</span>
 
 <span class="c1"># ================================================================</span>
 <span class="c1"># SETUP FIGURE</span>
@@ -674,12 +742,7 @@
     <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.17</span><span class="p">,</span> <span class="mf">0.60</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">],</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">axcolor</span><span class="p">),</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.60</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">],</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">axcolor</span><span class="p">),</span>
 <span class="p">]</span>
-<span class="n">sliders</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">Slider</span><span class="p">(</span><span class="n">slider_axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;param a&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">valinit</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#3b82f6&#39;</span><span class="p">),</span>
-    <span class="n">Slider</span><span class="p">(</span><span class="n">slider_axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;param b&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">valinit</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#3b82f6&#39;</span><span class="p">),</span>
-    <span class="n">Slider</span><span class="p">(</span><span class="n">slider_axes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;param c&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">valinit</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#ef4444&#39;</span><span class="p">),</span>
-    <span class="n">Slider</span><span class="p">(</span><span class="n">slider_axes</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;param d&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">valinit</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#ef4444&#39;</span><span class="p">),</span>
-<span class="p">]</span>
+<span class="n">sliders</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
 
 <span class="c1"># Label keterangan slider</span>
 <span class="n">info_slider</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mf">8.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#475569&#39;</span><span class="p">,</span>
@@ -693,27 +756,22 @@
     <span class="n">cfg</span>  <span class="o">=</span> <span class="n">PASANGAN</span><span class="p">[</span><span class="n">nama</span><span class="p">]</span>
 
     <span class="n">params_nama</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">]</span>
-    <span class="n">params_init</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;init&#39;</span><span class="p">]</span>
-    <span class="n">params_range</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;range&#39;</span><span class="p">]</span>
     <span class="n">is_lingkaran</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;lingkaran&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
     <span class="c1"># Ambil nilai slider sesuai jumlah param</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">params_nama</span><span class="p">)</span>
-    <span class="n">params_val</span> <span class="o">=</span> <span class="p">[</span><span class="n">sliders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">val</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">params_val</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">sliders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">params_val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sliders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">params_val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;init&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
 
     <span class="c1"># Update label slider</span>
     <span class="n">info_txt</span> <span class="o">=</span> <span class="s1">&#39;  &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">params_nama</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">params_val</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="p">)</span>
     <span class="n">info_slider</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;Parameter aktif: &#39;</span> <span class="o">+</span> <span class="n">info_txt</span><span class="p">)</span>
-
-    <span class="c1"># Update slider label nama</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sliders</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-            <span class="n">s</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;param </span><span class="si">{</span><span class="n">params_nama</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-            <span class="n">s</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">s</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="c1"># Hitung y</span>
     <span class="n">f1</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;f1&#39;</span><span class="p">]</span>
@@ -736,7 +794,7 @@
         <span class="n">line1b</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="c1"># Titik potong</span>
-    <span class="n">titik</span> <span class="o">=</span> <span class="n">cari_titik_potong</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">params_val</span><span class="p">,</span> <span class="n">is_lingkaran</span><span class="p">)</span>
+    <span class="n">titik</span> <span class="o">=</span> <span class="n">cari_titik_potong</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">params_val</span><span class="p">,</span> <span class="n">nama</span><span class="p">)</span>
 
     <span class="c1"># Hapus anotasi lama</span>
     <span class="k">for</span> <span class="n">ann</span> <span class="ow">in</span> <span class="n">annot_list</span><span class="p">:</span>
@@ -773,23 +831,34 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">on_radio</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
-    <span class="c1"># Reset slider ke init value pasangan yang dipilih</span>
     <span class="n">cfg</span> <span class="o">=</span> <span class="n">PASANGAN</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
-    <span class="n">n</span>   <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">])</span>
+    <span class="n">params_nama</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">]</span>
+    <span class="n">params_init</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;init&#39;</span><span class="p">]</span>
+    <span class="n">params_range</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;range&#39;</span><span class="p">]</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;colors&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;#3b82f6&#39;</span><span class="p">,</span> <span class="s1">&#39;#3b82f6&#39;</span><span class="p">,</span> <span class="s1">&#39;#ef4444&#39;</span><span class="p">,</span> <span class="s1">&#39;#ef4444&#39;</span><span class="p">])</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">params_nama</span><span class="p">)</span>
+    
+    <span class="c1"># Recreate the active sliders</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">slider_axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-            <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;range&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">sliders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">valmin</span> <span class="o">=</span> <span class="n">lo</span>
-            <span class="n">sliders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">valmax</span> <span class="o">=</span> <span class="n">hi</span>
-            <span class="n">sliders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
-            <span class="n">sliders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;init&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">params_range</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">slider_axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">sliders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span>
+                <span class="n">slider_axes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                <span class="sa">f</span><span class="s1">&#39;param </span><span class="si">{</span><span class="n">params_nama</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> 
+                <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> 
+                <span class="n">valinit</span><span class="o">=</span><span class="n">params_init</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">sliders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">on_changed</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">sliders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">slider_axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">sliders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+            
     <span class="n">update</span><span class="p">()</span>
 
 <span class="c1"># ── Daftarkan event ──────────────────────────────────────────────</span>
-<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sliders</span><span class="p">:</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">on_changed</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
 <span class="n">radio</span><span class="o">.</span><span class="n">on_clicked</span><span class="p">(</span><span class="n">on_radio</span><span class="p">)</span>
 
 <span class="c1"># Inisialisasi tampilan awal</span>
@@ -797,7 +866,7 @@
 
 <span class="c1"># ── Catatan di bawah ─────────────────────────────────────────────</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span>
-         <span class="s1">&#39;📌 Titik potong dihitung dengan metode Brentq (scipy)  |  &#39;</span>
+         <span class="s1">&#39;📌 Titik potong dihitung secara analitik &amp; numerik  |  &#39;</span>
          <span class="s1">&#39;Geser slider untuk ubah parameter  |  Klik radio untuk ganti fungsi&#39;</span><span class="p">,</span>
          <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#64748b&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
 
@@ -809,77 +878,21 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\matplotlib\backends\registry.py:407,</span> in <span class="ni">BackendRegistry.resolve_gui_or_backend</span><span class="nt">(self, gui_or_backend)</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">407</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_backend</span><span class="p">(</span><span class="n">gui_or_backend</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># KeyError ?</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\matplotlib\backends\registry.py:369,</span> in <span class="ni">BackendRegistry.resolve_backend</span><span class="nt">(self, backend)</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span> <span class="k">if</span> <span class="n">gui</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">369</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">backend</span><span class="si">}</span><span class="s2">&#39; is not a recognised backend name&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">371</span> <span class="k">return</span> <span class="n">backend</span><span class="p">,</span> <span class="n">gui</span> <span class="k">if</span> <span class="n">gui</span> <span class="o">!=</span> <span class="s2">&quot;headless&quot;</span> <span class="k">else</span> <span class="kc">None</span>
-
-<span class="ne">RuntimeError</span>: &#39;widget&#39; is not a recognised backend name
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd"> SPL Non-Linier Interaktif</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> =========================</span>
-<span class="sd">   (...)     12     (pip install ipympl jika belum)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;widget&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\IPython\core\interactiveshell.py:2511,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2509</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2510</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2511</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2513</span> <span class="c1"># The code below prevents the output from being displayed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2514</span> <span class="c1"># when using magics with decorator @output_can_be_silenced</span>
-<span class="g g-Whitespace">   </span><span class="mi">2515</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2516</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\IPython\core\magics\pylab.py:103,</span> in <span class="ni">PylabMagics.matplotlib</span><span class="nt">(self, line)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="nb">print</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span>         <span class="s2">&quot;Available matplotlib backends: </span><span class="si">%s</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span>         <span class="o">%</span> <span class="n">_list_matplotlib_backends_and_gui_loops</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">103</span>     <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">enable_matplotlib</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_show_matplotlib_backend</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\IPython\core\interactiveshell.py:3789,</span> in <span class="ni">InteractiveShell.enable_matplotlib</span><span class="nt">(self, gui)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3786</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib_inline.backend_inline</span>
-<span class="g g-Whitespace">   </span><span class="mi">3788</span> <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">pylabtools</span> <span class="k">as</span> <span class="n">pt</span>
-<span class="ne">-&gt; </span><span class="mi">3789</span> <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">find_gui_and_backend</span><span class="p">(</span><span class="n">gui</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pylab_gui_select</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3791</span> <span class="k">if</span> <span class="n">gui</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3792</span>     <span class="c1"># If we have our first gui selection, store it</span>
-<span class="g g-Whitespace">   </span><span class="mi">3793</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pylab_gui_select</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\IPython\core\pylabtools.py:349,</span> in <span class="ni">find_gui_and_backend</span><span class="nt">(gui, gui_select)</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">348</span>     <span class="n">gui</span> <span class="o">=</span> <span class="n">_convert_gui_to_matplotlib</span><span class="p">(</span><span class="n">gui</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">349</span>     <span class="n">backend</span><span class="p">,</span> <span class="n">gui</span> <span class="o">=</span> <span class="n">backend_registry</span><span class="o">.</span><span class="n">resolve_gui_or_backend</span><span class="p">(</span><span class="n">gui</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">351</span> <span class="n">gui</span> <span class="o">=</span> <span class="n">_convert_gui_from_matplotlib</span><span class="p">(</span><span class="n">gui</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">352</span> <span class="k">return</span> <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\matplotlib\backends\registry.py:409,</span> in <span class="ni">BackendRegistry.resolve_gui_or_backend</span><span class="nt">(self, gui_or_backend)</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_backend</span><span class="p">(</span><span class="n">gui_or_backend</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># KeyError ?</span>
-<span class="ne">--&gt; </span><span class="mi">409</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">410</span>         <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">gui_or_backend</span><span class="si">}</span><span class="s2">&#39; is not a recognised GUI loop or backend name&quot;</span><span class="p">)</span>
-
-<span class="ne">RuntimeError</span>: &#39;widget&#39; is not a recognised GUI loop or backend name
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\IPython\core\pylabtools.py:170: UserWarning: Glyph 128204 (\N{PUSHPIN}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
 </pre></div>
 </div>
+<img alt="../../_images/207e55b23d4a692bc8f5b2315ecc9df3d072fbbc4c58dfa0e801bd1927dd0b05.png" src="../../_images/207e55b23d4a692bc8f5b2315ecc9df3d072fbbc4c58dfa0e801bd1927dd0b05.png" />
 </div>
 </div>
+</section>
+<section id="geogebra-visualisation-linier">
+<h1>geogebra visualisation linier<a class="headerlink" href="#geogebra-visualisation-linier" title="Link to this heading">#</a></h1>
+<iframe src="https://www.geogebra.org/calculator/gz9xyxsf?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+</section>
+<section id="geogebra-visualisation-non-linier">
+<h1>geogebra visualisation non linier<a class="headerlink" href="#geogebra-visualisation-non-linier" title="Link to this heading">#</a></h1>
+<iframe src="https://www.geogebra.org/calculator/gz9xyxsf?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 </section>
 
     <script type="text/x-thebe-config">
@@ -921,6 +934,15 @@
         <p class="prev-next-title">Playground: Eliminasi Gaussian</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../../tugas/guassian.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">tugas gauss</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -941,6 +963,8 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">visualisasi sistem persamaan linier</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-sistem-persamaan-non-linier">visualisasi sistem persamaan non linier</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra-visualisation-linier">geogebra visualisation linier</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra-visualisation-non-linier">geogebra visualisation non linier</a></li>
 </ul>
 
   </nav></div>

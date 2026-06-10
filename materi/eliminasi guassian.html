@@ -188,6 +188,14 @@
 
 <li class="toctree-l1"><a class="reference internal" href="dekomposisi%20QR.html">Dekomposisi QR</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Playground</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="playground/gauss.html">Playground: Eliminasi Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playground/spl.html">visualisasi sistem persamaan linier</a></li>
+
+
+
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">tugas</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tugas/guassian.html">tugas gauss</a></li>
@@ -387,7 +395,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-eliminasi-gaussian">Langkah-Langkah Eliminasi Gaussian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-python-numpy">Implementasi Python (NumPy)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisalai-eliminasi-gauss">visualisalai eliminasi gauss</a></li>
 </ul>
             </nav>
         </div>
@@ -410,36 +418,8 @@
 <li><p><strong>Substitusi Balik (Back Substitution)</strong>: Menyelesaikan nilai-nilai variabel dari baris paling bawah ke atas.</p></li>
 </ol>
 </section>
-<section id="implementasi-python-numpy">
-<h2>Implementasi Python (NumPy)<a class="headerlink" href="#implementasi-python-numpy" title="Link to this heading">#</a></h2>
-<p>Berikut adalah contoh implementasi kode Python untuk menyelesaikan SPL menggunakan Eliminasi Gaussian dengan partial pivoting.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">eliminasi_gaussian</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="c1"># Gabungkan menjadi matriks augmented</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-    
-    <span class="c1"># Eliminasi Maju dengan Partial Pivoting</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="c1"># Cari pivot terbesar di kolom i</span>
-        <span class="n">pivot_row</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">:,</span> <span class="n">i</span><span class="p">]))</span> <span class="o">+</span> <span class="n">i</span>
-        <span class="c1"># Tukar baris jika diperlukan</span>
-        <span class="k">if</span> <span class="n">pivot_row</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span>
-            <span class="n">M</span><span class="p">[[</span><span class="n">i</span><span class="p">,</span> <span class="n">pivot_row</span><span class="p">]]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[[</span><span class="n">pivot_row</span><span class="p">,</span> <span class="n">i</span><span class="p">]]</span>
-            
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-            <span class="n">factor</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
-            <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">:]</span> <span class="o">-=</span> <span class="n">factor</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">:]</span>
-            
-    <span class="c1"># Substitusi Balik</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">]))</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
-        
-    <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-</div>
+<section id="visualisalai-eliminasi-gauss">
+<h2>visualisalai eliminasi gauss<a class="headerlink" href="#visualisalai-eliminasi-gauss" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -510,7 +490,7 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-eliminasi-gaussian">Langkah-Langkah Eliminasi Gaussian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-python-numpy">Implementasi Python (NumPy)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisalai-eliminasi-gauss">visualisalai eliminasi gauss</a></li>
 </ul>
   </nav></div>
 

@@ -1,0 +1,229 @@
+Traceback (most recent call last):
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\mohgh\AppData\Local\Programs\Python\Python314\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# ── Titik-titik dari GeoGebra Anda ──────────────────────────────
+%matplotlib inline
+TITIK = {
+    'A': (2, 3),  'B': (2, 4),  'C': (3, 4),  'D': (3, 3),
+    'E': (2,-3),  'F': (3,-3),  'G': (2,-4),  'H': (3,-4),
+    'I': (2, 2),  'J': (3, 2),  'K': (2, 1),  'L': (3, 1),
+    'M': (2,-1),  'N': (3,-1),  'O': (2,-2),  'P': (3,-2),
+}
+
+FRAMES  = 80
+PAUSE_F = 15
+
+# ── Setup figure ────────────────────────────────────────────────
+fig, ax = plt.subplots(figsize=(8, 7), dpi=70)
+fig.patch.set_facecolor('white')
+ax.set_facecolor('white')
+ax.set_xlim(-6, 6)
+ax.set_ylim(-6, 6)
+ax.set_aspect('equal')
+ax.axhline(0, color='black', linewidth=1.2, zorder=2)
+ax.axvline(0, color='black', linewidth=1.2, zorder=2)
+ax.grid(True, color='#cccccc', linewidth=0.5)
+ax.tick_params(labelsize=9)
+ax.set_title('Animasi Translasi ke Atas dan Pencerminan terhadap Sumbu X (Atas-Bawah)\n'
+             '(Klik grafik untuk Pause/Play)', fontsize=11, pad=10)
+
+# ── Warna per pasangan blok Anda ─────────────────────────────────
+BLOK = [
+    {'asli': ['A','B','C','D'], 'warna': '#1a6fb5'},
+    {'asli': ['I','J','L','K'], 'warna': '#7c3aed'},
+    {'asli': ['M','N','P','O'], 'warna': '#d97706'},
+    {'asli': ['E','F','H','G'], 'warna': '#10b981'},
+]
+
+# artists per blok
+blok_artists = []
+for blok in BLOK:
+    warna = blok['warna']
+    pts   = [TITIK[k] for k in blok['asli']]
+    xs    = [p[0] for p in pts]
+    ys    = [p[1] for p in pts]
+
+    xmin, xmax = min(xs), max(xs)
+    ymin, ymax = min(ys), max(ys)
+    r_asli = patches.Rectangle(
+        (xmin, ymin), xmax-xmin, ymax-ymin,
+        lw=2, edgecolor=warna, facecolor='none', zorder=5
+    )
+    ax.add_patch(r_asli)
+    d_asli, = ax.plot([], [], 'o', color=warna, ms=7, zorder=6)
+    t_asli  = [ax.text(0, 0, lbl, color=warna, fontsize=8,
+                       fontweight='bold', zorder=7)
+               for lbl in blok['asli']]
+
+    r_cermin = patches.Rectangle(
+        (xmin, ymin), xmax-xmin, ymax-ymin,
+        lw=2, edgecolor='#e74c3c', facecolor='none', zorder=5
+    )
+    ax.add_patch(r_cermin)
+    d_cermin, = ax.plot([], [], 'o', color='#e74c3c', ms=7, zorder=6)
+    lbl_cermin = [k+"'" for k in blok['asli']]
+    t_cermin   = [ax.text(0, 0, lbl, color='#e74c3c', fontsize=8,
+                          fontweight='bold', zorder=7)
+                  for lbl in lbl_cermin]
+
+    blok_artists.append({
+        'r_asli': r_asli, 'd_asli': d_asli, 't_asli': t_asli,
+        'r_cermin': r_cermin, 'd_cermin': d_cermin, 't_cermin': t_cermin,
+        'xmin': xmin, 'xmax': xmax, 'ymin': ymin, 'ymax': ymax
+    })
+
+# ── Info teks matriks ────────────────────────────────────────────
+mat_txt = ax.text(-5.8, 4.0, '', fontsize=9, color='#222',
+                  fontfamily='monospace',
+                  bbox=dict(boxstyle='round,pad=0.4', facecolor='#f0f4ff',
+                            edgecolor='#aaaaaa', alpha=0.9))
+
+# ── Legend ───────────────────────────────────────────────────────
+legend_elements = [
+    Line2D([0],[0], color='#1a6fb5', lw=2, label='Blok Asli'),
+    Line2D([0],[0], color='#e74c3c', lw=2, label="Blok Cermin (P')"),
+]
+ax.legend(handles=legend_elements, loc='upper right',
+          fontsize=9, framealpha=0.9)
+
+# ── State pause ──────────────────────────────────────────────────
+state = {'paused': False}
+def on_click(event):
+    if event.inaxes == ax:
+        state['paused'] = not state['paused']
+fig.canvas.mpl_connect('button_press_event', on_click)
+
+# ── Easing scale dan translasi ───────────────────────────────────
+def get_scale_and_trans(frame):
+    if frame < PAUSE_F:
+        return 0.0, 1.0
+    if frame >= FRAMES - PAUSE_F:
+        return 1.0, -1.0
+
+    mid = FRAMES // 2
+    if frame < mid:
+        t_val = (frame - PAUSE_F) / (mid - PAUSE_F - 1)
+        t_val = 3*t_val**2 - 2*t_val**3
+        return t_val, 1.0
+    else:
+        s_val = (frame - mid) / (FRAMES - PAUSE_F - mid)
+        s_val = 3*s_val**2 - 2*s_val**3
+        s = 1.0 - 2.0 * s_val
+        return 1.0, s
+
+cur_frame = [0]
+
+def animate(frame):
+    if state['paused']:
+        frame = cur_frame[0]
+    else:
+        cur_frame[0] = frame
+
+    t, s = get_scale_and_trans(frame)
+    all_artists = [mat_txt]
+
+    for ba in blok_artists:
+        xmin = ba['xmin']; xmax = ba['xmax']
+        ymin = ba['ymin']; ymax = ba['ymax']
+
+        y0a = ymin
+        y1a = ymax
+        ya_min = ymin
+        ha = ymax - ymin
+        ba['r_asli'].set_y(ya_min)
+        ba['r_asli'].set_height(ha)
+
+        cx = [xmin, xmax, xmax, xmin]
+        cy_a = [y0a, y0a, y1a, y1a]
+        ba['d_asli'].set_data(cx, cy_a)
+        off = [(-0.15,-0.2),(0.05,-0.2),(0.05,0.05),(-0.15,0.05)]
+        for tx, px, py, (dx, dy) in zip(ba['t_asli'], cx, cy_a, off):
+            tx.set_position((px+dx, py+dy))
+        all_artists += [ba['d_asli'], ba['r_asli']] + ba['t_asli']
+
+        y0c = (ymin + t) * s
+        y1c = (ymax + t) * s
+        yc_min = min(y0c, y1c)
+        hc = abs(y0c - y1c)
+        ba['r_cermin'].set_y(yc_min)
+        ba['r_cermin'].set_height(max(hc, 1e-6))
+
+        cy_c = [y0c, y0c, y1c, y1c]
+        off2 = [(-0.15,-0.25),(0.05,-0.25),(0.05,0.05),(-0.15,0.05)]
+        for tx, px, py, (dx, dy) in zip(ba['t_cermin'], cx, cy_c, off2):
+            tx.set_position((px+dx, py+dy))
+        ba['d_cermin'].set_data(cx, cy_c)
+        all_artists += [ba['d_cermin'], ba['r_cermin']] + ba['t_cermin']
+
+    # ✅ FIX: mat_txt.set_text sejajar dengan 'for' loop (indent 4 spasi)
+    mat_txt.set_text(
+        f'T_trans = [1.0  0.0  0.00]\n'
+        f'          [0.0  1.0  {t:.2f}]\n'
+        f'          [0.0  0.0  1.00]\n\n'
+        f'M_refly = [1.0  0.0  0.00]\n'
+        f'          [0.0  {s:.2f}  0.00]\n'
+        f'          [0.0  0.0  1.00]\n\n'
+        f'A_gab   = [1.0  0.0  0.00]\n'
+        f'          [0.0  {s:.2f}  {s*t:.2f}]\n'
+        f'          [0.0  0.0  1.00]'
+    )
+    return all_artists
+
+ani = animation.FuncAnimation(
+    fig, animate, frames=FRAMES,
+    interval=45, blit=True, repeat=True
+)
+
+from IPython.display import HTML, display
+import matplotlib
+matplotlib.rcParams['animation.embed_limit'] = 100  # supaya tidak terpotong
+
+
+plt.tight_layout()
+display(HTML(ani.to_jshtml()))
+plt.close()
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 45[39m
+[32m     43[39m xmin, xmax = [38;5;28mmin[39m(xs), [38;5;28mmax[39m(xs)
+[32m     44[39m ymin, ymax = [38;5;28mmin[39m(ys), [38;5;28mmax[39m(ys)
+[32m---> [39m[32m45[39m r_asli = [43mpatches[49m.Rectangle(
+[32m     46[39m     (xmin, ymin), xmax-xmin, ymax-ymin,
+[32m     47[39m     lw=[32m2[39m, edgecolor=warna, facecolor=[33m'[39m[33mnone[39m[33m'[39m, zorder=[32m5[39m
+[32m     48[39m )
+[32m     49[39m ax.add_patch(r_asli)
+[32m     50[39m d_asli, = ax.plot([], [], [33m'[39m[33mo[39m[33m'[39m, color=warna, ms=[32m7[39m, zorder=[32m6[39m)
+
+[31mNameError[39m: name 'patches' is not defined
+
