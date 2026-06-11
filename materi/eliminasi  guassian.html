@@ -1,0 +1,966 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sistem Persamaan Linear &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ad5f3a07" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'materi/eliminasi  guassian';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Landing Page
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tentang</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../biodata/biodata.html">Biodata Saya &amp; Dosen Pengampu</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Materi</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="spl.html">Sistem Persamaan Linier (SPL)</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="eliminasi%20guassian.html">Eliminasi Gaussian</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="determinan%20%26%20invers.html">Determinan dan Invers Matriks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dekomposisi%20QR.html">Dekomposisi QR</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Playground</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="playground/gauss.html">Playground: Eliminasi Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playground/spl.html">visualisasi sistem persamaan linier</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">tugas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tugas/guassian.html">tugas gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tugas/transformasi_pencerminan.html">Transformasi Sumbu Y menggunakan Translasi dan Pencerminan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tugas/svd.html">Tugas: Singular Value Decomposition (SVD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tugas/determinan_invers.html">Tugas Determinan dan Invers Matriks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmateri/eliminasi  guassian.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/materi/eliminasi  guassian.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sistem Persamaan Linear</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-eliminasi-gauss">Metode Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan">penjelasan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal">contoh Soal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-bentuk-matriks-augmented">Langkah 1 — Bentuk Matriks Augmented</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-forward-elimination-eliminasi-ke-depan">Langkah 2 — Forward Elimination (Eliminasi ke Depan)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-x-pivot-baris-1">Eliminasi Kolom <span class="math notranslate nohighlight">\(x\)</span> (Pivot: Baris 1)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-y-pivot-baris-2">Eliminasi Kolom <span class="math notranslate nohighlight">\(y\)</span> (Pivot: Baris 2)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-back-substitution-substitusi-mundur">Langkah 3 — Back Substitution (Substitusi Mundur)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-3-cari-z">Dari Baris 3 → cari <span class="math notranslate nohighlight">\(z\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-2-cari-y">Dari Baris 2 → cari <span class="math notranslate nohighlight">\(y\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-1-cari-x">Dari Baris 1 → cari <span class="math notranslate nohighlight">\(x\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-spl-3-variabel">Solusi SPL 3 Variabel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spl-4-variabel-eliminasi-gauss">SPL 4 Variabel — Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">contoh Soal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 1 — Bentuk Matriks Augmented</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-forward-elimination">Langkah 2 — Forward Elimination</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-w-pivot-baris-1">Eliminasi Kolom <span class="math notranslate nohighlight">\(w\)</span> (Pivot: Baris 1)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-x-pivot-baris-2">Eliminasi Kolom <span class="math notranslate nohighlight">\(x\)</span> (Pivot: Baris 2)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tukar-baris-3-dan-baris-4-partial-pivoting">Tukar Baris 3 dan Baris 4 (Partial Pivoting)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-back-substitution">Langkah 3 — Back Substitution</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-4-cari-z">Dari Baris 4 → cari <span class="math notranslate nohighlight">\(z\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-3-cari-y">Dari Baris 3 → cari <span class="math notranslate nohighlight">\(y\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-2-cari-x">Dari Baris 2 → cari <span class="math notranslate nohighlight">\(x\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-1-cari-w">Dari Baris 1 → cari <span class="math notranslate nohighlight">\(w\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-spl-4-variabel">Solusi SPL 4 Variabel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-langkah-eliminasi-gauss">💡 Ringkasan Langkah Eliminasi Gauss</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sistem-persamaan-linear">
+<h1>Sistem Persamaan Linear<a class="headerlink" href="#sistem-persamaan-linear" title="Link to this heading">#</a></h1>
+<section id="metode-eliminasi-gauss">
+<h2>Metode Eliminasi Gauss<a class="headerlink" href="#metode-eliminasi-gauss" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<section id="penjelasan">
+<h3>penjelasan<a class="headerlink" href="#penjelasan" title="Link to this heading">#</a></h3>
+<p><strong>Eliminasi Gauss</strong> adalah metode sistematis untuk menyelesaikan Sistem Persamaan Linear (SPL) dengan cara mengubah matriks augmented menjadi bentuk <strong>eselon baris (row echelon form)</strong>, kemudian diselesaikan dengan <strong>substitusi mundur (back substitution)</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="contoh-soal">
+<h3>contoh Soal<a class="headerlink" href="#contoh-soal" title="Link to this heading">#</a></h3>
+<p>Tentukan nilai <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, dan <span class="math notranslate nohighlight">\(z\)</span> dari sistem persamaan berikut:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+2x + y - z = 8 \\
+-3x - y + 2z = -11 \\
+-2x + y + 2z = -3
+\end{cases}
+\end{split}\]</div>
+</section>
+<hr class="docutils" />
+<section id="langkah-1-bentuk-matriks-augmented">
+<h3>Langkah 1 — Bentuk Matriks Augmented<a class="headerlink" href="#langkah-1-bentuk-matriks-augmented" title="Link to this heading">#</a></h3>
+<p>Sistem persamaan di atas dapat dituliskan dalam bentuk matriks augmented <span class="math notranslate nohighlight">\([A|b]\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[\begin{array}{ccc|c}
+2 &amp; 1 &amp; -1 &amp; 8 \\
+-3 &amp; -1 &amp; 2 &amp; -11 \\
+-2 &amp; 1 &amp; 2 &amp; -3
+\end{array}\right]
+\end{split}\]</div>
+<p>Matriks ini terdiri dari:</p>
+<ul class="simple">
+<li><p><strong>Kolom 1, 2, 3</strong> → koefisien variabel <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span></p></li>
+<li><p><strong>Kolom 4</strong> → nilai ruas kanan <span class="math notranslate nohighlight">\(b\)</span></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-forward-elimination-eliminasi-ke-depan">
+<h3>Langkah 2 — Forward Elimination (Eliminasi ke Depan)<a class="headerlink" href="#langkah-2-forward-elimination-eliminasi-ke-depan" title="Link to this heading">#</a></h3>
+<p>Tujuan: membuat elemen <strong>di bawah diagonal utama menjadi nol</strong>.</p>
+<hr class="docutils" />
+<section id="eliminasi-kolom-x-pivot-baris-1">
+<h4>Eliminasi Kolom <span class="math notranslate nohighlight">\(x\)</span> (Pivot: Baris 1)<a class="headerlink" href="#eliminasi-kolom-x-pivot-baris-1" title="Link to this heading">#</a></h4>
+<p>Pivot = <span class="math notranslate nohighlight">\(a_{11} = 2\)</span></p>
+<p><strong>Operasi baris:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+R_2 \leftarrow R_2 + \frac{3}{2} R_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_2 = [-3 + \tfrac{3}{2}(2),\ -1 + \tfrac{3}{2}(1),\ 2 + \tfrac{3}{2}(-1)\ |\ -11 + \tfrac{3}{2}(8)]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_2 = [0,\ \tfrac{1}{2},\ \tfrac{1}{2}\ |\ 1]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_3 \leftarrow R_3 + \frac{2}{2} R_1 = R_3 + R_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_3 = [-2+2,\ 1+1,\ 2+(-1)\ |\ -3+8]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_3 = [0,\ 2,\ 1\ |\ 5]
+\]</div>
+<p><strong>Hasil setelah eliminasi kolom <span class="math notranslate nohighlight">\(x\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[\begin{array}{ccc|c}
+2 &amp; 1 &amp; -1 &amp; 8 \\
+0 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; 1 \\
+0 &amp; 2 &amp; 1 &amp; 5
+\end{array}\right]
+\end{split}\]</div>
+</section>
+<hr class="docutils" />
+<section id="eliminasi-kolom-y-pivot-baris-2">
+<h4>Eliminasi Kolom <span class="math notranslate nohighlight">\(y\)</span> (Pivot: Baris 2)<a class="headerlink" href="#eliminasi-kolom-y-pivot-baris-2" title="Link to this heading">#</a></h4>
+<p>Pivot = <span class="math notranslate nohighlight">\(a_{22} = \dfrac{1}{2}\)</span></p>
+<p><strong>Operasi baris:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+R_3 \leftarrow R_3 - \frac{2}{\frac{1}{2}} R_2 = R_3 - 4R_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_3 = [0-0,\ 2-4(\tfrac{1}{2}),\ 1-4(\tfrac{1}{2})\ |\ 5-4(1)]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_3 = [0,\ 0,\ -1\ |\ 1]
+\]</div>
+<p><strong>Hasil setelah eliminasi kolom <span class="math notranslate nohighlight">\(y\)</span> (bentuk eselon baris):</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[\begin{array}{ccc|c}
+2 &amp; 1 &amp; -1 &amp; 8 \\
+0 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; 1 \\
+0 &amp; 0 &amp; -1 &amp; 1
+\end{array}\right]
+\end{split}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-back-substitution-substitusi-mundur">
+<h3>Langkah 3 — Back Substitution (Substitusi Mundur)<a class="headerlink" href="#langkah-3-back-substitution-substitusi-mundur" title="Link to this heading">#</a></h3>
+<p>Dimulai dari baris paling bawah ke atas.</p>
+<hr class="docutils" />
+<section id="dari-baris-3-cari-z">
+<h4>Dari Baris 3 → cari <span class="math notranslate nohighlight">\(z\)</span><a class="headerlink" href="#dari-baris-3-cari-z" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+-z = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\boxed{z = -1}
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="dari-baris-2-cari-y">
+<h4>Dari Baris 2 → cari <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#dari-baris-2-cari-y" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{2}y + \frac{1}{2}z = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{2}y + \frac{1}{2}(-1) = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{2}y = 1 + \frac{1}{2} = \frac{3}{2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\boxed{y = 3}
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="dari-baris-1-cari-x">
+<h4>Dari Baris 1 → cari <span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#dari-baris-1-cari-x" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+2x + y - z = 8
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+2x + 3 - (-1) = 8
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+2x + 4 = 8
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+2x = 4
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\boxed{x = 2}
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="solusi-spl-3-variabel">
+<h3>Solusi SPL 3 Variabel<a class="headerlink" href="#solusi-spl-3-variabel" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\boxed{x = 2, \quad y = 3, \quad z = -1}
+\]</div>
+<p>Kita bisa periksa dengan mensubstitusikan ke ketiga persamaan asal. Persamaan pertama: <span class="math notranslate nohighlight">\(2(2) + 3 - (-1) = 8\)</span> , persamaan kedua: <span class="math notranslate nohighlight">\(-3(2) - 3 + 2(-1) = -11\)</span>, persamaan ketiga: <span class="math notranslate nohighlight">\(-2(2) + 3 + 2(-1) = -3\)</span>. Semua nilai terpenuhi.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="spl-4-variabel-eliminasi-gauss">
+<h2>SPL 4 Variabel — Eliminasi Gauss<a class="headerlink" href="#spl-4-variabel-eliminasi-gauss" title="Link to this heading">#</a></h2>
+<p>Setelah memahami SPL 3 variabel, kita perluas ke <strong>4 variabel</strong> dengan cara yang sama. Semakin banyak variabel, semakin banyak langkah eliminasi — namun polanya tetap identik.</p>
+<hr class="docutils" />
+<section id="id1">
+<h3>contoh Soal<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Tentukan nilai <span class="math notranslate nohighlight">\(w\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, dan <span class="math notranslate nohighlight">\(z\)</span> dari sistem berikut:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+w + x + y + z = 10 \\
+2w + 3x + y - z = 14 \\
+w - x + 3y + 2z = 9 \\
+3w + x - y + 2z = 13
+\end{cases}
+\end{split}\]</div>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h3>Langkah 1 — Bentuk Matriks Augmented<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+2 &amp; 3 &amp; 1 &amp; -1 &amp; 14 \\
+1 &amp; -1 &amp; 3 &amp; 2 &amp; 9 \\
+3 &amp; 1 &amp; -1 &amp; 2 &amp; 13
+\end{array}\right]
+\end{split}\]</div>
+<p>Matriks ini terdiri dari:</p>
+<ul class="simple">
+<li><p><strong>Kolom 1, 2, 3, 4</strong> → koefisien variabel <span class="math notranslate nohighlight">\(w\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span></p></li>
+<li><p><strong>Kolom 5</strong> → nilai ruas kanan <span class="math notranslate nohighlight">\(b\)</span></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-forward-elimination">
+<h3>Langkah 2 — Forward Elimination<a class="headerlink" href="#langkah-2-forward-elimination" title="Link to this heading">#</a></h3>
+<section id="eliminasi-kolom-w-pivot-baris-1">
+<h4>Eliminasi Kolom <span class="math notranslate nohighlight">\(w\)</span> (Pivot: Baris 1)<a class="headerlink" href="#eliminasi-kolom-w-pivot-baris-1" title="Link to this heading">#</a></h4>
+<p>Pivot = <span class="math notranslate nohighlight">\(a_{11} = 1\)</span></p>
+<div class="math notranslate nohighlight">
+\[R_2 \leftarrow R_2 - 2R_1\]</div>
+<div class="math notranslate nohighlight">
+\[R_2 = [2-2(1),\ 3-2(1),\ 1-2(1),\ -1-2(1)\ |\ 14-2(10)]\]</div>
+<div class="math notranslate nohighlight">
+\[R_2 = [0,\ 1,\ -1,\ -3\ |\ -6]\]</div>
+<div class="math notranslate nohighlight">
+\[R_3 \leftarrow R_3 - R_1\]</div>
+<div class="math notranslate nohighlight">
+\[R_3 = [1-1,\ -1-1,\ 3-1,\ 2-1\ |\ 9-10]\]</div>
+<div class="math notranslate nohighlight">
+\[R_3 = [0,\ -2,\ 2,\ 1\ |\ -1]\]</div>
+<div class="math notranslate nohighlight">
+\[R_4 \leftarrow R_4 - 3R_1\]</div>
+<div class="math notranslate nohighlight">
+\[R_4 = [3-3,\ 1-3,\ -1-3,\ 2-3\ |\ 13-30]\]</div>
+<div class="math notranslate nohighlight">
+\[R_4 = [0,\ -2,\ -4,\ -1\ |\ -17]\]</div>
+<p><strong>Hasil setelah eliminasi kolom <span class="math notranslate nohighlight">\(w\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; 1 &amp; -1 &amp; -3 &amp; -6 \\
+0 &amp; -2 &amp; 2 &amp; 1 &amp; -1 \\
+0 &amp; -2 &amp; -4 &amp; -1 &amp; -17
+\end{array}\right]
+\end{split}\]</div>
+</section>
+<hr class="docutils" />
+<section id="eliminasi-kolom-x-pivot-baris-2">
+<h4>Eliminasi Kolom <span class="math notranslate nohighlight">\(x\)</span> (Pivot: Baris 2)<a class="headerlink" href="#eliminasi-kolom-x-pivot-baris-2" title="Link to this heading">#</a></h4>
+<p>Pivot = <span class="math notranslate nohighlight">\(a_{22} = 1\)</span></p>
+<div class="math notranslate nohighlight">
+\[R_3 \leftarrow R_3 + 2R_2\]</div>
+<div class="math notranslate nohighlight">
+\[R_3 = [0,\ -2+2,\ 2+2(-1),\ 1+2(-3)\ |\ -1+2(-6)]\]</div>
+<div class="math notranslate nohighlight">
+\[R_3 = [0,\ 0,\ 0,\ -5\ |\ -13]\]</div>
+<div class="math notranslate nohighlight">
+\[R_4 \leftarrow R_4 + 2R_2\]</div>
+<div class="math notranslate nohighlight">
+\[R_4 = [0,\ -2+2,\ -4+2(-1),\ -1+2(-3)\ |\ -17+2(-6)]\]</div>
+<div class="math notranslate nohighlight">
+\[R_4 = [0,\ 0,\ -6,\ -7\ |\ -29]\]</div>
+<p><strong>Hasil setelah eliminasi kolom <span class="math notranslate nohighlight">\(x\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; 1 &amp; -1 &amp; -3 &amp; -6 \\
+0 &amp; 0 &amp; 0 &amp; -5 &amp; -13 \\
+0 &amp; 0 &amp; -6 &amp; -7 &amp; -29
+\end{array}\right]
+\end{split}\]</div>
+</section>
+<hr class="docutils" />
+<section id="tukar-baris-3-dan-baris-4-partial-pivoting">
+<h4>Tukar Baris 3 dan Baris 4 (Partial Pivoting)<a class="headerlink" href="#tukar-baris-3-dan-baris-4-partial-pivoting" title="Link to this heading">#</a></h4>
+<p>Karena <span class="math notranslate nohighlight">\(a_{33} = 0\)</span>, kita perlu tukar baris agar pivot tidak nol:</p>
+<div class="math notranslate nohighlight">
+\[R_3 \leftrightarrow R_4\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; 1 &amp; -1 &amp; -3 &amp; -6 \\
+0 &amp; 0 &amp; -6 &amp; -7 &amp; -29 \\
+0 &amp; 0 &amp; 0 &amp; -5 &amp; -13
+\end{array}\right]
+\end{split}\]</div>
+<p>Matriks sudah dalam <strong>bentuk eselon baris</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-back-substitution">
+<h3>Langkah 3 — Back Substitution<a class="headerlink" href="#langkah-3-back-substitution" title="Link to this heading">#</a></h3>
+<section id="dari-baris-4-cari-z">
+<h4>Dari Baris 4 → cari <span class="math notranslate nohighlight">\(z\)</span><a class="headerlink" href="#dari-baris-4-cari-z" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[-5z = -13\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{z = \frac{13}{5} = 2{,}6}\]</div>
+</section>
+<hr class="docutils" />
+<section id="dari-baris-3-cari-y">
+<h4>Dari Baris 3 → cari <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#dari-baris-3-cari-y" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[-6y - 7z = -29\]</div>
+<div class="math notranslate nohighlight">
+\[-6y - 7\left(\frac{13}{5}\right) = -29\]</div>
+<div class="math notranslate nohighlight">
+\[-6y = -29 + \frac{91}{5} = \frac{-145 + 91}{5} = \frac{-54}{5}\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{y = \frac{54}{30} = \frac{9}{5} = 1{,}8}\]</div>
+</section>
+<hr class="docutils" />
+<section id="dari-baris-2-cari-x">
+<h4>Dari Baris 2 → cari <span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#dari-baris-2-cari-x" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[x - y - 3z = -6\]</div>
+<div class="math notranslate nohighlight">
+\[x - \frac{9}{5} - 3\left(\frac{13}{5}\right) = -6\]</div>
+<div class="math notranslate nohighlight">
+\[x - \frac{9}{5} - \frac{39}{5} = -6\]</div>
+<div class="math notranslate nohighlight">
+\[x - \frac{48}{5} = -6\]</div>
+<div class="math notranslate nohighlight">
+\[x = -6 + \frac{48}{5} = \frac{-30 + 48}{5} = \frac{18}{5}\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{x = \frac{18}{5} = 3{,}6}\]</div>
+</section>
+<hr class="docutils" />
+<section id="dari-baris-1-cari-w">
+<h4>Dari Baris 1 → cari <span class="math notranslate nohighlight">\(w\)</span><a class="headerlink" href="#dari-baris-1-cari-w" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[w + x + y + z = 10\]</div>
+<div class="math notranslate nohighlight">
+\[w + \frac{18}{5} + \frac{9}{5} + \frac{13}{5} = 10\]</div>
+<div class="math notranslate nohighlight">
+\[w + \frac{40}{5} = 10\]</div>
+<div class="math notranslate nohighlight">
+\[w + 8 = 10\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{w = 2}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="solusi-spl-4-variabel">
+<h3>Solusi SPL 4 Variabel<a class="headerlink" href="#solusi-spl-4-variabel" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\boxed{w = 2, \quad x = 3{,}6, \quad y = 1{,}8, \quad z = 2{,}6}\]</div>
+</section>
+<hr class="docutils" />
+<section id="ringkasan-langkah-eliminasi-gauss">
+<h3>💡 Ringkasan Langkah Eliminasi Gauss<a class="headerlink" href="#ringkasan-langkah-eliminasi-gauss" title="Link to this heading">#</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">Algoritma Eliminasi Gauss</p>
+<ol class="arabic simple">
+<li><p><strong>Bentuk matriks augmented</strong> <span class="math notranslate nohighlight">\([A|b]\)</span></p></li>
+<li><p><strong>Forward Elimination</strong> — ubah menjadi bentuk segitiga atas:</p>
+<ul class="simple">
+<li><p>Untuk setiap kolom pivot <span class="math notranslate nohighlight">\(k\)</span>, eliminasi semua elemen di bawahnya</p></li>
+<li><p>Faktor eliminasi: <span class="math notranslate nohighlight">\(m_{ik} = \dfrac{a_{ik}}{a_{kk}}\)</span></p></li>
+<li><p>Operasi: <span class="math notranslate nohighlight">\(R_i \leftarrow R_i - m_{ik} \cdot R_k\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Back Substitution</strong> — selesaikan dari baris terakhir ke atas:
+$<span class="math notranslate nohighlight">\(x_i = \frac{b_i - \sum_{j=i+1}^{n} a_{ij} x_j}{a_{ii}}\)</span>$</p></li>
+</ol>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./materi"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-eliminasi-gauss">Metode Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan">penjelasan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal">contoh Soal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-bentuk-matriks-augmented">Langkah 1 — Bentuk Matriks Augmented</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-forward-elimination-eliminasi-ke-depan">Langkah 2 — Forward Elimination (Eliminasi ke Depan)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-x-pivot-baris-1">Eliminasi Kolom <span class="math notranslate nohighlight">\(x\)</span> (Pivot: Baris 1)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-y-pivot-baris-2">Eliminasi Kolom <span class="math notranslate nohighlight">\(y\)</span> (Pivot: Baris 2)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-back-substitution-substitusi-mundur">Langkah 3 — Back Substitution (Substitusi Mundur)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-3-cari-z">Dari Baris 3 → cari <span class="math notranslate nohighlight">\(z\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-2-cari-y">Dari Baris 2 → cari <span class="math notranslate nohighlight">\(y\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-1-cari-x">Dari Baris 1 → cari <span class="math notranslate nohighlight">\(x\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-spl-3-variabel">Solusi SPL 3 Variabel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spl-4-variabel-eliminasi-gauss">SPL 4 Variabel — Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">contoh Soal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 1 — Bentuk Matriks Augmented</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-forward-elimination">Langkah 2 — Forward Elimination</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-w-pivot-baris-1">Eliminasi Kolom <span class="math notranslate nohighlight">\(w\)</span> (Pivot: Baris 1)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-kolom-x-pivot-baris-2">Eliminasi Kolom <span class="math notranslate nohighlight">\(x\)</span> (Pivot: Baris 2)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tukar-baris-3-dan-baris-4-partial-pivoting">Tukar Baris 3 dan Baris 4 (Partial Pivoting)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-back-substitution">Langkah 3 — Back Substitution</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-4-cari-z">Dari Baris 4 → cari <span class="math notranslate nohighlight">\(z\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-3-cari-y">Dari Baris 3 → cari <span class="math notranslate nohighlight">\(y\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-2-cari-x">Dari Baris 2 → cari <span class="math notranslate nohighlight">\(x\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-baris-1-cari-w">Dari Baris 1 → cari <span class="math notranslate nohighlight">\(w\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-spl-4-variabel">Solusi SPL 4 Variabel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-langkah-eliminasi-gauss">💡 Ringkasan Langkah Eliminasi Gauss</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
