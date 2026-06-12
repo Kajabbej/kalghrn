@@ -65,7 +65,7 @@ $$ = 10 $$
 
 # Jawaban Akhir
 
-$\det(A) = 10$
+$\det(A)$ = 10
 
 ---
 
@@ -217,7 +217,7 @@ $$ = 22 $$
 
 # Jawaban Akhir
 
-$\det(A) = 22$
+$\det(A)$ = 22
 
 ---
 
@@ -277,7 +277,7 @@ $$ = 2M_{11} - 0M_{12} + 1M_{13} - 0M_{14} $$
 
 Karena ada nol:
 
-$= 2M_{11} + M_{13}$
+= 2M11 + $M_{13}$
 
 ---
 
@@ -373,7 +373,7 @@ $$ = 18 $$
 
 # Jawaban Akhir
 
-$\det(A) = 18$
+$\det(A)$ = 18
 
 # Mencari Determinan 4×4 dengan Ekspansi Baris Kedua
 
@@ -551,7 +551,7 @@ $$ = -54 $$
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+$\det(A)$ = -54
 
 ---
 
@@ -784,7 +784,7 @@ $$ = -54 $$
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+$\det(A)$ = -54
 
 ---
 
@@ -983,7 +983,7 @@ $$ = -54 $$
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+$\det(A)$ = -54
 
 ---
 
@@ -1191,7 +1191,7 @@ $$ = -54 $$
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+$\det(A)$ = -54
 
 # Mencari Determinan 4×4 dengan Ekspansi Kolom Kedua
 
@@ -1373,7 +1373,7 @@ $$ = -54 $$
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+$\det(A)$ = -54
 
 ---
 
@@ -1579,7 +1579,7 @@ $$ = -54 $$
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+$\det(A)$ = -54
 
 ---
 
@@ -1814,7 +1814,7 @@ $$ = -54 $$
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+$\det(A)$ = -54
 
 ---
 
@@ -1852,4 +1852,4 @@ Untuk matriks 4×4 ini:
 
 Semua menghasilkan nilai determinan yang sama:
 
-$\det(A) = -54$
+$\det(A)$ = -54

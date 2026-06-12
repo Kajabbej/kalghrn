@@ -1,0 +1,1663 @@
+# Determinan Matriks
+
+Halaman ini membahas cara mencari determinan matriks.
+
+---
+# Mencari Determinan 2×2
+
+Diketahui:
+
+| 3  2 |
+| 1  4 |
+
+---
+
+## Rumus Determinan 2×2
+
+det(A)
+
+= (a × d) - (b × c)
+
+---
+
+## Identifikasi Elemen
+
+| a  b |
+| c  d |
+
+=
+
+| 3  2 |
+| 1  4 |
+
+Maka:
+
+a = 3
+b = 2
+c = 1
+d = 4
+
+---
+
+## Substitusi ke Rumus
+
+det(A)
+
+= (3 × 4) - (2 × 1)
+
+= 12 - 2
+
+= 10
+
+---
+
+# Jawaban Akhir
+
+det(A) = 10
+
+---
+
+## Bentuk Ekspansi Baris 1
+
+Baris pertama:
+
+[3  2]
+
+Pola tanda:
+
++  -
+
+Maka:
+
+det(A)
+
+= 3(4) - 2(1)
+
+= 12 - 2
+
+= 10
+
+---
+
+# Kesimpulan
+
+Untuk matriks 2×2:
+
+| a  b |
+| c  d |
+
+det(A)
+
+= a(d) - b(c)
+
+= ad - bc
+
+# Mencari Determinan 3×3 dengan Ekspansi Baris Pertama
+
+Diketahui:
+
+| 1  2  3 |
+| 0  4  5 |
+| 1  0  6 |
+
+---
+
+## Langkah 1: Pilih Baris Pertama
+
+Baris pertama:
+
+[1  2  3]
+
+Pola tanda:
+
++  -  +
+
+Maka:
+
+det(A)
+
+= 1(M11) - 2(M12) + 3(M13)
+
+---
+
+## Langkah 2: Cari Minor M11
+
+Coret baris 1 dan kolom 1
+
+M11 =
+
+| 4  5 |
+| 0  6 |
+
+det(M11)
+
+= (4×6) - (5×0)
+
+= 24
+
+---
+
+## Langkah 3: Cari Minor M12
+
+Coret baris 1 dan kolom 2
+
+M12 =
+
+| 0  5 |
+| 1  6 |
+
+det(M12)
+
+= (0×6) - (5×1)
+
+= -5
+
+---
+
+## Langkah 4: Cari Minor M13
+
+Coret baris 1 dan kolom 3
+
+M13 =
+
+| 0  4 |
+| 1  0 |
+
+det(M13)
+
+= (0×0) - (4×1)
+
+= -4
+
+---
+
+## Langkah 5: Substitusi ke Rumus
+
+det(A)
+
+= 1(24) - 2(-5) + 3(-4)
+
+= 24 + 10 - 12
+
+= 22
+
+---
+
+# Jawaban Akhir
+
+det(A) = 22
+
+---
+
+# Pola yang Harus Diingat
+
+Untuk ekspansi baris pertama matriks 3×3:
+
+det(A)
+
+= a(M11) - b(M12) + c(M13)
+
+Pola tanda:
+
++  -  +
+
+Langkah:
+
+1. Pilih baris.
+2. Coret baris dan kolom elemen tersebut.
+3. Hitung minor 2×2.
+4. Kalikan dengan tanda (+ - +).
+5. Jumlahkan semuanya.
+
+
+# Mencari Determinan 4×4 dengan Ekspansi Baris Pertama
+
+Diketahui:
+
+|A| =
+
+| 2  0  1  0 |
+| 3  1  2  4 |
+| 1  2  3  1 |
+| 0  1  2  3 |
+
+---
+
+## Langkah 1: Pilih Baris Pertama
+
+Baris pertama:
+
+[2  0  1  0]
+
+Pola tanda:
+
++  -  +  -
+
+Maka:
+
+det(A)
+
+= 2M11 - 0M12 + 1M13 - 0M14
+
+Karena ada nol:
+
+= 2M11 + M13
+
+---
+
+## Langkah 2: Cari Minor M11
+
+Coret baris 1 dan kolom 1
+
+M11 =
+
+| 1  2  4 |
+| 2  3  1 |
+| 1  2  3 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(1×3×3) + (2×1×1) + (4×2×2)
+
+= 9 + 2 + 16
+
+= 27
+
+Diagonal naik:
+
+(1×3×4) + (2×1×1) + (3×2×2)
+
+= 12 + 2 + 12
+
+= 26
+
+M11 = 27 - 26
+
+M11 = 1
+
+---
+
+## Langkah 3: Cari Minor M13
+
+Coret baris 1 dan kolom 3
+
+M13 =
+
+| 3  1  4 |
+| 1  2  1 |
+| 0  1  3 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(3×2×3) + (1×1×0) + (4×1×1)
+
+= 18 + 0 + 4
+
+= 22
+
+Diagonal naik:
+
+(0×2×4) + (1×1×3) + (3×1×1)
+
+= 0 + 3 + 3
+
+= 6
+
+M13 = 22 - 6
+
+M13 = 16
+
+---
+
+## Langkah 4: Substitusi ke Rumus
+
+det(A)
+
+= 2(M11) + M13
+
+= 2(1) + 16
+
+= 2 + 16
+
+= 18
+
+---
+
+# Jawaban Akhir
+
+det(A) = 18
+
+# Mencari Determinan 4×4 dengan Ekspansi Baris Kedua
+
+Diketahui:
+
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
+
+---
+
+## Langkah 1: Pilih Baris Kedua
+
+Baris kedua:
+
+[1  0  2  4]
+
+Pola tanda baris kedua:
+
+-  +  -  +
+
+Maka:
+
+det(A)
+
+= -1(M21)
++0(M22)
+-2(M23)
++4(M24)
+
+Karena ada nol:
+
+det(A)
+
+= -M21 - 2M23 + 4M24
+
+---
+
+## Langkah 2: Cari Minor M21
+
+Coret baris 2 dan kolom 1
+
+M21 =
+
+| 1  0  3 |
+| 1  2  1 |
+| 2  1  3 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(1×2×3) + (0×1×2) + (3×1×1)
+
+= 6 + 0 + 3
+
+= 9
+
+Diagonal naik:
+
+(2×2×3) + (1×1×1) + (3×1×0)
+
+= 12 + 1 + 0
+
+= 13
+
+M21
+
+= 9 - 13
+
+= -4
+
+---
+
+## Langkah 3: Cari Minor M23
+
+Coret baris 2 dan kolom 3
+
+M23 =
+
+| 2  1  3 |
+| 3  1  1 |
+| 0  2  3 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×1×3) + (1×1×0) + (3×3×2)
+
+= 6 + 0 + 18
+
+= 24
+
+Diagonal naik:
+
+(0×1×3) + (2×1×2) + (3×3×1)
+
+= 0 + 4 + 9
+
+= 13
+
+M23
+
+= 24 - 13
+
+= 11
+
+---
+
+## Langkah 4: Cari Minor M24
+
+Coret baris 2 dan kolom 4
+
+M24 =
+
+| 2  1  0 |
+| 3  1  2 |
+| 0  2  1 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×1×1) + (1×2×0) + (0×3×2)
+
+= 2 + 0 + 0
+
+= 2
+
+Diagonal naik:
+
+(0×1×0) + (2×2×2) + (1×3×1)
+
+= 0 + 8 + 3
+
+= 11
+
+M24
+
+= 2 - 11
+
+= -9
+
+---
+
+## Langkah 5: Substitusi
+
+det(A)
+
+= -(-4) - 2(11) + 4(-9)
+
+= 4 - 22 - 36
+
+= -54
+
+---
+
+# Jawaban Akhir
+
+det(A) = -54
+
+---
+
+# Pola Tanda yang Wajib Hafal
+
+| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |
+
+Untuk ekspansi baris ke-2:
+
+-  +  -  +
+
+Untuk ekspansi baris ke-4:
+
+-  +  -  +
+# Mencari Determinan 4×4 dengan Ekspansi Baris Ketiga
+
+Diketahui:
+
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
+
+---
+
+## Langkah 1: Pilih Baris Ketiga
+
+Baris ketiga:
+
+[3  1  2  1]
+
+Pola tanda baris ketiga:
+
++  -  +  -
+
+Maka:
+
+det(A)
+
+= 3(M31)
+- 1(M32)
++ 2(M33)
+- 1(M34)
+
+---
+
+## Langkah 2: Cari Minor M31
+
+Coret baris 3 dan kolom 1
+
+M31 =
+
+| 1  0  3 |
+| 0  2  4 |
+| 2  1  3 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(1×2×3) + (0×4×2) + (3×0×1)
+
+= 6 + 0 + 0
+
+= 6
+
+Diagonal naik:
+
+(2×2×3) + (1×4×1) + (3×0×0)
+
+= 12 + 4 + 0
+
+= 16
+
+M31
+
+= 6 - 16
+
+= -10
+
+---
+
+## Langkah 3: Cari Minor M32
+
+Coret baris 3 dan kolom 2
+
+M32 =
+
+| 2  0  3 |
+| 1  2  4 |
+| 0  1  3 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×2×3) + (0×4×0) + (3×1×1)
+
+= 12 + 0 + 3
+
+= 15
+
+Diagonal naik:
+
+(0×2×3) + (1×4×2) + (3×1×0)
+
+= 0 + 8 + 0
+
+= 8
+
+M32
+
+= 15 - 8
+
+= 7
+
+---
+
+## Langkah 4: Cari Minor M33
+
+Coret baris 3 dan kolom 3
+
+M33 =
+
+| 2  1  3 |
+| 1  0  4 |
+| 0  2  3 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×0×3) + (1×4×0) + (3×1×2)
+
+= 0 + 0 + 6
+
+= 6
+
+Diagonal naik:
+
+(0×0×3) + (2×4×2) + (3×1×1)
+
+= 0 + 16 + 3
+
+= 19
+
+M33
+
+= 6 - 19
+
+= -13
+
+---
+
+## Langkah 5: Cari Minor M34
+
+Coret baris 3 dan kolom 4
+
+M34 =
+
+| 2  1  0 |
+| 1  0  2 |
+| 0  2  1 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×0×1) + (1×2×0) + (0×1×2)
+
+= 0
+
+Diagonal naik:
+
+(0×0×0) + (2×2×2) + (1×1×1)
+
+= 0 + 8 + 1
+
+= 9
+
+M34
+
+= 0 - 9
+
+= -9
+
+---
+
+## Langkah 6: Substitusi
+
+det(A)
+
+= 3(-10)
+- 1(7)
++ 2(-13)
+- 1(-9)
+
+= -30 - 7 - 26 + 9
+
+= -54
+
+---
+
+# Jawaban Akhir
+
+det(A) = -54
+
+---
+
+# Pola Tanda Kofaktor 4×4
+
+| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |
+
+Baris ke-3 menggunakan:
+
++  -  +  -
+
+# Mencari Determinan 4×4 dengan Ekspansi Baris Keempat
+
+Diketahui:
+
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
+
+---
+
+## Langkah 1: Pilih Baris Keempat
+
+Baris keempat:
+
+[0  2  1  3]
+
+Pola tanda baris keempat:
+
+-  +  -  +
+
+Maka:
+
+det(A)
+
+= -0(M41)
++2(M42)
+-1(M43)
++3(M44)
+
+Karena ada nol:
+
+det(A)
+
+= 2(M42)
+- M43
++ 3(M44)
+
+---
+
+## Langkah 2: Cari Minor M42
+
+Coret baris 4 dan kolom 2
+
+M42 =
+
+| 2  0  3 |
+| 1  2  4 |
+| 3  2  1 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×2×1) + (0×4×3) + (3×1×2)
+
+= 4 + 0 + 6
+
+= 10
+
+Diagonal naik:
+
+(3×2×3) + (2×4×2) + (1×1×0)
+
+= 18 + 16 + 0
+
+= 34
+
+M42
+
+= 10 - 34
+
+= -24
+
+---
+
+## Langkah 3: Cari Minor M43
+
+Coret baris 4 dan kolom 3
+
+M43 =
+
+| 2  1  3 |
+| 1  0  4 |
+| 3  1  1 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×0×1) + (1×4×3) + (3×1×1)
+
+= 0 + 12 + 3
+
+= 15
+
+Diagonal naik:
+
+(3×0×3) + (1×4×2) + (1×1×1)
+
+= 0 + 8 + 1
+
+= 9
+
+M43
+
+= 15 - 9
+
+= 6
+
+---
+
+## Langkah 4: Cari Minor M44
+
+Coret baris 4 dan kolom 4
+
+M44 =
+
+| 2  1  0 |
+| 1  0  2 |
+| 3  1  2 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×0×2) + (1×2×3) + (0×1×1)
+
+= 0 + 6 + 0
+
+= 6
+
+Diagonal naik:
+
+(3×0×0) + (1×2×2) + (2×1×1)
+
+= 0 + 4 + 2
+
+= 6
+
+M44
+
+= 6 - 6
+
+= 0
+
+---
+
+## Langkah 5: Substitusi
+
+det(A)
+
+= 2(-24)
+- (6)
++ 3(0)
+
+= -48 - 6 + 0
+
+= -54
+
+---
+
+# Jawaban Akhir
+
+det(A) = -54
+
+---
+
+# Pola Tanda Kofaktor 4×4
+
+| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |
+
+Baris ke-4 menggunakan:
+
+-  +  -  +
+
+---
+
+# Ringkasan Ekspansi Baris
+
+Baris 1 → +  -  +  -
+
+Baris 2 → -  +  -  +
+
+Baris 3 → +  -  +  -
+
+Baris 4 → -  +  -  +
+
+Semua ekspansi menghasilkan determinan yang sama.
+
+# ekpansi  perkolom 1-4
+# Mencari Determinan 4×4 dengan Ekspansi Kolom Pertama
+
+Diketahui:
+
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
+
+---
+
+## Langkah 1: Pilih Kolom Pertama
+
+Kolom pertama:
+
+| 2 |
+| 1 |
+| 3 |
+| 0 |
+
+Pola tanda kolom pertama:
+
++
+-
++
+-
+
+Maka:
+
+det(A)
+
+= 2(M11)
+- 1(M21)
++ 3(M31)
+- 0(M41)
+
+Karena elemen terakhir nol:
+
+det(A)
+
+= 2(M11)
+- M21
++ 3(M31)
+
+---
+
+## Langkah 2: Cari Minor M11
+
+Coret baris 1 dan kolom 1
+
+| 0  2  4 |
+| 1  2  1 |
+| 2  1  3 |
+
+Hitung Sarrus:
+
+Diagonal turun:
+
+(0×2×3)+(2×1×2)+(4×1×1)
+
+= 0+4+4
+
+= 8
+
+Diagonal naik:
+
+(2×2×4)+(1×1×0)+(3×1×2)
+
+=16+0+6
+
+=22
+
+M11 = 8 - 22
+
+M11 = -14
+
+---
+
+## Langkah 3: Cari Minor M21
+
+Coret baris 2 dan kolom 1
+
+| 1  0  3 |
+| 1  2  1 |
+| 2  1  3 |
+
+Hitung Sarrus:
+
+Diagonal turun:
+
+(1×2×3)+(0×1×2)+(3×1×1)
+
+=6+0+3
+
+=9
+
+Diagonal naik:
+
+(2×2×3)+(1×1×1)+(3×1×0)
+
+=12+1+0
+
+=13
+
+M21 = 9 - 13
+
+M21 = -4
+
+---
+
+## Langkah 4: Cari Minor M31
+
+Coret baris 3 dan kolom 1
+
+| 1  0  3 |
+| 0  2  4 |
+| 2  1  3 |
+
+Hitung Sarrus:
+
+Diagonal turun:
+
+(1×2×3)+(0×4×2)+(3×0×1)
+
+=6
+
+Diagonal naik:
+
+(2×2×3)+(1×4×1)+(3×0×0)
+
+=16
+
+M31 = 6 - 16
+
+M31 = -10
+
+---
+
+## Langkah 5: Substitusi
+
+det(A)
+
+= 2(-14)
+-(-4)
++3(-10)
+
+= -28 + 4 - 30
+
+= -54
+
+---
+
+# Jawaban Akhir
+
+det(A) = -54
+
+# Mencari Determinan 4×4 dengan Ekspansi Kolom Kedua
+
+Diketahui:
+
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
+
+---
+
+## Langkah 1: Pilih Kolom Kedua
+
+Kolom kedua:
+
+| 1 |
+| 0 |
+| 1 |
+| 2 |
+
+Pola tanda kolom kedua:
+
+-
++
+-
++
+
+Maka:
+
+det(A)
+
+= -1(M12)
++0(M22)
+-1(M32)
++2(M42)
+
+Karena ada nol:
+
+det(A)
+
+= -M12 - M32 + 2M42
+
+---
+
+## Langkah 2: Cari Minor M12
+
+Coret baris 1 dan kolom 2
+
+| 1  2  4 |
+| 3  2  1 |
+| 0  1  3 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(1×2×3) + (2×1×0) + (4×3×1)
+
+= 6 + 0 + 12
+
+= 18
+
+Diagonal naik:
+
+(0×2×4) + (1×1×1) + (3×3×2)
+
+= 0 + 1 + 18
+
+= 19
+
+M12
+
+= 18 - 19
+
+= -1
+
+---
+
+## Langkah 3: Cari Minor M32
+
+Coret baris 3 dan kolom 2
+
+| 2  0  3 |
+| 1  2  4 |
+| 0  1  3 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×2×3) + (0×4×0) + (3×1×1)
+
+= 12 + 0 + 3
+
+= 15
+
+Diagonal naik:
+
+(0×2×3) + (1×4×2) + (3×1×0)
+
+= 0 + 8 + 0
+
+= 8
+
+M32
+
+= 15 - 8
+
+= 7
+
+---
+
+## Langkah 4: Cari Minor M42
+
+Coret baris 4 dan kolom 2
+
+| 2  0  3 |
+| 1  2  4 |
+| 3  2  1 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×2×1) + (0×4×3) + (3×1×2)
+
+= 4 + 0 + 6
+
+= 10
+
+Diagonal naik:
+
+(3×2×3) + (2×4×2) + (1×1×0)
+
+= 18 + 16 + 0
+
+= 34
+
+M42
+
+= 10 - 34
+
+= -24
+
+---
+
+## Langkah 5: Substitusi
+
+det(A)
+
+= -(-1) - (7) + 2(-24)
+
+= 1 - 7 - 48
+
+= -54
+
+---
+
+# Jawaban Akhir
+
+det(A) = -54
+
+---
+
+# Pola Tanda Kolom Kedua
+
+Posisi:
+
+(1,2) = -
+
+(2,2) = +
+
+(3,2) = -
+
+(4,2) = +
+
+Sehingga:
+
+-  +  -  +
+
+Semua ekspansi (baris atau kolom mana pun) harus menghasilkan nilai determinan yang sama.
+
+# Mencari Determinan 4×4 dengan Ekspansi Kolom Ketiga
+
+Diketahui:
+
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
+
+---
+
+## Langkah 1: Pilih Kolom Ketiga
+
+Kolom ketiga:
+
+| 0 |
+| 2 |
+| 2 |
+| 1 |
+
+Pola tanda kolom ketiga:
+
++
+-
++
+-
+
+Maka:
+
+det(A)
+
+= 0(M13)
+-2(M23)
++2(M33)
+-1(M43)
+
+Karena ada nol:
+
+det(A)
+
+= -2(M23)
++2(M33)
+-M43
+
+---
+
+## Langkah 2: Cari Minor M23
+
+Coret baris 2 dan kolom 3
+
+| 2  1  3 |
+| 3  1  1 |
+| 0  2  3 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×1×3) + (1×1×0) + (3×3×2)
+
+= 6 + 0 + 18
+
+= 24
+
+Diagonal naik:
+
+(0×1×3) + (2×1×2) + (3×3×1)
+
+= 0 + 4 + 9
+
+= 13
+
+M23
+
+= 24 - 13
+
+= 11
+
+---
+
+## Langkah 3: Cari Minor M33
+
+Coret baris 3 dan kolom 3
+
+| 2  1  3 |
+| 1  0  4 |
+| 0  2  3 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×0×3) + (1×4×0) + (3×1×2)
+
+= 0 + 0 + 6
+
+= 6
+
+Diagonal naik:
+
+(0×0×3) + (2×4×2) + (3×1×1)
+
+= 0 + 16 + 3
+
+= 19
+
+M33
+
+= 6 - 19
+
+= -13
+
+---
+
+## Langkah 4: Cari Minor M43
+
+Coret baris 4 dan kolom 3
+
+| 2  1  3 |
+| 1  0  4 |
+| 3  1  1 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×0×1) + (1×4×3) + (3×1×1)
+
+= 0 + 12 + 3
+
+= 15
+
+Diagonal naik:
+
+(3×0×3) + (1×4×2) + (1×1×1)
+
+= 0 + 8 + 1
+
+= 9
+
+M43
+
+= 15 - 9
+
+= 6
+
+---
+
+## Langkah 5: Substitusi
+
+det(A)
+
+= -2(11)
++2(-13)
+-6
+
+= -22 - 26 - 6
+
+= -54
+
+---
+
+# Jawaban Akhir
+
+det(A) = -54
+
+---
+
+# Pola Tanda Kolom Ketiga
+
+Posisi:
+
+(1,3) = +
+
+(2,3) = -
+
+(3,3) = +
+
+(4,3) = -
+
+Sehingga:
+
++  -  +  -
+
+Semua ekspansi baris maupun kolom harus menghasilkan determinan yang sama.
+
+# Mencari Determinan 4×4 dengan Ekspansi Kolom Keempat
+
+Diketahui:
+
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
+
+---
+
+## Langkah 1: Pilih Kolom Keempat
+
+Kolom keempat:
+
+| 3 |
+| 4 |
+| 1 |
+| 3 |
+
+Pola tanda kolom keempat:
+
+-
++
+-
++
+
+Maka:
+
+det(A)
+
+= -3(M14)
++4(M24)
+-1(M34)
++3(M44)
+
+---
+
+## Langkah 2: Cari Minor M14
+
+Coret baris 1 dan kolom 4
+
+| 1  0  2 |
+| 3  1  2 |
+| 0  2  1 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(1×1×1) + (0×2×0) + (2×3×2)
+
+= 1 + 0 + 12
+
+= 13
+
+Diagonal naik:
+
+(0×1×2) + (2×2×1) + (1×3×0)
+
+= 0 + 4 + 0
+
+= 4
+
+M14
+
+= 13 - 4
+
+= 9
+
+---
+
+## Langkah 3: Cari Minor M24
+
+Coret baris 2 dan kolom 4
+
+| 2  1  0 |
+| 3  1  2 |
+| 0  2  1 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×1×1) + (1×2×0) + (0×3×2)
+
+= 2 + 0 + 0
+
+= 2
+
+Diagonal naik:
+
+(0×1×0) + (2×2×2) + (1×3×1)
+
+= 0 + 8 + 3
+
+= 11
+
+M24
+
+= 2 - 11
+
+= -9
+
+---
+
+## Langkah 4: Cari Minor M34
+
+Coret baris 3 dan kolom 4
+
+| 2  1  0 |
+| 1  0  2 |
+| 0  2  1 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×0×1) + (1×2×0) + (0×1×2)
+
+= 0
+
+Diagonal naik:
+
+(0×0×0) + (2×2×2) + (1×1×1)
+
+= 0 + 8 + 1
+
+= 9
+
+M34
+
+= 0 - 9
+
+= -9
+
+---
+
+## Langkah 5: Cari Minor M44
+
+Coret baris 4 dan kolom 4
+
+| 2  1  0 |
+| 1  0  2 |
+| 3  1  2 |
+
+Hitung dengan Sarrus:
+
+Diagonal turun:
+
+(2×0×2) + (1×2×3) + (0×1×1)
+
+= 0 + 6 + 0
+
+= 6
+
+Diagonal naik:
+
+(3×0×0) + (1×2×2) + (2×1×1)
+
+= 0 + 4 + 2
+
+= 6
+
+M44
+
+= 6 - 6
+
+= 0
+
+---
+
+## Langkah 6: Substitusi
+
+det(A)
+
+= -3(9)
++4(-9)
+-1(-9)
++3(0)
+
+= -27 - 36 + 9 + 0
+
+= -54
+
+---
+
+# Jawaban Akhir
+
+det(A) = -54
+
+---
+
+# Pola Tanda Kolom Keempat
+
+Posisi:
+
+(1,4) = -
+
+(2,4) = +
+
+(3,4) = -
+
+(4,4) = +
+
+Sehingga:
+
+-  +  -  +
+
+---
+
+# Kesimpulan
+
+Untuk matriks 4×4 ini:
+
+- Ekspansi Baris 1 = -54
+- Ekspansi Baris 2 = -54
+- Ekspansi Baris 3 = -54
+- Ekspansi Baris 4 = -54
+
+- Ekspansi Kolom 1 = -54
+- Ekspansi Kolom 2 = -54
+- Ekspansi Kolom 3 = -54
+- Ekspansi Kolom 4 = -54
+
+Semua menghasilkan nilai determinan yang sama:
+
+det(A) = -54

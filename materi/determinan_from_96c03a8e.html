@@ -1,0 +1,957 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Determinan Matriks &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ad5f3a07" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'materi/determinan_from_96c03a8e';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Landing Page
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tentang</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../biodata/biodata.html">Biodata Saya &amp; Dosen Pengampu</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Materi</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="spl.html">Sistem Persamaan Linier (SPL)</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="eliminasi%20guassian.html">Eliminasi Gaussian</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="determinan.html">Determinan Matriks</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="invers.html">Invers Matriks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dekomposisi%20QR.html">Dekomposisi QR</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Playground</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="playground/gauss.html">Playground: Eliminasi Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playground/spl.html">visualisasi sistem persamaan linier</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">tugas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tugas/guassian.html">tugas gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tugas/transformasi_pencerminan.html">Transformasi Sumbu Y menggunakan Translasi dan Pencerminan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tugas/svd.html">Tugas: Singular Value Decomposition (SVD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tugas/qr.html">tugas dekomposisi QR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tugas/determinan_invers.html">Tugas Determinan dan Invers Matriks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmateri/determinan_from_96c03a8e.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/materi/determinan_from_96c03a8e.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Determinan Matriks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-2-times-2">1. Determinan Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-determinan">Rumus Determinan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan">Contoh Perhitungan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-3-times-3-dengan-ekspansi-kofaktor">2. Determinan Matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span> dengan Ekspansi Kofaktor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-ekspansi-baris-pertama">Contoh Perhitungan (Ekspansi Baris Pertama)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-hitung-minor-m-11-coret-baris-1-kolom-1">Langkah 1: Hitung Minor <span class="math notranslate nohighlight">\(M_{11}\)</span> (Coret Baris 1 &amp; Kolom 1)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hitung-minor-m-12-coret-baris-1-kolom-2">Langkah 2: Hitung Minor <span class="math notranslate nohighlight">\(M_{12}\)</span> (Coret Baris 1 &amp; Kolom 2)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-hitung-minor-m-13-coret-baris-1-kolom-3">Langkah 3: Hitung Minor <span class="math notranslate nohighlight">\(M_{13}\)</span> (Coret Baris 1 &amp; Kolom 3)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-substitusi-dan-hasil-akhir">Langkah 4: Substitusi dan Hasil Akhir</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-4-times-4-ekspansi-baris-pertama">3. Determinan Matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span> (Ekspansi Baris Pertama)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Contoh Perhitungan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 1: Hitung Minor <span class="math notranslate nohighlight">\(M_{11}\)</span> (Coret Baris 1 &amp; Kolom 1)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hitung-minor-m-13-coret-baris-1-kolom-3">Langkah 2: Hitung Minor <span class="math notranslate nohighlight">\(M_{13}\)</span> (Coret Baris 1 &amp; Kolom 3)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-hasil-akhir">Langkah 3: Hasil Akhir</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-ekspansi-baris-kolom-lainnya-matriks-4-times-4">4. Eksplorasi Ekspansi Baris &amp; Kolom Lainnya (Matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="determinan-matriks">
+<h1>Determinan Matriks<a class="headerlink" href="#determinan-matriks" title="Link to this heading">#</a></h1>
+<p>Halaman ini membahas konsep determinan matriks persegi dari ukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>, <span class="math notranslate nohighlight">\(3 \times 3\)</span>, hingga <span class="math notranslate nohighlight">\(4 \times 4\)</span>, lengkap dengan metode ekspansi kofaktor (baris/kolom) dan metode Sarrus.</p>
+<hr class="docutils" />
+<section id="determinan-matriks-2-times-2">
+<h2>1. Determinan Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span><a class="headerlink" href="#determinan-matriks-2-times-2" title="Link to this heading">#</a></h2>
+<p>Misalkan kita memiliki matriks persegi <span class="math notranslate nohighlight">\(A\)</span> berukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>:
+$<span class="math notranslate nohighlight">\(
+A = \begin{bmatrix} 
+3 &amp; 2 \\ 
+1 &amp; 4 
+\end{bmatrix}
+\)</span>$</p>
+<section id="rumus-determinan">
+<h3>Rumus Determinan<a class="headerlink" href="#rumus-determinan" title="Link to this heading">#</a></h3>
+<p>Determinan dari matriks <span class="math notranslate nohighlight">\(A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}\)</span> didefinisikan sebagai:
+$<span class="math notranslate nohighlight">\(
+\det(A) = \begin{vmatrix} 
+a &amp; b \\ 
+c &amp; d 
+\end{vmatrix} = ad - bc
+\)</span>$</p>
+</section>
+<section id="contoh-perhitungan">
+<h3>Contoh Perhitungan<a class="headerlink" href="#contoh-perhitungan" title="Link to this heading">#</a></h3>
+<p>Dari matriks <span class="math notranslate nohighlight">\(A\)</span> di atas, kita dapat mengidentifikasi elemen-elemennya:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a = 3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d = 4\)</span></p></li>
+</ul>
+<p>Substitusi ke dalam rumus:
+$<span class="math notranslate nohighlight">\(
+\det(A) = (3 \times 4) - (2 \times 1) = 12 - 2 = 10
+\)</span>$</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="determinan-matriks-3-times-3-dengan-ekspansi-kofaktor">
+<h2>2. Determinan Matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span> dengan Ekspansi Kofaktor<a class="headerlink" href="#determinan-matriks-3-times-3-dengan-ekspansi-kofaktor" title="Link to this heading">#</a></h2>
+<p>Metode ekspansi kofaktor digunakan untuk menghitung determinan matriks berukuran <span class="math notranslate nohighlight">\(3 \times 3\)</span> atau lebih besar dengan cara mereduksi ukurannya menjadi minor-minor matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>.</p>
+<p>Pola tanda kofaktor untuk matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span> adalah:
+$$
+\begin{bmatrix}</p>
+<ul class="simple">
+<li><p>&amp; - &amp; + \</p></li>
+</ul>
+<ul class="simple">
+<li><p>&amp; + &amp; - \</p></li>
+</ul>
+<ul class="simple">
+<li><p>&amp; - &amp; +
+\end{bmatrix}
+$$</p></li>
+</ul>
+<section id="contoh-perhitungan-ekspansi-baris-pertama">
+<h3>Contoh Perhitungan (Ekspansi Baris Pertama)<a class="headerlink" href="#contoh-perhitungan-ekspansi-baris-pertama" title="Link to this heading">#</a></h3>
+<p><strong>Diketahui:</strong>
+$<span class="math notranslate nohighlight">\(
+A = \begin{bmatrix} 
+1 &amp; 2 &amp; 3 \\ 
+0 &amp; 4 &amp; 5 \\ 
+1 &amp; 0 &amp; 6 
+\end{bmatrix}
+\)</span>$</p>
+<p>Kita akan menggunakan ekspansi sepanjang <strong>baris pertama</strong> yaitu <span class="math notranslate nohighlight">\([1, 2, 3]\)</span> dengan pola tanda <span class="math notranslate nohighlight">\([+, -, +]\)</span>:
+$<span class="math notranslate nohighlight">\(
+\det(A) = 1 \cdot M_{11} - 2 \cdot M_{12} + 3 \cdot M_{13}
+\)</span>$</p>
+<section id="langkah-1-hitung-minor-m-11-coret-baris-1-kolom-1">
+<h4>Langkah 1: Hitung Minor <span class="math notranslate nohighlight">\(M_{11}\)</span> (Coret Baris 1 &amp; Kolom 1)<a class="headerlink" href="#langkah-1-hitung-minor-m-11-coret-baris-1-kolom-1" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M_{11} = \begin{vmatrix} 4 &amp; 5 \\ 0 &amp; 6 \end{vmatrix} = (4 \times 6) - (5 \times 0) = 24
+\end{split}\]</div>
+</section>
+<section id="langkah-2-hitung-minor-m-12-coret-baris-1-kolom-2">
+<h4>Langkah 2: Hitung Minor <span class="math notranslate nohighlight">\(M_{12}\)</span> (Coret Baris 1 &amp; Kolom 2)<a class="headerlink" href="#langkah-2-hitung-minor-m-12-coret-baris-1-kolom-2" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M_{12} = \begin{vmatrix} 0 &amp; 5 \\ 1 &amp; 6 \end{vmatrix} = (0 \times 6) - (5 \times 1) = -5
+\end{split}\]</div>
+</section>
+<section id="langkah-3-hitung-minor-m-13-coret-baris-1-kolom-3">
+<h4>Langkah 3: Hitung Minor <span class="math notranslate nohighlight">\(M_{13}\)</span> (Coret Baris 1 &amp; Kolom 3)<a class="headerlink" href="#langkah-3-hitung-minor-m-13-coret-baris-1-kolom-3" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M_{13} = \begin{vmatrix} 0 &amp; 4 \\ 1 &amp; 0 \end{vmatrix} = (0 \times 0) - (4 \times 1) = -4
+\end{split}\]</div>
+</section>
+<section id="langkah-4-substitusi-dan-hasil-akhir">
+<h4>Langkah 4: Substitusi dan Hasil Akhir<a class="headerlink" href="#langkah-4-substitusi-dan-hasil-akhir" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = 1(24) - 2(-5) + 3(-4) = 24 + 10 - 12 = 22
+\]</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="determinan-matriks-4-times-4-ekspansi-baris-pertama">
+<h2>3. Determinan Matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span> (Ekspansi Baris Pertama)<a class="headerlink" href="#determinan-matriks-4-times-4-ekspansi-baris-pertama" title="Link to this heading">#</a></h2>
+<p>Untuk matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span>, ekspansi kofaktor akan mereduksinya menjadi beberapa minor <span class="math notranslate nohighlight">\(3 \times 3\)</span>.</p>
+<p>Pola tanda kofaktor untuk matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span> adalah:
+$$
+\begin{bmatrix}</p>
+<ul class="simple">
+<li><p>&amp; - &amp; + &amp; - \</p></li>
+</ul>
+<ul class="simple">
+<li><p>&amp; + &amp; - &amp; + \</p></li>
+</ul>
+<ul class="simple">
+<li><p>&amp; - &amp; + &amp; - \</p></li>
+</ul>
+<ul class="simple">
+<li><p>&amp; + &amp; - &amp; +
+\end{bmatrix}
+$$</p></li>
+</ul>
+<section id="id1">
+<h3>Contoh Perhitungan<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><strong>Diketahui:</strong>
+$<span class="math notranslate nohighlight">\(
+A = \begin{bmatrix} 
+2 &amp; 0 &amp; 1 &amp; 0 \\ 
+3 &amp; 1 &amp; 2 &amp; 4 \\ 
+1 &amp; 2 &amp; 3 &amp; 1 \\ 
+0 &amp; 1 &amp; 2 &amp; 3 
+\end{bmatrix}
+\)</span>$</p>
+<p>Kita pilih <strong>baris pertama</strong> <span class="math notranslate nohighlight">\([2, 0, 1, 0]\)</span> dengan pola tanda <span class="math notranslate nohighlight">\([+, -, +, -]\)</span>:
+$<span class="math notranslate nohighlight">\(
+\det(A) = 2 \cdot M_{11} - 0 \cdot M_{12} + 1 \cdot M_{13} - 0 \cdot M_{14} = 2 \cdot M_{11} + M_{13}
+\)</span>$</p>
+<section id="id2">
+<h4>Langkah 1: Hitung Minor <span class="math notranslate nohighlight">\(M_{11}\)</span> (Coret Baris 1 &amp; Kolom 1)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M_{11} = \begin{vmatrix} 
+1 &amp; 2 &amp; 4 \\ 
+2 &amp; 3 &amp; 1 \\ 
+1 &amp; 2 &amp; 3 
+\end{vmatrix}
+\end{split}\]</div>
+<p>Hitung menggunakan metode <strong>Sarrus</strong>:</p>
+<ul class="simple">
+<li><p>Diagonal turun: <span class="math notranslate nohighlight">\((1\times3\times3) + (2\times1\times1) + (4\times2\times2) = 9 + 2 + 16 = 27\)</span></p></li>
+<li><p>Diagonal naik: <span class="math notranslate nohighlight">\((1\times3\times4) + (2\times1\times1) + (3\times2\times2) = 12 + 2 + 12 = 26\)</span>
+$<span class="math notranslate nohighlight">\(
+M_{11} = 27 - 26 = 1
+\)</span>$</p></li>
+</ul>
+</section>
+<section id="langkah-2-hitung-minor-m-13-coret-baris-1-kolom-3">
+<h4>Langkah 2: Hitung Minor <span class="math notranslate nohighlight">\(M_{13}\)</span> (Coret Baris 1 &amp; Kolom 3)<a class="headerlink" href="#langkah-2-hitung-minor-m-13-coret-baris-1-kolom-3" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M_{13} = \begin{vmatrix} 
+3 &amp; 1 &amp; 4 \\ 
+1 &amp; 2 &amp; 1 \\ 
+0 &amp; 1 &amp; 3 
+\end{vmatrix}
+\end{split}\]</div>
+<p>Hitung menggunakan metode <strong>Sarrus</strong>:</p>
+<ul class="simple">
+<li><p>Diagonal turun: <span class="math notranslate nohighlight">\((3\times2\times3) + (1\times1\times0) + (4\times1\times1) = 18 + 0 + 4 = 22\)</span></p></li>
+<li><p>Diagonal naik: <span class="math notranslate nohighlight">\((0\times2\times4) + (1\times1\times3) + (3\times1\times1) = 0 + 3 + 3 = 6\)</span>
+$<span class="math notranslate nohighlight">\(
+M_{13} = 22 - 6 = 16
+\)</span>$</p></li>
+</ul>
+</section>
+<section id="langkah-3-hasil-akhir">
+<h4>Langkah 3: Hasil Akhir<a class="headerlink" href="#langkah-3-hasil-akhir" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = 2(1) + 16 = 18
+\]</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="eksplorasi-ekspansi-baris-kolom-lainnya-matriks-4-times-4">
+<h2>4. Eksplorasi Ekspansi Baris &amp; Kolom Lainnya (Matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span>)<a class="headerlink" href="#eksplorasi-ekspansi-baris-kolom-lainnya-matriks-4-times-4" title="Link to this heading">#</a></h2>
+<p>Teorema Laplace menjamin bahwa kita akan mendapatkan nilai determinan yang sama tidak peduli baris atau kolom mana yang kita pilih untuk ekspansi.</p>
+<p>Mari kita buktikan menggunakan matriks <span class="math notranslate nohighlight">\(B\)</span> berikut:
+$<span class="math notranslate nohighlight">\(
+B = \begin{bmatrix} 
+2 &amp; 1 &amp; 0 &amp; 3 \\ 
+1 &amp; 0 &amp; 2 &amp; 4 \\ 
+3 &amp; 1 &amp; 2 &amp; 1 \\ 
+0 &amp; 2 &amp; 1 &amp; 3 
+\end{bmatrix}
+\)</span>$</p>
+<p>Berikut adalah rincian perhitungan ekspansi kofaktor untuk seluruh baris dan kolom (klik untuk membukanya):</p>
+<details>
+<summary><b>Ekspansi Baris Kedua (Hasil: -54)</b></summary>
+<p>Baris kedua: <span class="math notranslate nohighlight">\([1, 0, 2, 4]\)</span> dengan tanda <span class="math notranslate nohighlight">\([-, +, -, +]\)</span>:
+$<span class="math notranslate nohighlight">\(
+\det(B) = -1 \cdot M_{21} + 0 \cdot M_{22} - 2 \cdot M_{23} + 4 \cdot M_{24} = -M_{21} - 2M_{23} + 4M_{24}
+\)</span>$</p>
+<ul class="simple">
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{21}\)</span></strong> (Coret Baris 2 &amp; Kolom 1):
+$<span class="math notranslate nohighlight">\(
+M_{21} = \begin{vmatrix} 1 &amp; 0 &amp; 3 \\ 1 &amp; 2 &amp; 1 \\ 2 &amp; 1 &amp; 3 \end{vmatrix} = (6 + 0 + 3) - (12 + 1 + 0) = 9 - 13 = -4
+\)</span>$</p></li>
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{23}\)</span></strong> (Coret Baris 2 &amp; Kolom 3):
+$<span class="math notranslate nohighlight">\(
+M_{23} = \begin{vmatrix} 2 &amp; 1 &amp; 3 \\ 3 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; 3 \end{vmatrix} = (6 + 0 + 18) - (0 + 4 + 9) = 24 - 13 = 11
+\)</span>$</p></li>
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{24}\)</span></strong> (Coret Baris 2 &amp; Kolom 4):
+$<span class="math notranslate nohighlight">\(
+M_{24} = \begin{vmatrix} 2 &amp; 1 &amp; 0 \\ 3 &amp; 1 &amp; 2 \\ 0 &amp; 2 &amp; 1 \end{vmatrix} = (2 + 0 + 0) - (0 + 8 + 3) = 2 - 11 = -9
+\)</span>$</p></li>
+</ul>
+<p><strong>Substitusi:</strong>
+$<span class="math notranslate nohighlight">\(
+\det(B) = -(-4) - 2(11) + 4(-9) = 4 - 22 - 36 = -54
+\)</span>$</p>
+</details>
+<details>
+<summary><b>Ekspansi Baris Ketiga (Hasil: -54)</b></summary>
+<p>Baris ketiga: <span class="math notranslate nohighlight">\([3, 1, 2, 1]\)</span> dengan tanda <span class="math notranslate nohighlight">\([+, -, +, -]\)</span>:
+$<span class="math notranslate nohighlight">\(
+\det(B) = 3 \cdot M_{31} - 1 \cdot M_{32} + 2 \cdot M_{33} - 1 \cdot M_{34}
+\)</span>$</p>
+<ul class="simple">
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{31}\)</span></strong>:
+$<span class="math notranslate nohighlight">\(
+M_{31} = \begin{vmatrix} 1 &amp; 0 &amp; 3 \\ 0 &amp; 2 &amp; 4 \\ 2 &amp; 1 &amp; 3 \end{vmatrix} = (6 + 0 + 0) - (12 + 4 + 0) = 6 - 16 = -10
+\)</span>$</p></li>
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{32}\)</span></strong>:
+$<span class="math notranslate nohighlight">\(
+M_{32} = \begin{vmatrix} 2 &amp; 0 &amp; 3 \\ 1 &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 3 \end{vmatrix} = (12 + 0 + 3) - (0 + 8 + 0) = 15 - 8 = 7
+\)</span>$</p></li>
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{33}\)</span></strong>:
+$<span class="math notranslate nohighlight">\(
+M_{33} = \begin{vmatrix} 2 &amp; 1 &amp; 3 \\ 1 &amp; 0 &amp; 4 \\ 0 &amp; 2 &amp; 3 \end{vmatrix} = (0 + 0 + 6) - (0 + 16 + 3) = 6 - 19 = -13
+\)</span>$</p></li>
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{34}\)</span></strong>:
+$<span class="math notranslate nohighlight">\(
+M_{34} = \begin{vmatrix} 2 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 2 \\ 0 &amp; 2 &amp; 1 \end{vmatrix} = 0 - (0 + 8 + 1) = -9
+\)</span>$</p></li>
+</ul>
+<p><strong>Substitusi:</strong>
+$<span class="math notranslate nohighlight">\(
+\det(B) = 3(-10) - 1(7) + 2(-13) - 1(-9) = -30 - 7 - 26 + 9 = -54
+\)</span>$</p>
+</details>
+<details>
+<summary><b>Ekspansi Baris Keempat (Hasil: -54)</b></summary>
+<p>Baris keempat: <span class="math notranslate nohighlight">\([0, 2, 1, 3]\)</span> dengan tanda <span class="math notranslate nohighlight">\([-, +, -, +]\)</span>:
+$<span class="math notranslate nohighlight">\(
+\det(B) = -0 \cdot M_{41} + 2 \cdot M_{42} - 1 \cdot M_{43} + 3 \cdot M_{44} = 2 \cdot M_{42} - M_{43} + 3 \cdot M_{44}
+\)</span>$</p>
+<ul class="simple">
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{42}\)</span></strong>:
+$<span class="math notranslate nohighlight">\(
+M_{42} = \begin{vmatrix} 2 &amp; 0 &amp; 3 \\ 1 &amp; 2 &amp; 4 \\ 3 &amp; 2 &amp; 1 \end{vmatrix} = (4 + 0 + 6) - (18 + 16 + 0) = 10 - 34 = -24
+\)</span>$</p></li>
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{43}\)</span></strong>:
+$<span class="math notranslate nohighlight">\(
+M_{43} = \begin{vmatrix} 2 &amp; 1 &amp; 3 \\ 1 &amp; 0 &amp; 4 \\ 3 &amp; 1 &amp; 1 \end{vmatrix} = (0 + 12 + 3) - (0 + 8 + 1) = 15 - 9 = 6
+\)</span>$</p></li>
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{44}\)</span></strong>:
+$<span class="math notranslate nohighlight">\(
+M_{44} = \begin{vmatrix} 2 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 2 \\ 3 &amp; 1 &amp; 2 \end{vmatrix} = (0 + 6 + 0) - (0 + 4 + 2) = 6 - 6 = 0
+\)</span>$</p></li>
+</ul>
+<p><strong>Substitusi:</strong>
+$<span class="math notranslate nohighlight">\(
+\det(B) = 2(-24) - 6 + 3(0) = -48 - 6 = -54
+\)</span>$</p>
+</details>
+<details>
+<summary><b>Ekspansi Kolom Pertama (Hasil: -54)</b></summary>
+<p>Kolom pertama: <span class="math notranslate nohighlight">\([2, 1, 3, 0]^T\)</span> dengan tanda <span class="math notranslate nohighlight">\([+, -, +, -]\)</span>:
+$<span class="math notranslate nohighlight">\(
+\det(B) = 2 \cdot M_{11} - 1 \cdot M_{21} + 3 \cdot M_{31} - 0 = 2 \cdot M_{11} - M_{21} + 3 \cdot M_{31}
+\)</span>$</p>
+<ul class="simple">
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{11}\)</span></strong>:
+$<span class="math notranslate nohighlight">\(
+M_{11} = \begin{vmatrix} 0 &amp; 2 &amp; 4 \\ 1 &amp; 2 &amp; 1 \\ 2 &amp; 1 &amp; 3 \end{vmatrix} = (0 + 4 + 4) - (16 + 0 + 6) = 8 - 22 = -14
+\)</span>$</p></li>
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{21}\)</span></strong> (Sudah dihitung di bagian Baris 2): <span class="math notranslate nohighlight">\(-4\)</span></p></li>
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{31}\)</span></strong> (Sudah dihitung di bagian Baris 3): <span class="math notranslate nohighlight">\(-10\)</span></p></li>
+</ul>
+<p><strong>Substitusi:</strong>
+$<span class="math notranslate nohighlight">\(
+\det(B) = 2(-14) - (-4) + 3(-10) = -28 + 4 - 30 = -54
+\)</span>$</p>
+</details>
+<details>
+<summary><b>Ekspansi Kolom Kedua (Hasil: -54)</b></summary>
+<p>Kolom kedua: <span class="math notranslate nohighlight">\([1, 0, 1, 2]^T\)</span> dengan tanda <span class="math notranslate nohighlight">\([-, +, -, +]\)</span>:
+$<span class="math notranslate nohighlight">\(
+\det(B) = -1 \cdot M_{12} + 0 - 1 \cdot M_{32} + 2 \cdot M_{42} = -M_{12} - M_{32} + 2 \cdot M_{42}
+\)</span>$</p>
+<ul class="simple">
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{12}\)</span></strong>:
+$<span class="math notranslate nohighlight">\(
+M_{12} = \begin{vmatrix} 1 &amp; 2 &amp; 4 \\ 3 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 3 \end{vmatrix} = (6 + 0 + 12) - (0 + 1 + 18) = 18 - 19 = -1
+\)</span>$</p></li>
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{32}\)</span></strong> (Sudah dihitung di bagian Baris 3): <span class="math notranslate nohighlight">\(7\)</span></p></li>
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{42}\)</span></strong> (Sudah dihitung di bagian Baris 4): <span class="math notranslate nohighlight">\(-24\)</span></p></li>
+</ul>
+<p><strong>Substitusi:</strong>
+$<span class="math notranslate nohighlight">\(
+\det(B) = -(-1) - 7 + 2(-24) = 1 - 7 - 48 = -54
+\)</span>$</p>
+</details>
+<details>
+<summary><b>Ekspansi Kolom Ketiga (Hasil: -54)</b></summary>
+<p>Kolom ketiga: <span class="math notranslate nohighlight">\([0, 2, 2, 1]^T\)</span> dengan tanda <span class="math notranslate nohighlight">\([+, -, +, -]\)</span>:
+$<span class="math notranslate nohighlight">\(
+\det(B) = 0 - 2 \cdot M_{23} + 2 \cdot M_{33} - 1 \cdot M_{43} = -2 \cdot M_{23} + 2 \cdot M_{33} - M_{43}
+\)</span>$</p>
+<ul class="simple">
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{23}\)</span></strong> (Sudah dihitung di bagian Baris 2): <span class="math notranslate nohighlight">\(11\)</span></p></li>
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{33}\)</span></strong> (Sudah dihitung di bagian Baris 3): <span class="math notranslate nohighlight">\(-13\)</span></p></li>
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{43}\)</span></strong> (Sudah dihitung di bagian Baris 4): <span class="math notranslate nohighlight">\(6\)</span></p></li>
+</ul>
+<p><strong>Substitusi:</strong>
+$<span class="math notranslate nohighlight">\(
+\det(B) = -2(11) + 2(-13) - 6 = -22 - 26 - 6 = -54
+\)</span>$</p>
+</details>
+<details>
+<summary><b>Ekspansi Kolom Keempat (Hasil: -54)</b></summary>
+<p>Kolom keempat: <span class="math notranslate nohighlight">\([3, 4, 1, 3]^T\)</span> dengan tanda <span class="math notranslate nohighlight">\([-, +, -, +]\)</span>:
+$<span class="math notranslate nohighlight">\(
+\det(B) = -3 \cdot M_{14} + 4 \cdot M_{24} - 1 \cdot M_{34} + 3 \cdot M_{44}
+\)</span>$</p>
+<ul class="simple">
+<li><p><strong>Hitung Minor <span class="math notranslate nohighlight">\(M_{14}\)</span></strong>:
+$<span class="math notranslate nohighlight">\(
+M_{14} = \begin{vmatrix} 1 &amp; 0 &amp; 2 \\ 3 &amp; 1 &amp; 2 \\ 0 &amp; 2 &amp; 1 \end{vmatrix} = (1 + 0 + 12) - (0 + 4 + 0) = 13 - 4 = 9
+\)</span>$</p></li>
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{24}\)</span></strong> (Sudah dihitung di bagian Baris 2): <span class="math notranslate nohighlight">\(-9\)</span></p></li>
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{34}\)</span></strong> (Sudah dihitung di bagian Baris 3): <span class="math notranslate nohighlight">\(-9\)</span></p></li>
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{44}\)</span></strong> (Sudah dihitung di bagian Baris 4): <span class="math notranslate nohighlight">\(0\)</span></p></li>
+</ul>
+<p><strong>Substitusi:</strong>
+$<span class="math notranslate nohighlight">\(
+\det(B) = -3(9) + 4(-9) - (-9) + 3(0) = -27 - 36 + 9 = -54
+\)</span>$</p>
+</details>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan">
+<h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>Berdasarkan hasil perhitungan di atas, semua metode ekspansi baris dan kolom menghasilkan determinan yang konsisten:
+$<span class="math notranslate nohighlight">\(
+\det(B) = -54
+\)</span><span class="math notranslate nohighlight">\(
+Hal ini membuktikan keabsahan Teorema Laplace untuk penentuan determinan matriks berukuran tinggi menggunakan baris atau kolom manapun yang paling memudahkan perhitungan (biasanya yang memiliki banyak elemen bernilai \)</span>0$).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./materi"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-2-times-2">1. Determinan Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-determinan">Rumus Determinan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan">Contoh Perhitungan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-3-times-3-dengan-ekspansi-kofaktor">2. Determinan Matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span> dengan Ekspansi Kofaktor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-ekspansi-baris-pertama">Contoh Perhitungan (Ekspansi Baris Pertama)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-hitung-minor-m-11-coret-baris-1-kolom-1">Langkah 1: Hitung Minor <span class="math notranslate nohighlight">\(M_{11}\)</span> (Coret Baris 1 &amp; Kolom 1)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hitung-minor-m-12-coret-baris-1-kolom-2">Langkah 2: Hitung Minor <span class="math notranslate nohighlight">\(M_{12}\)</span> (Coret Baris 1 &amp; Kolom 2)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-hitung-minor-m-13-coret-baris-1-kolom-3">Langkah 3: Hitung Minor <span class="math notranslate nohighlight">\(M_{13}\)</span> (Coret Baris 1 &amp; Kolom 3)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-substitusi-dan-hasil-akhir">Langkah 4: Substitusi dan Hasil Akhir</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-4-times-4-ekspansi-baris-pertama">3. Determinan Matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span> (Ekspansi Baris Pertama)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Contoh Perhitungan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 1: Hitung Minor <span class="math notranslate nohighlight">\(M_{11}\)</span> (Coret Baris 1 &amp; Kolom 1)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hitung-minor-m-13-coret-baris-1-kolom-3">Langkah 2: Hitung Minor <span class="math notranslate nohighlight">\(M_{13}\)</span> (Coret Baris 1 &amp; Kolom 3)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-hasil-akhir">Langkah 3: Hasil Akhir</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-ekspansi-baris-kolom-lainnya-matriks-4-times-4">4. Eksplorasi Ekspansi Baris &amp; Kolom Lainnya (Matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
