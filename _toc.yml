@@ -1,15 +1,24 @@
 format: jb-book
 root: intro
-parts:
+parts: 
   - caption: "Tentang"
     chapters:
       - file: biodata/biodata
   - caption: "Materi"
     chapters:
       - file: materi/spl
-      - file: materi/matriks
-      - file: materi/dekomposisi_qr
+      - file: materi/eliminasi guassian
+      - file: materi/determinan
+      - file: materi/invers
+      - file: materi/dekomposisi QR
+  - caption: "Playground"
+    chapters:
+      - file: materi/playground/gauss
+      - file: materi/playground/spl
   - caption: "tugas"
     chapters:
-      - file: tugas/tugas_eliminasi_gaussian
+      - file: tugas/guassian
       - file: tugas/transformasi_pencerminan
+      - file: tugas/svd
+      - file: tugas/qr
+      - file: tugas/determinan_invers
