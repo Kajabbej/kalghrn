@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ad5f3a07" />
@@ -61,8 +61,6 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'materi/determinan';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -186,6 +184,37 @@
 <li class="toctree-l1"><a class="reference internal" href="eliminasi%20guassian.html">Eliminasi Gaussian</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Determinan Matriks</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="invers.html">Invers Matriks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dekomposisi%20QR.html">Dekomposisi QR</a></li>
 </ul>
@@ -396,12 +425,112 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-determinan">Menghitung Determinan</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-1-times-1">Matriks <span class="math notranslate nohighlight">\(1 \times 1\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-n-times-n-n-geq-2">Matriks <span class="math notranslate nohighlight">\(n \times n\)</span> (<span class="math notranslate nohighlight">\(n \geq 2\)</span>)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Determinan Matriks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-22">Mencari Determinan 2×2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-determinan-22">Rumus Determinan 2×2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-elemen">Identifikasi Elemen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substitusi-ke-rumus">Substitusi ke Rumus</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban-akhir">Jawaban Akhir</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-ekspansi-baris-1">Bentuk Ekspansi Baris 1</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-33-dengan-ekspansi-baris-pertama">Mencari Determinan 3×3 dengan Ekspansi Baris Pertama</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-pertama">Langkah 1: Pilih Baris Pertama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m11">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m12">Langkah 3: Cari Minor M12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m13">Langkah 4: Cari Minor M13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-substitusi-ke-rumus">Langkah 5: Substitusi ke Rumus</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-yang-harus-diingat">Pola yang Harus Diingat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-pertama">Mencari Determinan 4×4 dengan Ekspansi Baris Pertama</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 1: Pilih Baris Pertama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m13">Langkah 3: Cari Minor M13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-substitusi-ke-rumus">Langkah 4: Substitusi ke Rumus</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-kedua">Mencari Determinan 4×4 dengan Ekspansi Baris Kedua</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-kedua">Langkah 1: Pilih Baris Kedua</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m21">Langkah 2: Cari Minor M21</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m23">Langkah 3: Cari Minor M23</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m24">Langkah 4: Cari Minor M24</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-substitusi">Langkah 5: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-yang-wajib-hafal">Pola Tanda yang Wajib Hafal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-ketiga">Mencari Determinan 4×4 dengan Ekspansi Baris Ketiga</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-ketiga">Langkah 1: Pilih Baris Ketiga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m31">Langkah 2: Cari Minor M31</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m32">Langkah 3: Cari Minor M32</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m33">Langkah 4: Cari Minor M33</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-cari-minor-m34">Langkah 5: Cari Minor M34</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6-substitusi">Langkah 6: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kofaktor-44">Pola Tanda Kofaktor 4×4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-keempat">Mencari Determinan 4×4 dengan Ekspansi Baris Keempat</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-keempat">Langkah 1: Pilih Baris Keempat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m42">Langkah 2: Cari Minor M42</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m43">Langkah 3: Cari Minor M43</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m44">Langkah 4: Cari Minor M44</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Langkah 5: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Pola Tanda Kofaktor 4×4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-ekspansi-baris">Ringkasan Ekspansi Baris</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ekpansi-perkolom-1-4">ekpansi  perkolom 1-4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-pertama">Mencari Determinan 4×4 dengan Ekspansi Kolom Pertama</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-pertama">Langkah 1: Pilih Kolom Pertama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m21">Langkah 3: Cari Minor M21</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m31">Langkah 4: Cari Minor M31</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Langkah 5: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-kedua">Mencari Determinan 4×4 dengan Ekspansi Kolom Kedua</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-kedua">Langkah 1: Pilih Kolom Kedua</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m12">Langkah 2: Cari Minor M12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Langkah 3: Cari Minor M32</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m42">Langkah 4: Cari Minor M42</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Langkah 5: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-kedua">Pola Tanda Kolom Kedua</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-ketiga">Mencari Determinan 4×4 dengan Ekspansi Kolom Ketiga</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-ketiga">Langkah 1: Pilih Kolom Ketiga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m23">Langkah 2: Cari Minor M23</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m33">Langkah 3: Cari Minor M33</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m43">Langkah 4: Cari Minor M43</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Langkah 5: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-ketiga">Pola Tanda Kolom Ketiga</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-keempat">Mencari Determinan 4×4 dengan Ekspansi Kolom Keempat</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-keempat">Langkah 1: Pilih Kolom Keempat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m14">Langkah 2: Cari Minor M14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m24">Langkah 3: Cari Minor M24</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m34">Langkah 4: Cari Minor M34</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-cari-minor-m44">Langkah 5: Cari Minor M44</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Langkah 6: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-keempat">Pola Tanda Kolom Keempat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Kesimpulan</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -415,23 +544,1291 @@
   <section class="tex2jax_ignore mathjax_ignore" id="determinan-matriks">
 <h1>Determinan Matriks<a class="headerlink" href="#determinan-matriks" title="Link to this heading">#</a></h1>
 <p>Halaman ini membahas cara mencari determinan matriks.</p>
+</section>
 <hr class="docutils" />
-<section id="menghitung-determinan">
-<h2>Menghitung Determinan<a class="headerlink" href="#menghitung-determinan" title="Link to this heading">#</a></h2>
-<p>Misalkan kita punya matriks persegi <span class="math notranslate nohighlight">\(A\)</span>:
-$<span class="math notranslate nohighlight">\( A = [a_{ij}]_{n \times n} \)</span>$</p>
-<section id="matriks-1-times-1">
-<h3>Matriks <span class="math notranslate nohighlight">\(1 \times 1\)</span><a class="headerlink" href="#matriks-1-times-1" title="Link to this heading">#</a></h3>
-<p>Jika ukuran matriks hanya <span class="math notranslate nohighlight">\(1 \times 1\)</span>, determinannya adalah nilai elemen itu sendiri:
-$<span class="math notranslate nohighlight">\( \det(A) = a_{11} \)</span>$</p>
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-22">
+<h1>Mencari Determinan 2×2<a class="headerlink" href="#mencari-determinan-22" title="Link to this heading">#</a></h1>
+<p>Diketahui:</p>
+<p>| 3  2 |
+| 1  4 |</p>
+<hr class="docutils" />
+<section id="rumus-determinan-22">
+<h2>Rumus Determinan 2×2<a class="headerlink" href="#rumus-determinan-22" title="Link to this heading">#</a></h2>
+<p>det(A)</p>
+<p>= (a × d) - (b × c)</p>
 </section>
-<section id="matriks-n-times-n-n-geq-2">
-<h3>Matriks <span class="math notranslate nohighlight">\(n \times n\)</span> (<span class="math notranslate nohighlight">\(n \geq 2\)</span>)<a class="headerlink" href="#matriks-n-times-n-n-geq-2" title="Link to this heading">#</a></h3>
-<p>Untuk matriks berukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span> atau lebih besar, kita gunakan metode ekspansi kofaktor pada baris pertama:
-$<span class="math notranslate nohighlight">\( \det(A) = \sum_{j=1}^{n} (-1)^{1+j} \, a_{1j} \, \det(A_{1j}) \)</span>$</p>
-<p><em>Catatan: <span class="math notranslate nohighlight">\(A_{1j}\)</span> adalah matriks sisa setelah kita menghapus baris ke-1 dan kolom ke-<span class="math notranslate nohighlight">\(j\)</span> dari matriks <span class="math notranslate nohighlight">\(A\)</span>.</em></p>
+<hr class="docutils" />
+<section id="identifikasi-elemen">
+<h2>Identifikasi Elemen<a class="headerlink" href="#identifikasi-elemen" title="Link to this heading">#</a></h2>
+<p>| a  b |
+| c  d |</p>
+<p>=</p>
+<p>| 3  2 |
+| 1  4 |</p>
+<p>Maka:</p>
+<p>a = 3
+b = 2
+c = 1
+d = 4</p>
+</section>
+<hr class="docutils" />
+<section id="substitusi-ke-rumus">
+<h2>Substitusi ke Rumus<a class="headerlink" href="#substitusi-ke-rumus" title="Link to this heading">#</a></h2>
+<p>det(A)</p>
+<p>= (3 × 4) - (2 × 1)</p>
+<p>= 12 - 2</p>
+<p>= 10</p>
 </section>
 </section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="jawaban-akhir">
+<h1>Jawaban Akhir<a class="headerlink" href="#jawaban-akhir" title="Link to this heading">#</a></h1>
+<p>det(A) = 10</p>
+<hr class="docutils" />
+<section id="bentuk-ekspansi-baris-1">
+<h2>Bentuk Ekspansi Baris 1<a class="headerlink" href="#bentuk-ekspansi-baris-1" title="Link to this heading">#</a></h2>
+<p>Baris pertama:</p>
+<p>[3  2]</p>
+<p>Pola tanda:</p>
+<ul class="simple">
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<p>Maka:</p>
+<p>det(A)</p>
+<p>= 3(4) - 2(1)</p>
+<p>= 12 - 2</p>
+<p>= 10</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="kesimpulan">
+<h1>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h1>
+<p>Untuk matriks 2×2:</p>
+<p>| a  b |
+| c  d |</p>
+<p>det(A)</p>
+<p>= a(d) - b(c)</p>
+<p>= ad - bc</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-33-dengan-ekspansi-baris-pertama">
+<h1>Mencari Determinan 3×3 dengan Ekspansi Baris Pertama<a class="headerlink" href="#mencari-determinan-33-dengan-ekspansi-baris-pertama" title="Link to this heading">#</a></h1>
+<p>Diketahui:</p>
+<p>| 1  2  3 |
+| 0  4  5 |
+| 1  0  6 |</p>
+<hr class="docutils" />
+<section id="langkah-1-pilih-baris-pertama">
+<h2>Langkah 1: Pilih Baris Pertama<a class="headerlink" href="#langkah-1-pilih-baris-pertama" title="Link to this heading">#</a></h2>
+<p>Baris pertama:</p>
+<p>[1  2  3]</p>
+<p>Pola tanda:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Maka:</p>
+<p>det(A)</p>
+<p>= 1(M11) - 2(M12) + 3(M13)</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-cari-minor-m11">
+<h2>Langkah 2: Cari Minor M11<a class="headerlink" href="#langkah-2-cari-minor-m11" title="Link to this heading">#</a></h2>
+<p>Coret baris 1 dan kolom 1</p>
+<p>M11 =</p>
+<p>| 4  5 |
+| 0  6 |</p>
+<p>det(M11)</p>
+<p>= (4×6) - (5×0)</p>
+<p>= 24</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-cari-minor-m12">
+<h2>Langkah 3: Cari Minor M12<a class="headerlink" href="#langkah-3-cari-minor-m12" title="Link to this heading">#</a></h2>
+<p>Coret baris 1 dan kolom 2</p>
+<p>M12 =</p>
+<p>| 0  5 |
+| 1  6 |</p>
+<p>det(M12)</p>
+<p>= (0×6) - (5×1)</p>
+<p>= -5</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-cari-minor-m13">
+<h2>Langkah 4: Cari Minor M13<a class="headerlink" href="#langkah-4-cari-minor-m13" title="Link to this heading">#</a></h2>
+<p>Coret baris 1 dan kolom 3</p>
+<p>M13 =</p>
+<p>| 0  4 |
+| 1  0 |</p>
+<p>det(M13)</p>
+<p>= (0×0) - (4×1)</p>
+<p>= -4</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-5-substitusi-ke-rumus">
+<h2>Langkah 5: Substitusi ke Rumus<a class="headerlink" href="#langkah-5-substitusi-ke-rumus" title="Link to this heading">#</a></h2>
+<p>det(A)</p>
+<p>= 1(24) - 2(-5) + 3(-4)</p>
+<p>= 24 + 10 - 12</p>
+<p>= 22</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Jawaban Akhir<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>det(A) = 22</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="pola-yang-harus-diingat">
+<h1>Pola yang Harus Diingat<a class="headerlink" href="#pola-yang-harus-diingat" title="Link to this heading">#</a></h1>
+<p>Untuk ekspansi baris pertama matriks 3×3:</p>
+<p>det(A)</p>
+<p>= a(M11) - b(M12) + c(M13)</p>
+<p>Pola tanda:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Langkah:</p>
+<ol class="arabic simple">
+<li><p>Pilih baris.</p></li>
+<li><p>Coret baris dan kolom elemen tersebut.</p></li>
+<li><p>Hitung minor 2×2.</p></li>
+<li><p>Kalikan dengan tanda (+ - +).</p></li>
+<li><p>Jumlahkan semuanya.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-baris-pertama">
+<h1>Mencari Determinan 4×4 dengan Ekspansi Baris Pertama<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-baris-pertama" title="Link to this heading">#</a></h1>
+<p>Diketahui:</p>
+<p>|A| =</p>
+<p>| 2  0  1  0 |
+| 3  1  2  4 |
+| 1  2  3  1 |
+| 0  1  2  3 |</p>
+<hr class="docutils" />
+<section id="id2">
+<h2>Langkah 1: Pilih Baris Pertama<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Baris pertama:</p>
+<p>[2  0  1  0]</p>
+<p>Pola tanda:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Maka:</p>
+<p>det(A)</p>
+<p>= 2M11 - 0M12 + 1M13 - 0M14</p>
+<p>Karena ada nol:</p>
+<p>= 2M11 + M13</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>Langkah 2: Cari Minor M11<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Coret baris 1 dan kolom 1</p>
+<p>M11 =</p>
+<p>| 1  2  4 |
+| 2  3  1 |
+| 1  2  3 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(1×3×3) + (2×1×1) + (4×2×2)</p>
+<p>= 9 + 2 + 16</p>
+<p>= 27</p>
+<p>Diagonal naik:</p>
+<p>(1×3×4) + (2×1×1) + (3×2×2)</p>
+<p>= 12 + 2 + 12</p>
+<p>= 26</p>
+<p>M11 = 27 - 26</p>
+<p>M11 = 1</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-cari-minor-m13">
+<h2>Langkah 3: Cari Minor M13<a class="headerlink" href="#langkah-3-cari-minor-m13" title="Link to this heading">#</a></h2>
+<p>Coret baris 1 dan kolom 3</p>
+<p>M13 =</p>
+<p>| 3  1  4 |
+| 1  2  1 |
+| 0  1  3 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(3×2×3) + (1×1×0) + (4×1×1)</p>
+<p>= 18 + 0 + 4</p>
+<p>= 22</p>
+<p>Diagonal naik:</p>
+<p>(0×2×4) + (1×1×3) + (3×1×1)</p>
+<p>= 0 + 3 + 3</p>
+<p>= 6</p>
+<p>M13 = 22 - 6</p>
+<p>M13 = 16</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-substitusi-ke-rumus">
+<h2>Langkah 4: Substitusi ke Rumus<a class="headerlink" href="#langkah-4-substitusi-ke-rumus" title="Link to this heading">#</a></h2>
+<p>det(A)</p>
+<p>= 2(M11) + M13</p>
+<p>= 2(1) + 16</p>
+<p>= 2 + 16</p>
+<p>= 18</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id4">
+<h1>Jawaban Akhir<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+<p>det(A) = 18</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-baris-kedua">
+<h1>Mencari Determinan 4×4 dengan Ekspansi Baris Kedua<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-baris-kedua" title="Link to this heading">#</a></h1>
+<p>Diketahui:</p>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
+<hr class="docutils" />
+<section id="langkah-1-pilih-baris-kedua">
+<h2>Langkah 1: Pilih Baris Kedua<a class="headerlink" href="#langkah-1-pilih-baris-kedua" title="Link to this heading">#</a></h2>
+<p>Baris kedua:</p>
+<p>[1  0  2  4]</p>
+<p>Pola tanda baris kedua:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Maka:</p>
+<p>det(A)</p>
+<p>= -1(M21)
++0(M22)
+-2(M23)
++4(M24)</p>
+<p>Karena ada nol:</p>
+<p>det(A)</p>
+<p>= -M21 - 2M23 + 4M24</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-cari-minor-m21">
+<h2>Langkah 2: Cari Minor M21<a class="headerlink" href="#langkah-2-cari-minor-m21" title="Link to this heading">#</a></h2>
+<p>Coret baris 2 dan kolom 1</p>
+<p>M21 =</p>
+<p>| 1  0  3 |
+| 1  2  1 |
+| 2  1  3 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(1×2×3) + (0×1×2) + (3×1×1)</p>
+<p>= 6 + 0 + 3</p>
+<p>= 9</p>
+<p>Diagonal naik:</p>
+<p>(2×2×3) + (1×1×1) + (3×1×0)</p>
+<p>= 12 + 1 + 0</p>
+<p>= 13</p>
+<p>M21</p>
+<p>= 9 - 13</p>
+<p>= -4</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-cari-minor-m23">
+<h2>Langkah 3: Cari Minor M23<a class="headerlink" href="#langkah-3-cari-minor-m23" title="Link to this heading">#</a></h2>
+<p>Coret baris 2 dan kolom 3</p>
+<p>M23 =</p>
+<p>| 2  1  3 |
+| 3  1  1 |
+| 0  2  3 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×1×3) + (1×1×0) + (3×3×2)</p>
+<p>= 6 + 0 + 18</p>
+<p>= 24</p>
+<p>Diagonal naik:</p>
+<p>(0×1×3) + (2×1×2) + (3×3×1)</p>
+<p>= 0 + 4 + 9</p>
+<p>= 13</p>
+<p>M23</p>
+<p>= 24 - 13</p>
+<p>= 11</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-cari-minor-m24">
+<h2>Langkah 4: Cari Minor M24<a class="headerlink" href="#langkah-4-cari-minor-m24" title="Link to this heading">#</a></h2>
+<p>Coret baris 2 dan kolom 4</p>
+<p>M24 =</p>
+<p>| 2  1  0 |
+| 3  1  2 |
+| 0  2  1 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×1×1) + (1×2×0) + (0×3×2)</p>
+<p>= 2 + 0 + 0</p>
+<p>= 2</p>
+<p>Diagonal naik:</p>
+<p>(0×1×0) + (2×2×2) + (1×3×1)</p>
+<p>= 0 + 8 + 3</p>
+<p>= 11</p>
+<p>M24</p>
+<p>= 2 - 11</p>
+<p>= -9</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-5-substitusi">
+<h2>Langkah 5: Substitusi<a class="headerlink" href="#langkah-5-substitusi" title="Link to this heading">#</a></h2>
+<p>det(A)</p>
+<p>= -(-4) - 2(11) + 4(-9)</p>
+<p>= 4 - 22 - 36</p>
+<p>= -54</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>Jawaban Akhir<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+<p>det(A) = -54</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="pola-tanda-yang-wajib-hafal">
+<h1>Pola Tanda yang Wajib Hafal<a class="headerlink" href="#pola-tanda-yang-wajib-hafal" title="Link to this heading">#</a></h1>
+<p>| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |</p>
+<p>Untuk ekspansi baris ke-2:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Untuk ekspansi baris ke-4:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-baris-ketiga">
+<h1>Mencari Determinan 4×4 dengan Ekspansi Baris Ketiga<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-baris-ketiga" title="Link to this heading">#</a></h1>
+<p>Diketahui:</p>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
+<hr class="docutils" />
+<section id="langkah-1-pilih-baris-ketiga">
+<h2>Langkah 1: Pilih Baris Ketiga<a class="headerlink" href="#langkah-1-pilih-baris-ketiga" title="Link to this heading">#</a></h2>
+<p>Baris ketiga:</p>
+<p>[3  1  2  1]</p>
+<p>Pola tanda baris ketiga:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Maka:</p>
+<p>det(A)</p>
+<p>= 3(M31)</p>
+<ul class="simple">
+<li><p>1(M32)</p></li>
+</ul>
+<ul class="simple">
+<li><p>2(M33)</p></li>
+</ul>
+<ul class="simple">
+<li><p>1(M34)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-cari-minor-m31">
+<h2>Langkah 2: Cari Minor M31<a class="headerlink" href="#langkah-2-cari-minor-m31" title="Link to this heading">#</a></h2>
+<p>Coret baris 3 dan kolom 1</p>
+<p>M31 =</p>
+<p>| 1  0  3 |
+| 0  2  4 |
+| 2  1  3 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(1×2×3) + (0×4×2) + (3×0×1)</p>
+<p>= 6 + 0 + 0</p>
+<p>= 6</p>
+<p>Diagonal naik:</p>
+<p>(2×2×3) + (1×4×1) + (3×0×0)</p>
+<p>= 12 + 4 + 0</p>
+<p>= 16</p>
+<p>M31</p>
+<p>= 6 - 16</p>
+<p>= -10</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-cari-minor-m32">
+<h2>Langkah 3: Cari Minor M32<a class="headerlink" href="#langkah-3-cari-minor-m32" title="Link to this heading">#</a></h2>
+<p>Coret baris 3 dan kolom 2</p>
+<p>M32 =</p>
+<p>| 2  0  3 |
+| 1  2  4 |
+| 0  1  3 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×2×3) + (0×4×0) + (3×1×1)</p>
+<p>= 12 + 0 + 3</p>
+<p>= 15</p>
+<p>Diagonal naik:</p>
+<p>(0×2×3) + (1×4×2) + (3×1×0)</p>
+<p>= 0 + 8 + 0</p>
+<p>= 8</p>
+<p>M32</p>
+<p>= 15 - 8</p>
+<p>= 7</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-cari-minor-m33">
+<h2>Langkah 4: Cari Minor M33<a class="headerlink" href="#langkah-4-cari-minor-m33" title="Link to this heading">#</a></h2>
+<p>Coret baris 3 dan kolom 3</p>
+<p>M33 =</p>
+<p>| 2  1  3 |
+| 1  0  4 |
+| 0  2  3 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×0×3) + (1×4×0) + (3×1×2)</p>
+<p>= 0 + 0 + 6</p>
+<p>= 6</p>
+<p>Diagonal naik:</p>
+<p>(0×0×3) + (2×4×2) + (3×1×1)</p>
+<p>= 0 + 16 + 3</p>
+<p>= 19</p>
+<p>M33</p>
+<p>= 6 - 19</p>
+<p>= -13</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-5-cari-minor-m34">
+<h2>Langkah 5: Cari Minor M34<a class="headerlink" href="#langkah-5-cari-minor-m34" title="Link to this heading">#</a></h2>
+<p>Coret baris 3 dan kolom 4</p>
+<p>M34 =</p>
+<p>| 2  1  0 |
+| 1  0  2 |
+| 0  2  1 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×0×1) + (1×2×0) + (0×1×2)</p>
+<p>= 0</p>
+<p>Diagonal naik:</p>
+<p>(0×0×0) + (2×2×2) + (1×1×1)</p>
+<p>= 0 + 8 + 1</p>
+<p>= 9</p>
+<p>M34</p>
+<p>= 0 - 9</p>
+<p>= -9</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-6-substitusi">
+<h2>Langkah 6: Substitusi<a class="headerlink" href="#langkah-6-substitusi" title="Link to this heading">#</a></h2>
+<p>det(A)</p>
+<p>= 3(-10)</p>
+<ul class="simple">
+<li><p>1(7)</p></li>
+</ul>
+<ul class="simple">
+<li><p>2(-13)</p></li>
+</ul>
+<ul class="simple">
+<li><p>1(-9)</p></li>
+</ul>
+<p>= -30 - 7 - 26 + 9</p>
+<p>= -54</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1>Jawaban Akhir<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<p>det(A) = -54</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="pola-tanda-kofaktor-44">
+<h1>Pola Tanda Kofaktor 4×4<a class="headerlink" href="#pola-tanda-kofaktor-44" title="Link to this heading">#</a></h1>
+<p>| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |</p>
+<p>Baris ke-3 menggunakan:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-baris-keempat">
+<h1>Mencari Determinan 4×4 dengan Ekspansi Baris Keempat<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-baris-keempat" title="Link to this heading">#</a></h1>
+<p>Diketahui:</p>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
+<hr class="docutils" />
+<section id="langkah-1-pilih-baris-keempat">
+<h2>Langkah 1: Pilih Baris Keempat<a class="headerlink" href="#langkah-1-pilih-baris-keempat" title="Link to this heading">#</a></h2>
+<p>Baris keempat:</p>
+<p>[0  2  1  3]</p>
+<p>Pola tanda baris keempat:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Maka:</p>
+<p>det(A)</p>
+<p>= -0(M41)
++2(M42)
+-1(M43)
++3(M44)</p>
+<p>Karena ada nol:</p>
+<p>det(A)</p>
+<p>= 2(M42)</p>
+<ul class="simple">
+<li><p>M43</p></li>
+</ul>
+<ul class="simple">
+<li><p>3(M44)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-cari-minor-m42">
+<h2>Langkah 2: Cari Minor M42<a class="headerlink" href="#langkah-2-cari-minor-m42" title="Link to this heading">#</a></h2>
+<p>Coret baris 4 dan kolom 2</p>
+<p>M42 =</p>
+<p>| 2  0  3 |
+| 1  2  4 |
+| 3  2  1 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×2×1) + (0×4×3) + (3×1×2)</p>
+<p>= 4 + 0 + 6</p>
+<p>= 10</p>
+<p>Diagonal naik:</p>
+<p>(3×2×3) + (2×4×2) + (1×1×0)</p>
+<p>= 18 + 16 + 0</p>
+<p>= 34</p>
+<p>M42</p>
+<p>= 10 - 34</p>
+<p>= -24</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-cari-minor-m43">
+<h2>Langkah 3: Cari Minor M43<a class="headerlink" href="#langkah-3-cari-minor-m43" title="Link to this heading">#</a></h2>
+<p>Coret baris 4 dan kolom 3</p>
+<p>M43 =</p>
+<p>| 2  1  3 |
+| 1  0  4 |
+| 3  1  1 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×0×1) + (1×4×3) + (3×1×1)</p>
+<p>= 0 + 12 + 3</p>
+<p>= 15</p>
+<p>Diagonal naik:</p>
+<p>(3×0×3) + (1×4×2) + (1×1×1)</p>
+<p>= 0 + 8 + 1</p>
+<p>= 9</p>
+<p>M43</p>
+<p>= 15 - 9</p>
+<p>= 6</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-cari-minor-m44">
+<h2>Langkah 4: Cari Minor M44<a class="headerlink" href="#langkah-4-cari-minor-m44" title="Link to this heading">#</a></h2>
+<p>Coret baris 4 dan kolom 4</p>
+<p>M44 =</p>
+<p>| 2  1  0 |
+| 1  0  2 |
+| 3  1  2 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×0×2) + (1×2×3) + (0×1×1)</p>
+<p>= 0 + 6 + 0</p>
+<p>= 6</p>
+<p>Diagonal naik:</p>
+<p>(3×0×0) + (1×2×2) + (2×1×1)</p>
+<p>= 0 + 4 + 2</p>
+<p>= 6</p>
+<p>M44</p>
+<p>= 6 - 6</p>
+<p>= 0</p>
+</section>
+<hr class="docutils" />
+<section id="id7">
+<h2>Langkah 5: Substitusi<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>det(A)</p>
+<p>= 2(-24)</p>
+<ul class="simple">
+<li><p>(6)</p></li>
+</ul>
+<ul class="simple">
+<li><p>3(0)</p></li>
+</ul>
+<p>= -48 - 6 + 0</p>
+<p>= -54</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id8">
+<h1>Jawaban Akhir<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+<p>det(A) = -54</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id9">
+<h1>Pola Tanda Kofaktor 4×4<a class="headerlink" href="#id9" title="Link to this heading">#</a></h1>
+<p>| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |</p>
+<p>Baris ke-4 menggunakan:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="ringkasan-ekspansi-baris">
+<h1>Ringkasan Ekspansi Baris<a class="headerlink" href="#ringkasan-ekspansi-baris" title="Link to this heading">#</a></h1>
+<p>Baris 1 → +  -  +  -</p>
+<p>Baris 2 → -  +  -  +</p>
+<p>Baris 3 → +  -  +  -</p>
+<p>Baris 4 → -  +  -  +</p>
+<p>Semua ekspansi menghasilkan determinan yang sama.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ekpansi-perkolom-1-4">
+<h1>ekpansi  perkolom 1-4<a class="headerlink" href="#ekpansi-perkolom-1-4" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-kolom-pertama">
+<h1>Mencari Determinan 4×4 dengan Ekspansi Kolom Pertama<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-kolom-pertama" title="Link to this heading">#</a></h1>
+<p>Diketahui:</p>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
+<hr class="docutils" />
+<section id="langkah-1-pilih-kolom-pertama">
+<h2>Langkah 1: Pilih Kolom Pertama<a class="headerlink" href="#langkah-1-pilih-kolom-pertama" title="Link to this heading">#</a></h2>
+<p>Kolom pertama:</p>
+<p>| 2 |
+| 1 |
+| 3 |
+| 0 |</p>
+<p>Pola tanda kolom pertama:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<p>Maka:</p>
+<p>det(A)</p>
+<p>= 2(M11)</p>
+<ul class="simple">
+<li><p>1(M21)</p></li>
+</ul>
+<ul class="simple">
+<li><p>3(M31)</p></li>
+</ul>
+<ul class="simple">
+<li><p>0(M41)</p></li>
+</ul>
+<p>Karena elemen terakhir nol:</p>
+<p>det(A)</p>
+<p>= 2(M11)</p>
+<ul class="simple">
+<li><p>M21</p></li>
+</ul>
+<ul class="simple">
+<li><p>3(M31)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id10">
+<h2>Langkah 2: Cari Minor M11<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<p>Coret baris 1 dan kolom 1</p>
+<p>| 0  2  4 |
+| 1  2  1 |
+| 2  1  3 |</p>
+<p>Hitung Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(0×2×3)+(2×1×2)+(4×1×1)</p>
+<p>= 0+4+4</p>
+<p>= 8</p>
+<p>Diagonal naik:</p>
+<p>(2×2×4)+(1×1×0)+(3×1×2)</p>
+<p>=16+0+6</p>
+<p>=22</p>
+<p>M11 = 8 - 22</p>
+<p>M11 = -14</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-cari-minor-m21">
+<h2>Langkah 3: Cari Minor M21<a class="headerlink" href="#langkah-3-cari-minor-m21" title="Link to this heading">#</a></h2>
+<p>Coret baris 2 dan kolom 1</p>
+<p>| 1  0  3 |
+| 1  2  1 |
+| 2  1  3 |</p>
+<p>Hitung Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(1×2×3)+(0×1×2)+(3×1×1)</p>
+<p>=6+0+3</p>
+<p>=9</p>
+<p>Diagonal naik:</p>
+<p>(2×2×3)+(1×1×1)+(3×1×0)</p>
+<p>=12+1+0</p>
+<p>=13</p>
+<p>M21 = 9 - 13</p>
+<p>M21 = -4</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-cari-minor-m31">
+<h2>Langkah 4: Cari Minor M31<a class="headerlink" href="#langkah-4-cari-minor-m31" title="Link to this heading">#</a></h2>
+<p>Coret baris 3 dan kolom 1</p>
+<p>| 1  0  3 |
+| 0  2  4 |
+| 2  1  3 |</p>
+<p>Hitung Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(1×2×3)+(0×4×2)+(3×0×1)</p>
+<p>=6</p>
+<p>Diagonal naik:</p>
+<p>(2×2×3)+(1×4×1)+(3×0×0)</p>
+<p>=16</p>
+<p>M31 = 6 - 16</p>
+<p>M31 = -10</p>
+</section>
+<hr class="docutils" />
+<section id="id11">
+<h2>Langkah 5: Substitusi<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<p>det(A)</p>
+<p>= 2(-14)
+-(-4)
++3(-10)</p>
+<p>= -28 + 4 - 30</p>
+<p>= -54</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id12">
+<h1>Jawaban Akhir<a class="headerlink" href="#id12" title="Link to this heading">#</a></h1>
+<p>det(A) = -54</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-kolom-kedua">
+<h1>Mencari Determinan 4×4 dengan Ekspansi Kolom Kedua<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-kolom-kedua" title="Link to this heading">#</a></h1>
+<p>Diketahui:</p>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
+<hr class="docutils" />
+<section id="langkah-1-pilih-kolom-kedua">
+<h2>Langkah 1: Pilih Kolom Kedua<a class="headerlink" href="#langkah-1-pilih-kolom-kedua" title="Link to this heading">#</a></h2>
+<p>Kolom kedua:</p>
+<p>| 1 |
+| 0 |
+| 1 |
+| 2 |</p>
+<p>Pola tanda kolom kedua:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<p>Maka:</p>
+<p>det(A)</p>
+<p>= -1(M12)
++0(M22)
+-1(M32)
++2(M42)</p>
+<p>Karena ada nol:</p>
+<p>det(A)</p>
+<p>= -M12 - M32 + 2M42</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-cari-minor-m12">
+<h2>Langkah 2: Cari Minor M12<a class="headerlink" href="#langkah-2-cari-minor-m12" title="Link to this heading">#</a></h2>
+<p>Coret baris 1 dan kolom 2</p>
+<p>| 1  2  4 |
+| 3  2  1 |
+| 0  1  3 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(1×2×3) + (2×1×0) + (4×3×1)</p>
+<p>= 6 + 0 + 12</p>
+<p>= 18</p>
+<p>Diagonal naik:</p>
+<p>(0×2×4) + (1×1×1) + (3×3×2)</p>
+<p>= 0 + 1 + 18</p>
+<p>= 19</p>
+<p>M12</p>
+<p>= 18 - 19</p>
+<p>= -1</p>
+</section>
+<hr class="docutils" />
+<section id="id13">
+<h2>Langkah 3: Cari Minor M32<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<p>Coret baris 3 dan kolom 2</p>
+<p>| 2  0  3 |
+| 1  2  4 |
+| 0  1  3 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×2×3) + (0×4×0) + (3×1×1)</p>
+<p>= 12 + 0 + 3</p>
+<p>= 15</p>
+<p>Diagonal naik:</p>
+<p>(0×2×3) + (1×4×2) + (3×1×0)</p>
+<p>= 0 + 8 + 0</p>
+<p>= 8</p>
+<p>M32</p>
+<p>= 15 - 8</p>
+<p>= 7</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-cari-minor-m42">
+<h2>Langkah 4: Cari Minor M42<a class="headerlink" href="#langkah-4-cari-minor-m42" title="Link to this heading">#</a></h2>
+<p>Coret baris 4 dan kolom 2</p>
+<p>| 2  0  3 |
+| 1  2  4 |
+| 3  2  1 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×2×1) + (0×4×3) + (3×1×2)</p>
+<p>= 4 + 0 + 6</p>
+<p>= 10</p>
+<p>Diagonal naik:</p>
+<p>(3×2×3) + (2×4×2) + (1×1×0)</p>
+<p>= 18 + 16 + 0</p>
+<p>= 34</p>
+<p>M42</p>
+<p>= 10 - 34</p>
+<p>= -24</p>
+</section>
+<hr class="docutils" />
+<section id="id14">
+<h2>Langkah 5: Substitusi<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<p>det(A)</p>
+<p>= -(-1) - (7) + 2(-24)</p>
+<p>= 1 - 7 - 48</p>
+<p>= -54</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id15">
+<h1>Jawaban Akhir<a class="headerlink" href="#id15" title="Link to this heading">#</a></h1>
+<p>det(A) = -54</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="pola-tanda-kolom-kedua">
+<h1>Pola Tanda Kolom Kedua<a class="headerlink" href="#pola-tanda-kolom-kedua" title="Link to this heading">#</a></h1>
+<p>Posisi:</p>
+<p>(1,2) = -</p>
+<p>(2,2) = +</p>
+<p>(3,2) = -</p>
+<p>(4,2) = +</p>
+<p>Sehingga:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Semua ekspansi (baris atau kolom mana pun) harus menghasilkan nilai determinan yang sama.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-kolom-ketiga">
+<h1>Mencari Determinan 4×4 dengan Ekspansi Kolom Ketiga<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-kolom-ketiga" title="Link to this heading">#</a></h1>
+<p>Diketahui:</p>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
+<hr class="docutils" />
+<section id="langkah-1-pilih-kolom-ketiga">
+<h2>Langkah 1: Pilih Kolom Ketiga<a class="headerlink" href="#langkah-1-pilih-kolom-ketiga" title="Link to this heading">#</a></h2>
+<p>Kolom ketiga:</p>
+<p>| 0 |
+| 2 |
+| 2 |
+| 1 |</p>
+<p>Pola tanda kolom ketiga:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<p>Maka:</p>
+<p>det(A)</p>
+<p>= 0(M13)
+-2(M23)
++2(M33)
+-1(M43)</p>
+<p>Karena ada nol:</p>
+<p>det(A)</p>
+<p>= -2(M23)
++2(M33)
+-M43</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-cari-minor-m23">
+<h2>Langkah 2: Cari Minor M23<a class="headerlink" href="#langkah-2-cari-minor-m23" title="Link to this heading">#</a></h2>
+<p>Coret baris 2 dan kolom 3</p>
+<p>| 2  1  3 |
+| 3  1  1 |
+| 0  2  3 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×1×3) + (1×1×0) + (3×3×2)</p>
+<p>= 6 + 0 + 18</p>
+<p>= 24</p>
+<p>Diagonal naik:</p>
+<p>(0×1×3) + (2×1×2) + (3×3×1)</p>
+<p>= 0 + 4 + 9</p>
+<p>= 13</p>
+<p>M23</p>
+<p>= 24 - 13</p>
+<p>= 11</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-cari-minor-m33">
+<h2>Langkah 3: Cari Minor M33<a class="headerlink" href="#langkah-3-cari-minor-m33" title="Link to this heading">#</a></h2>
+<p>Coret baris 3 dan kolom 3</p>
+<p>| 2  1  3 |
+| 1  0  4 |
+| 0  2  3 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×0×3) + (1×4×0) + (3×1×2)</p>
+<p>= 0 + 0 + 6</p>
+<p>= 6</p>
+<p>Diagonal naik:</p>
+<p>(0×0×3) + (2×4×2) + (3×1×1)</p>
+<p>= 0 + 16 + 3</p>
+<p>= 19</p>
+<p>M33</p>
+<p>= 6 - 19</p>
+<p>= -13</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-cari-minor-m43">
+<h2>Langkah 4: Cari Minor M43<a class="headerlink" href="#langkah-4-cari-minor-m43" title="Link to this heading">#</a></h2>
+<p>Coret baris 4 dan kolom 3</p>
+<p>| 2  1  3 |
+| 1  0  4 |
+| 3  1  1 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×0×1) + (1×4×3) + (3×1×1)</p>
+<p>= 0 + 12 + 3</p>
+<p>= 15</p>
+<p>Diagonal naik:</p>
+<p>(3×0×3) + (1×4×2) + (1×1×1)</p>
+<p>= 0 + 8 + 1</p>
+<p>= 9</p>
+<p>M43</p>
+<p>= 15 - 9</p>
+<p>= 6</p>
+</section>
+<hr class="docutils" />
+<section id="id16">
+<h2>Langkah 5: Substitusi<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<p>det(A)</p>
+<p>= -2(11)
++2(-13)
+-6</p>
+<p>= -22 - 26 - 6</p>
+<p>= -54</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id17">
+<h1>Jawaban Akhir<a class="headerlink" href="#id17" title="Link to this heading">#</a></h1>
+<p>det(A) = -54</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="pola-tanda-kolom-ketiga">
+<h1>Pola Tanda Kolom Ketiga<a class="headerlink" href="#pola-tanda-kolom-ketiga" title="Link to this heading">#</a></h1>
+<p>Posisi:</p>
+<p>(1,3) = +</p>
+<p>(2,3) = -</p>
+<p>(3,3) = +</p>
+<p>(4,3) = -</p>
+<p>Sehingga:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Semua ekspansi baris maupun kolom harus menghasilkan determinan yang sama.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-kolom-keempat">
+<h1>Mencari Determinan 4×4 dengan Ekspansi Kolom Keempat<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-kolom-keempat" title="Link to this heading">#</a></h1>
+<p>Diketahui:</p>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
+<hr class="docutils" />
+<section id="langkah-1-pilih-kolom-keempat">
+<h2>Langkah 1: Pilih Kolom Keempat<a class="headerlink" href="#langkah-1-pilih-kolom-keempat" title="Link to this heading">#</a></h2>
+<p>Kolom keempat:</p>
+<p>| 3 |
+| 4 |
+| 1 |
+| 3 |</p>
+<p>Pola tanda kolom keempat:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<ul class="simple">
+<li></li>
+</ul>
+<p>Maka:</p>
+<p>det(A)</p>
+<p>= -3(M14)
++4(M24)
+-1(M34)
++3(M44)</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-cari-minor-m14">
+<h2>Langkah 2: Cari Minor M14<a class="headerlink" href="#langkah-2-cari-minor-m14" title="Link to this heading">#</a></h2>
+<p>Coret baris 1 dan kolom 4</p>
+<p>| 1  0  2 |
+| 3  1  2 |
+| 0  2  1 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(1×1×1) + (0×2×0) + (2×3×2)</p>
+<p>= 1 + 0 + 12</p>
+<p>= 13</p>
+<p>Diagonal naik:</p>
+<p>(0×1×2) + (2×2×1) + (1×3×0)</p>
+<p>= 0 + 4 + 0</p>
+<p>= 4</p>
+<p>M14</p>
+<p>= 13 - 4</p>
+<p>= 9</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-cari-minor-m24">
+<h2>Langkah 3: Cari Minor M24<a class="headerlink" href="#langkah-3-cari-minor-m24" title="Link to this heading">#</a></h2>
+<p>Coret baris 2 dan kolom 4</p>
+<p>| 2  1  0 |
+| 3  1  2 |
+| 0  2  1 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×1×1) + (1×2×0) + (0×3×2)</p>
+<p>= 2 + 0 + 0</p>
+<p>= 2</p>
+<p>Diagonal naik:</p>
+<p>(0×1×0) + (2×2×2) + (1×3×1)</p>
+<p>= 0 + 8 + 3</p>
+<p>= 11</p>
+<p>M24</p>
+<p>= 2 - 11</p>
+<p>= -9</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-cari-minor-m34">
+<h2>Langkah 4: Cari Minor M34<a class="headerlink" href="#langkah-4-cari-minor-m34" title="Link to this heading">#</a></h2>
+<p>Coret baris 3 dan kolom 4</p>
+<p>| 2  1  0 |
+| 1  0  2 |
+| 0  2  1 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×0×1) + (1×2×0) + (0×1×2)</p>
+<p>= 0</p>
+<p>Diagonal naik:</p>
+<p>(0×0×0) + (2×2×2) + (1×1×1)</p>
+<p>= 0 + 8 + 1</p>
+<p>= 9</p>
+<p>M34</p>
+<p>= 0 - 9</p>
+<p>= -9</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-5-cari-minor-m44">
+<h2>Langkah 5: Cari Minor M44<a class="headerlink" href="#langkah-5-cari-minor-m44" title="Link to this heading">#</a></h2>
+<p>Coret baris 4 dan kolom 4</p>
+<p>| 2  1  0 |
+| 1  0  2 |
+| 3  1  2 |</p>
+<p>Hitung dengan Sarrus:</p>
+<p>Diagonal turun:</p>
+<p>(2×0×2) + (1×2×3) + (0×1×1)</p>
+<p>= 0 + 6 + 0</p>
+<p>= 6</p>
+<p>Diagonal naik:</p>
+<p>(3×0×0) + (1×2×2) + (2×1×1)</p>
+<p>= 0 + 4 + 2</p>
+<p>= 6</p>
+<p>M44</p>
+<p>= 6 - 6</p>
+<p>= 0</p>
+</section>
+<hr class="docutils" />
+<section id="id18">
+<h2>Langkah 6: Substitusi<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<p>det(A)</p>
+<p>= -3(9)
++4(-9)
+-1(-9)
++3(0)</p>
+<p>= -27 - 36 + 9 + 0</p>
+<p>= -54</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id19">
+<h1>Jawaban Akhir<a class="headerlink" href="#id19" title="Link to this heading">#</a></h1>
+<p>det(A) = -54</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="pola-tanda-kolom-keempat">
+<h1>Pola Tanda Kolom Keempat<a class="headerlink" href="#pola-tanda-kolom-keempat" title="Link to this heading">#</a></h1>
+<p>Posisi:</p>
+<p>(1,4) = -</p>
+<p>(2,4) = +</p>
+<p>(3,4) = -</p>
+<p>(4,4) = +</p>
+<p>Sehingga:</p>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id20">
+<h1>Kesimpulan<a class="headerlink" href="#id20" title="Link to this heading">#</a></h1>
+<p>Untuk matriks 4×4 ini:</p>
+<ul class="simple">
+<li><p>Ekspansi Baris 1 = -54</p></li>
+<li><p>Ekspansi Baris 2 = -54</p></li>
+<li><p>Ekspansi Baris 3 = -54</p></li>
+<li><p>Ekspansi Baris 4 = -54</p></li>
+<li><p>Ekspansi Kolom 1 = -54</p></li>
+<li><p>Ekspansi Kolom 2 = -54</p></li>
+<li><p>Ekspansi Kolom 3 = -54</p></li>
+<li><p>Ekspansi Kolom 4 = -54</p></li>
+</ul>
+<p>Semua menghasilkan nilai determinan yang sama:</p>
+<p>det(A) = -54</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -500,12 +1897,112 @@ $<span class="math notranslate nohighlight">\( \det(A) = \sum_{j=1}^{n} (-1)^{1+
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-determinan">Menghitung Determinan</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-1-times-1">Matriks <span class="math notranslate nohighlight">\(1 \times 1\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-n-times-n-n-geq-2">Matriks <span class="math notranslate nohighlight">\(n \times n\)</span> (<span class="math notranslate nohighlight">\(n \geq 2\)</span>)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Determinan Matriks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-22">Mencari Determinan 2×2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-determinan-22">Rumus Determinan 2×2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-elemen">Identifikasi Elemen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substitusi-ke-rumus">Substitusi ke Rumus</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban-akhir">Jawaban Akhir</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-ekspansi-baris-1">Bentuk Ekspansi Baris 1</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-33-dengan-ekspansi-baris-pertama">Mencari Determinan 3×3 dengan Ekspansi Baris Pertama</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-pertama">Langkah 1: Pilih Baris Pertama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m11">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m12">Langkah 3: Cari Minor M12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m13">Langkah 4: Cari Minor M13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-substitusi-ke-rumus">Langkah 5: Substitusi ke Rumus</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-yang-harus-diingat">Pola yang Harus Diingat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-pertama">Mencari Determinan 4×4 dengan Ekspansi Baris Pertama</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 1: Pilih Baris Pertama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m13">Langkah 3: Cari Minor M13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-substitusi-ke-rumus">Langkah 4: Substitusi ke Rumus</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-kedua">Mencari Determinan 4×4 dengan Ekspansi Baris Kedua</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-kedua">Langkah 1: Pilih Baris Kedua</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m21">Langkah 2: Cari Minor M21</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m23">Langkah 3: Cari Minor M23</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m24">Langkah 4: Cari Minor M24</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-substitusi">Langkah 5: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-yang-wajib-hafal">Pola Tanda yang Wajib Hafal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-ketiga">Mencari Determinan 4×4 dengan Ekspansi Baris Ketiga</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-ketiga">Langkah 1: Pilih Baris Ketiga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m31">Langkah 2: Cari Minor M31</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m32">Langkah 3: Cari Minor M32</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m33">Langkah 4: Cari Minor M33</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-cari-minor-m34">Langkah 5: Cari Minor M34</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6-substitusi">Langkah 6: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kofaktor-44">Pola Tanda Kofaktor 4×4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-keempat">Mencari Determinan 4×4 dengan Ekspansi Baris Keempat</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-keempat">Langkah 1: Pilih Baris Keempat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m42">Langkah 2: Cari Minor M42</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m43">Langkah 3: Cari Minor M43</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m44">Langkah 4: Cari Minor M44</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Langkah 5: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Pola Tanda Kofaktor 4×4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-ekspansi-baris">Ringkasan Ekspansi Baris</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ekpansi-perkolom-1-4">ekpansi  perkolom 1-4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-pertama">Mencari Determinan 4×4 dengan Ekspansi Kolom Pertama</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-pertama">Langkah 1: Pilih Kolom Pertama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m21">Langkah 3: Cari Minor M21</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m31">Langkah 4: Cari Minor M31</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Langkah 5: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-kedua">Mencari Determinan 4×4 dengan Ekspansi Kolom Kedua</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-kedua">Langkah 1: Pilih Kolom Kedua</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m12">Langkah 2: Cari Minor M12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Langkah 3: Cari Minor M32</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m42">Langkah 4: Cari Minor M42</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Langkah 5: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-kedua">Pola Tanda Kolom Kedua</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-ketiga">Mencari Determinan 4×4 dengan Ekspansi Kolom Ketiga</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-ketiga">Langkah 1: Pilih Kolom Ketiga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m23">Langkah 2: Cari Minor M23</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m33">Langkah 3: Cari Minor M33</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m43">Langkah 4: Cari Minor M43</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Langkah 5: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-ketiga">Pola Tanda Kolom Ketiga</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-keempat">Mencari Determinan 4×4 dengan Ekspansi Kolom Keempat</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-keempat">Langkah 1: Pilih Kolom Keempat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m14">Langkah 2: Cari Minor M14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m24">Langkah 3: Cari Minor M24</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m34">Langkah 4: Cari Minor M34</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-cari-minor-m44">Langkah 5: Cari Minor M44</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Langkah 6: Substitusi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Jawaban Akhir</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-keempat">Pola Tanda Kolom Keempat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Kesimpulan</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>
