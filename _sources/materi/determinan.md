@@ -42,7 +42,13 @@ $$
 Metode ekspansi kofaktor digunakan untuk menghitung determinan matriks berukuran $3 \times 3$ atau lebih besar dengan cara mereduksi ukurannya menjadi minor-minor matriks $2 \times 2$.
 
 Pola tanda kofaktor untuk matriks $3 \times 3$ adalah:
-$$ \begin{bmatrix} + & - & + \\ - & + & - \\ + & - & + \end{bmatrix} $$
+$$
+\begin{bmatrix} 
++ & - & + \\ 
+- & + & - \\ 
++ & - & + 
+\end{bmatrix}
+$$
 
 ### Contoh Perhitungan (Ekspansi Baris Pertama)
 **Diketahui:**
@@ -86,7 +92,14 @@ $$
 Untuk matriks $4 \times 4$, ekspansi kofaktor akan mereduksinya menjadi beberapa minor $3 \times 3$.
 
 Pola tanda kofaktor untuk matriks $4 \times 4$ adalah:
-$$ \begin{bmatrix} + & - & + & - \\ - & + & - & + \\ + & - & + & - \\ - & + & - & + \end{bmatrix} $$
+$$
+\begin{bmatrix} 
++ & - & + & - \\ 
+- & + & - & + \\ 
++ & - & + & - \\ 
+- & + & - & + 
+\end{bmatrix}
+$$
 
 ### Contoh Perhitungan
 **Diketahui:**
@@ -161,113 +174,174 @@ Berikut adalah rincian perhitungan ekspansi kofaktor untuk seluruh baris dan kol
 <summary><b>Ekspansi Baris Kedua (Hasil: -54)</b></summary>
 
 Baris kedua: $[1, 0, 2, 4]$ dengan tanda $[-, +, -, +]$:
-$$ \det(B) = -1 \cdot M_{21} + 0 \cdot M_{22} - 2 \cdot M_{23} + 4 \cdot M_{24} = -M_{21} - 2M_{23} + 4M_{24} $$
+$$
+\det(B) = -1 \cdot M_{21} + 0 \cdot M_{22} - 2 \cdot M_{23} + 4 \cdot M_{24} = -M_{21} - 2M_{23} + 4M_{24}
+$$
 
 * **Hitung Minor $M_{21}$** (Coret Baris 2 & Kolom 1):
-$$ M_{21} = \begin{vmatrix} 1 & 0 & 3 \\ 1 & 2 & 1 \\ 2 & 1 & 3 \end{vmatrix} = (6 + 0 + 3) - (12 + 1 + 0) = 9 - 13 = -4 $$
+$$
+M_{21} = \begin{vmatrix} 1 & 0 & 3 \\ 1 & 2 & 1 \\ 2 & 1 & 3 \end{vmatrix} = (6 + 0 + 3) - (12 + 1 + 0) = 9 - 13 = -4
+$$
+
 * **Hitung Minor $M_{23}$** (Coret Baris 2 & Kolom 3):
-$$ M_{23} = \begin{vmatrix} 2 & 1 & 3 \\ 3 & 1 & 1 \\ 0 & 2 & 3 \end{vmatrix} = (6 + 0 + 18) - (0 + 4 + 9) = 24 - 13 = 11 $$
+$$
+M_{23} = \begin{vmatrix} 2 & 1 & 3 \\ 3 & 1 & 1 \\ 0 & 2 & 3 \end{vmatrix} = (6 + 0 + 18) - (0 + 4 + 9) = 24 - 13 = 11
+$$
+
 * **Hitung Minor $M_{24}$** (Coret Baris 2 & Kolom 4):
-$$ M_{24} = \begin{vmatrix} 2 & 1 & 0 \\ 3 & 1 & 2 \\ 0 & 2 & 1 \end{vmatrix} = (2 + 0 + 0) - (0 + 8 + 3) = 2 - 11 = -9 $$
+$$
+M_{24} = \begin{vmatrix} 2 & 1 & 0 \\ 3 & 1 & 2 \\ 0 & 2 & 1 \end{vmatrix} = (2 + 0 + 0) - (0 + 8 + 3) = 2 - 11 = -9
+$$
 
 **Substitusi:**
-$$ \det(B) = -(-4) - 2(11) + 4(-9) = 4 - 22 - 36 = -54 $$
+$$
+\det(B) = -(-4) - 2(11) + 4(-9) = 4 - 22 - 36 = -54
+$$
 </details>
 
 <details>
 <summary><b>Ekspansi Baris Ketiga (Hasil: -54)</b></summary>
 
 Baris ketiga: $[3, 1, 2, 1]$ dengan tanda $[+, -, +, -]$:
-$$ \det(B) = 3 \cdot M_{31} - 1 \cdot M_{32} + 2 \cdot M_{33} - 1 \cdot M_{34} $$
+$$
+\det(B) = 3 \cdot M_{31} - 1 \cdot M_{32} + 2 \cdot M_{33} - 1 \cdot M_{34}
+$$
 
 * **Hitung Minor $M_{31}$**:
-$$ M_{31} = \begin{vmatrix} 1 & 0 & 3 \\ 0 & 2 & 4 \\ 2 & 1 & 3 \end{vmatrix} = (6 + 0 + 0) - (12 + 4 + 0) = 6 - 16 = -10 $$
+$$
+M_{31} = \begin{vmatrix} 1 & 0 & 3 \\ 0 & 2 & 4 \\ 2 & 1 & 3 \end{vmatrix} = (6 + 0 + 0) - (12 + 4 + 0) = 6 - 16 = -10
+$$
+
 * **Hitung Minor $M_{32}$**:
-$$ M_{32} = \begin{vmatrix} 2 & 0 & 3 \\ 1 & 2 & 4 \\ 0 & 1 & 3 \end{vmatrix} = (12 + 0 + 3) - (0 + 8 + 0) = 15 - 8 = 7 $$
+$$
+M_{32} = \begin{vmatrix} 2 & 0 & 3 \\ 1 & 2 & 4 \\ 0 & 1 & 3 \end{vmatrix} = (12 + 0 + 3) - (0 + 8 + 0) = 15 - 8 = 7
+$$
+
 * **Hitung Minor $M_{33}$**:
-$$ M_{33} = \begin{vmatrix} 2 & 1 & 3 \\ 1 & 0 & 4 \\ 0 & 2 & 3 \end{vmatrix} = (0 + 0 + 6) - (0 + 16 + 3) = 6 - 19 = -13 $$
+$$
+M_{33} = \begin{vmatrix} 2 & 1 & 3 \\ 1 & 0 & 4 \\ 0 & 2 & 3 \end{vmatrix} = (0 + 0 + 6) - (0 + 16 + 3) = 6 - 19 = -13
+$$
+
 * **Hitung Minor $M_{34}$**:
-$$ M_{34} = \begin{vmatrix} 2 & 1 & 0 \\ 1 & 0 & 2 \\ 0 & 2 & 1 \end{vmatrix} = 0 - (0 + 8 + 1) = -9 $$
+$$
+M_{34} = \begin{vmatrix} 2 & 1 & 0 \\ 1 & 0 & 2 \\ 0 & 2 & 1 \end{vmatrix} = 0 - (0 + 8 + 1) = -9
+$$
 
 **Substitusi:**
-$$ \det(B) = 3(-10) - 1(7) + 2(-13) - 1(-9) = -30 - 7 - 26 + 9 = -54 $$
+$$
+\det(B) = 3(-10) - 1(7) + 2(-13) - 1(-9) = -30 - 7 - 26 + 9 = -54
+$$
 </details>
 
 <details>
 <summary><b>Ekspansi Baris Keempat (Hasil: -54)</b></summary>
 
 Baris keempat: $[0, 2, 1, 3]$ dengan tanda $[-, +, -, +]$:
-$$ \det(B) = -0 \cdot M_{41} + 2 \cdot M_{42} - 1 \cdot M_{43} + 3 \cdot M_{44} = 2 \cdot M_{42} - M_{43} + 3 \cdot M_{44} $$
+$$
+\det(B) = -0 \cdot M_{41} + 2 \cdot M_{42} - 1 \cdot M_{43} + 3 \cdot M_{44} = 2 \cdot M_{42} - M_{43} + 3 \cdot M_{44}
+$$
 
 * **Hitung Minor $M_{42}$**:
-$$ M_{42} = \begin{vmatrix} 2 & 0 & 3 \\ 1 & 2 & 4 \\ 3 & 2 & 1 \end{vmatrix} = (4 + 0 + 6) - (18 + 16 + 0) = 10 - 34 = -24 $$
+$$
+M_{42} = \begin{vmatrix} 2 & 0 & 3 \\ 1 & 2 & 4 \\ 3 & 2 & 1 \end{vmatrix} = (4 + 0 + 6) - (18 + 16 + 0) = 10 - 34 = -24
+$$
+
 * **Hitung Minor $M_{43}$**:
-$$ M_{43} = \begin{vmatrix} 2 & 1 & 3 \\ 1 & 0 & 4 \\ 3 & 1 & 1 \end{vmatrix} = (0 + 12 + 3) - (0 + 8 + 1) = 15 - 9 = 6 $$
+$$
+M_{43} = \begin{vmatrix} 2 & 1 & 3 \\ 1 & 0 & 4 \\ 3 & 1 & 1 \end{vmatrix} = (0 + 12 + 3) - (0 + 8 + 1) = 15 - 9 = 6
+$$
+
 * **Hitung Minor $M_{44}$**:
-$$ M_{44} = \begin{vmatrix} 2 & 1 & 0 \\ 1 & 0 & 2 \\ 3 & 1 & 2 \end{vmatrix} = (0 + 6 + 0) - (0 + 4 + 2) = 6 - 6 = 0 $$
+$$
+M_{44} = \begin{vmatrix} 2 & 1 & 0 \\ 1 & 0 & 2 \\ 3 & 1 & 2 \end{vmatrix} = (0 + 6 + 0) - (0 + 4 + 2) = 6 - 6 = 0
+$$
 
 **Substitusi:**
-$$ \det(B) = 2(-24) - 6 + 3(0) = -48 - 6 = -54 $$
+$$
+\det(B) = 2(-24) - 6 + 3(0) = -48 - 6 = -54
+$$
 </details>
 
 <details>
 <summary><b>Ekspansi Kolom Pertama (Hasil: -54)</b></summary>
 
 Kolom pertama: $[2, 1, 3, 0]^T$ dengan tanda $[+, -, +, -]$:
-$$ \det(B) = 2 \cdot M_{11} - 1 \cdot M_{21} + 3 \cdot M_{31} - 0 = 2 \cdot M_{11} - M_{21} + 3 \cdot M_{31} $$
+$$
+\det(B) = 2 \cdot M_{11} - 1 \cdot M_{21} + 3 \cdot M_{31} - 0 = 2 \cdot M_{11} - M_{21} + 3 \cdot M_{31}
+$$
 
 * **Hitung Minor $M_{11}$**:
-$$ M_{11} = \begin{vmatrix} 0 & 2 & 4 \\ 1 & 2 & 1 \\ 2 & 1 & 3 \end{vmatrix} = (0 + 4 + 4) - (16 + 0 + 6) = 8 - 22 = -14 $$
+$$
+M_{11} = \begin{vmatrix} 0 & 2 & 4 \\ 1 & 2 & 1 \\ 2 & 1 & 3 \end{vmatrix} = (0 + 4 + 4) - (16 + 0 + 6) = 8 - 22 = -14
+$$
 * **Minor $M_{21}$** (Sudah dihitung di bagian Baris 2): $-4$
 * **Minor $M_{31}$** (Sudah dihitung di bagian Baris 3): $-10$
 
 **Substitusi:**
-$$ \det(B) = 2(-14) - (-4) + 3(-10) = -28 + 4 - 30 = -54 $$
+$$
+\det(B) = 2(-14) - (-4) + 3(-10) = -28 + 4 - 30 = -54
+$$
 </details>
 
 <details>
 <summary><b>Ekspansi Kolom Kedua (Hasil: -54)</b></summary>
 
 Kolom kedua: $[1, 0, 1, 2]^T$ dengan tanda $[-, +, -, +]$:
-$$ \det(B) = -1 \cdot M_{12} + 0 - 1 \cdot M_{32} + 2 \cdot M_{42} = -M_{12} - M_{32} + 2 \cdot M_{42} $$
+$$
+\det(B) = -1 \cdot M_{12} + 0 - 1 \cdot M_{32} + 2 \cdot M_{42} = -M_{12} - M_{32} + 2 \cdot M_{42}
+$$
 
 * **Hitung Minor $M_{12}$**:
-$$ M_{12} = \begin{vmatrix} 1 & 2 & 4 \\ 3 & 2 & 1 \\ 0 & 1 & 3 \end{vmatrix} = (6 + 0 + 12) - (0 + 1 + 18) = 18 - 19 = -1 $$
+$$
+M_{12} = \begin{vmatrix} 1 & 2 & 4 \\ 3 & 2 & 1 \\ 0 & 1 & 3 \end{vmatrix} = (6 + 0 + 12) - (0 + 1 + 18) = 18 - 19 = -1
+$$
 * **Minor $M_{32}$** (Sudah dihitung di bagian Baris 3): $7$
 * **Minor $M_{42}$** (Sudah dihitung di bagian Baris 4): $-24$
 
 **Substitusi:**
-$$ \det(B) = -(-1) - 7 + 2(-24) = 1 - 7 - 48 = -54 $$
+$$
+\det(B) = -(-1) - 7 + 2(-24) = 1 - 7 - 48 = -54
+$$
 </details>
 
 <details>
 <summary><b>Ekspansi Kolom Ketiga (Hasil: -54)</b></summary>
 
 Kolom ketiga: $[0, 2, 2, 1]^T$ dengan tanda $[+, -, +, -]$:
-$$ \det(B) = 0 - 2 \cdot M_{23} + 2 \cdot M_{33} - 1 \cdot M_{43} = -2 \cdot M_{23} + 2 \cdot M_{33} - M_{43} $$
+$$
+\det(B) = 0 - 2 \cdot M_{23} + 2 \cdot M_{33} - 1 \cdot M_{43} = -2 \cdot M_{23} + 2 \cdot M_{33} - M_{43}
+$$
 
 * **Minor $M_{23}$** (Sudah dihitung di bagian Baris 2): $11$
 * **Minor $M_{33}$** (Sudah dihitung di bagian Baris 3): $-13$
 * **Minor $M_{43}$** (Sudah dihitung di bagian Baris 4): $6$
 
 **Substitusi:**
-$$ \det(B) = -2(11) + 2(-13) - 6 = -22 - 26 - 6 = -54 $$
+$$
+\det(B) = -2(11) + 2(-13) - 6 = -22 - 26 - 6 = -54
+$$
 </details>
 
 <details>
 <summary><b>Ekspansi Kolom Keempat (Hasil: -54)</b></summary>
 
 Kolom keempat: $[3, 4, 1, 3]^T$ dengan tanda $[-, +, -, +]$:
-$$ \det(B) = -3 \cdot M_{14} + 4 \cdot M_{24} - 1 \cdot M_{34} + 3 \cdot M_{44} $$
+$$
+\det(B) = -3 \cdot M_{14} + 4 \cdot M_{24} - 1 \cdot M_{34} + 3 \cdot M_{44}
+$$
 
 * **Hitung Minor $M_{14}$**:
-$$ M_{14} = \begin{vmatrix} 1 & 0 & 2 \\ 3 & 1 & 2 \\ 0 & 2 & 1 \end{vmatrix} = (1 + 0 + 12) - (0 + 4 + 0) = 13 - 4 = 9 $$
+$$
+M_{14} = \begin{vmatrix} 1 & 0 & 2 \\ 3 & 1 & 2 \\ 0 & 2 & 1 \end{vmatrix} = (1 + 0 + 12) - (0 + 4 + 0) = 13 - 4 = 9
+$$
 * **Minor $M_{24}$** (Sudah dihitung di bagian Baris 2): $-9$
 * **Minor $M_{34}$** (Sudah dihitung di bagian Baris 3): $-9$
 * **Minor $M_{44}$** (Sudah dihitung di bagian Baris 4): $0$
 
 **Substitusi:**
-$$ \det(B) = -3(9) + 4(-9) - (-9) + 3(0) = -27 - 36 + 9 = -54 $$
+$$
+\det(B) = -3(9) + 4(-9) - (-9) + 3(0) = -27 - 36 + 9 = -54
+$$
 </details>
 
 ---
