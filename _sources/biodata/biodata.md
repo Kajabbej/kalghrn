@@ -87,22 +87,7 @@
         <div class="bio-card-header">
             <div class="avatar-container">
                 <div class="avatar-ring dsn-ring"></div>
-                <!-- Premium SVG Avatar representing a Lecturer/Professor -->
-                <svg class="avatar-img dsn-avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="dsnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#9b51e0" />
-                            <stop offset="100%" stop-color="#f43f5e" />
-                        </linearGradient>
-                    </defs>
-                    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#dsnGrad)" stroke-width="2.5"/>
-                    <!-- Lecturer cap representation -->
-                    <path d="M50 20 L75 32 L50 44 L25 32 Z" fill="url(#dsnGrad)"/>
-                    <rect x="47" y="32" width="6" height="15" fill="url(#dsnGrad)" rx="2"/>
-                    <circle cx="50" cy="47" r="5" fill="#f43f5e"/>
-                    <!-- Bust -->
-                    <path d="M30 80 C30 68 38 62 50 62 C62 62 70 68 70 80 C70 82 68 84 65 84 L35 84 C32 84 30 82 30 80 Z" fill="url(#dsnGrad)" opacity="0.85"/>
-                </svg>
+                <img class="avatar-img" src="../_static/dosen.jpg" alt="Mula'ab, S.Si., M.Kom.">
             </div>
             <h2 class="bio-name dsn-name">Mula'ab, S.Si., M.Kom.</h2>
             <p class="bio-tagline">Dosen Aljabar Linear</p>
