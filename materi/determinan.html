@@ -61,12 +61,10 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'materi/determinan';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Invers Matriks" href="invers.html" />
+    <link rel="next" title="invers" href="invers.html" />
     <link rel="prev" title="Eliminasi Gaussian" href="eliminasi%20guassian.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -213,11 +211,7 @@
 
 
 
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="invers.html">Invers Matriks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="invers.html">invers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dekomposisi%20QR.html">Dekomposisi QR</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Playground</span></p>
@@ -235,6 +229,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../tugas/svd.html">Tugas: Singular Value Decomposition (SVD)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tugas/qr.html">tugas dekomposisi QR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tugas/determinan_invers.html">Tugas Determinan dan Invers Matriks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">UAS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../UAS/uas.html">tugas UAS</a></li>
+
+
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -441,9 +447,9 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-33-dengan-ekspansi-baris-pertama">Mencari Determinan 3×3 dengan Ekspansi Baris Pertama</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-pertama">Langkah 1: Pilih Baris Pertama</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-11">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{11}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-12">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{12}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-13">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{13}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m11">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m12">Langkah 3: Cari Minor M12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m13">Langkah 4: Cari Minor M13</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-substitusi-ke-rumus">Langkah 5: Substitusi ke Rumus</a></li>
 </ul>
 </li>
@@ -451,17 +457,17 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-yang-harus-diingat">Pola yang Harus Diingat</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-pertama">Mencari Determinan 4×4 dengan Ekspansi Baris Pertama</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 1: Pilih Baris Pertama</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{11}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-13">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{13}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m13">Langkah 3: Cari Minor M13</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-substitusi-ke-rumus">Langkah 4: Substitusi ke Rumus</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Jawaban Akhir</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-kedua">Mencari Determinan 4×4 dengan Ekspansi Baris Kedua</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-kedua">Langkah 1: Pilih Baris Kedua</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-21">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{21}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-23">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{23}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-24">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{24}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m21">Langkah 2: Cari Minor M21</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m23">Langkah 3: Cari Minor M23</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m24">Langkah 4: Cari Minor M24</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-substitusi">Langkah 5: Substitusi</a></li>
 </ul>
 </li>
@@ -469,10 +475,10 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-yang-wajib-hafal">Pola Tanda yang Wajib Hafal</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-ketiga">Mencari Determinan 4×4 dengan Ekspansi Baris Ketiga</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-ketiga">Langkah 1: Pilih Baris Ketiga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-31">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{31}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-32">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{32}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-33">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{33}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-cari-minor-m-34">Langkah 5: Cari Minor <span class="math notranslate nohighlight">\(M_{34}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m31">Langkah 2: Cari Minor M31</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m32">Langkah 3: Cari Minor M32</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m33">Langkah 4: Cari Minor M33</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-cari-minor-m34">Langkah 5: Cari Minor M34</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6-substitusi">Langkah 6: Substitusi</a></li>
 </ul>
 </li>
@@ -480,9 +486,9 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kofaktor-44">Pola Tanda Kofaktor 4×4</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-keempat">Mencari Determinan 4×4 dengan Ekspansi Baris Keempat</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-keempat">Langkah 1: Pilih Baris Keempat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-42">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{42}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-43">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{43}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-44">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{44}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m42">Langkah 2: Cari Minor M42</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m43">Langkah 3: Cari Minor M43</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m44">Langkah 4: Cari Minor M44</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Langkah 5: Substitusi</a></li>
 </ul>
 </li>
@@ -492,18 +498,18 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ekpansi-perkolom-1-4">ekpansi  perkolom 1-4</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-pertama">Mencari Determinan 4×4 dengan Ekspansi Kolom Pertama</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-pertama">Langkah 1: Pilih Kolom Pertama</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{11}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-21">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{21}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-31">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{31}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m21">Langkah 3: Cari Minor M21</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m31">Langkah 4: Cari Minor M31</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Langkah 5: Substitusi</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Jawaban Akhir</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-kedua">Mencari Determinan 4×4 dengan Ekspansi Kolom Kedua</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-kedua">Langkah 1: Pilih Kolom Kedua</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-12">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{12}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{32}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-42">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{42}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m12">Langkah 2: Cari Minor M12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Langkah 3: Cari Minor M32</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m42">Langkah 4: Cari Minor M42</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Langkah 5: Substitusi</a></li>
 </ul>
 </li>
@@ -511,26 +517,14 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-kedua">Pola Tanda Kolom Kedua</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-ketiga">Mencari Determinan 4×4 dengan Ekspansi Kolom Ketiga</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-ketiga">Langkah 1: Pilih Kolom Ketiga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-23">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{23}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-33">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{33}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-43">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{43}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m23">Langkah 2: Cari Minor M23</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m33">Langkah 3: Cari Minor M33</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m43">Langkah 4: Cari Minor M43</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Langkah 5: Substitusi</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Jawaban Akhir</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-ketiga">Pola Tanda Kolom Ketiga</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-keempat">Mencari Determinan 4×4 dengan Ekspansi Kolom Keempat</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-keempat">Langkah 1: Pilih Kolom Keempat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-14">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{14}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-24">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{24}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-34">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{34}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-cari-minor-m-44">Langkah 5: Cari Minor <span class="math notranslate nohighlight">\(M_{44}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Langkah 6: Substitusi</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Jawaban Akhir</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-keempat">Pola Tanda Kolom Keempat</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Kesimpulan</a></li>
 </ul>
 
             </nav>
@@ -551,65 +545,46 @@
 <section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-22">
 <h1>Mencari Determinan 2×2<a class="headerlink" href="#mencari-determinan-22" title="Link to this heading">#</a></h1>
 <p>Diketahui:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-3 &amp; 2 \\
-1 &amp; 4
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 3  2 |
+| 1  4 |</p>
 <hr class="docutils" />
 <section id="rumus-determinan-22">
 <h2>Rumus Determinan 2×2<a class="headerlink" href="#rumus-determinan-22" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p><span class="math notranslate nohighlight">\(= (a \times d) - (b \times c)\)</span></p>
+<p>det(A)</p>
+<p>= (a × d) - (b × c)</p>
 </section>
 <hr class="docutils" />
 <section id="identifikasi-elemen">
 <h2>Identifikasi Elemen<a class="headerlink" href="#identifikasi-elemen" title="Link to this heading">#</a></h2>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-a &amp; b \\
-c &amp; d
-\end{bmatrix}
-\end{split}\]</div>
+<p>| a  b |
+| c  d |</p>
 <p>=</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-3 &amp; 2 \\
-1 &amp; 4
-\end{bmatrix}
-\end{split}\]</div>
+<p>| 3  2 |
+| 1  4 |</p>
 <p>Maka:</p>
-<p><span class="math notranslate nohighlight">\(a = 3\)</span>
-<span class="math notranslate nohighlight">\(b = 2\)</span>
-<span class="math notranslate nohighlight">\(c = 1\)</span>
-<span class="math notranslate nohighlight">\(d = 4\)</span></p>
+<p>a = 3
+b = 2
+c = 1
+d = 4</p>
 </section>
 <hr class="docutils" />
 <section id="substitusi-ke-rumus">
 <h2>Substitusi ke Rumus<a class="headerlink" href="#substitusi-ke-rumus" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = (3 \times 4) - (2 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 12 - 2 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 10 \]</div>
+<p>det(A)</p>
+<p>= (3 × 4) - (2 × 1)</p>
+<p>= 12 - 2</p>
+<p>= 10</p>
 </section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="jawaban-akhir">
 <h1>Jawaban Akhir<a class="headerlink" href="#jawaban-akhir" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\det(A) = 10\)</span></p>
+<p>det(A) = 10</p>
 <hr class="docutils" />
 <section id="bentuk-ekspansi-baris-1">
 <h2>Bentuk Ekspansi Baris 1<a class="headerlink" href="#bentuk-ekspansi-baris-1" title="Link to this heading">#</a></h2>
 <p>Baris pertama:</p>
-<div class="math notranslate nohighlight">
-\[ [3 \quad 2] \]</div>
+<p>[3  2]</p>
 <p>Pola tanda:</p>
 <ul class="simple">
 <li><ul>
@@ -618,47 +593,33 @@ c &amp; d
 </li>
 </ul>
 <p>Maka:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 3(4) - 2(1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 12 - 2 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 10 \]</div>
+<p>det(A)</p>
+<p>= 3(4) - 2(1)</p>
+<p>= 12 - 2</p>
+<p>= 10</p>
 </section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="kesimpulan">
 <h1>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h1>
 <p>Untuk matriks 2×2:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-a &amp; b \\
-c &amp; d
-\end{bmatrix}
-\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p><span class="math notranslate nohighlight">\(= a(d) - b(c)\)</span></p>
-<p><span class="math notranslate nohighlight">\(= ad - bc\)</span></p>
+<p>| a  b |
+| c  d |</p>
+<p>det(A)</p>
+<p>= a(d) - b(c)</p>
+<p>= ad - bc</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-33-dengan-ekspansi-baris-pertama">
 <h1>Mencari Determinan 3×3 dengan Ekspansi Baris Pertama<a class="headerlink" href="#mencari-determinan-33-dengan-ekspansi-baris-pertama" title="Link to this heading">#</a></h1>
 <p>Diketahui:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-1 &amp; 2 &amp; 3 \\
-0 &amp; 4 &amp; 5 \\
-1 &amp; 0 &amp; 6
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 1  2  3 |
+| 0  4  5 |
+| 1  0  6 |</p>
 <hr class="docutils" />
 <section id="langkah-1-pilih-baris-pertama">
 <h2>Langkah 1: Pilih Baris Pertama<a class="headerlink" href="#langkah-1-pilih-baris-pertama" title="Link to this heading">#</a></h2>
 <p>Baris pertama:</p>
-<div class="math notranslate nohighlight">
-\[ [1 \quad 2 \quad 3] \]</div>
+<p>[1  2  3]</p>
 <p>Pola tanda:</p>
 <ul class="simple">
 <li><ul>
@@ -670,86 +631,62 @@ c &amp; d
 </li>
 </ul>
 <p>Maka:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= 1(<span class="math notranslate nohighlight">\(M_{11}\)</span>) - 2(<span class="math notranslate nohighlight">\(M_{12}\)</span>) + 3(<span class="math notranslate nohighlight">\(M_{13}\)</span>)</p>
+<p>det(A)</p>
+<p>= 1(M11) - 2(M12) + 3(M13)</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-2-cari-minor-m-11">
-<h2>Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{11}\)</span><a class="headerlink" href="#langkah-2-cari-minor-m-11" title="Link to this heading">#</a></h2>
+<section id="langkah-2-cari-minor-m11">
+<h2>Langkah 2: Cari Minor M11<a class="headerlink" href="#langkah-2-cari-minor-m11" title="Link to this heading">#</a></h2>
 <p>Coret baris 1 dan kolom 1</p>
-<p><span class="math notranslate nohighlight">\(M_{11}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-4 &amp; 5 \\
-0 &amp; 6
-\end{vmatrix}
-\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\det(M_{11})\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = (4\times6) - (5\times0) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 24 \]</div>
+<p>M11 =</p>
+<p>| 4  5 |
+| 0  6 |</p>
+<p>det(M11)</p>
+<p>= (4×6) - (5×0)</p>
+<p>= 24</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-3-cari-minor-m-12">
-<h2>Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{12}\)</span><a class="headerlink" href="#langkah-3-cari-minor-m-12" title="Link to this heading">#</a></h2>
+<section id="langkah-3-cari-minor-m12">
+<h2>Langkah 3: Cari Minor M12<a class="headerlink" href="#langkah-3-cari-minor-m12" title="Link to this heading">#</a></h2>
 <p>Coret baris 1 dan kolom 2</p>
-<p><span class="math notranslate nohighlight">\(M_{12}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-0 &amp; 5 \\
-1 &amp; 6
-\end{vmatrix}
-\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\det(M_{12})\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = (0\times6) - (5\times1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = -5 \]</div>
+<p>M12 =</p>
+<p>| 0  5 |
+| 1  6 |</p>
+<p>det(M12)</p>
+<p>= (0×6) - (5×1)</p>
+<p>= -5</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-4-cari-minor-m-13">
-<h2>Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{13}\)</span><a class="headerlink" href="#langkah-4-cari-minor-m-13" title="Link to this heading">#</a></h2>
+<section id="langkah-4-cari-minor-m13">
+<h2>Langkah 4: Cari Minor M13<a class="headerlink" href="#langkah-4-cari-minor-m13" title="Link to this heading">#</a></h2>
 <p>Coret baris 1 dan kolom 3</p>
-<p><span class="math notranslate nohighlight">\(M_{13}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-0 &amp; 4 \\
-1 &amp; 0
-\end{vmatrix}
-\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\det(M_{13})\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = (0\times0) - (4\times1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = -4 \]</div>
+<p>M13 =</p>
+<p>| 0  4 |
+| 1  0 |</p>
+<p>det(M13)</p>
+<p>= (0×0) - (4×1)</p>
+<p>= -4</p>
 </section>
 <hr class="docutils" />
 <section id="langkah-5-substitusi-ke-rumus">
 <h2>Langkah 5: Substitusi ke Rumus<a class="headerlink" href="#langkah-5-substitusi-ke-rumus" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 1(24) - 2(-5) + 3(-4) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 24 + 10 - 12 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 22 \]</div>
+<p>det(A)</p>
+<p>= 1(24) - 2(-5) + 3(-4)</p>
+<p>= 24 + 10 - 12</p>
+<p>= 22</p>
 </section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Jawaban Akhir<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\det(A) = 22\)</span></p>
+<p>det(A) = 22</p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="pola-yang-harus-diingat">
 <h1>Pola yang Harus Diingat<a class="headerlink" href="#pola-yang-harus-diingat" title="Link to this heading">#</a></h1>
 <p>Untuk ekspansi baris pertama matriks 3×3:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= a(<span class="math notranslate nohighlight">\(M_{11}\)</span>) - b(<span class="math notranslate nohighlight">\(M_{12}\)</span>) + c(<span class="math notranslate nohighlight">\(M_{13}\)</span>)</p>
+<p>det(A)</p>
+<p>= a(M11) - b(M12) + c(M13)</p>
 <p>Pola tanda:</p>
 <ul class="simple">
 <li><ul>
@@ -773,21 +710,15 @@ c &amp; d
 <h1>Mencari Determinan 4×4 dengan Ekspansi Baris Pertama<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-baris-pertama" title="Link to this heading">#</a></h1>
 <p>Diketahui:</p>
 <p>|A| =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 0 &amp; 1 &amp; 0 \\
-3 &amp; 1 &amp; 2 &amp; 4 \\
-1 &amp; 2 &amp; 3 &amp; 1 \\
-0 &amp; 1 &amp; 2 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  0  1  0 |
+| 3  1  2  4 |
+| 1  2  3  1 |
+| 0  1  2  3 |</p>
 <hr class="docutils" />
 <section id="id2">
 <h2>Langkah 1: Pilih Baris Pertama<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Baris pertama:</p>
-<div class="math notranslate nohighlight">
-\[ [2 \quad 0 \quad 1 \quad 0] \]</div>
+<p>[2  0  1  0]</p>
 <p>Pola tanda:</p>
 <ul class="simple">
 <li><ul>
@@ -802,110 +733,78 @@ c &amp; d
 </li>
 </ul>
 <p>Maka:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 2M_{11} - 0M_{12} + 1M_{13} - 0M_{14} \]</div>
+<p>det(A)</p>
+<p>= 2M11 - 0M12 + 1M13 - 0M14</p>
 <p>Karena ada nol:</p>
-<p><span class="math notranslate nohighlight">\(= 2M_{11} + M_{13}\)</span></p>
+<p>= 2M11 + M13</p>
 </section>
 <hr class="docutils" />
 <section id="id3">
-<h2>Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{11}\)</span><a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2>Langkah 2: Cari Minor M11<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>Coret baris 1 dan kolom 1</p>
-<p><span class="math notranslate nohighlight">\(M_{11}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-1 &amp; 2 &amp; 4 \\
-2 &amp; 3 &amp; 1 \\
-1 &amp; 2 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>M11 =</p>
+<p>| 1  2  4 |
+| 2  3  1 |
+| 1  2  3 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (1 \times 3 \times 3) + (2 \times 1 \times 1) + (4 \times 2 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 9 + 2 + 16 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 27 \]</div>
+<p>(1×3×3) + (2×1×1) + (4×2×2)</p>
+<p>= 9 + 2 + 16</p>
+<p>= 27</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (1 \times 3 \times 4) + (2 \times 1 \times 1) + (3 \times 2 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 12 + 2 + 12 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 26 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{11}\)</span> = 27 - 26</p>
-<p><span class="math notranslate nohighlight">\(M_{11}\)</span> = 1</p>
+<p>(1×3×4) + (2×1×1) + (3×2×2)</p>
+<p>= 12 + 2 + 12</p>
+<p>= 26</p>
+<p>M11 = 27 - 26</p>
+<p>M11 = 1</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-3-cari-minor-m-13">
-<h2>Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{13}\)</span><a class="headerlink" href="#langkah-3-cari-minor-m-13" title="Link to this heading">#</a></h2>
+<section id="langkah-3-cari-minor-m13">
+<h2>Langkah 3: Cari Minor M13<a class="headerlink" href="#langkah-3-cari-minor-m13" title="Link to this heading">#</a></h2>
 <p>Coret baris 1 dan kolom 3</p>
-<p><span class="math notranslate nohighlight">\(M_{13}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-3 &amp; 1 &amp; 4 \\
-1 &amp; 2 &amp; 1 \\
-0 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>M13 =</p>
+<p>| 3  1  4 |
+| 1  2  1 |
+| 0  1  3 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (3 \times 2 \times 3) + (1 \times 1 \times 0) + (4 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 18 + 0 + 4 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 22 \]</div>
+<p>(3×2×3) + (1×1×0) + (4×1×1)</p>
+<p>= 18 + 0 + 4</p>
+<p>= 22</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 2 \times 4) + (1 \times 1 \times 3) + (3 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 3 + 3 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{13}\)</span> = 22 - 6</p>
-<p><span class="math notranslate nohighlight">\(M_{13}\)</span> = 16</p>
+<p>(0×2×4) + (1×1×3) + (3×1×1)</p>
+<p>= 0 + 3 + 3</p>
+<p>= 6</p>
+<p>M13 = 22 - 6</p>
+<p>M13 = 16</p>
 </section>
 <hr class="docutils" />
 <section id="langkah-4-substitusi-ke-rumus">
 <h2>Langkah 4: Substitusi ke Rumus<a class="headerlink" href="#langkah-4-substitusi-ke-rumus" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= 2(<span class="math notranslate nohighlight">\(M_{11}\)</span>) + <span class="math notranslate nohighlight">\(M_{13}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 2(1) + 16 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 2 + 16 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 18 \]</div>
+<p>det(A)</p>
+<p>= 2(M11) + M13</p>
+<p>= 2(1) + 16</p>
+<p>= 2 + 16</p>
+<p>= 18</p>
 </section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id4">
 <h1>Jawaban Akhir<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\det(A) = 18\)</span></p>
+<p>det(A) = 18</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-baris-kedua">
 <h1>Mencari Determinan 4×4 dengan Ekspansi Baris Kedua<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-baris-kedua" title="Link to this heading">#</a></h1>
 <p>Diketahui:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 &amp; 3 \\
-1 &amp; 0 &amp; 2 &amp; 4 \\
-3 &amp; 1 &amp; 2 &amp; 1 \\
-0 &amp; 2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
 <hr class="docutils" />
 <section id="langkah-1-pilih-baris-kedua">
 <h2>Langkah 1: Pilih Baris Kedua<a class="headerlink" href="#langkah-1-pilih-baris-kedua" title="Link to this heading">#</a></h2>
 <p>Baris kedua:</p>
-<div class="math notranslate nohighlight">
-\[ [1 \quad 0 \quad 2 \quad 4] \]</div>
+<p>[1  0  2  4]</p>
 <p>Pola tanda baris kedua:</p>
 <ul class="simple">
 <li><ul>
@@ -920,146 +819,99 @@ c &amp; d
 </li>
 </ul>
 <p>Maka:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= -1(<span class="math notranslate nohighlight">\(M_{21}\)</span>)
-+0(<span class="math notranslate nohighlight">\(M_{22}\)</span>)
--2(<span class="math notranslate nohighlight">\(M_{23}\)</span>)
-+4(<span class="math notranslate nohighlight">\(M_{24}\)</span>)</p>
+<p>det(A)</p>
+<p>= -1(M21)
++0(M22)
+-2(M23)
++4(M24)</p>
 <p>Karena ada nol:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= -<span class="math notranslate nohighlight">\(M_{21}\)</span> - 2M23 + 4M24</p>
+<p>det(A)</p>
+<p>= -M21 - 2M23 + 4M24</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-2-cari-minor-m-21">
-<h2>Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{21}\)</span><a class="headerlink" href="#langkah-2-cari-minor-m-21" title="Link to this heading">#</a></h2>
+<section id="langkah-2-cari-minor-m21">
+<h2>Langkah 2: Cari Minor M21<a class="headerlink" href="#langkah-2-cari-minor-m21" title="Link to this heading">#</a></h2>
 <p>Coret baris 2 dan kolom 1</p>
-<p><span class="math notranslate nohighlight">\(M_{21}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-1 &amp; 0 &amp; 3 \\
-1 &amp; 2 &amp; 1 \\
-2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>M21 =</p>
+<p>| 1  0  3 |
+| 1  2  1 |
+| 2  1  3 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (1 \times 2 \times 3) + (0 \times 1 \times 2) + (3 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 + 0 + 3 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 9 \]</div>
+<p>(1×2×3) + (0×1×2) + (3×1×1)</p>
+<p>= 6 + 0 + 3</p>
+<p>= 9</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 2 \times 3) + (1 \times 1 \times 1) + (3 \times 1 \times 0) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 12 + 1 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 13 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{21}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 9 - 13 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -4 \]</div>
+<p>(2×2×3) + (1×1×1) + (3×1×0)</p>
+<p>= 12 + 1 + 0</p>
+<p>= 13</p>
+<p>M21</p>
+<p>= 9 - 13</p>
+<p>= -4</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-3-cari-minor-m-23">
-<h2>Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{23}\)</span><a class="headerlink" href="#langkah-3-cari-minor-m-23" title="Link to this heading">#</a></h2>
+<section id="langkah-3-cari-minor-m23">
+<h2>Langkah 3: Cari Minor M23<a class="headerlink" href="#langkah-3-cari-minor-m23" title="Link to this heading">#</a></h2>
 <p>Coret baris 2 dan kolom 3</p>
-<p><span class="math notranslate nohighlight">\(M_{23}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 3 \\
-3 &amp; 1 &amp; 1 \\
-0 &amp; 2 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>M23 =</p>
+<p>| 2  1  3 |
+| 3  1  1 |
+| 0  2  3 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 1 \times 3) + (1 \times 1 \times 0) + (3 \times 3 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 + 0 + 18 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 24 \]</div>
+<p>(2×1×3) + (1×1×0) + (3×3×2)</p>
+<p>= 6 + 0 + 18</p>
+<p>= 24</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 1 \times 3) + (2 \times 1 \times 2) + (3 \times 3 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 4 + 9 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 13 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{23}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 24 - 13 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 11 \]</div>
+<p>(0×1×3) + (2×1×2) + (3×3×1)</p>
+<p>= 0 + 4 + 9</p>
+<p>= 13</p>
+<p>M23</p>
+<p>= 24 - 13</p>
+<p>= 11</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-4-cari-minor-m-24">
-<h2>Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{24}\)</span><a class="headerlink" href="#langkah-4-cari-minor-m-24" title="Link to this heading">#</a></h2>
+<section id="langkah-4-cari-minor-m24">
+<h2>Langkah 4: Cari Minor M24<a class="headerlink" href="#langkah-4-cari-minor-m24" title="Link to this heading">#</a></h2>
 <p>Coret baris 2 dan kolom 4</p>
-<p><span class="math notranslate nohighlight">\(M_{24}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 \\
-3 &amp; 1 &amp; 2 \\
-0 &amp; 2 &amp; 1
-\end{vmatrix}
-\end{split}\]</div>
+<p>M24 =</p>
+<p>| 2  1  0 |
+| 3  1  2 |
+| 0  2  1 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 1 \times 1) + (1 \times 2 \times 0) + (0 \times 3 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 2 + 0 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 2 \]</div>
+<p>(2×1×1) + (1×2×0) + (0×3×2)</p>
+<p>= 2 + 0 + 0</p>
+<p>= 2</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 1 \times 0) + (2 \times 2 \times 2) + (1 \times 3 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 8 + 3 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 11 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{24}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 2 - 11 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -9 \]</div>
+<p>(0×1×0) + (2×2×2) + (1×3×1)</p>
+<p>= 0 + 8 + 3</p>
+<p>= 11</p>
+<p>M24</p>
+<p>= 2 - 11</p>
+<p>= -9</p>
 </section>
 <hr class="docutils" />
 <section id="langkah-5-substitusi">
 <h2>Langkah 5: Substitusi<a class="headerlink" href="#langkah-5-substitusi" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = -(-4) - 2(11) + 4(-9) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 4 - 22 - 36 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -54 \]</div>
+<p>det(A)</p>
+<p>= -(-4) - 2(11) + 4(-9)</p>
+<p>= 4 - 22 - 36</p>
+<p>= -54</p>
 </section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id5">
 <h1>Jawaban Akhir<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\det(A) = -54\)</span></p>
+<p>det(A) = -54</p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="pola-tanda-yang-wajib-hafal">
 <h1>Pola Tanda yang Wajib Hafal<a class="headerlink" href="#pola-tanda-yang-wajib-hafal" title="Link to this heading">#</a></h1>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-+ &amp; - &amp; + &amp; - \\
-- &amp; + &amp; - &amp; + \\
-+ &amp; - &amp; + &amp; - \\
-- &amp; + &amp; - &amp; +
-\end{bmatrix}
-\end{split}\]</div>
+<p>| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |</p>
 <p>Untuk ekspansi baris ke-2:</p>
 <ul class="simple">
 <li><ul>
@@ -1090,21 +942,15 @@ c &amp; d
 <section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-baris-ketiga">
 <h1>Mencari Determinan 4×4 dengan Ekspansi Baris Ketiga<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-baris-ketiga" title="Link to this heading">#</a></h1>
 <p>Diketahui:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 &amp; 3 \\
-1 &amp; 0 &amp; 2 &amp; 4 \\
-3 &amp; 1 &amp; 2 &amp; 1 \\
-0 &amp; 2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
 <hr class="docutils" />
 <section id="langkah-1-pilih-baris-ketiga">
 <h2>Langkah 1: Pilih Baris Ketiga<a class="headerlink" href="#langkah-1-pilih-baris-ketiga" title="Link to this heading">#</a></h2>
 <p>Baris ketiga:</p>
-<div class="math notranslate nohighlight">
-\[ [3 \quad 1 \quad 2 \quad 1] \]</div>
+<p>[3  1  2  1]</p>
 <p>Pola tanda baris ketiga:</p>
 <ul class="simple">
 <li><ul>
@@ -1119,158 +965,106 @@ c &amp; d
 </li>
 </ul>
 <p>Maka:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= 3(<span class="math notranslate nohighlight">\(M_{31}\)</span>)</p>
+<p>det(A)</p>
+<p>= 3(M31)</p>
 <ul class="simple">
-<li><p>1(<span class="math notranslate nohighlight">\(M_{32}\)</span>)</p></li>
+<li><p>1(M32)</p></li>
 </ul>
 <ul class="simple">
-<li><p>2(<span class="math notranslate nohighlight">\(M_{33}\)</span>)</p></li>
+<li><p>2(M33)</p></li>
 </ul>
 <ul class="simple">
-<li><p>1(<span class="math notranslate nohighlight">\(M_{34}\)</span>)</p></li>
+<li><p>1(M34)</p></li>
 </ul>
 </section>
 <hr class="docutils" />
-<section id="langkah-2-cari-minor-m-31">
-<h2>Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{31}\)</span><a class="headerlink" href="#langkah-2-cari-minor-m-31" title="Link to this heading">#</a></h2>
+<section id="langkah-2-cari-minor-m31">
+<h2>Langkah 2: Cari Minor M31<a class="headerlink" href="#langkah-2-cari-minor-m31" title="Link to this heading">#</a></h2>
 <p>Coret baris 3 dan kolom 1</p>
-<p><span class="math notranslate nohighlight">\(M_{31}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-1 &amp; 0 &amp; 3 \\
-0 &amp; 2 &amp; 4 \\
-2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>M31 =</p>
+<p>| 1  0  3 |
+| 0  2  4 |
+| 2  1  3 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (1 \times 2 \times 3) + (0 \times 4 \times 2) + (3 \times 0 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 + 0 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 \]</div>
+<p>(1×2×3) + (0×4×2) + (3×0×1)</p>
+<p>= 6 + 0 + 0</p>
+<p>= 6</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 2 \times 3) + (1 \times 4 \times 1) + (3 \times 0 \times 0) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 12 + 4 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 16 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{31}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 6 - 16 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -10 \]</div>
+<p>(2×2×3) + (1×4×1) + (3×0×0)</p>
+<p>= 12 + 4 + 0</p>
+<p>= 16</p>
+<p>M31</p>
+<p>= 6 - 16</p>
+<p>= -10</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-3-cari-minor-m-32">
-<h2>Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{32}\)</span><a class="headerlink" href="#langkah-3-cari-minor-m-32" title="Link to this heading">#</a></h2>
+<section id="langkah-3-cari-minor-m32">
+<h2>Langkah 3: Cari Minor M32<a class="headerlink" href="#langkah-3-cari-minor-m32" title="Link to this heading">#</a></h2>
 <p>Coret baris 3 dan kolom 2</p>
-<p><span class="math notranslate nohighlight">\(M_{32}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 0 &amp; 3 \\
-1 &amp; 2 &amp; 4 \\
-0 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>M32 =</p>
+<p>| 2  0  3 |
+| 1  2  4 |
+| 0  1  3 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 2 \times 3) + (0 \times 4 \times 0) + (3 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 12 + 0 + 3 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 15 \]</div>
+<p>(2×2×3) + (0×4×0) + (3×1×1)</p>
+<p>= 12 + 0 + 3</p>
+<p>= 15</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 2 \times 3) + (1 \times 4 \times 2) + (3 \times 1 \times 0) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 8 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 8 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{32}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 15 - 8 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 7 \]</div>
+<p>(0×2×3) + (1×4×2) + (3×1×0)</p>
+<p>= 0 + 8 + 0</p>
+<p>= 8</p>
+<p>M32</p>
+<p>= 15 - 8</p>
+<p>= 7</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-4-cari-minor-m-33">
-<h2>Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{33}\)</span><a class="headerlink" href="#langkah-4-cari-minor-m-33" title="Link to this heading">#</a></h2>
+<section id="langkah-4-cari-minor-m33">
+<h2>Langkah 4: Cari Minor M33<a class="headerlink" href="#langkah-4-cari-minor-m33" title="Link to this heading">#</a></h2>
 <p>Coret baris 3 dan kolom 3</p>
-<p><span class="math notranslate nohighlight">\(M_{33}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 3 \\
-1 &amp; 0 &amp; 4 \\
-0 &amp; 2 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>M33 =</p>
+<p>| 2  1  3 |
+| 1  0  4 |
+| 0  2  3 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 0 \times 3) + (1 \times 4 \times 0) + (3 \times 1 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 0 + 6 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 \]</div>
+<p>(2×0×3) + (1×4×0) + (3×1×2)</p>
+<p>= 0 + 0 + 6</p>
+<p>= 6</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 0 \times 3) + (2 \times 4 \times 2) + (3 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 16 + 3 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 19 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{33}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 6 - 19 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -13 \]</div>
+<p>(0×0×3) + (2×4×2) + (3×1×1)</p>
+<p>= 0 + 16 + 3</p>
+<p>= 19</p>
+<p>M33</p>
+<p>= 6 - 19</p>
+<p>= -13</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-5-cari-minor-m-34">
-<h2>Langkah 5: Cari Minor <span class="math notranslate nohighlight">\(M_{34}\)</span><a class="headerlink" href="#langkah-5-cari-minor-m-34" title="Link to this heading">#</a></h2>
+<section id="langkah-5-cari-minor-m34">
+<h2>Langkah 5: Cari Minor M34<a class="headerlink" href="#langkah-5-cari-minor-m34" title="Link to this heading">#</a></h2>
 <p>Coret baris 3 dan kolom 4</p>
-<p><span class="math notranslate nohighlight">\(M_{34}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 \\
-1 &amp; 0 &amp; 2 \\
-0 &amp; 2 &amp; 1
-\end{vmatrix}
-\end{split}\]</div>
+<p>M34 =</p>
+<p>| 2  1  0 |
+| 1  0  2 |
+| 0  2  1 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 0 \times 1) + (1 \times 2 \times 0) + (0 \times 1 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 \]</div>
+<p>(2×0×1) + (1×2×0) + (0×1×2)</p>
+<p>= 0</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 0 \times 0) + (2 \times 2 \times 2) + (1 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 8 + 1 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 9 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{34}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 0 - 9 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -9 \]</div>
+<p>(0×0×0) + (2×2×2) + (1×1×1)</p>
+<p>= 0 + 8 + 1</p>
+<p>= 9</p>
+<p>M34</p>
+<p>= 0 - 9</p>
+<p>= -9</p>
 </section>
 <hr class="docutils" />
 <section id="langkah-6-substitusi">
 <h2>Langkah 6: Substitusi<a class="headerlink" href="#langkah-6-substitusi" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 3(-10) \]</div>
+<p>det(A)</p>
+<p>= 3(-10)</p>
 <ul class="simple">
 <li><p>1(7)</p></li>
 </ul>
@@ -1280,29 +1074,22 @@ c &amp; d
 <ul class="simple">
 <li><p>1(-9)</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[ = -30 - 7 - 26 + 9 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -54 \]</div>
+<p>= -30 - 7 - 26 + 9</p>
+<p>= -54</p>
 </section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id6">
 <h1>Jawaban Akhir<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\det(A) = -54\)</span></p>
+<p>det(A) = -54</p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="pola-tanda-kofaktor-44">
 <h1>Pola Tanda Kofaktor 4×4<a class="headerlink" href="#pola-tanda-kofaktor-44" title="Link to this heading">#</a></h1>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-+ &amp; - &amp; + &amp; - \\
-- &amp; + &amp; - &amp; + \\
-+ &amp; - &amp; + &amp; - \\
-- &amp; + &amp; - &amp; +
-\end{bmatrix}
-\end{split}\]</div>
+<p>| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |</p>
 <p>Baris ke-3 menggunakan:</p>
 <ul class="simple">
 <li><ul>
@@ -1320,21 +1107,15 @@ c &amp; d
 <section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-baris-keempat">
 <h1>Mencari Determinan 4×4 dengan Ekspansi Baris Keempat<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-baris-keempat" title="Link to this heading">#</a></h1>
 <p>Diketahui:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 &amp; 3 \\
-1 &amp; 0 &amp; 2 &amp; 4 \\
-3 &amp; 1 &amp; 2 &amp; 1 \\
-0 &amp; 2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
 <hr class="docutils" />
 <section id="langkah-1-pilih-baris-keempat">
 <h2>Langkah 1: Pilih Baris Keempat<a class="headerlink" href="#langkah-1-pilih-baris-keempat" title="Link to this heading">#</a></h2>
 <p>Baris keempat:</p>
-<div class="math notranslate nohighlight">
-\[ [0 \quad 2 \quad 1 \quad 3] \]</div>
+<p>[0  2  1  3]</p>
 <p>Pola tanda baris keempat:</p>
 <ul class="simple">
 <li><ul>
@@ -1349,158 +1130,111 @@ c &amp; d
 </li>
 </ul>
 <p>Maka:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= -0(<span class="math notranslate nohighlight">\(M_{41}\)</span>)
-+2(<span class="math notranslate nohighlight">\(M_{42}\)</span>)
--1(<span class="math notranslate nohighlight">\(M_{43}\)</span>)
-+3(<span class="math notranslate nohighlight">\(M_{44}\)</span>)</p>
+<p>det(A)</p>
+<p>= -0(M41)
++2(M42)
+-1(M43)
++3(M44)</p>
 <p>Karena ada nol:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= 2(<span class="math notranslate nohighlight">\(M_{42}\)</span>)</p>
+<p>det(A)</p>
+<p>= 2(M42)</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(M_{43}\)</span></p></li>
+<li><p>M43</p></li>
 </ul>
 <ul class="simple">
-<li><p>3(<span class="math notranslate nohighlight">\(M_{44}\)</span>)</p></li>
+<li><p>3(M44)</p></li>
 </ul>
 </section>
 <hr class="docutils" />
-<section id="langkah-2-cari-minor-m-42">
-<h2>Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{42}\)</span><a class="headerlink" href="#langkah-2-cari-minor-m-42" title="Link to this heading">#</a></h2>
+<section id="langkah-2-cari-minor-m42">
+<h2>Langkah 2: Cari Minor M42<a class="headerlink" href="#langkah-2-cari-minor-m42" title="Link to this heading">#</a></h2>
 <p>Coret baris 4 dan kolom 2</p>
-<p><span class="math notranslate nohighlight">\(M_{42}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 0 &amp; 3 \\
-1 &amp; 2 &amp; 4 \\
-3 &amp; 2 &amp; 1
-\end{vmatrix}
-\end{split}\]</div>
+<p>M42 =</p>
+<p>| 2  0  3 |
+| 1  2  4 |
+| 3  2  1 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 2 \times 1) + (0 \times 4 \times 3) + (3 \times 1 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 4 + 0 + 6 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 10 \]</div>
+<p>(2×2×1) + (0×4×3) + (3×1×2)</p>
+<p>= 4 + 0 + 6</p>
+<p>= 10</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (3 \times 2 \times 3) + (2 \times 4 \times 2) + (1 \times 1 \times 0) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 18 + 16 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 34 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{42}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 10 - 34 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -24 \]</div>
+<p>(3×2×3) + (2×4×2) + (1×1×0)</p>
+<p>= 18 + 16 + 0</p>
+<p>= 34</p>
+<p>M42</p>
+<p>= 10 - 34</p>
+<p>= -24</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-3-cari-minor-m-43">
-<h2>Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{43}\)</span><a class="headerlink" href="#langkah-3-cari-minor-m-43" title="Link to this heading">#</a></h2>
+<section id="langkah-3-cari-minor-m43">
+<h2>Langkah 3: Cari Minor M43<a class="headerlink" href="#langkah-3-cari-minor-m43" title="Link to this heading">#</a></h2>
 <p>Coret baris 4 dan kolom 3</p>
-<p><span class="math notranslate nohighlight">\(M_{43}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 3 \\
-1 &amp; 0 &amp; 4 \\
-3 &amp; 1 &amp; 1
-\end{vmatrix}
-\end{split}\]</div>
+<p>M43 =</p>
+<p>| 2  1  3 |
+| 1  0  4 |
+| 3  1  1 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 0 \times 1) + (1 \times 4 \times 3) + (3 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 12 + 3 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 15 \]</div>
+<p>(2×0×1) + (1×4×3) + (3×1×1)</p>
+<p>= 0 + 12 + 3</p>
+<p>= 15</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (3 \times 0 \times 3) + (1 \times 4 \times 2) + (1 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 8 + 1 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 9 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{43}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 15 - 9 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 \]</div>
+<p>(3×0×3) + (1×4×2) + (1×1×1)</p>
+<p>= 0 + 8 + 1</p>
+<p>= 9</p>
+<p>M43</p>
+<p>= 15 - 9</p>
+<p>= 6</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-4-cari-minor-m-44">
-<h2>Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{44}\)</span><a class="headerlink" href="#langkah-4-cari-minor-m-44" title="Link to this heading">#</a></h2>
+<section id="langkah-4-cari-minor-m44">
+<h2>Langkah 4: Cari Minor M44<a class="headerlink" href="#langkah-4-cari-minor-m44" title="Link to this heading">#</a></h2>
 <p>Coret baris 4 dan kolom 4</p>
-<p><span class="math notranslate nohighlight">\(M_{44}\)</span> =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 \\
-1 &amp; 0 &amp; 2 \\
-3 &amp; 1 &amp; 2
-\end{vmatrix}
-\end{split}\]</div>
+<p>M44 =</p>
+<p>| 2  1  0 |
+| 1  0  2 |
+| 3  1  2 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 0 \times 2) + (1 \times 2 \times 3) + (0 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 6 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 \]</div>
+<p>(2×0×2) + (1×2×3) + (0×1×1)</p>
+<p>= 0 + 6 + 0</p>
+<p>= 6</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (3 \times 0 \times 0) + (1 \times 2 \times 2) + (2 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 4 + 2 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{44}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 6 - 6 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 \]</div>
+<p>(3×0×0) + (1×2×2) + (2×1×1)</p>
+<p>= 0 + 4 + 2</p>
+<p>= 6</p>
+<p>M44</p>
+<p>= 6 - 6</p>
+<p>= 0</p>
 </section>
 <hr class="docutils" />
 <section id="id7">
 <h2>Langkah 5: Substitusi<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 2(-24) \]</div>
+<p>det(A)</p>
+<p>= 2(-24)</p>
 <ul class="simple">
 <li><p>(6)</p></li>
 </ul>
 <ul class="simple">
 <li><p>3(0)</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[ = -48 - 6 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -54 \]</div>
+<p>= -48 - 6 + 0</p>
+<p>= -54</p>
 </section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id8">
 <h1>Jawaban Akhir<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\det(A) = -54\)</span></p>
+<p>det(A) = -54</p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id9">
 <h1>Pola Tanda Kofaktor 4×4<a class="headerlink" href="#id9" title="Link to this heading">#</a></h1>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-+ &amp; - &amp; + &amp; - \\
-- &amp; + &amp; - &amp; + \\
-+ &amp; - &amp; + &amp; - \\
-- &amp; + &amp; - &amp; +
-\end{bmatrix}
-\end{split}\]</div>
+<p>| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |</p>
 <p>Baris ke-4 menggunakan:</p>
 <ul class="simple">
 <li><ul>
@@ -1530,28 +1264,18 @@ c &amp; d
 <section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-kolom-pertama">
 <h1>Mencari Determinan 4×4 dengan Ekspansi Kolom Pertama<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-kolom-pertama" title="Link to this heading">#</a></h1>
 <p>Diketahui:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 &amp; 3 \\
-1 &amp; 0 &amp; 2 &amp; 4 \\
-3 &amp; 1 &amp; 2 &amp; 1 \\
-0 &amp; 2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
 <hr class="docutils" />
 <section id="langkah-1-pilih-kolom-pertama">
 <h2>Langkah 1: Pilih Kolom Pertama<a class="headerlink" href="#langkah-1-pilih-kolom-pertama" title="Link to this heading">#</a></h2>
 <p>Kolom pertama:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-2 \\
-1 \\
-3 \\
-0
-\end{bmatrix}
-\end{split}\]</div>
+<p>| 2 |
+| 1 |
+| 3 |
+| 0 |</p>
 <p>Pola tanda kolom pertama:</p>
 <ul class="simple">
 <li></li>
@@ -1566,157 +1290,113 @@ c &amp; d
 <li></li>
 </ul>
 <p>Maka:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= 2(<span class="math notranslate nohighlight">\(M_{11}\)</span>)</p>
+<p>det(A)</p>
+<p>= 2(M11)</p>
 <ul class="simple">
-<li><p>1(<span class="math notranslate nohighlight">\(M_{21}\)</span>)</p></li>
+<li><p>1(M21)</p></li>
 </ul>
 <ul class="simple">
-<li><p>3(<span class="math notranslate nohighlight">\(M_{31}\)</span>)</p></li>
+<li><p>3(M31)</p></li>
 </ul>
 <ul class="simple">
-<li><p>0(<span class="math notranslate nohighlight">\(M_{41}\)</span>)</p></li>
+<li><p>0(M41)</p></li>
 </ul>
 <p>Karena elemen terakhir nol:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= 2(<span class="math notranslate nohighlight">\(M_{11}\)</span>)</p>
+<p>det(A)</p>
+<p>= 2(M11)</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(M_{21}\)</span></p></li>
+<li><p>M21</p></li>
 </ul>
 <ul class="simple">
-<li><p>3(<span class="math notranslate nohighlight">\(M_{31}\)</span>)</p></li>
+<li><p>3(M31)</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="id10">
-<h2>Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{11}\)</span><a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<h2>Langkah 2: Cari Minor M11<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <p>Coret baris 1 dan kolom 1</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-0 &amp; 2 &amp; 4 \\
-1 &amp; 2 &amp; 1 \\
-2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 0  2  4 |
+| 1  2  1 |
+| 2  1  3 |</p>
 <p>Hitung Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 2 \times 3)+(2 \times 1 \times 2)+(4 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0+4+4 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 8 \]</div>
+<p>(0×2×3)+(2×1×2)+(4×1×1)</p>
+<p>= 0+4+4</p>
+<p>= 8</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 2 \times 4)+(1 \times 1 \times 0)+(3 \times 1 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ =16+0+6 \]</div>
-<div class="math notranslate nohighlight">
-\[ =22 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{11}\)</span> = 8 - 22</p>
-<p><span class="math notranslate nohighlight">\(M_{11}\)</span> = -14</p>
+<p>(2×2×4)+(1×1×0)+(3×1×2)</p>
+<p>=16+0+6</p>
+<p>=22</p>
+<p>M11 = 8 - 22</p>
+<p>M11 = -14</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-3-cari-minor-m-21">
-<h2>Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{21}\)</span><a class="headerlink" href="#langkah-3-cari-minor-m-21" title="Link to this heading">#</a></h2>
+<section id="langkah-3-cari-minor-m21">
+<h2>Langkah 3: Cari Minor M21<a class="headerlink" href="#langkah-3-cari-minor-m21" title="Link to this heading">#</a></h2>
 <p>Coret baris 2 dan kolom 1</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-1 &amp; 0 &amp; 3 \\
-1 &amp; 2 &amp; 1 \\
-2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 1  0  3 |
+| 1  2  1 |
+| 2  1  3 |</p>
 <p>Hitung Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (1 \times 2 \times 3)+(0 \times 1 \times 2)+(3 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ =6+0+3 \]</div>
-<div class="math notranslate nohighlight">
-\[ =9 \]</div>
+<p>(1×2×3)+(0×1×2)+(3×1×1)</p>
+<p>=6+0+3</p>
+<p>=9</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 2 \times 3)+(1 \times 1 \times 1)+(3 \times 1 \times 0) \]</div>
-<div class="math notranslate nohighlight">
-\[ =12+1+0 \]</div>
-<div class="math notranslate nohighlight">
-\[ =13 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{21}\)</span> = 9 - 13</p>
-<p><span class="math notranslate nohighlight">\(M_{21}\)</span> = -4</p>
+<p>(2×2×3)+(1×1×1)+(3×1×0)</p>
+<p>=12+1+0</p>
+<p>=13</p>
+<p>M21 = 9 - 13</p>
+<p>M21 = -4</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-4-cari-minor-m-31">
-<h2>Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{31}\)</span><a class="headerlink" href="#langkah-4-cari-minor-m-31" title="Link to this heading">#</a></h2>
+<section id="langkah-4-cari-minor-m31">
+<h2>Langkah 4: Cari Minor M31<a class="headerlink" href="#langkah-4-cari-minor-m31" title="Link to this heading">#</a></h2>
 <p>Coret baris 3 dan kolom 1</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-1 &amp; 0 &amp; 3 \\
-0 &amp; 2 &amp; 4 \\
-2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 1  0  3 |
+| 0  2  4 |
+| 2  1  3 |</p>
 <p>Hitung Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (1 \times 2 \times 3)+(0 \times 4 \times 2)+(3 \times 0 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ =6 \]</div>
+<p>(1×2×3)+(0×4×2)+(3×0×1)</p>
+<p>=6</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 2 \times 3)+(1 \times 4 \times 1)+(3 \times 0 \times 0) \]</div>
-<div class="math notranslate nohighlight">
-\[ =16 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{31}\)</span> = 6 - 16</p>
-<p><span class="math notranslate nohighlight">\(M_{31}\)</span> = -10</p>
+<p>(2×2×3)+(1×4×1)+(3×0×0)</p>
+<p>=16</p>
+<p>M31 = 6 - 16</p>
+<p>M31 = -10</p>
 </section>
 <hr class="docutils" />
 <section id="id11">
 <h2>Langkah 5: Substitusi<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 2(-14) \]</div>
-<p>-(-4)
+<p>det(A)</p>
+<p>= 2(-14)
+-(-4)
 +3(-10)</p>
-<div class="math notranslate nohighlight">
-\[ = -28 + 4 - 30 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -54 \]</div>
+<p>= -28 + 4 - 30</p>
+<p>= -54</p>
 </section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id12">
 <h1>Jawaban Akhir<a class="headerlink" href="#id12" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\det(A) = -54\)</span></p>
+<p>det(A) = -54</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-kolom-kedua">
 <h1>Mencari Determinan 4×4 dengan Ekspansi Kolom Kedua<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-kolom-kedua" title="Link to this heading">#</a></h1>
 <p>Diketahui:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 &amp; 3 \\
-1 &amp; 0 &amp; 2 &amp; 4 \\
-3 &amp; 1 &amp; 2 &amp; 1 \\
-0 &amp; 2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
 <hr class="docutils" />
 <section id="langkah-1-pilih-kolom-kedua">
 <h2>Langkah 1: Pilih Kolom Kedua<a class="headerlink" href="#langkah-1-pilih-kolom-kedua" title="Link to this heading">#</a></h2>
 <p>Kolom kedua:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 \\
-0 \\
-1 \\
-2
-\end{bmatrix}
-\end{split}\]</div>
+<p>| 1 |
+| 0 |
+| 1 |
+| 2 |</p>
 <p>Pola tanda kolom kedua:</p>
 <ul class="simple">
 <li></li>
@@ -1731,130 +1411,88 @@ c &amp; d
 <li></li>
 </ul>
 <p>Maka:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= -1(<span class="math notranslate nohighlight">\(M_{12}\)</span>)
-+0(<span class="math notranslate nohighlight">\(M_{22}\)</span>)
--1(<span class="math notranslate nohighlight">\(M_{32}\)</span>)
-+2(<span class="math notranslate nohighlight">\(M_{42}\)</span>)</p>
+<p>det(A)</p>
+<p>= -1(M12)
++0(M22)
+-1(M32)
++2(M42)</p>
 <p>Karena ada nol:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= -<span class="math notranslate nohighlight">\(M_{12}\)</span> - <span class="math notranslate nohighlight">\(M_{32}\)</span> + 2M42</p>
+<p>det(A)</p>
+<p>= -M12 - M32 + 2M42</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-2-cari-minor-m-12">
-<h2>Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{12}\)</span><a class="headerlink" href="#langkah-2-cari-minor-m-12" title="Link to this heading">#</a></h2>
+<section id="langkah-2-cari-minor-m12">
+<h2>Langkah 2: Cari Minor M12<a class="headerlink" href="#langkah-2-cari-minor-m12" title="Link to this heading">#</a></h2>
 <p>Coret baris 1 dan kolom 2</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-1 &amp; 2 &amp; 4 \\
-3 &amp; 2 &amp; 1 \\
-0 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 1  2  4 |
+| 3  2  1 |
+| 0  1  3 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (1 \times 2 \times 3) + (2 \times 1 \times 0) + (4 \times 3 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 + 0 + 12 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 18 \]</div>
+<p>(1×2×3) + (2×1×0) + (4×3×1)</p>
+<p>= 6 + 0 + 12</p>
+<p>= 18</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 2 \times 4) + (1 \times 1 \times 1) + (3 \times 3 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 1 + 18 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 19 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{12}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 18 - 19 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -1 \]</div>
+<p>(0×2×4) + (1×1×1) + (3×3×2)</p>
+<p>= 0 + 1 + 18</p>
+<p>= 19</p>
+<p>M12</p>
+<p>= 18 - 19</p>
+<p>= -1</p>
 </section>
 <hr class="docutils" />
 <section id="id13">
-<h2>Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{32}\)</span><a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<h2>Langkah 3: Cari Minor M32<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <p>Coret baris 3 dan kolom 2</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 0 &amp; 3 \\
-1 &amp; 2 &amp; 4 \\
-0 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  0  3 |
+| 1  2  4 |
+| 0  1  3 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 2 \times 3) + (0 \times 4 \times 0) + (3 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 12 + 0 + 3 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 15 \]</div>
+<p>(2×2×3) + (0×4×0) + (3×1×1)</p>
+<p>= 12 + 0 + 3</p>
+<p>= 15</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 2 \times 3) + (1 \times 4 \times 2) + (3 \times 1 \times 0) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 8 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 8 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{32}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 15 - 8 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 7 \]</div>
+<p>(0×2×3) + (1×4×2) + (3×1×0)</p>
+<p>= 0 + 8 + 0</p>
+<p>= 8</p>
+<p>M32</p>
+<p>= 15 - 8</p>
+<p>= 7</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-4-cari-minor-m-42">
-<h2>Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{42}\)</span><a class="headerlink" href="#langkah-4-cari-minor-m-42" title="Link to this heading">#</a></h2>
+<section id="langkah-4-cari-minor-m42">
+<h2>Langkah 4: Cari Minor M42<a class="headerlink" href="#langkah-4-cari-minor-m42" title="Link to this heading">#</a></h2>
 <p>Coret baris 4 dan kolom 2</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 0 &amp; 3 \\
-1 &amp; 2 &amp; 4 \\
-3 &amp; 2 &amp; 1
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  0  3 |
+| 1  2  4 |
+| 3  2  1 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 2 \times 1) + (0 \times 4 \times 3) + (3 \times 1 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 4 + 0 + 6 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 10 \]</div>
+<p>(2×2×1) + (0×4×3) + (3×1×2)</p>
+<p>= 4 + 0 + 6</p>
+<p>= 10</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (3 \times 2 \times 3) + (2 \times 4 \times 2) + (1 \times 1 \times 0) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 18 + 16 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 34 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{42}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 10 - 34 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -24 \]</div>
+<p>(3×2×3) + (2×4×2) + (1×1×0)</p>
+<p>= 18 + 16 + 0</p>
+<p>= 34</p>
+<p>M42</p>
+<p>= 10 - 34</p>
+<p>= -24</p>
 </section>
 <hr class="docutils" />
 <section id="id14">
 <h2>Langkah 5: Substitusi<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = -(-1) - (7) + 2(-24) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 1 - 7 - 48 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -54 \]</div>
+<p>det(A)</p>
+<p>= -(-1) - (7) + 2(-24)</p>
+<p>= 1 - 7 - 48</p>
+<p>= -54</p>
 </section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id15">
 <h1>Jawaban Akhir<a class="headerlink" href="#id15" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\det(A) = -54\)</span></p>
+<p>det(A) = -54</p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="pola-tanda-kolom-kedua">
@@ -1882,28 +1520,18 @@ c &amp; d
 <section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-kolom-ketiga">
 <h1>Mencari Determinan 4×4 dengan Ekspansi Kolom Ketiga<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-kolom-ketiga" title="Link to this heading">#</a></h1>
 <p>Diketahui:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 &amp; 3 \\
-1 &amp; 0 &amp; 2 &amp; 4 \\
-3 &amp; 1 &amp; 2 &amp; 1 \\
-0 &amp; 2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |</p>
 <hr class="docutils" />
 <section id="langkah-1-pilih-kolom-ketiga">
 <h2>Langkah 1: Pilih Kolom Ketiga<a class="headerlink" href="#langkah-1-pilih-kolom-ketiga" title="Link to this heading">#</a></h2>
 <p>Kolom ketiga:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-0 \\
-2 \\
-2 \\
-1
-\end{bmatrix}
-\end{split}\]</div>
+<p>| 0 |
+| 2 |
+| 2 |
+| 1 |</p>
 <p>Pola tanda kolom ketiga:</p>
 <ul class="simple">
 <li></li>
@@ -1918,134 +1546,92 @@ c &amp; d
 <li></li>
 </ul>
 <p>Maka:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= 0(<span class="math notranslate nohighlight">\(M_{13}\)</span>)
--2(<span class="math notranslate nohighlight">\(M_{23}\)</span>)
-+2(<span class="math notranslate nohighlight">\(M_{33}\)</span>)
--1(<span class="math notranslate nohighlight">\(M_{43}\)</span>)</p>
+<p>det(A)</p>
+<p>= 0(M13)
+-2(M23)
++2(M33)
+-1(M43)</p>
 <p>Karena ada nol:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= -2(<span class="math notranslate nohighlight">\(M_{23}\)</span>)
-+2(<span class="math notranslate nohighlight">\(M_{33}\)</span>)
--<span class="math notranslate nohighlight">\(M_{43}\)</span></p>
+<p>det(A)</p>
+<p>= -2(M23)
++2(M33)
+-M43</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-2-cari-minor-m-23">
-<h2>Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{23}\)</span><a class="headerlink" href="#langkah-2-cari-minor-m-23" title="Link to this heading">#</a></h2>
+<section id="langkah-2-cari-minor-m23">
+<h2>Langkah 2: Cari Minor M23<a class="headerlink" href="#langkah-2-cari-minor-m23" title="Link to this heading">#</a></h2>
 <p>Coret baris 2 dan kolom 3</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 3 \\
-3 &amp; 1 &amp; 1 \\
-0 &amp; 2 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  1  3 |
+| 3  1  1 |
+| 0  2  3 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 1 \times 3) + (1 \times 1 \times 0) + (3 \times 3 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 + 0 + 18 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 24 \]</div>
+<p>(2×1×3) + (1×1×0) + (3×3×2)</p>
+<p>= 6 + 0 + 18</p>
+<p>= 24</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 1 \times 3) + (2 \times 1 \times 2) + (3 \times 3 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 4 + 9 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 13 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{23}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 24 - 13 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 11 \]</div>
+<p>(0×1×3) + (2×1×2) + (3×3×1)</p>
+<p>= 0 + 4 + 9</p>
+<p>= 13</p>
+<p>M23</p>
+<p>= 24 - 13</p>
+<p>= 11</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-3-cari-minor-m-33">
-<h2>Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{33}\)</span><a class="headerlink" href="#langkah-3-cari-minor-m-33" title="Link to this heading">#</a></h2>
+<section id="langkah-3-cari-minor-m33">
+<h2>Langkah 3: Cari Minor M33<a class="headerlink" href="#langkah-3-cari-minor-m33" title="Link to this heading">#</a></h2>
 <p>Coret baris 3 dan kolom 3</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 3 \\
-1 &amp; 0 &amp; 4 \\
-0 &amp; 2 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  1  3 |
+| 1  0  4 |
+| 0  2  3 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 0 \times 3) + (1 \times 4 \times 0) + (3 \times 1 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 0 + 6 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 \]</div>
+<p>(2×0×3) + (1×4×0) + (3×1×2)</p>
+<p>= 0 + 0 + 6</p>
+<p>= 6</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 0 \times 3) + (2 \times 4 \times 2) + (3 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 16 + 3 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 19 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{33}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 6 - 19 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -13 \]</div>
+<p>(0×0×3) + (2×4×2) + (3×1×1)</p>
+<p>= 0 + 16 + 3</p>
+<p>= 19</p>
+<p>M33</p>
+<p>= 6 - 19</p>
+<p>= -13</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-4-cari-minor-m-43">
-<h2>Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{43}\)</span><a class="headerlink" href="#langkah-4-cari-minor-m-43" title="Link to this heading">#</a></h2>
+<section id="langkah-4-cari-minor-m43">
+<h2>Langkah 4: Cari Minor M43<a class="headerlink" href="#langkah-4-cari-minor-m43" title="Link to this heading">#</a></h2>
 <p>Coret baris 4 dan kolom 3</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 3 \\
-1 &amp; 0 &amp; 4 \\
-3 &amp; 1 &amp; 1
-\end{vmatrix}
-\end{split}\]</div>
+<p>| 2  1  3 |
+| 1  0  4 |
+| 3  1  1 |</p>
 <p>Hitung dengan Sarrus:</p>
 <p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 0 \times 1) + (1 \times 4 \times 3) + (3 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 12 + 3 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 15 \]</div>
+<p>(2×0×1) + (1×4×3) + (3×1×1)</p>
+<p>= 0 + 12 + 3</p>
+<p>= 15</p>
 <p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (3 \times 0 \times 3) + (1 \times 4 \times 2) + (1 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 8 + 1 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 9 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{43}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 15 - 9 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 \]</div>
+<p>(3×0×3) + (1×4×2) + (1×1×1)</p>
+<p>= 0 + 8 + 1</p>
+<p>= 9</p>
+<p>M43</p>
+<p>= 15 - 9</p>
+<p>= 6</p>
 </section>
 <hr class="docutils" />
 <section id="id16">
 <h2>Langkah 5: Substitusi<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = -2(11) \]</div>
-<p>+2(-13)
+<p>det(A)</p>
+<p>= -2(11)
++2(-13)
 -6</p>
-<div class="math notranslate nohighlight">
-\[ = -22 - 26 - 6 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -54 \]</div>
+<p>= -22 - 26 - 6</p>
+<p>= -54</p>
 </section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id17">
 <h1>Jawaban Akhir<a class="headerlink" href="#id17" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\det(A) = -54\)</span></p>
+<p>det(A) = -54</p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="pola-tanda-kolom-ketiga">
@@ -2069,240 +1655,6 @@ c &amp; d
 </li>
 </ul>
 <p>Semua ekspansi baris maupun kolom harus menghasilkan determinan yang sama.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="mencari-determinan-44-dengan-ekspansi-kolom-keempat">
-<h1>Mencari Determinan 4×4 dengan Ekspansi Kolom Keempat<a class="headerlink" href="#mencari-determinan-44-dengan-ekspansi-kolom-keempat" title="Link to this heading">#</a></h1>
-<p>Diketahui:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 &amp; 3 \\
-1 &amp; 0 &amp; 2 &amp; 4 \\
-3 &amp; 1 &amp; 2 &amp; 1 \\
-0 &amp; 2 &amp; 1 &amp; 3
-\end{vmatrix}
-\end{split}\]</div>
-<hr class="docutils" />
-<section id="langkah-1-pilih-kolom-keempat">
-<h2>Langkah 1: Pilih Kolom Keempat<a class="headerlink" href="#langkah-1-pilih-kolom-keempat" title="Link to this heading">#</a></h2>
-<p>Kolom keempat:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-3 \\
-4 \\
-1 \\
-3
-\end{bmatrix}
-\end{split}\]</div>
-<p>Pola tanda kolom keempat:</p>
-<ul class="simple">
-<li></li>
-</ul>
-<ul class="simple">
-<li></li>
-</ul>
-<ul class="simple">
-<li></li>
-</ul>
-<ul class="simple">
-<li></li>
-</ul>
-<p>Maka:</p>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<p>= -3(<span class="math notranslate nohighlight">\(M_{14}\)</span>)
-+4(<span class="math notranslate nohighlight">\(M_{24}\)</span>)
--1(<span class="math notranslate nohighlight">\(M_{34}\)</span>)
-+3(<span class="math notranslate nohighlight">\(M_{44}\)</span>)</p>
-</section>
-<hr class="docutils" />
-<section id="langkah-2-cari-minor-m-14">
-<h2>Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{14}\)</span><a class="headerlink" href="#langkah-2-cari-minor-m-14" title="Link to this heading">#</a></h2>
-<p>Coret baris 1 dan kolom 4</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-1 &amp; 0 &amp; 2 \\
-3 &amp; 1 &amp; 2 \\
-0 &amp; 2 &amp; 1
-\end{vmatrix}
-\end{split}\]</div>
-<p>Hitung dengan Sarrus:</p>
-<p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (1 \times 1 \times 1) + (0 \times 2 \times 0) + (2 \times 3 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 1 + 0 + 12 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 13 \]</div>
-<p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 1 \times 2) + (2 \times 2 \times 1) + (1 \times 3 \times 0) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 4 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 4 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{14}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 13 - 4 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 9 \]</div>
-</section>
-<hr class="docutils" />
-<section id="langkah-3-cari-minor-m-24">
-<h2>Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{24}\)</span><a class="headerlink" href="#langkah-3-cari-minor-m-24" title="Link to this heading">#</a></h2>
-<p>Coret baris 2 dan kolom 4</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 \\
-3 &amp; 1 &amp; 2 \\
-0 &amp; 2 &amp; 1
-\end{vmatrix}
-\end{split}\]</div>
-<p>Hitung dengan Sarrus:</p>
-<p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 1 \times 1) + (1 \times 2 \times 0) + (0 \times 3 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 2 + 0 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 2 \]</div>
-<p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 1 \times 0) + (2 \times 2 \times 2) + (1 \times 3 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 8 + 3 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 11 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{24}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 2 - 11 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -9 \]</div>
-</section>
-<hr class="docutils" />
-<section id="langkah-4-cari-minor-m-34">
-<h2>Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{34}\)</span><a class="headerlink" href="#langkah-4-cari-minor-m-34" title="Link to this heading">#</a></h2>
-<p>Coret baris 3 dan kolom 4</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 \\
-1 &amp; 0 &amp; 2 \\
-0 &amp; 2 &amp; 1
-\end{vmatrix}
-\end{split}\]</div>
-<p>Hitung dengan Sarrus:</p>
-<p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 0 \times 1) + (1 \times 2 \times 0) + (0 \times 1 \times 2) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 \]</div>
-<p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (0 \times 0 \times 0) + (2 \times 2 \times 2) + (1 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 8 + 1 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 9 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{34}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 0 - 9 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -9 \]</div>
-</section>
-<hr class="docutils" />
-<section id="langkah-5-cari-minor-m-44">
-<h2>Langkah 5: Cari Minor <span class="math notranslate nohighlight">\(M_{44}\)</span><a class="headerlink" href="#langkah-5-cari-minor-m-44" title="Link to this heading">#</a></h2>
-<p>Coret baris 4 dan kolom 4</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{vmatrix}
-2 &amp; 1 &amp; 0 \\
-1 &amp; 0 &amp; 2 \\
-3 &amp; 1 &amp; 2
-\end{vmatrix}
-\end{split}\]</div>
-<p>Hitung dengan Sarrus:</p>
-<p>Diagonal turun:</p>
-<div class="math notranslate nohighlight">
-\[ (2 \times 0 \times 2) + (1 \times 2 \times 3) + (0 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 6 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 \]</div>
-<p>Diagonal naik:</p>
-<div class="math notranslate nohighlight">
-\[ (3 \times 0 \times 0) + (1 \times 2 \times 2) + (2 \times 1 \times 1) \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 + 4 + 2 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 6 \]</div>
-<p><span class="math notranslate nohighlight">\(M_{44}\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = 6 - 6 \]</div>
-<div class="math notranslate nohighlight">
-\[ = 0 \]</div>
-</section>
-<hr class="docutils" />
-<section id="id18">
-<h2>Langkah 6: Substitusi<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\det(A)\)</span></p>
-<div class="math notranslate nohighlight">
-\[ = -3(9) \]</div>
-<p>+4(-9)
--1(-9)
-+3(0)</p>
-<div class="math notranslate nohighlight">
-\[ = -27 - 36 + 9 + 0 \]</div>
-<div class="math notranslate nohighlight">
-\[ = -54 \]</div>
-</section>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id19">
-<h1>Jawaban Akhir<a class="headerlink" href="#id19" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\det(A) = -54\)</span></p>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="pola-tanda-kolom-keempat">
-<h1>Pola Tanda Kolom Keempat<a class="headerlink" href="#pola-tanda-kolom-keempat" title="Link to this heading">#</a></h1>
-<p>Posisi:</p>
-<p>(1,4) = -</p>
-<p>(2,4) = +</p>
-<p>(3,4) = -</p>
-<p>(4,4) = +</p>
-<p>Sehingga:</p>
-<ul class="simple">
-<li><ul>
-<li><ul>
-<li><ul>
-<li></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id20">
-<h1>Kesimpulan<a class="headerlink" href="#id20" title="Link to this heading">#</a></h1>
-<p>Untuk matriks 4×4 ini:</p>
-<ul class="simple">
-<li><p>Ekspansi Baris 1 = -54</p></li>
-<li><p>Ekspansi Baris 2 = -54</p></li>
-<li><p>Ekspansi Baris 3 = -54</p></li>
-<li><p>Ekspansi Baris 4 = -54</p></li>
-<li><p>Ekspansi Kolom 1 = -54</p></li>
-<li><p>Ekspansi Kolom 2 = -54</p></li>
-<li><p>Ekspansi Kolom 3 = -54</p></li>
-<li><p>Ekspansi Kolom 4 = -54</p></li>
-</ul>
-<p>Semua menghasilkan nilai determinan yang sama:</p>
-<p><span class="math notranslate nohighlight">\(\det(A) = -54\)</span></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2349,7 +1701,7 @@ c &amp; d
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Invers Matriks</p>
+        <p class="prev-next-title">invers</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2385,9 +1737,9 @@ c &amp; d
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-33-dengan-ekspansi-baris-pertama">Mencari Determinan 3×3 dengan Ekspansi Baris Pertama</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-pertama">Langkah 1: Pilih Baris Pertama</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-11">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{11}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-12">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{12}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-13">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{13}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m11">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m12">Langkah 3: Cari Minor M12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m13">Langkah 4: Cari Minor M13</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-substitusi-ke-rumus">Langkah 5: Substitusi ke Rumus</a></li>
 </ul>
 </li>
@@ -2395,17 +1747,17 @@ c &amp; d
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-yang-harus-diingat">Pola yang Harus Diingat</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-pertama">Mencari Determinan 4×4 dengan Ekspansi Baris Pertama</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 1: Pilih Baris Pertama</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{11}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-13">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{13}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m13">Langkah 3: Cari Minor M13</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-substitusi-ke-rumus">Langkah 4: Substitusi ke Rumus</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Jawaban Akhir</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-kedua">Mencari Determinan 4×4 dengan Ekspansi Baris Kedua</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-kedua">Langkah 1: Pilih Baris Kedua</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-21">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{21}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-23">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{23}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-24">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{24}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m21">Langkah 2: Cari Minor M21</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m23">Langkah 3: Cari Minor M23</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m24">Langkah 4: Cari Minor M24</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-substitusi">Langkah 5: Substitusi</a></li>
 </ul>
 </li>
@@ -2413,10 +1765,10 @@ c &amp; d
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-yang-wajib-hafal">Pola Tanda yang Wajib Hafal</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-ketiga">Mencari Determinan 4×4 dengan Ekspansi Baris Ketiga</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-ketiga">Langkah 1: Pilih Baris Ketiga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-31">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{31}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-32">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{32}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-33">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{33}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-cari-minor-m-34">Langkah 5: Cari Minor <span class="math notranslate nohighlight">\(M_{34}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m31">Langkah 2: Cari Minor M31</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m32">Langkah 3: Cari Minor M32</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m33">Langkah 4: Cari Minor M33</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-cari-minor-m34">Langkah 5: Cari Minor M34</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6-substitusi">Langkah 6: Substitusi</a></li>
 </ul>
 </li>
@@ -2424,9 +1776,9 @@ c &amp; d
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kofaktor-44">Pola Tanda Kofaktor 4×4</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-baris-keempat">Mencari Determinan 4×4 dengan Ekspansi Baris Keempat</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-baris-keempat">Langkah 1: Pilih Baris Keempat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-42">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{42}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-43">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{43}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-44">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{44}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m42">Langkah 2: Cari Minor M42</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m43">Langkah 3: Cari Minor M43</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m44">Langkah 4: Cari Minor M44</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Langkah 5: Substitusi</a></li>
 </ul>
 </li>
@@ -2436,18 +1788,18 @@ c &amp; d
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ekpansi-perkolom-1-4">ekpansi  perkolom 1-4</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-pertama">Mencari Determinan 4×4 dengan Ekspansi Kolom Pertama</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-pertama">Langkah 1: Pilih Kolom Pertama</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{11}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-21">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{21}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-31">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{31}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Langkah 2: Cari Minor M11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m21">Langkah 3: Cari Minor M21</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m31">Langkah 4: Cari Minor M31</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Langkah 5: Substitusi</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Jawaban Akhir</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-kedua">Mencari Determinan 4×4 dengan Ekspansi Kolom Kedua</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-kedua">Langkah 1: Pilih Kolom Kedua</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-12">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{12}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{32}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-42">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{42}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m12">Langkah 2: Cari Minor M12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Langkah 3: Cari Minor M32</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m42">Langkah 4: Cari Minor M42</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Langkah 5: Substitusi</a></li>
 </ul>
 </li>
@@ -2455,26 +1807,14 @@ c &amp; d
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-kedua">Pola Tanda Kolom Kedua</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-ketiga">Mencari Determinan 4×4 dengan Ekspansi Kolom Ketiga</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-ketiga">Langkah 1: Pilih Kolom Ketiga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-23">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{23}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-33">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{33}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-43">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{43}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m23">Langkah 2: Cari Minor M23</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m33">Langkah 3: Cari Minor M33</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m43">Langkah 4: Cari Minor M43</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Langkah 5: Substitusi</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Jawaban Akhir</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-ketiga">Pola Tanda Kolom Ketiga</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-determinan-44-dengan-ekspansi-kolom-keempat">Mencari Determinan 4×4 dengan Ekspansi Kolom Keempat</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-pilih-kolom-keempat">Langkah 1: Pilih Kolom Keempat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cari-minor-m-14">Langkah 2: Cari Minor <span class="math notranslate nohighlight">\(M_{14}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-cari-minor-m-24">Langkah 3: Cari Minor <span class="math notranslate nohighlight">\(M_{24}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cari-minor-m-34">Langkah 4: Cari Minor <span class="math notranslate nohighlight">\(M_{34}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-cari-minor-m-44">Langkah 5: Cari Minor <span class="math notranslate nohighlight">\(M_{44}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Langkah 6: Substitusi</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Jawaban Akhir</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kolom-keempat">Pola Tanda Kolom Keempat</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Kesimpulan</a></li>
 </ul>
 
   </nav></div>
