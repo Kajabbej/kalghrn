@@ -22,3 +22,6 @@ parts:
       - file: tugas/svd
       - file: tugas/qr
       - file: tugas/determinan_invers
+  - caption: "UAS"
+    chapters:
+      - file: UAS/uas

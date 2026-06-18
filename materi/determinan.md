@@ -7,65 +7,53 @@ Halaman ini membahas cara mencari determinan matriks.
 
 Diketahui:
 
-$$
-\begin{vmatrix}
-3 & 2 \\
-1 & 4
-\end{vmatrix}
-$$
+| 3  2 |
+| 1  4 |
 
 ---
 
 ## Rumus Determinan 2×2
 
-$\det(A)$
+det(A)
 
-$= (a \times d) - (b \times c)$
+= (a × d) - (b × c)
 
 ---
 
 ## Identifikasi Elemen
 
-$$
-\begin{bmatrix}
-a & b \\
-c & d
-\end{bmatrix}
-$$
+| a  b |
+| c  d |
 
 =
 
-$$
-\begin{bmatrix}
-3 & 2 \\
-1 & 4
-\end{bmatrix}
-$$
+| 3  2 |
+| 1  4 |
 
 Maka:
 
-$a = 3$
-$b = 2$
-$c = 1$
-$d = 4$
+a = 3
+b = 2
+c = 1
+d = 4
 
 ---
 
 ## Substitusi ke Rumus
 
-$\det(A)$
+det(A)
 
-$$ = (3 \times 4) - (2 \times 1) $$
+= (3 × 4) - (2 × 1)
 
-$$ = 12 - 2 $$
+= 12 - 2
 
-$$ = 10 $$
+= 10
 
 ---
 
 # Jawaban Akhir
 
-$\det(A) = 10$
+det(A) = 10
 
 ---
 
@@ -73,7 +61,7 @@ $\det(A) = 10$
 
 Baris pertama:
 
-$$ [3 \quad 2] $$
+[3  2]
 
 Pola tanda:
 
@@ -81,13 +69,13 @@ Pola tanda:
 
 Maka:
 
-$\det(A)$
+det(A)
 
-$$ = 3(4) - 2(1) $$
+= 3(4) - 2(1)
 
-$$ = 12 - 2 $$
+= 12 - 2
 
-$$ = 10 $$
+= 10
 
 ---
 
@@ -95,30 +83,22 @@ $$ = 10 $$
 
 Untuk matriks 2×2:
 
-$$
-\begin{bmatrix}
-a & b \\
-c & d
-\end{bmatrix}
-$$
+| a  b |
+| c  d |
 
-$\det(A)$
+det(A)
 
-$= a(d) - b(c)$
+= a(d) - b(c)
 
-$= ad - bc$
+= ad - bc
 
 # Mencari Determinan 3×3 dengan Ekspansi Baris Pertama
 
 Diketahui:
 
-$$
-\begin{vmatrix}
-1 & 2 & 3 \\
-0 & 4 & 5 \\
-1 & 0 & 6
-\end{vmatrix}
-$$
+| 1  2  3 |
+| 0  4  5 |
+| 1  0  6 |
 
 ---
 
@@ -126,7 +106,7 @@ $$
 
 Baris pertama:
 
-$$ [1 \quad 2 \quad 3] $$
+[1  2  3]
 
 Pola tanda:
 
@@ -134,90 +114,78 @@ Pola tanda:
 
 Maka:
 
-$\det(A)$
+det(A)
 
-= 1($M_{11}$) - 2($M_{12}$) + 3($M_{13}$)
+= 1(M11) - 2(M12) + 3(M13)
 
 ---
 
-## Langkah 2: Cari Minor $M_{11}$
+## Langkah 2: Cari Minor M11
 
 Coret baris 1 dan kolom 1
 
-$M_{11}$ =
+M11 =
 
-$$
-\begin{vmatrix}
-4 & 5 \\
-0 & 6
-\end{vmatrix}
-$$
+| 4  5 |
+| 0  6 |
 
-$\det(M_{11})$
+det(M11)
 
-$$ = (4\times6) - (5\times0) $$
+= (4×6) - (5×0)
 
-$$ = 24 $$
+= 24
 
 ---
 
-## Langkah 3: Cari Minor $M_{12}$
+## Langkah 3: Cari Minor M12
 
 Coret baris 1 dan kolom 2
 
-$M_{12}$ =
+M12 =
 
-$$
-\begin{vmatrix}
-0 & 5 \\
-1 & 6
-\end{vmatrix}
-$$
+| 0  5 |
+| 1  6 |
 
-$\det(M_{12})$
+det(M12)
 
-$$ = (0\times6) - (5\times1) $$
+= (0×6) - (5×1)
 
-$$ = -5 $$
+= -5
 
 ---
 
-## Langkah 4: Cari Minor $M_{13}$
+## Langkah 4: Cari Minor M13
 
 Coret baris 1 dan kolom 3
 
-$M_{13}$ =
+M13 =
 
-$$
-\begin{vmatrix}
-0 & 4 \\
-1 & 0
-\end{vmatrix}
-$$
+| 0  4 |
+| 1  0 |
 
-$\det(M_{13})$
+det(M13)
 
-$$ = (0\times0) - (4\times1) $$
+= (0×0) - (4×1)
 
-$$ = -4 $$
+= -4
 
 ---
 
 ## Langkah 5: Substitusi ke Rumus
 
-$\det(A)$
+det(A)
 
-$$ = 1(24) - 2(-5) + 3(-4) $$
+= 1(24) - 2(-5) + 3(-4)
 
-$$ = 24 + 10 - 12 $$
+= 24 + 10 - 12
 
-$$ = 22 $$
+= 22
 
 ---
 
 # Jawaban Akhir
 
-$\det(A) = 22$
+det(A) = 22
 
 ---
 
@@ -225,9 +193,9 @@ $\det(A) = 22$
 
 Untuk ekspansi baris pertama matriks 3×3:
 
-$\det(A)$
+det(A)
 
-= a($M_{11}$) - b($M_{12}$) + c($M_{13}$)
+= a(M11) - b(M12) + c(M13)
 
 Pola tanda:
 
@@ -248,14 +216,10 @@ Diketahui:
 
 |A| =
 
-$$
-\begin{vmatrix}
-2 & 0 & 1 & 0 \\
-3 & 1 & 2 & 4 \\
-1 & 2 & 3 & 1 \\
-0 & 1 & 2 & 3
-\end{vmatrix}
-$$
+| 2  0  1  0 |
+| 3  1  2  4 |
+| 1  2  3  1 |
+| 0  1  2  3 |
 
 ---
 
@@ -263,7 +227,7 @@ $$
 
 Baris pertama:
 
-$$ [2 \quad 0 \quad 1 \quad 0] $$
+[2  0  1  0]
 
 Pola tanda:
 
@@ -271,122 +235,110 @@ Pola tanda:
 
 Maka:
 
-$\det(A)$
+det(A)
 
-$$ = 2M_{11} - 0M_{12} + 1M_{13} - 0M_{14} $$
+= 2M11 - 0M12 + 1M13 - 0M14
 
 Karena ada nol:
 
-$= 2M_{11} + M_{13}$
+= 2M11 + M13
 
 ---
 
-## Langkah 2: Cari Minor $M_{11}$
+## Langkah 2: Cari Minor M11
 
 Coret baris 1 dan kolom 1
 
-$M_{11}$ =
+M11 =
 
-$$
-\begin{vmatrix}
-1 & 2 & 4 \\
-2 & 3 & 1 \\
-1 & 2 & 3
-\end{vmatrix}
-$$
+| 1  2  4 |
+| 2  3  1 |
+| 1  2  3 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (1 \times 3 \times 3) + (2 \times 1 \times 1) + (4 \times 2 \times 2) $$
+(1×3×3) + (2×1×1) + (4×2×2)
 
-$$ = 9 + 2 + 16 $$
+= 9 + 2 + 16
 
-$$ = 27 $$
+= 27
 
 Diagonal naik:
 
-$$ (1 \times 3 \times 4) + (2 \times 1 \times 1) + (3 \times 2 \times 2) $$
+(1×3×4) + (2×1×1) + (3×2×2)
 
-$$ = 12 + 2 + 12 $$
+= 12 + 2 + 12
 
-$$ = 26 $$
+= 26
 
-$M_{11}$ = 27 - 26
+M11 = 27 - 26
 
-$M_{11}$ = 1
+M11 = 1
 
 ---
 
-## Langkah 3: Cari Minor $M_{13}$
+## Langkah 3: Cari Minor M13
 
 Coret baris 1 dan kolom 3
 
-$M_{13}$ =
+M13 =
 
-$$
-\begin{vmatrix}
-3 & 1 & 4 \\
-1 & 2 & 1 \\
-0 & 1 & 3
-\end{vmatrix}
-$$
+| 3  1  4 |
+| 1  2  1 |
+| 0  1  3 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (3 \times 2 \times 3) + (1 \times 1 \times 0) + (4 \times 1 \times 1) $$
+(3×2×3) + (1×1×0) + (4×1×1)
 
-$$ = 18 + 0 + 4 $$
+= 18 + 0 + 4
 
-$$ = 22 $$
+= 22
 
 Diagonal naik:
 
-$$ (0 \times 2 \times 4) + (1 \times 1 \times 3) + (3 \times 1 \times 1) $$
+(0×2×4) + (1×1×3) + (3×1×1)
 
-$$ = 0 + 3 + 3 $$
+= 0 + 3 + 3
 
-$$ = 6 $$
+= 6
 
-$M_{13}$ = 22 - 6
+M13 = 22 - 6
 
-$M_{13}$ = 16
+M13 = 16
 
 ---
 
 ## Langkah 4: Substitusi ke Rumus
 
-$\det(A)$
+det(A)
 
-= 2($M_{11}$) + $M_{13}$
+= 2(M11) + M13
 
-$$ = 2(1) + 16 $$
+= 2(1) + 16
 
-$$ = 2 + 16 $$
+= 2 + 16
 
-$$ = 18 $$
+= 18
 
 ---
 
 # Jawaban Akhir
 
-$\det(A) = 18$
+det(A) = 18
 
 # Mencari Determinan 4×4 dengan Ekspansi Baris Kedua
 
 Diketahui:
 
-$$
-\begin{vmatrix}
-2 & 1 & 0 & 3 \\
-1 & 0 & 2 & 4 \\
-3 & 1 & 2 & 1 \\
-0 & 2 & 1 & 3
-\end{vmatrix}
-$$
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
 
 ---
 
@@ -394,7 +346,7 @@ $$
 
 Baris kedua:
 
-$$ [1 \quad 0 \quad 2 \quad 4] $$
+[1  0  2  4]
 
 Pola tanda baris kedua:
 
@@ -402,169 +354,153 @@ Pola tanda baris kedua:
 
 Maka:
 
-$\det(A)$
+det(A)
 
-= -1($M_{21}$)
-+0($M_{22}$)
--2($M_{23}$)
-+4($M_{24}$)
+= -1(M21)
++0(M22)
+-2(M23)
++4(M24)
 
 Karena ada nol:
 
-$\det(A)$
+det(A)
 
-= -$M_{21}$ - 2M23 + 4M24
+= -M21 - 2M23 + 4M24
 
 ---
 
-## Langkah 2: Cari Minor $M_{21}$
+## Langkah 2: Cari Minor M21
 
 Coret baris 2 dan kolom 1
 
-$M_{21}$ =
+M21 =
 
-$$
-\begin{vmatrix}
-1 & 0 & 3 \\
-1 & 2 & 1 \\
-2 & 1 & 3
-\end{vmatrix}
-$$
+| 1  0  3 |
+| 1  2  1 |
+| 2  1  3 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (1 \times 2 \times 3) + (0 \times 1 \times 2) + (3 \times 1 \times 1) $$
+(1×2×3) + (0×1×2) + (3×1×1)
 
-$$ = 6 + 0 + 3 $$
+= 6 + 0 + 3
 
-$$ = 9 $$
+= 9
 
 Diagonal naik:
 
-$$ (2 \times 2 \times 3) + (1 \times 1 \times 1) + (3 \times 1 \times 0) $$
+(2×2×3) + (1×1×1) + (3×1×0)
 
-$$ = 12 + 1 + 0 $$
+= 12 + 1 + 0
 
-$$ = 13 $$
+= 13
 
-$M_{21}$
+M21
 
-$$ = 9 - 13 $$
+= 9 - 13
 
-$$ = -4 $$
+= -4
 
 ---
 
-## Langkah 3: Cari Minor $M_{23}$
+## Langkah 3: Cari Minor M23
 
 Coret baris 2 dan kolom 3
 
-$M_{23}$ =
+M23 =
 
-$$
-\begin{vmatrix}
-2 & 1 & 3 \\
-3 & 1 & 1 \\
-0 & 2 & 3
-\end{vmatrix}
-$$
+| 2  1  3 |
+| 3  1  1 |
+| 0  2  3 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 1 \times 3) + (1 \times 1 \times 0) + (3 \times 3 \times 2) $$
+(2×1×3) + (1×1×0) + (3×3×2)
 
-$$ = 6 + 0 + 18 $$
+= 6 + 0 + 18
 
-$$ = 24 $$
+= 24
 
 Diagonal naik:
 
-$$ (0 \times 1 \times 3) + (2 \times 1 \times 2) + (3 \times 3 \times 1) $$
+(0×1×3) + (2×1×2) + (3×3×1)
 
-$$ = 0 + 4 + 9 $$
+= 0 + 4 + 9
 
-$$ = 13 $$
+= 13
 
-$M_{23}$
+M23
 
-$$ = 24 - 13 $$
+= 24 - 13
 
-$$ = 11 $$
+= 11
 
 ---
 
-## Langkah 4: Cari Minor $M_{24}$
+## Langkah 4: Cari Minor M24
 
 Coret baris 2 dan kolom 4
 
-$M_{24}$ =
+M24 =
 
-$$
-\begin{vmatrix}
-2 & 1 & 0 \\
-3 & 1 & 2 \\
-0 & 2 & 1
-\end{vmatrix}
-$$
+| 2  1  0 |
+| 3  1  2 |
+| 0  2  1 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 1 \times 1) + (1 \times 2 \times 0) + (0 \times 3 \times 2) $$
+(2×1×1) + (1×2×0) + (0×3×2)
 
-$$ = 2 + 0 + 0 $$
+= 2 + 0 + 0
 
-$$ = 2 $$
+= 2
 
 Diagonal naik:
 
-$$ (0 \times 1 \times 0) + (2 \times 2 \times 2) + (1 \times 3 \times 1) $$
+(0×1×0) + (2×2×2) + (1×3×1)
 
-$$ = 0 + 8 + 3 $$
+= 0 + 8 + 3
 
-$$ = 11 $$
+= 11
 
-$M_{24}$
+M24
 
-$$ = 2 - 11 $$
+= 2 - 11
 
-$$ = -9 $$
+= -9
 
 ---
 
 ## Langkah 5: Substitusi
 
-$\det(A)$
+det(A)
 
-$$ = -(-4) - 2(11) + 4(-9) $$
+= -(-4) - 2(11) + 4(-9)
 
-$$ = 4 - 22 - 36 $$
+= 4 - 22 - 36
 
-$$ = -54 $$
+= -54
 
 ---
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+det(A) = -54
 
 ---
 
 # Pola Tanda yang Wajib Hafal
 
-$$
-\begin{bmatrix}
-+ & - & + & - \\
-- & + & - & + \\
-+ & - & + & - \\
-- & + & - & +
-\end{bmatrix}
-$$
+| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |
 
 Untuk ekspansi baris ke-2:
 
@@ -577,14 +513,10 @@ Untuk ekspansi baris ke-4:
 
 Diketahui:
 
-$$
-\begin{vmatrix}
-2 & 1 & 0 & 3 \\
-1 & 0 & 2 & 4 \\
-3 & 1 & 2 & 1 \\
-0 & 2 & 1 & 3
-\end{vmatrix}
-$$
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
 
 ---
 
@@ -592,7 +524,7 @@ $$
 
 Baris ketiga:
 
-$$ [3 \quad 1 \quad 2 \quad 1] $$
+[3  1  2  1]
 
 Pola tanda baris ketiga:
 
@@ -600,204 +532,184 @@ Pola tanda baris ketiga:
 
 Maka:
 
-$\det(A)$
+det(A)
 
-= 3($M_{31}$)
-- 1($M_{32}$)
-+ 2($M_{33}$)
-- 1($M_{34}$)
+= 3(M31)
+- 1(M32)
++ 2(M33)
+- 1(M34)
 
 ---
 
-## Langkah 2: Cari Minor $M_{31}$
+## Langkah 2: Cari Minor M31
 
 Coret baris 3 dan kolom 1
 
-$M_{31}$ =
+M31 =
 
-$$
-\begin{vmatrix}
-1 & 0 & 3 \\
-0 & 2 & 4 \\
-2 & 1 & 3
-\end{vmatrix}
-$$
+| 1  0  3 |
+| 0  2  4 |
+| 2  1  3 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (1 \times 2 \times 3) + (0 \times 4 \times 2) + (3 \times 0 \times 1) $$
+(1×2×3) + (0×4×2) + (3×0×1)
 
-$$ = 6 + 0 + 0 $$
+= 6 + 0 + 0
 
-$$ = 6 $$
+= 6
 
 Diagonal naik:
 
-$$ (2 \times 2 \times 3) + (1 \times 4 \times 1) + (3 \times 0 \times 0) $$
+(2×2×3) + (1×4×1) + (3×0×0)
 
-$$ = 12 + 4 + 0 $$
+= 12 + 4 + 0
 
-$$ = 16 $$
+= 16
 
-$M_{31}$
+M31
 
-$$ = 6 - 16 $$
+= 6 - 16
 
-$$ = -10 $$
+= -10
 
 ---
 
-## Langkah 3: Cari Minor $M_{32}$
+## Langkah 3: Cari Minor M32
 
 Coret baris 3 dan kolom 2
 
-$M_{32}$ =
+M32 =
 
-$$
-\begin{vmatrix}
-2 & 0 & 3 \\
-1 & 2 & 4 \\
-0 & 1 & 3
-\end{vmatrix}
-$$
+| 2  0  3 |
+| 1  2  4 |
+| 0  1  3 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 2 \times 3) + (0 \times 4 \times 0) + (3 \times 1 \times 1) $$
+(2×2×3) + (0×4×0) + (3×1×1)
 
-$$ = 12 + 0 + 3 $$
+= 12 + 0 + 3
 
-$$ = 15 $$
+= 15
 
 Diagonal naik:
 
-$$ (0 \times 2 \times 3) + (1 \times 4 \times 2) + (3 \times 1 \times 0) $$
+(0×2×3) + (1×4×2) + (3×1×0)
 
-$$ = 0 + 8 + 0 $$
+= 0 + 8 + 0
 
-$$ = 8 $$
+= 8
 
-$M_{32}$
+M32
 
-$$ = 15 - 8 $$
+= 15 - 8
 
-$$ = 7 $$
+= 7
 
 ---
 
-## Langkah 4: Cari Minor $M_{33}$
+## Langkah 4: Cari Minor M33
 
 Coret baris 3 dan kolom 3
 
-$M_{33}$ =
+M33 =
 
-$$
-\begin{vmatrix}
-2 & 1 & 3 \\
-1 & 0 & 4 \\
-0 & 2 & 3
-\end{vmatrix}
-$$
+| 2  1  3 |
+| 1  0  4 |
+| 0  2  3 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 0 \times 3) + (1 \times 4 \times 0) + (3 \times 1 \times 2) $$
+(2×0×3) + (1×4×0) + (3×1×2)
 
-$$ = 0 + 0 + 6 $$
+= 0 + 0 + 6
 
-$$ = 6 $$
+= 6
 
 Diagonal naik:
 
-$$ (0 \times 0 \times 3) + (2 \times 4 \times 2) + (3 \times 1 \times 1) $$
+(0×0×3) + (2×4×2) + (3×1×1)
 
-$$ = 0 + 16 + 3 $$
+= 0 + 16 + 3
 
-$$ = 19 $$
+= 19
 
-$M_{33}$
+M33
 
-$$ = 6 - 19 $$
+= 6 - 19
 
-$$ = -13 $$
+= -13
 
 ---
 
-## Langkah 5: Cari Minor $M_{34}$
+## Langkah 5: Cari Minor M34
 
 Coret baris 3 dan kolom 4
 
-$M_{34}$ =
+M34 =
 
-$$
-\begin{vmatrix}
-2 & 1 & 0 \\
-1 & 0 & 2 \\
-0 & 2 & 1
-\end{vmatrix}
-$$
+| 2  1  0 |
+| 1  0  2 |
+| 0  2  1 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 0 \times 1) + (1 \times 2 \times 0) + (0 \times 1 \times 2) $$
+(2×0×1) + (1×2×0) + (0×1×2)
 
-$$ = 0 $$
+= 0
 
 Diagonal naik:
 
-$$ (0 \times 0 \times 0) + (2 \times 2 \times 2) + (1 \times 1 \times 1) $$
+(0×0×0) + (2×2×2) + (1×1×1)
 
-$$ = 0 + 8 + 1 $$
+= 0 + 8 + 1
 
-$$ = 9 $$
+= 9
 
-$M_{34}$
+M34
 
-$$ = 0 - 9 $$
+= 0 - 9
 
-$$ = -9 $$
+= -9
 
 ---
 
 ## Langkah 6: Substitusi
 
-$\det(A)$
+det(A)
 
-$$ = 3(-10) $$
+= 3(-10)
 - 1(7)
 + 2(-13)
 - 1(-9)
 
-$$ = -30 - 7 - 26 + 9 $$
+= -30 - 7 - 26 + 9
 
-$$ = -54 $$
+= -54
 
 ---
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+det(A) = -54
 
 ---
 
 # Pola Tanda Kofaktor 4×4
 
-$$
-\begin{bmatrix}
-+ & - & + & - \\
-- & + & - & + \\
-+ & - & + & - \\
-- & + & - & +
-\end{bmatrix}
-$$
+| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |
 
 Baris ke-3 menggunakan:
 
@@ -807,14 +719,10 @@ Baris ke-3 menggunakan:
 
 Diketahui:
 
-$$
-\begin{vmatrix}
-2 & 1 & 0 & 3 \\
-1 & 0 & 2 & 4 \\
-3 & 1 & 2 & 1 \\
-0 & 2 & 1 & 3
-\end{vmatrix}
-$$
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
 
 ---
 
@@ -822,7 +730,7 @@ $$
 
 Baris keempat:
 
-$$ [0 \quad 2 \quad 1 \quad 3] $$
+[0  2  1  3]
 
 Pola tanda baris keempat:
 
@@ -830,173 +738,157 @@ Pola tanda baris keempat:
 
 Maka:
 
-$\det(A)$
+det(A)
 
-= -0($M_{41}$)
-+2($M_{42}$)
--1($M_{43}$)
-+3($M_{44}$)
+= -0(M41)
++2(M42)
+-1(M43)
++3(M44)
 
 Karena ada nol:
 
-$\det(A)$
+det(A)
 
-= 2($M_{42}$)
-- $M_{43}$
-+ 3($M_{44}$)
+= 2(M42)
+- M43
++ 3(M44)
 
 ---
 
-## Langkah 2: Cari Minor $M_{42}$
+## Langkah 2: Cari Minor M42
 
 Coret baris 4 dan kolom 2
 
-$M_{42}$ =
+M42 =
 
-$$
-\begin{vmatrix}
-2 & 0 & 3 \\
-1 & 2 & 4 \\
-3 & 2 & 1
-\end{vmatrix}
-$$
+| 2  0  3 |
+| 1  2  4 |
+| 3  2  1 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 2 \times 1) + (0 \times 4 \times 3) + (3 \times 1 \times 2) $$
+(2×2×1) + (0×4×3) + (3×1×2)
 
-$$ = 4 + 0 + 6 $$
+= 4 + 0 + 6
 
-$$ = 10 $$
+= 10
 
 Diagonal naik:
 
-$$ (3 \times 2 \times 3) + (2 \times 4 \times 2) + (1 \times 1 \times 0) $$
+(3×2×3) + (2×4×2) + (1×1×0)
 
-$$ = 18 + 16 + 0 $$
+= 18 + 16 + 0
 
-$$ = 34 $$
+= 34
 
-$M_{42}$
+M42
 
-$$ = 10 - 34 $$
+= 10 - 34
 
-$$ = -24 $$
+= -24
 
 ---
 
-## Langkah 3: Cari Minor $M_{43}$
+## Langkah 3: Cari Minor M43
 
 Coret baris 4 dan kolom 3
 
-$M_{43}$ =
+M43 =
 
-$$
-\begin{vmatrix}
-2 & 1 & 3 \\
-1 & 0 & 4 \\
-3 & 1 & 1
-\end{vmatrix}
-$$
+| 2  1  3 |
+| 1  0  4 |
+| 3  1  1 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 0 \times 1) + (1 \times 4 \times 3) + (3 \times 1 \times 1) $$
+(2×0×1) + (1×4×3) + (3×1×1)
 
-$$ = 0 + 12 + 3 $$
+= 0 + 12 + 3
 
-$$ = 15 $$
+= 15
 
 Diagonal naik:
 
-$$ (3 \times 0 \times 3) + (1 \times 4 \times 2) + (1 \times 1 \times 1) $$
+(3×0×3) + (1×4×2) + (1×1×1)
 
-$$ = 0 + 8 + 1 $$
+= 0 + 8 + 1
 
-$$ = 9 $$
+= 9
 
-$M_{43}$
+M43
 
-$$ = 15 - 9 $$
+= 15 - 9
 
-$$ = 6 $$
+= 6
 
 ---
 
-## Langkah 4: Cari Minor $M_{44}$
+## Langkah 4: Cari Minor M44
 
 Coret baris 4 dan kolom 4
 
-$M_{44}$ =
+M44 =
 
-$$
-\begin{vmatrix}
-2 & 1 & 0 \\
-1 & 0 & 2 \\
-3 & 1 & 2
-\end{vmatrix}
-$$
+| 2  1  0 |
+| 1  0  2 |
+| 3  1  2 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 0 \times 2) + (1 \times 2 \times 3) + (0 \times 1 \times 1) $$
+(2×0×2) + (1×2×3) + (0×1×1)
 
-$$ = 0 + 6 + 0 $$
+= 0 + 6 + 0
 
-$$ = 6 $$
+= 6
 
 Diagonal naik:
 
-$$ (3 \times 0 \times 0) + (1 \times 2 \times 2) + (2 \times 1 \times 1) $$
+(3×0×0) + (1×2×2) + (2×1×1)
 
-$$ = 0 + 4 + 2 $$
+= 0 + 4 + 2
 
-$$ = 6 $$
+= 6
 
-$M_{44}$
+M44
 
-$$ = 6 - 6 $$
+= 6 - 6
 
-$$ = 0 $$
+= 0
 
 ---
 
 ## Langkah 5: Substitusi
 
-$\det(A)$
+det(A)
 
-$$ = 2(-24) $$
+= 2(-24)
 - (6)
 + 3(0)
 
-$$ = -48 - 6 + 0 $$
+= -48 - 6 + 0
 
-$$ = -54 $$
+= -54
 
 ---
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+det(A) = -54
 
 ---
 
 # Pola Tanda Kofaktor 4×4
 
-$$
-\begin{bmatrix}
-+ & - & + & - \\
-- & + & - & + \\
-+ & - & + & - \\
-- & + & - & +
-\end{bmatrix}
-$$
+| +  -  +  - |
+| -  +  -  + |
+| +  -  +  - |
+| -  +  -  + |
 
 Baris ke-4 menggunakan:
 
@@ -1021,14 +913,10 @@ Semua ekspansi menghasilkan determinan yang sama.
 
 Diketahui:
 
-$$
-\begin{vmatrix}
-2 & 1 & 0 & 3 \\
-1 & 0 & 2 & 4 \\
-3 & 1 & 2 & 1 \\
-0 & 2 & 1 & 3
-\end{vmatrix}
-$$
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
 
 ---
 
@@ -1036,14 +924,10 @@ $$
 
 Kolom pertama:
 
-$$
-\begin{bmatrix}
-2 \\
-1 \\
-3 \\
-0
-\end{bmatrix}
-$$
+| 2 |
+| 1 |
+| 3 |
+| 0 |
 
 Pola tanda kolom pertama:
 
@@ -1054,157 +938,141 @@ Pola tanda kolom pertama:
 
 Maka:
 
-$\det(A)$
+det(A)
 
-= 2($M_{11}$)
-- 1($M_{21}$)
-+ 3($M_{31}$)
-- 0($M_{41}$)
+= 2(M11)
+- 1(M21)
++ 3(M31)
+- 0(M41)
 
 Karena elemen terakhir nol:
 
-$\det(A)$
+det(A)
 
-= 2($M_{11}$)
-- $M_{21}$
-+ 3($M_{31}$)
+= 2(M11)
+- M21
++ 3(M31)
 
 ---
 
-## Langkah 2: Cari Minor $M_{11}$
+## Langkah 2: Cari Minor M11
 
 Coret baris 1 dan kolom 1
 
-$$
-\begin{vmatrix}
-0 & 2 & 4 \\
-1 & 2 & 1 \\
-2 & 1 & 3
-\end{vmatrix}
-$$
+| 0  2  4 |
+| 1  2  1 |
+| 2  1  3 |
 
 Hitung Sarrus:
 
 Diagonal turun:
 
-$$ (0 \times 2 \times 3)+(2 \times 1 \times 2)+(4 \times 1 \times 1) $$
+(0×2×3)+(2×1×2)+(4×1×1)
 
-$$ = 0+4+4 $$
+= 0+4+4
 
-$$ = 8 $$
+= 8
 
 Diagonal naik:
 
-$$ (2 \times 2 \times 4)+(1 \times 1 \times 0)+(3 \times 1 \times 2) $$
+(2×2×4)+(1×1×0)+(3×1×2)
 
-$$ =16+0+6 $$
+=16+0+6
 
-$$ =22 $$
+=22
 
-$M_{11}$ = 8 - 22
+M11 = 8 - 22
 
-$M_{11}$ = -14
+M11 = -14
 
 ---
 
-## Langkah 3: Cari Minor $M_{21}$
+## Langkah 3: Cari Minor M21
 
 Coret baris 2 dan kolom 1
 
-$$
-\begin{vmatrix}
-1 & 0 & 3 \\
-1 & 2 & 1 \\
-2 & 1 & 3
-\end{vmatrix}
-$$
+| 1  0  3 |
+| 1  2  1 |
+| 2  1  3 |
 
 Hitung Sarrus:
 
 Diagonal turun:
 
-$$ (1 \times 2 \times 3)+(0 \times 1 \times 2)+(3 \times 1 \times 1) $$
+(1×2×3)+(0×1×2)+(3×1×1)
 
-$$ =6+0+3 $$
+=6+0+3
 
-$$ =9 $$
+=9
 
 Diagonal naik:
 
-$$ (2 \times 2 \times 3)+(1 \times 1 \times 1)+(3 \times 1 \times 0) $$
+(2×2×3)+(1×1×1)+(3×1×0)
 
-$$ =12+1+0 $$
+=12+1+0
 
-$$ =13 $$
+=13
 
-$M_{21}$ = 9 - 13
+M21 = 9 - 13
 
-$M_{21}$ = -4
+M21 = -4
 
 ---
 
-## Langkah 4: Cari Minor $M_{31}$
+## Langkah 4: Cari Minor M31
 
 Coret baris 3 dan kolom 1
 
-$$
-\begin{vmatrix}
-1 & 0 & 3 \\
-0 & 2 & 4 \\
-2 & 1 & 3
-\end{vmatrix}
-$$
+| 1  0  3 |
+| 0  2  4 |
+| 2  1  3 |
 
 Hitung Sarrus:
 
 Diagonal turun:
 
-$$ (1 \times 2 \times 3)+(0 \times 4 \times 2)+(3 \times 0 \times 1) $$
+(1×2×3)+(0×4×2)+(3×0×1)
 
-$$ =6 $$
+=6
 
 Diagonal naik:
 
-$$ (2 \times 2 \times 3)+(1 \times 4 \times 1)+(3 \times 0 \times 0) $$
+(2×2×3)+(1×4×1)+(3×0×0)
 
-$$ =16 $$
+=16
 
-$M_{31}$ = 6 - 16
+M31 = 6 - 16
 
-$M_{31}$ = -10
+M31 = -10
 
 ---
 
 ## Langkah 5: Substitusi
 
-$\det(A)$
+det(A)
 
-$$ = 2(-14) $$
+= 2(-14)
 -(-4)
 +3(-10)
 
-$$ = -28 + 4 - 30 $$
+= -28 + 4 - 30
 
-$$ = -54 $$
+= -54
 
 ---
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+det(A) = -54
 
 # Mencari Determinan 4×4 dengan Ekspansi Kolom Kedua
 
 Diketahui:
 
-$$
-\begin{vmatrix}
-2 & 1 & 0 & 3 \\
-1 & 0 & 2 & 4 \\
-3 & 1 & 2 & 1 \\
-0 & 2 & 1 & 3
-\end{vmatrix}
-$$
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
 
 ---
 
@@ -1212,14 +1080,10 @@ $$
 
 Kolom kedua:
 
-$$
-\begin{bmatrix}
-1 \\
-0 \\
-1 \\
-2
-\end{bmatrix}
-$$
+| 1 |
+| 0 |
+| 1 |
+| 2 |
 
 Pola tanda kolom kedua:
 
@@ -1230,150 +1094,138 @@ Pola tanda kolom kedua:
 
 Maka:
 
-$\det(A)$
+det(A)
 
-= -1($M_{12}$)
-+0($M_{22}$)
--1($M_{32}$)
-+2($M_{42}$)
+= -1(M12)
++0(M22)
+-1(M32)
++2(M42)
 
 Karena ada nol:
 
-$\det(A)$
+det(A)
 
-= -$M_{12}$ - $M_{32}$ + 2M42
+= -M12 - M32 + 2M42
 
 ---
 
-## Langkah 2: Cari Minor $M_{12}$
+## Langkah 2: Cari Minor M12
 
 Coret baris 1 dan kolom 2
 
-$$
-\begin{vmatrix}
-1 & 2 & 4 \\
-3 & 2 & 1 \\
-0 & 1 & 3
-\end{vmatrix}
-$$
+| 1  2  4 |
+| 3  2  1 |
+| 0  1  3 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (1 \times 2 \times 3) + (2 \times 1 \times 0) + (4 \times 3 \times 1) $$
+(1×2×3) + (2×1×0) + (4×3×1)
 
-$$ = 6 + 0 + 12 $$
+= 6 + 0 + 12
 
-$$ = 18 $$
+= 18
 
 Diagonal naik:
 
-$$ (0 \times 2 \times 4) + (1 \times 1 \times 1) + (3 \times 3 \times 2) $$
+(0×2×4) + (1×1×1) + (3×3×2)
 
-$$ = 0 + 1 + 18 $$
+= 0 + 1 + 18
 
-$$ = 19 $$
+= 19
 
-$M_{12}$
+M12
 
-$$ = 18 - 19 $$
+= 18 - 19
 
-$$ = -1 $$
+= -1
 
 ---
 
-## Langkah 3: Cari Minor $M_{32}$
+## Langkah 3: Cari Minor M32
 
 Coret baris 3 dan kolom 2
 
-$$
-\begin{vmatrix}
-2 & 0 & 3 \\
-1 & 2 & 4 \\
-0 & 1 & 3
-\end{vmatrix}
-$$
+| 2  0  3 |
+| 1  2  4 |
+| 0  1  3 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 2 \times 3) + (0 \times 4 \times 0) + (3 \times 1 \times 1) $$
+(2×2×3) + (0×4×0) + (3×1×1)
 
-$$ = 12 + 0 + 3 $$
+= 12 + 0 + 3
 
-$$ = 15 $$
+= 15
 
 Diagonal naik:
 
-$$ (0 \times 2 \times 3) + (1 \times 4 \times 2) + (3 \times 1 \times 0) $$
+(0×2×3) + (1×4×2) + (3×1×0)
 
-$$ = 0 + 8 + 0 $$
+= 0 + 8 + 0
 
-$$ = 8 $$
+= 8
 
-$M_{32}$
+M32
 
-$$ = 15 - 8 $$
+= 15 - 8
 
-$$ = 7 $$
+= 7
 
 ---
 
-## Langkah 4: Cari Minor $M_{42}$
+## Langkah 4: Cari Minor M42
 
 Coret baris 4 dan kolom 2
 
-$$
-\begin{vmatrix}
-2 & 0 & 3 \\
-1 & 2 & 4 \\
-3 & 2 & 1
-\end{vmatrix}
-$$
+| 2  0  3 |
+| 1  2  4 |
+| 3  2  1 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 2 \times 1) + (0 \times 4 \times 3) + (3 \times 1 \times 2) $$
+(2×2×1) + (0×4×3) + (3×1×2)
 
-$$ = 4 + 0 + 6 $$
+= 4 + 0 + 6
 
-$$ = 10 $$
+= 10
 
 Diagonal naik:
 
-$$ (3 \times 2 \times 3) + (2 \times 4 \times 2) + (1 \times 1 \times 0) $$
+(3×2×3) + (2×4×2) + (1×1×0)
 
-$$ = 18 + 16 + 0 $$
+= 18 + 16 + 0
 
-$$ = 34 $$
+= 34
 
-$M_{42}$
+M42
 
-$$ = 10 - 34 $$
+= 10 - 34
 
-$$ = -24 $$
+= -24
 
 ---
 
 ## Langkah 5: Substitusi
 
-$\det(A)$
+det(A)
 
-$$ = -(-1) - (7) + 2(-24) $$
+= -(-1) - (7) + 2(-24)
 
-$$ = 1 - 7 - 48 $$
+= 1 - 7 - 48
 
-$$ = -54 $$
+= -54
 
 ---
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+det(A) = -54
 
 ---
 
@@ -1399,14 +1251,10 @@ Semua ekspansi (baris atau kolom mana pun) harus menghasilkan nilai determinan y
 
 Diketahui:
 
-$$
-\begin{vmatrix}
-2 & 1 & 0 & 3 \\
-1 & 0 & 2 & 4 \\
-3 & 1 & 2 & 1 \\
-0 & 2 & 1 & 3
-\end{vmatrix}
-$$
+| 2  1  0  3 |
+| 1  0  2  4 |
+| 3  1  2  1 |
+| 0  2  1  3 |
 
 ---
 
@@ -1414,14 +1262,10 @@ $$
 
 Kolom ketiga:
 
-$$
-\begin{bmatrix}
-0 \\
-2 \\
-2 \\
-1
-\end{bmatrix}
-$$
+| 0 |
+| 2 |
+| 2 |
+| 1 |
 
 Pola tanda kolom ketiga:
 
@@ -1432,154 +1276,142 @@ Pola tanda kolom ketiga:
 
 Maka:
 
-$\det(A)$
+det(A)
 
-= 0($M_{13}$)
--2($M_{23}$)
-+2($M_{33}$)
--1($M_{43}$)
+= 0(M13)
+-2(M23)
++2(M33)
+-1(M43)
 
 Karena ada nol:
 
-$\det(A)$
+det(A)
 
-= -2($M_{23}$)
-+2($M_{33}$)
--$M_{43}$
+= -2(M23)
++2(M33)
+-M43
 
 ---
 
-## Langkah 2: Cari Minor $M_{23}$
+## Langkah 2: Cari Minor M23
 
 Coret baris 2 dan kolom 3
 
-$$
-\begin{vmatrix}
-2 & 1 & 3 \\
-3 & 1 & 1 \\
-0 & 2 & 3
-\end{vmatrix}
-$$
+| 2  1  3 |
+| 3  1  1 |
+| 0  2  3 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 1 \times 3) + (1 \times 1 \times 0) + (3 \times 3 \times 2) $$
+(2×1×3) + (1×1×0) + (3×3×2)
 
-$$ = 6 + 0 + 18 $$
+= 6 + 0 + 18
 
-$$ = 24 $$
+= 24
 
 Diagonal naik:
 
-$$ (0 \times 1 \times 3) + (2 \times 1 \times 2) + (3 \times 3 \times 1) $$
+(0×1×3) + (2×1×2) + (3×3×1)
 
-$$ = 0 + 4 + 9 $$
+= 0 + 4 + 9
 
-$$ = 13 $$
+= 13
 
-$M_{23}$
+M23
 
-$$ = 24 - 13 $$
+= 24 - 13
 
-$$ = 11 $$
+= 11
 
 ---
 
-## Langkah 3: Cari Minor $M_{33}$
+## Langkah 3: Cari Minor M33
 
 Coret baris 3 dan kolom 3
 
-$$
-\begin{vmatrix}
-2 & 1 & 3 \\
-1 & 0 & 4 \\
-0 & 2 & 3
-\end{vmatrix}
-$$
+| 2  1  3 |
+| 1  0  4 |
+| 0  2  3 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 0 \times 3) + (1 \times 4 \times 0) + (3 \times 1 \times 2) $$
+(2×0×3) + (1×4×0) + (3×1×2)
 
-$$ = 0 + 0 + 6 $$
+= 0 + 0 + 6
 
-$$ = 6 $$
+= 6
 
 Diagonal naik:
 
-$$ (0 \times 0 \times 3) + (2 \times 4 \times 2) + (3 \times 1 \times 1) $$
+(0×0×3) + (2×4×2) + (3×1×1)
 
-$$ = 0 + 16 + 3 $$
+= 0 + 16 + 3
 
-$$ = 19 $$
+= 19
 
-$M_{33}$
+M33
 
-$$ = 6 - 19 $$
+= 6 - 19
 
-$$ = -13 $$
+= -13
 
 ---
 
-## Langkah 4: Cari Minor $M_{43}$
+## Langkah 4: Cari Minor M43
 
 Coret baris 4 dan kolom 3
 
-$$
-\begin{vmatrix}
-2 & 1 & 3 \\
-1 & 0 & 4 \\
-3 & 1 & 1
-\end{vmatrix}
-$$
+| 2  1  3 |
+| 1  0  4 |
+| 3  1  1 |
 
 Hitung dengan Sarrus:
 
 Diagonal turun:
 
-$$ (2 \times 0 \times 1) + (1 \times 4 \times 3) + (3 \times 1 \times 1) $$
+(2×0×1) + (1×4×3) + (3×1×1)
 
-$$ = 0 + 12 + 3 $$
+= 0 + 12 + 3
 
-$$ = 15 $$
+= 15
 
 Diagonal naik:
 
-$$ (3 \times 0 \times 3) + (1 \times 4 \times 2) + (1 \times 1 \times 1) $$
+(3×0×3) + (1×4×2) + (1×1×1)
 
-$$ = 0 + 8 + 1 $$
+= 0 + 8 + 1
 
-$$ = 9 $$
+= 9
 
-$M_{43}$
+M43
 
-$$ = 15 - 9 $$
+= 15 - 9
 
-$$ = 6 $$
+= 6
 
 ---
 
 ## Langkah 5: Substitusi
 
-$\det(A)$
+det(A)
 
-$$ = -2(11) $$
+= -2(11)
 +2(-13)
 -6
 
-$$ = -22 - 26 - 6 $$
+= -22 - 26 - 6
 
-$$ = -54 $$
+= -54
 
 ---
 
 # Jawaban Akhir
 
-$\det(A) = -54$
+det(A) = -54
 
 ---
 
@@ -1601,255 +1433,3 @@ Sehingga:
 
 Semua ekspansi baris maupun kolom harus menghasilkan determinan yang sama.
 
-# Mencari Determinan 4×4 dengan Ekspansi Kolom Keempat
-
-Diketahui:
-
-$$
-\begin{vmatrix}
-2 & 1 & 0 & 3 \\
-1 & 0 & 2 & 4 \\
-3 & 1 & 2 & 1 \\
-0 & 2 & 1 & 3
-\end{vmatrix}
-$$
-
----
-
-## Langkah 1: Pilih Kolom Keempat
-
-Kolom keempat:
-
-$$
-\begin{bmatrix}
-3 \\
-4 \\
-1 \\
-3
-\end{bmatrix}
-$$
-
-Pola tanda kolom keempat:
-
--
-+
--
-+
-
-Maka:
-
-$\det(A)$
-
-= -3($M_{14}$)
-+4($M_{24}$)
--1($M_{34}$)
-+3($M_{44}$)
-
----
-
-## Langkah 2: Cari Minor $M_{14}$
-
-Coret baris 1 dan kolom 4
-
-$$
-\begin{vmatrix}
-1 & 0 & 2 \\
-3 & 1 & 2 \\
-0 & 2 & 1
-\end{vmatrix}
-$$
-
-Hitung dengan Sarrus:
-
-Diagonal turun:
-
-$$ (1 \times 1 \times 1) + (0 \times 2 \times 0) + (2 \times 3 \times 2) $$
-
-$$ = 1 + 0 + 12 $$
-
-$$ = 13 $$
-
-Diagonal naik:
-
-$$ (0 \times 1 \times 2) + (2 \times 2 \times 1) + (1 \times 3 \times 0) $$
-
-$$ = 0 + 4 + 0 $$
-
-$$ = 4 $$
-
-$M_{14}$
-
-$$ = 13 - 4 $$
-
-$$ = 9 $$
-
----
-
-## Langkah 3: Cari Minor $M_{24}$
-
-Coret baris 2 dan kolom 4
-
-$$
-\begin{vmatrix}
-2 & 1 & 0 \\
-3 & 1 & 2 \\
-0 & 2 & 1
-\end{vmatrix}
-$$
-
-Hitung dengan Sarrus:
-
-Diagonal turun:
-
-$$ (2 \times 1 \times 1) + (1 \times 2 \times 0) + (0 \times 3 \times 2) $$
-
-$$ = 2 + 0 + 0 $$
-
-$$ = 2 $$
-
-Diagonal naik:
-
-$$ (0 \times 1 \times 0) + (2 \times 2 \times 2) + (1 \times 3 \times 1) $$
-
-$$ = 0 + 8 + 3 $$
-
-$$ = 11 $$
-
-$M_{24}$
-
-$$ = 2 - 11 $$
-
-$$ = -9 $$
-
----
-
-## Langkah 4: Cari Minor $M_{34}$
-
-Coret baris 3 dan kolom 4
-
-$$
-\begin{vmatrix}
-2 & 1 & 0 \\
-1 & 0 & 2 \\
-0 & 2 & 1
-\end{vmatrix}
-$$
-
-Hitung dengan Sarrus:
-
-Diagonal turun:
-
-$$ (2 \times 0 \times 1) + (1 \times 2 \times 0) + (0 \times 1 \times 2) $$
-
-$$ = 0 $$
-
-Diagonal naik:
-
-$$ (0 \times 0 \times 0) + (2 \times 2 \times 2) + (1 \times 1 \times 1) $$
-
-$$ = 0 + 8 + 1 $$
-
-$$ = 9 $$
-
-$M_{34}$
-
-$$ = 0 - 9 $$
-
-$$ = -9 $$
-
----
-
-## Langkah 5: Cari Minor $M_{44}$
-
-Coret baris 4 dan kolom 4
-
-$$
-\begin{vmatrix}
-2 & 1 & 0 \\
-1 & 0 & 2 \\
-3 & 1 & 2
-\end{vmatrix}
-$$
-
-Hitung dengan Sarrus:
-
-Diagonal turun:
-
-$$ (2 \times 0 \times 2) + (1 \times 2 \times 3) + (0 \times 1 \times 1) $$
-
-$$ = 0 + 6 + 0 $$
-
-$$ = 6 $$
-
-Diagonal naik:
-
-$$ (3 \times 0 \times 0) + (1 \times 2 \times 2) + (2 \times 1 \times 1) $$
-
-$$ = 0 + 4 + 2 $$
-
-$$ = 6 $$
-
-$M_{44}$
-
-$$ = 6 - 6 $$
-
-$$ = 0 $$
-
----
-
-## Langkah 6: Substitusi
-
-$\det(A)$
-
-$$ = -3(9) $$
-+4(-9)
--1(-9)
-+3(0)
-
-$$ = -27 - 36 + 9 + 0 $$
-
-$$ = -54 $$
-
----
-
-# Jawaban Akhir
-
-$\det(A) = -54$
-
----
-
-# Pola Tanda Kolom Keempat
-
-Posisi:
-
-(1,4) = -
-
-(2,4) = +
-
-(3,4) = -
-
-(4,4) = +
-
-Sehingga:
-
--  +  -  +
-
----
-
-# Kesimpulan
-
-Untuk matriks 4×4 ini:
-
-- Ekspansi Baris 1 = -54
-- Ekspansi Baris 2 = -54
-- Ekspansi Baris 3 = -54
-- Ekspansi Baris 4 = -54
-
-- Ekspansi Kolom 1 = -54
-- Ekspansi Kolom 2 = -54
-- Ekspansi Kolom 3 = -54
-- Ekspansi Kolom 4 = -54
-
-Semua menghasilkan nilai determinan yang sama:
-
-$\det(A) = -54$

@@ -30,3 +30,15 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  extra_css:
+    - _static/custom.css
+
+exclude_patterns:
+  - tugas_svd_old.ipynb
+  - intro1.md
+  - markdown.md
+  - markdown-notebooks.md
+  - notebooks.ipynb
+  - todo.md
+
+
