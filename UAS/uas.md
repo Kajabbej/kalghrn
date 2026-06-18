@@ -34,7 +34,10 @@
     Perbaikan ini mengacu pada metode perhitungan determinan matriks $4 \times 4$ yang sistematis (mengikuti prinsip dasar ekspansi Laplace seperti pada panduan [YouTube referensi](https://youtu.be/mZ-QNk-U3bg?si=I7_rbiFxvj7sYduK)).
 
 ---
+---
+ 
 ### Langkah Perhitungan Determinan Secara Matematis (LaTeX)
+ 
 $$
 A = \begin{bmatrix}
 1 & 3 & 4 & 5 \\
@@ -43,20 +46,25 @@ A = \begin{bmatrix}
 5 & 3 & 2 & 1
 \end{bmatrix}
 $$
-
+ 
 $$
 \begin{aligned}
-\det(A) &= 1 \begin{vmatrix} 6 & 1 & 2 \\ 3 & 1 & 4 \\ 3 & 2 & 1 \end{vmatrix} - 3 \begin{vmatrix} 7 & 1 & 2 \\ 2 & 1 & 4 \\ 5 & 2 & 1 \end{vmatrix} + 4 \begin{vmatrix} 7 & 6 & 2 \\ 2 & 3 & 4 \\ 5 & 3 & 1 \end{vmatrix} - 5 \begin{vmatrix} 7 & 6 & 1 \\ 2 & 3 & 1 \\ 5 & 3 & 2 \end{vmatrix} \\[10pt]
-&= 1 \left[ 6(1\cdot1-4\cdot2) - 1(3\cdot1-4\cdot3) + 2(3\cdot2-1\cdot3) \right] \\
-&\quad - 3 \left[ 7(1\cdot1-4\cdot2) - 1(2\cdot1-4\cdot5) + 2(2\cdot2-1\cdot5) \right] \\
-&\quad + 4 \left[ 7(3\cdot1-4\cdot3) - 6(2\cdot1-4\cdot5) + 2(2\cdot3-3\cdot5) \right] \\
-&\quad - 5 \left[ 7(3\cdot2-1\cdot3) - 6(2\cdot2-1\cdot5) + 1(2\cdot3-3\cdot5) \right] \\[10pt]
-&= 1 \left[ 6(-7)-(-9)+2(3) \right] - 3 \left[ 7(-7)-(-18)+2(-1) \right] \\
-&\quad + 4 \left[ 7(-9)-6(-18)+2(-9) \right] - 5 \left[ 7(3)-6(-1)-9 \right] \\[10pt]
-&= 1(-27)-3(-33)+4(27)-5(18) \\
-&= -27+99+108-90 \\
-&= 72+108-90 \\
-&= 180-90 \\
-&= \boxed{\det(A)=90}
+\det(A) &= 1 \begin{vmatrix} 6 & 1 & 2 \\ 3 & 1 & 4 \\ 3 & 2 & 1 \end{vmatrix}
+- 3 \begin{vmatrix} 7 & 1 & 2 \\ 2 & 1 & 4 \\ 5 & 2 & 1 \end{vmatrix}
++ 4 \begin{vmatrix} 7 & 6 & 2 \\ 2 & 3 & 4 \\ 5 & 3 & 1 \end{vmatrix}
+- 5 \begin{vmatrix} 7 & 6 & 1 \\ 2 & 3 & 1 \\ 5 & 3 & 2 \end{vmatrix} \\[10pt]
+&= 1 \Big[ 6(1\cdot1-4\cdot2) - 1(3\cdot1-4\cdot3) + 2(3\cdot2-1\cdot3) \Big] \\
+&\quad - 3 \Big[ 7(1\cdot1-4\cdot2) - 1(2\cdot1-4\cdot5) + 2(2\cdot2-1\cdot5) \Big] \\
+&\quad + 4 \Big[ 7(3\cdot1-4\cdot3) - 6(2\cdot1-4\cdot5) + 2(2\cdot3-3\cdot5) \Big] \\
+&\quad - 5 \Big[ 7(3\cdot2-1\cdot3) - 6(2\cdot2-1\cdot5) + 1(2\cdot3-3\cdot5) \Big] \\[10pt]
+&= 1 \Big[ 6(-7) - 1(-9) + 2(3) \Big]
+- 3 \Big[ 7(-7) - 1(-18) + 2(-1) \Big] \\
+&\quad + 4 \Big[ 7(-9) - 6(-18) + 2(-9) \Big]
+- 5 \Big[ 7(3) - 6(-1) + 1(-9) \Big] \\[10pt]
+&= 1(-27) - 3(-33) + 4(27) - 5(18) \\[6pt]
+&= -27 + 99 + 108 - 90 \\[6pt]
+&= 72 + 108 - 90 \\[6pt]
+&= 180 - 90 \\[6pt]
+&= \boxed{\det(A) = 90}
 \end{aligned}
 $$
